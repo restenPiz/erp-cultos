@@ -1,7 +1,7 @@
 <?php
 
 return [
-    
+
     'create_users' => false,
 
     'truncate_tables' => true,
@@ -27,7 +27,7 @@ return [
             'files' => 'c,r,u,d',
             'profile' => 'r,u',
         ],
-        'Member' => [
+        'member' => [
             'files' => 'r',
             'announcement' => 'c,r,u,d',
             'profile' => 'r,u',
