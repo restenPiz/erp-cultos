@@ -67,7 +67,6 @@
                                 <div class="p-2 mt-4">
                                     <form action="{{route('register')}}" method="post">
                                         @csrf
-
                                         <div class="mb-3">
                                             <label for="useremail" class="form-label">Email <span
                                                     class="text-danger">*</span></label>
@@ -80,7 +79,7 @@
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Nome de Usuario <span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="username"
+                                            <input type="text" class="form-control" name="name"
                                                 placeholder="Digite o nome de usuario" required>
                                             <div class="invalid-feedback">
                                                 Digite o nome de usuario
@@ -91,9 +90,8 @@
                                             <label class="form-label" for="password-input">Senha</label>
                                             <div class="position-relative auth-pass-inputgroup">
                                                 <input type="password" class="form-control pe-5 password-input"
-                                                    onpaste="return false" placeholder="Digite a sua senha"
-                                                    name="password" aria-describedby="passwordInput"
-                                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                   placeholder="Digite a sua senha"
+                                                    name="password" required>
                                                 <button
                                                     class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                     type="button" id="password-addon"><i
@@ -109,9 +107,7 @@
                                                 Confirmacao</label>
                                             <div class="position-relative auth-pass-inputgroup">
                                                 <input type="password" class="form-control pe-5 password-input"
-                                                    onpaste="return false" placeholder="Digite a sua senha"
-                                                    name="password_confirmation" aria-describedby="passwordInput"
-                                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                    placeholder="Digite a sua senha" name="password_confirmation" required>
                                                 <button
                                                     class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                     type="button" id="password-addon"><i
@@ -137,7 +133,7 @@
                                         </div>
 
                                         <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Registre-se</button>
+                                            <button class="btn btn-success w-100" type="submit" name="submit">Registre-se</button>
                                         </div>
 
                                     </form>
