@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form action="{{route('login')}}" method="post">
-
+                                        @csrf
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email</label>
                                             <input type="email" class="form-control" name="email" placeholder="Digite o seu email">

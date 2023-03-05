@@ -62,8 +62,7 @@
 
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
-                                    <h5 class="text-primary">Create New Account</h5>
-                                    <p class="text-muted">Get your free velzon account now</p>
+                                    <h5 class="text-primary">Crie a sua conta aqui</h5>
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form action="{{route('register')}}" method="post">
@@ -122,6 +121,8 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <input type="hidden" class="form-control" name="userType" value="admin" required>
 
                                         <div id="password-contain" class="p-3 bg-light mb-2 rounded">
                                             <h5 class="fs-13">Password must contain:</h5>
