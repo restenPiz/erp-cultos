@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<html lang="pt-br" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
 
     <meta charset="utf-8" />
@@ -96,10 +96,6 @@
                         </div>
                         <!-- end card -->
 
-                        <div class="mt-4 text-center">
-                            <p class="mb-0">Voce nao tem uma conta ? <a href="{{route('register')}}" class="fw-semibold text-primary text-decoration-underline"> Registre-se </a> </p>
-                        </div>
-
                     </div>
                 </div>
                 <!-- end row -->
@@ -141,7 +137,4 @@
     <!-- password-addon init -->
     <script src="assets/js/pages/password-addon.init.js"></script>
 </body>
-
-
-<!-- Mirrored from themesbrand.com/velzon/html/default/auth-signin-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Mar 2023 09:54:53 GMT -->
 </html>
