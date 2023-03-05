@@ -1,12 +1,9 @@
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
-
-
-<!-- Mirrored from themesbrand.com/velzon/html/default/auth-signin-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Mar 2023 09:54:52 GMT -->
 <head>
 
     <meta charset="utf-8" />
-    <title>Sign In | Velzon - Admin & Dashboard Template</title>
+    <title>Erp-Cultos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -25,7 +22,6 @@
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 </head>
-
 <body>
 
     <div class="auth-page-wrapper pt-5">
@@ -47,11 +43,11 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
-                                <a href="index.html" class="d-inline-block auth-logo">
+                                {{--<a href="index.html" class="d-inline-block auth-logo">
                                     <img src="assets/images/logo-light.png" alt="" height="20">
                                 </a>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
+                            <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>--}}
                         </div>
                     </div>
                 </div>
@@ -70,8 +66,8 @@
 
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
-                                    <h5 class="text-primary">Welcome Back !</h5>
-                                    <p class="text-muted">Sign in to continue to Velzon.</p>
+                                    <h5 class="text-primary">Bem vindo de volta !</h5>
+                                    <p class="text-muted">Preencha os campos para poder entrar no sistema.</p>
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form action="{{route('login')}}" method="post">
