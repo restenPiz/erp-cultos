@@ -115,7 +115,7 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> ERP-Cultos. Criado com <i class="mdi mdi-heart text-danger"></i> por Mauro Peniel
                             </p>
                         </div>
                     </div>
