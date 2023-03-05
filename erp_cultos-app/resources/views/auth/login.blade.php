@@ -119,6 +119,13 @@
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card mt-4">
 
+                            {{--Inicio da parte de erros do sistema--}}
+
+                            <x-auth-session-status class="mb-4" :status="session('status')" />
+                            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+                            {{--Fim da parte de erros do sistema--}}
+
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
                                     <h5 class="text-primary">Welcome Back !</h5>
