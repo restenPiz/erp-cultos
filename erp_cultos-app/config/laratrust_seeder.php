@@ -1,34 +1,41 @@
 <?php
 
 return [
-    /**
-     * Control if the seeder should create a user per role while seeding the data.
-     */
+    
     'create_users' => false,
 
-    /**
-     * Control if all the laratrust tables should be truncated before running the seeder.
-     */
     'truncate_tables' => true,
 
     'roles_structure' => [
         'admin' => [
             'users' => 'c,r,u,d',
-            'payments' => 'c,r,u,d',
+            'activities' => 'c,r,u,d',
+            'messages' => 'c,r,u,d,s',
+            'patrimony' => 'c,r,u,d',
+            'branches' => 'c,r,u,d',
+            'members' => 'r,d',
+            'cult' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
         'shepherd' => [
-            'users' => 'c,r,u,d',
+            'activities' => 'c,r,u,d',
+            'announcement' => 'c,r,u,d',
+            'members' => 'r,d',
             'profile' => 'r,u'
         ],
         'worship_leader' => [
+            'files' => 'c,r,u,d',
             'profile' => 'r,u',
         ],
         'Member' => [
+            'files' => 'r',
+            'announcement' => 'c,r,u,d',
             'profile' => 'r,u',
         ],
         'treasurer' => [
-            'module_1_name' => 'c,r,u,d',
+            'input' => 'c,r,u,d',
+            'output' => 'c,r,u,d',
+            'profile' => 'r,u',
         ]
     ],
 
@@ -36,6 +43,7 @@ return [
         'c' => 'create',
         'r' => 'read',
         'u' => 'update',
-        'd' => 'delete'
+        'd' => 'delete',
+        's'=>'send'
     ]
 ];
