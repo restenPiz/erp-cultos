@@ -46,7 +46,7 @@ class shepherdController extends Controller
 
         Auth::login($user);
 
-        toast('Cliente adicionado com sucesso','sucess');
+        toast('Usuario adicionado com sucesso!','sucess');
 
         return redirect()->back();
     }
