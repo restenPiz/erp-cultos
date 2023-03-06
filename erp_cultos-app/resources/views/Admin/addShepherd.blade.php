@@ -96,6 +96,7 @@
                                 </select>
                             </div>
                             <!--end col-->
+                            <input type="hidden" class="form-control" id="labelInput" name="userType" value="pastor">
                         </div>
                         <!--end row-->
                     </div>
