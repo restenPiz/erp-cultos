@@ -1,4 +1,4 @@
-        <!-- ========== App Menu ========== -->
+        @role('admin')
         <div class="app-menu navbar-menu">
             <!-- LOGO -->
             <div class="navbar-brand-box">
@@ -14,10 +14,10 @@
                 <!-- Light Logo-->
                 <br><a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/a1.png" alt="" height="30">
+                        <img src="{{route('dashboard')}}" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/a1.png" alt="" height="30">
+                        <img src="{{route('dashboard')}}" alt="" height="30">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -26,6 +26,7 @@
                 </button>
             </div>
 
+        @endrole
             <div id="scrollbar">
                 <div class="container-fluid">
 
@@ -51,7 +52,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Todas actividades </a>
+                                        <a href="#" class="nav-link" data-key="t-chat"> Todas actividades </a>
                                     </li>
                                 </ul>
                             </div>
