@@ -15,21 +15,21 @@
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="basiInput" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="basiInput" placeholder="Digite o seu nome">
+                                    <input type="text" class="form-control" id="basiInput" placeholder="Digite o seu nome" name="name">
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="labelInput" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="labelInput" placeholder="Digite o seu email">
+                                    <input type="email" class="form-control" id="labelInput" placeholder="Digite o seu email" name="email">
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="labelInput" class="form-label">Password</label>
-                                    <input type="passowrd" class="form-control" id="labelInput" placeholder="Digite a sua senha">
+                                    <input type="passowrd" class="form-control" id="labelInput" placeholder="Digite a sua senha" name="password">
                                 </div>
                             </div>
                             <!--end col-->
@@ -55,20 +55,20 @@
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="basiInput" class="form-label">Contacto</label>
-                                    <input type="password" class="form-control" id="basiInput" placeholder="Digite o seu contacto">
+                                    <input type="password" class="form-control" id="basiInput" placeholder="Digite o seu contacto" name="contact">
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="labelInput" class="form-label">Funcao</label>
-                                    <input type="password" class="form-control" id="labelInput" placeholder="Escreva a sua funcao">
+                                    <input type="password" class="form-control" id="labelInput" placeholder="Escreva a sua funcao" name="function">
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-xxl-6 col-md-6">
                                 <label for="exampleDataList" class="form-label">Nivel Teologico</label>
-                                <select class="form-control">
+                                <select class="form-control" name="theological_level">
                                     <option>...</option>
                                     <option>Caminho de Deus</option>
                                     <option>Caminho de Jesus</option>
@@ -85,7 +85,7 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <div class="card">
 
                 {{--Inicio da parte de butoes--}}
