@@ -66,6 +66,13 @@
                         <div class="row gy-4">
                             <div class="col-xxl-6 col-md-6">
                                 <div>
+                                    <label for="basiInput" class="form-label">Apelido</label>
+                                    <input type="text" class="form-control" id="basiInput"
+                                        placeholder="Digite o seu nome" name="surname">
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
                                     <label for="basiInput" class="form-label">Contacto</label>
                                     <input type="password" class="form-control" id="basiInput"
                                         placeholder="Digite o seu contacto" name="contact">
