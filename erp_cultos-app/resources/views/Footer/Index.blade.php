@@ -1,3 +1,6 @@
+
+@yield('content')
+
 <div class="offcanvas-footer border-top p-3 text-center">
     <div class="row">
         <div class="col-6">
