@@ -33,7 +33,7 @@
                                 <div class="col-xxl-6 col-md-6">
                                     <div>
                                         <label for="labelInput" class="form-label">Senha</label>
-                                        <input type="passowrd" class="form-control" id="labelInput"
+                                        <input type="password" class="form-control" id="labelInput"
                                             placeholder="Digite a sua senha" name="password">
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                 <div class="col-xxl-6 col-md-6">
                                     <div>
                                         <label for="labelInput" class="form-label">Senha de Confirmacao</label>
-                                        <input type="passowrd" class="form-control" id="labelInput"
+                                        <input type="password" class="form-control" id="labelInput"
                                             placeholder="Digite a sua senha" name="password_confirmation">
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="basiInput" class="form-label">Contacto</label>
-                                    <input type="password" class="form-control" id="basiInput"
+                                    <input type="text" class="form-control" id="basiInput"
                                         placeholder="Digite o seu contacto" name="contact">
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="labelInput" class="form-label">Funcao</label>
-                                    <input type="password" class="form-control" id="labelInput"
+                                    <input type="text" class="form-control" id="labelInput"
                                         placeholder="Escreva a sua funcao" name="function">
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
 
                 {{-- Inicio da parte de butoes --}}
 
-                <button class="form-control bg-primary" style="color:white">Adicionar</button>
+                <button type="submit" name="submit" class="form-control bg-primary" style="color:white">Adicionar</button>
 
                 {{-- Fim da parte de butoes --}}
 
