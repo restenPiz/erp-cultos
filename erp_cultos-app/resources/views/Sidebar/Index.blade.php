@@ -183,7 +183,7 @@
                             <div class="collapse menu-dropdown" id="sidebarIcons">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="icons-remix.html" class="nav-link" data-key="t-remix">Adicionar pastor</a>
+                                        <a href="{{route('addShepherd')}}" class="nav-link" data-key="t-remix">Adicionar pastor</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="icons-boxicons.html" class="nav-link"
