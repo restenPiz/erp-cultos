@@ -8,6 +8,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class shepherdController extends Controller
 {
@@ -44,6 +45,8 @@ class shepherdController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+
+        toast('Cliente adicionado com sucesso','sucess');
 
         return redirect()->back();
     }
