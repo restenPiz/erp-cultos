@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class dashboardController extends Controller
 {
-    //
     public function index()
     {
         if(Auth::user()->hasRole('admin')){
