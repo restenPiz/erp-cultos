@@ -1,6 +1,7 @@
-
-
-
+@extends('Layout.Index')
+@extends('Sidebar.Index')
+@section('content')
+    
 <div class="main-content">
 
     <div class="page-content">
@@ -2077,3 +2078,6 @@
         </div>
 
     </div>
+
+@extends('Footer.Index')
+@endsection
