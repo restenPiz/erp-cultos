@@ -12,8 +12,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class shepherdController extends Controller
 {
-    public function addShepherd()
+    public function addShepherd(User $user)
     {
+        $user->attachRole('admin');
+
         return view('Admin.addShepherd');
     }
     public function storeShepherd(Request $request)
@@ -37,6 +39,6 @@ class shepherdController extends Controller
 
         toast('Usuario adicionado com sucesso!','sucess');
 
-        return redirect()->back();
+        return redirect()->route('addShepherd');
     }
 }
