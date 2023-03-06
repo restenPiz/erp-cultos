@@ -31,6 +31,7 @@
 
                     <div id="two-column-menu">
                     </div>
+                    @role('admin')
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
@@ -205,6 +206,7 @@
                                 </ul>
                             </div>
                         </li>
+                        @endrole
 
                     </ul>
                 </div>
