@@ -10,7 +10,7 @@ class dashboardController extends Controller
     public function index()
     {
         if(Auth::user()->hasRole('admin')){
-            return view('Admin.Index');
+            return redirect()->route('dash');
         }
         else if(Auth::user()->hasRole('shepherd'))
         {
@@ -31,5 +31,9 @@ class dashboardController extends Controller
         else{
             return redirect()->back();
         }
+    }
+    public function dash()
+    {
+        return view('Admin.Index');
     }
 }

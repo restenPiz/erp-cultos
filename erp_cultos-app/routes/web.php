@@ -14,6 +14,7 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['au
 
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
+    Route::get('/Index', [dashboardController::class, 'dash'])->middleware(['auth'])->name('dash');
     Route::get('/addShepherd', [shepherdController::class, 'addShepherd'])->middleware(['auth'])->name('addShepherd');
     Route::post('/storeShepherd', [shepherdController::class, 'storeShepherd'])->middleware(['auth'])->name('storeShepherd');
 });

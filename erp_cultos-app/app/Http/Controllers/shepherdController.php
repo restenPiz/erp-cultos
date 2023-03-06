@@ -18,17 +18,6 @@ class shepherdController extends Controller
     }
     public function storeShepherd(Request $request)
     {       
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
-            'function' => ['required', 'string', 'max:255'],
-            'theological_level' => ['required', 'string', 'max:255'],
-            'contact' => ['required', 'string', 'max:255'],
-            'usertype' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
