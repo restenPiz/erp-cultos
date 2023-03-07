@@ -1117,7 +1117,7 @@
                                                 data-key="t-remix">Adicionar pastor</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="icons-boxicons.html" class="nav-link" data-key="t-boxicons">Todos
+                                            <a href="{{route('allShepherd')}}" class="nav-link" data-key="t-boxicons">Todos
                                                 pastores</a>
                                         </li>
                                     </ul>
