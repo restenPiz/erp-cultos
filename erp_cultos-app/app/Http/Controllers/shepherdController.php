@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
 
 class shepherdController extends Controller
 {
@@ -40,6 +41,8 @@ class shepherdController extends Controller
     }
     public function allShepherd()
     {
-        return view('Admin.allShepherd');
+        $users = DB::table('users')->where('userType', 'pastor')->first();
+
+        return view('Admin.allShepherd',compact('users'));
     }
 }
