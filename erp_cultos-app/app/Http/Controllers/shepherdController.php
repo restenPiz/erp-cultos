@@ -17,9 +17,9 @@ class shepherdController extends Controller
         return view('Admin.addShepherd');
     }
     public function storeShepherd(Request $request)
-    {   
-        if(Auth::user()->hasRole('admin')){
-             
+    {
+        if (Auth::user()->hasRole('admin')) {
+
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -33,9 +33,13 @@ class shepherdController extends Controller
 
             $user->attachRole('shepherd');
 
-            toast('Usuario adicionado com sucesso!','sucess');
+            toast('Usuario adicionado com sucesso!', 'sucess');
 
             return redirect()->route('addShepherd');
-        }   
+        }
+    }
+    public function allShepherd()
+    {
+        return view('Admin.allShepherd');
     }
 }
