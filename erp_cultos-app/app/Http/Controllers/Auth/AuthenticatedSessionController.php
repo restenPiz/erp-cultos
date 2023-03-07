@@ -17,10 +17,10 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request, $user)
     {
         //$request->authenticate();
-        if($user->hasRole('admin')){
+        if(Auth::user()->hasRole('admin')){
             return redirect()->route('dashboard');
         }
-        else if($user->hasRole('shepherd'))
+        else if(Auth::user()->hasRole('shepherd'))
         {
             return redirect()->route('dashShepherd');
         }
