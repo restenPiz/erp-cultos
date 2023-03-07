@@ -41,7 +41,7 @@ class shepherdController extends Controller
     }
     public function allShepherd()
     {
-        $users = DB::table('users')->where('userType', 'pastor')->first();
+        $users = DB::table('users')->where('userType', 'pastor')->get();
 
         return view('Admin.allShepherd',compact('users'));
     }

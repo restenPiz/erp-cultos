@@ -37,8 +37,6 @@
                                         <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal"
                                             id="create-btn" data-bs-target="#showModal"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</button>
-                                        <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i
-                                                class="ri-delete-bin-2-line"></i></button>
                                     </div>
                                 </div>
                                 <div class="col-sm">
@@ -67,17 +65,19 @@
                                             <th class="sort" data-sort="date">Papel</th>
                                             <th class="sort" data-sort="status">Nivel teologico</th>
                                             <th class="sort" data-sort="action">Contacto</th>
+                                            <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
                                         @foreach ($users as $user)
                                             <tr>
-                                                <td class="customer_name">{{$user->name}}</td>
-                                                <td class="email">{{$user->email}}</td>
-                                                <td class="phone">{{$user->surname}}</td>
-                                                <td class="date">{{$user->function}}</td>
-                                                <td class="date">{{$user->theological_level}}</td>
-                                                <td class="date">{{$user->contact}}</td>
+                                                <td class="customer_name">{{ $user->name }}</td>
+                                                <td class="email">{{ $user->email }}</td>
+                                                <td class="phone">{{ $user->surname }}</td>
+                                                <td class="date">{{ $user->function }}</td>
+                                                <td class="date">{{ $user->theological_level }}</td>
+                                                <td class="status">{{ $user->contact }}</td>
+                                                <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
