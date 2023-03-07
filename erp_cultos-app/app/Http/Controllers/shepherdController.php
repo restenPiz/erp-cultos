@@ -36,7 +36,6 @@ class shepherdController extends Controller
             toast('Usuario adicionado com sucesso!','sucess');
 
             return redirect()->route('addShepherd');
-        
         }   
     }
 }

@@ -9,8 +9,12 @@ class dashboardController extends Controller
 {
     public function index()
     {
-        if(Auth::user()->hasRole('admin')){
+        if(Auth::user()->hasRole('admin'))
+        {
             return view('Admin.Index');
+        }
+        else if(Auth::user()->hasRole('shepherd')){
+            return 404;
         }
     }
 }
