@@ -36,7 +36,7 @@
                                     <div>
                                         <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal"
                                             id="create-btn" data-bs-target="#showModal"><i
-                                                class="ri-add-line align-bottom me-1"></i> Add</button>
+                                                class="ri-add-line align-bottom me-1"></i> Adicionar</button>
                                         <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i
                                                 class="ri-delete-bin-2-line"></i></button>
                                     </div>
@@ -55,50 +55,43 @@
                                 <table class="table align-middle table-nowrap" id="customerTable">
                                     <thead class="table-light">
                                         <tr>
-                                            <th scope="col" style="width: 50px;">
+                                            {{-- <th scope="col" style="width: 50px;">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" id="checkAll"
                                                         value="option">
                                                 </div>
-                                            </th>
-                                            <th class="sort" data-sort="customer_name">Customer</th>
+                                            </th> --}}
+                                            <th class="sort" data-sort="customer_name">Nome</th>
                                             <th class="sort" data-sort="email">Email</th>
-                                            <th class="sort" data-sort="phone">Phone</th>
-                                            <th class="sort" data-sort="date">Joining Date</th>
-                                            <th class="sort" data-sort="status">Delivery Status</th>
-                                            <th class="sort" data-sort="action">Action</th>
+                                            <th class="sort" data-sort="phone">Apelido</th>
+                                            <th class="sort" data-sort="date">Papel</th>
+                                            <th class="sort" data-sort="status">Nivel teologico</th>
+                                            <th class="sort" data-sort="action">Contacto</th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="chk_child"
-                                                        value="option1">
-                                                </div>
-                                            </th>
-                                            <td class="id" style="display:none;"><a href="javascript:void(0);"
-                                                    class="fw-medium link-primary">#VZ2101</a></td>
-                                            <td class="customer_name">Mary Cousar</td>
-                                            <td class="email">marycousar@velzon.com</td>
-                                            <td class="phone">580-464-4694</td>
-                                            <td class="date">06 Apr, 2021</td>
-                                            <td class="status"><span
-                                                    class="badge badge-soft-success text-uppercase">Active</span></td>
-                                            <td>
-                                                <div class="d-flex gap-2">
-                                                    <div class="edit">
-                                                        <button class="btn btn-sm btn-success edit-item-btn"
-                                                            data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                        @foreach ($users as $user)
+                                            <tr>
+                                                <td class="customer_name">{{$user->name}}</td>
+                                                <td class="email">{{$user->email}}</td>
+                                                <td class="phone">{{$user->surname}}</td>
+                                                <td class="date">{{$user->function}}</td>
+                                                <td class="date">{{$user->theological_level}}</td>
+                                                <td class="date">{{$user->contact}}</td>
+                                                    <div class="d-flex gap-2">
+                                                        <div class="edit">
+                                                            <button class="btn btn-sm btn-success edit-item-btn"
+                                                                data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                        </div>
+                                                        <div class="remove">
+                                                            <button class="btn btn-sm btn-danger remove-item-btn"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteRecordModal">Remove</button>
+                                                        </div>
                                                     </div>
-                                                    <div class="remove">
-                                                        <button class="btn btn-sm btn-danger remove-item-btn"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#deleteRecordModal">Remove</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <div class="noresult" style="display: none">
