@@ -14,16 +14,23 @@ class AuthenticatedSessionController extends Controller
     {
         return view('auth.login');
     }
-    public function store(LoginRequest $request)
+    public function store(LoginRequest $request, $user)
     {
-        $request->authenticate();
+        //$request->authenticate();
+        if($user->hasRole('admin')){
+            return redirect()->route('dashboard');
+        }
+        else if($user->hasRole('shepherd'))
+        {
+            return redirect()->route('dashShepherd');
+        }
 
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
-    protected function authenticate(Request $request,$user)
+    /*protected function authenticate(Request $request,$user)
     {
         if($user->hasRole('admin')){
             return redirect()->route('dashboard');
@@ -32,7 +39,7 @@ class AuthenticatedSessionController extends Controller
         {
             return redirect()->route('dashShepherd');
         }
-    }
+    }*/
     public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
