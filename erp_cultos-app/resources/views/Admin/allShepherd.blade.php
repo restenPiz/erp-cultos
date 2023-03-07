@@ -34,9 +34,8 @@
                             <div class="row g-4 mb-3">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal"
-                                            id="create-btn" data-bs-target="#showModal"><i
-                                                class="ri-add-line align-bottom me-1"></i> Adicionar</button>
+                                        <a href="{{route('addShepherd')}}" class="btn btn-success add-btn"><i
+                                                class="ri-add-line align-bottom me-1"></i> Adicionar</a>
                                     </div>
                                 </div>
                                 <div class="col-sm">
@@ -81,12 +80,12 @@
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
-                                                                data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                data-bs-toggle="modal" data-bs-target="#showModal">Editar</button>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#deleteRecordModal">Remove</button>
+                                                                data-bs-target="#deleteRecordModal">Eliminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
