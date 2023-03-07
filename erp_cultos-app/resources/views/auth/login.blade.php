@@ -89,9 +89,9 @@
                                             <button class="btn btn-success w-100" type="submit">Entrar</button>
                                         </div>
 
-                                        <div class="mb-3">
+                                        {{--<div class="mb-3">
                                             <a class="form-control" href="{{route('register')}}">Registre-se</a>
-                                        </div>
+                                        </div>--}}
 
                                     </form>
                                 </div>
