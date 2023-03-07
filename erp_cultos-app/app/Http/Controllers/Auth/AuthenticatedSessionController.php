@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Support\Facades\Auth;
 class AuthenticatedSessionController extends Controller
 {
     public function create()
