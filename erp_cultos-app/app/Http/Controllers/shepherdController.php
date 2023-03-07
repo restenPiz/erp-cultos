@@ -45,4 +45,12 @@ class shepherdController extends Controller
 
         return view('Admin.allShepherd',compact('users'));
     }
+    public function updateShepherd()
+    {
+        return 404;
+    }
+    public function deleteShepherd()
+    {
+        return 404;
+    }
 }

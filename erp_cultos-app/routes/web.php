@@ -8,8 +8,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+//Inicio das rotas de redirecionamento
 Route::get('/dashShepherd', [dashboardController::class, 'indexShepherd'])->middleware(['auth'])->name('dashShepherd');
-
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 //Inicio das rotas da parte de administrador
