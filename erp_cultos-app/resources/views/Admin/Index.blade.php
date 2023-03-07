@@ -1,6 +1,6 @@
 @extends('Layout.Index')
 @section('content')
-    
+    @role('admin')
      <!-- start page title -->
      <div class="row">
         <div class="col-12">
@@ -19,5 +19,6 @@
         </div>
     </div>
     <!-- end page title -->
+    @endrole
 
 @endsection

@@ -14,8 +14,6 @@ class shepherdController extends Controller
 {
     public function addShepherd(User $user)
     {
-        $user->attachRole('admin');
-
         return view('Admin.addShepherd');
     }
     public function storeShepherd(Request $request)

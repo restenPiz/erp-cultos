@@ -34,6 +34,8 @@ class dashboardController extends Controller
     }
     public function dash()
     {
-        return view('Admin.Index');
+        if(Auth::user()->hasRole('admin')){
+            return view('Admin.Index');
+        }
     }
 }
