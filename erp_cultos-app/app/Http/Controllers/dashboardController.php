@@ -7,8 +7,18 @@ use Illuminate\Support\Facades\Auth;
 
 class dashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(['role:admin']);
+    }
     public function index()
     {
-        return view('Admin.Index');
+        if(Auth::user()->hasRole('admin'))
+        {
+            return view('Admin.Index');
+        }else{
+            return 404;
+        }
     }
 }
