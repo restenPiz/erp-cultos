@@ -13,6 +13,8 @@ Route::get('/', function () {
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 //Inicio das rotas da parte de administrador
-Route::get('/Index', [dashboardController::class, 'dash'])->middleware(['auth'])->name('dash');
-Route::get('/addShepherd', [shepherdController::class, 'addShepherd'])->middleware(['auth'])->name('addShepherd');
-Route::post('/storeShepherd', [shepherdController::class, 'storeShepherd'])->middleware(['auth'])->name('storeShepherd');
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+    //Inicio das rotas para a parte de pastor
+    Route::get('/addShepherd', [shepherdController::class, 'addShepherd'])->middleware(['auth'])->name('addShepherd');
+    Route::post('/storeShepherd', [shepherdController::class, 'storeShepherd'])->middleware(['auth'])->name('storeShepherd');
+});
