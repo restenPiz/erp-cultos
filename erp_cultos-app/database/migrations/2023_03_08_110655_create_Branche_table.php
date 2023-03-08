@@ -16,7 +16,7 @@ class CreateBrancheTable extends Migration
             $table->string('Number_of_members');
             //Inicio do
             $table->integer('Id_user')->unsigned();
-            $table->foreign('Id_user')->references('id')->on('Branche');
+            $table->foreign('Id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }
