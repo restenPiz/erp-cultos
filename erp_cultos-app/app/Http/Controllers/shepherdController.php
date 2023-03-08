@@ -47,18 +47,18 @@ class shepherdController extends Controller
     }
     public function updateShepherd($id, Request $request)
     {
-        $user=User::findOrFail($id);
-
         if (Auth::user()->hasRole('admin')) {
 
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'surname' => $request->surname,
-                'function' => $request->function,
-                'theological_level' => $request->theological_level,
-                'contact' => $request->contact,
-            ]);
+            $user=User::findOrFail($id);
+
+            $user->name=$request->name;
+            $user->email=$request->email;
+            $user->surname=$request->surname;
+            $user->contact=$request->contact;
+            $user->function=$request->function;
+            $user->theological_level=$request->theological_level;
+
+            $user->save();
 
             toast('Usuario adicionado com sucesso!', 'sucess');
 
