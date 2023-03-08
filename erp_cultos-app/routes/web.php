@@ -32,12 +32,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/deleteTreasurer/{id}', [treasurerController::class, 'deleteTreasurer'])->middleware(['auth'])->name('deleteTreasurer');
 
     //Inicio da parte contendo as rotas de lider de louvor
-    Route::get('/addTreasurer', [worship_leaderController::class, 'addTreasurer'])->middleware(['auth'])->name('addTreasurer');
-    Route::post('/storeTreasurer', [worship_leaderController::class, 'storeTreasurer'])->middleware(['auth'])->name('storeTreasurer');
-    Route::get('/allTreasurer', [worship_leaderController::class, 'allTreasurer'])->middleware(['auth'])->name('allTreasurer');
-    Route::post('/updateTreasurer/{id}', [worship_leaderControllerController::class, 'updateTreasurer'])->middleware(['auth'])->name('updateTreasurer');
-    Route::get('/deleteTreasurer/{id}', [worship_leaderControllerController::class, 'deleteTreasurer'])->middleware(['auth'])->name('deleteTreasurer');
-
+    Route::get('/addWorship_leader', [worship_leaderController::class, 'addWorship_leader'])->middleware(['auth'])->name('addWorship_leader');
+    Route::post('/storeWorship_leader', [worship_leaderController::class, 'storeWorship_leader'])->middleware(['auth'])->name('storeWorship_leader');
+    Route::get('/allWorship_leader', [worship_leaderController::class, 'allWorship_leader'])->middleware(['auth'])->name('allWorship_leader');
+    Route::post('/updateWorship_leader/{id}', [worship_leaderControllerController::class, 'updateWorship_leader'])->middleware(['auth'])->name('updateWorship_leader');
+    Route::get('/deleteWorship_leader/{id}', [worship_leaderControllerController::class, 'deleteWorship_leader'])->middleware(['auth'])->name('deleteWorship_leader');
+    
 
 });
 
