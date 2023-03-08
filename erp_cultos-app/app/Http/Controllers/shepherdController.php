@@ -77,7 +77,7 @@ class shepherdController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $user=User::find($id);
+            $user=User::findOrFail($id);
 
             $user->delete();
 
