@@ -97,7 +97,7 @@
                                         </select>
                                     </div>
                                     <!--end col-->
-                                    <input type="hidden" class="form-control" id="labelInput" name="userType" value="pastor">
+                                    <input type="hidden" class="form-control" id="labelInput" name="userType" value="lider_louvor">
                                 </div>
                                 <!--end row-->
                             </div>

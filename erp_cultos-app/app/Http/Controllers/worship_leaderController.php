@@ -32,9 +32,9 @@ class worship_leaderController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            $user->attachRole('Worship_leader');
+            $user->attachRole('worship_leader');
 
-            Alert::success('Adicionado', 'O pastor foi adicionado com sucesso!');
+            Alert::success('Adicionado', 'O lider de louvor foi adicionado com sucesso!');
 
             return redirect()->route('addWorship_leader');
         }
@@ -45,7 +45,7 @@ class worship_leaderController extends Controller
     }
     public function allWorship_leader()
     {
-        $users = DB::table('users')->where('userType', 'pastor')->get();
+        $users = DB::table('users')->where('userType', 'lider_louvor')->get();
 
         return view('Admin.allWorship_leader',compact('users'));
     }
@@ -64,7 +64,7 @@ class worship_leaderController extends Controller
 
             $user->save();
 
-            Alert::success('Actualizado', 'O pastor foi actualizado com sucesso!');
+            Alert::success('Actualizado', 'O lider de louvor foi actualizado com sucesso!');
 
             return redirect()->route('allWorship_leader');
         }
@@ -81,7 +81,7 @@ class worship_leaderController extends Controller
 
             $user->delete();
 
-            Alert::success('Eliminado', 'O pastor foi eliminado com sucesso!');
+            Alert::success('Eliminado', 'O lider de louvor foi eliminado com sucesso!');
             
             return redirect()->route('allWorship_leader');
         }
