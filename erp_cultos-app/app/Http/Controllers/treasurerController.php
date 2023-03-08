@@ -32,11 +32,11 @@ class treasurerController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            $user->attachRole('shepherd');
+            $user->attachRole('treasurer');
 
-            Alert::success('Adicionado', 'O pastor foi adicionado com sucesso!');
+            Alert::success('Adicionado', 'O tesoureiro foi adicionado com sucesso!');
 
-            return redirect()->route('addShepherd');
+            return redirect()->route('addTreasurer');
         }
         else
         {
