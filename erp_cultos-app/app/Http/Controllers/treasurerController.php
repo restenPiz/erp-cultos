@@ -45,11 +45,11 @@ class treasurerController extends Controller
     }
     public function allShepherd()
     {
-        $users = DB::table('users')->where('userType', 'pastor')->get();
+        $users = DB::table('users')->where('userType', 'tesoureiro')->get();
 
-        return view('Admin.allShepherd',compact('users'));
+        return view('Admin.allTreasurer',compact('users'));
     }
-    public function updateShepherd($id, Request $request)
+    public function updateTreasurer($id, Request $request)
     {
         if (Auth::user()->hasRole('admin')) {
 
@@ -64,9 +64,9 @@ class treasurerController extends Controller
 
             $user->save();
 
-            Alert::success('Actualizado', 'O pastor foi actualizado com sucesso!');
+            Alert::success('Actualizado', 'O tesoureiro foi actualizado com sucesso!');
 
-            return redirect()->route('allShepherd');
+            return redirect()->route('allTreasurer');
         }
         else
         {
@@ -81,9 +81,9 @@ class treasurerController extends Controller
 
             $user->delete();
 
-            Alert::success('Eliminado', 'O pastor foi eliminado com sucesso!');
+            Alert::success('Eliminado', 'O tesoureiro foi eliminado com sucesso!');
             
-            return redirect()->route('allShepherd');
+            return redirect()->route('allTreasurer');
         }
         else
         {
