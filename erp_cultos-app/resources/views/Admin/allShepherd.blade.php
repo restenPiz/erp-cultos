@@ -102,12 +102,13 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
-                                                        <form class="tablelist-form" autocomplete="off">
+                                                        <form class="tablelist-form" autocomplete="off" action="{{route('updateShepherd')}}" method="post">
+                                                            @csrf
                                                             <div class="modal-body">
-                                                                <div class="mb-3" id="modal-id" style="display: none;">
-                                                                    <label for="id-field" class="form-label">Nome</label>
+                                                                <div class="mb-3" id="modal-id">
+                                                                    <label for="customername-field" class="form-label">Nome</label>
                                                                     <input type="text" id="id-field" name="name" class="form-control"
-                                                                        value="{{$user->name}}" readonly />
+                                                                        value="{{$user->name}}" required />
                                                                 </div>
 
                                                                 <div class="mb-3">
