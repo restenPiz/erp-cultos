@@ -15,7 +15,7 @@ class treasurerController extends Controller
 {
     public function addTreasurer()
     {
-        return view('addTreasurer');
+        return view('Admin.addTreasurer');
     }
     public function storeTreasurer(Request $request)
     {

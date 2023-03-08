@@ -1033,11 +1033,11 @@
                                         <div class="col-lg-4">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="ui-alerts.html" class="nav-link"
+                                                    <a href="{{route('addTreasurer')}}" class="nav-link"
                                                         data-key="t-alerts">Adicionar Tesoureiro</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="ui-badges.html" class="nav-link" data-key="t-badges">Todos
+                                                    <a href="{{route('allTreasurer')}}" class="nav-link" data-key="t-badges">Todos
                                                         tesoureiros</a>
                                                 </li>
                                             </ul>

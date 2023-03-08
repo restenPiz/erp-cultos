@@ -24,11 +24,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/deleteShepherd/{id}', [shepherdController::class, 'deleteShepherd'])->middleware(['auth'])->name('deleteShepherd');
 
     //Inicio das rotas da parte de tesoureiros
-    Route::get('/addTreasurer', [treasurerController::class, 'addShepherd'])->middleware(['auth'])->name('addTreasurer');
-    Route::post('/storeTreasurer', [treasurerController::class, 'storeShepherd'])->middleware(['auth'])->name('storeTreasurer');
-    Route::get('/allTreasurer', [treasurerController::class, 'allShepherd'])->middleware(['auth'])->name('allTreasurer');
-    Route::post('/updateTreasurer/{id}', [treasurerController::class, 'updateShepherd'])->middleware(['auth'])->name('updateTreasurer');
-    Route::get('/deleteTreasurer/{id}', [treasurerController::class, 'deleteShepherd'])->middleware(['auth'])->name('deleteTreasurer');
+    Route::get('/addTreasurer', [treasurerController::class, 'addTreasurer'])->middleware(['auth'])->name('addTreasurer');
+    Route::post('/storeTreasurer', [treasurerController::class, 'storeTreasurer'])->middleware(['auth'])->name('storeTreasurer');
+    Route::get('/allTreasurer', [treasurerController::class, 'allTreasurer'])->middleware(['auth'])->name('allTreasurer');
+    Route::post('/updateTreasurer/{id}', [treasurerController::class, 'updateTreasurer'])->middleware(['auth'])->name('updateTreasurer');
+    Route::get('/deleteTreasurer/{id}', [treasurerController::class, 'deleteTreasurer'])->middleware(['auth'])->name('deleteTreasurer');
 
 });
 
