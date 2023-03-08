@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\shepherdController;
 use App\Http\Controllers\treasurerController;
+use App\Http\Controllers\worship_leaderController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -29,6 +30,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/allTreasurer', [treasurerController::class, 'allTreasurer'])->middleware(['auth'])->name('allTreasurer');
     Route::post('/updateTreasurer/{id}', [treasurerController::class, 'updateTreasurer'])->middleware(['auth'])->name('updateTreasurer');
     Route::get('/deleteTreasurer/{id}', [treasurerController::class, 'deleteTreasurer'])->middleware(['auth'])->name('deleteTreasurer');
+
+    //Inicio da parte contendo as rotas de lider de louvor
+    Route::get('/addTreasurer', [worship_leaderController::class, 'addTreasurer'])->middleware(['auth'])->name('addTreasurer');
+    Route::post('/storeTreasurer', [worship_leaderController::class, 'storeTreasurer'])->middleware(['auth'])->name('storeTreasurer');
+    Route::get('/allTreasurer', [worship_leaderController::class, 'allTreasurer'])->middleware(['auth'])->name('allTreasurer');
+    Route::post('/updateTreasurer/{id}', [worship_leaderControllerController::class, 'updateTreasurer'])->middleware(['auth'])->name('updateTreasurer');
+    Route::get('/deleteTreasurer/{id}', [worship_leaderControllerController::class, 'deleteTreasurer'])->middleware(['auth'])->name('deleteTreasurer');
+
 
 });
 
