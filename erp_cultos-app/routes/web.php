@@ -7,6 +7,7 @@ use App\Http\Controllers\treasurerController;
 use App\Http\Controllers\worship_leaderController;
 use App\Http\Controllers\branchesController;
 
+//Rota inicial de acesso a tela de login
 Route::get('/', function () {
     return view('auth.login');
 });
