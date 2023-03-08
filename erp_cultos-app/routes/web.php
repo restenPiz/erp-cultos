@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\shepherdController;
+use App\Http\Controllers\treasurerController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -21,6 +22,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/allShepherd', [shepherdController::class, 'allShepherd'])->middleware(['auth'])->name('allShepherd');
     Route::post('/updateShepherd/{id}', [shepherdController::class, 'updateShepherd'])->middleware(['auth'])->name('updateShepherd');
     Route::get('/deleteShepherd/{id}', [shepherdController::class, 'deleteShepherd'])->middleware(['auth'])->name('deleteShepherd');
+
+    //Inicio das rotas da parte de tesoureiros
+    Route::get('/addTreasurer', [treasurerController::class, 'addShepherd'])->middleware(['auth'])->name('addTreasurer');
+    Route::post('/storeTreasurer', [treasurerController::class, 'storeShepherd'])->middleware(['auth'])->name('storeTreasurer');
+    Route::get('/allTreasurer', [treasurerController::class, 'allShepherd'])->middleware(['auth'])->name('allTreasurer');
+    Route::post('/updateTreasurer/{id}', [treasurerController::class, 'updateShepherd'])->middleware(['auth'])->name('updateTreasurer');
+    Route::get('/deleteTreasurer/{id}', [treasurerController::class, 'deleteShepherd'])->middleware(['auth'])->name('deleteTreasurer');
+
 });
 
 
