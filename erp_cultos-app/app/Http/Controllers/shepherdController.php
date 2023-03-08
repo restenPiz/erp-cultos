@@ -45,9 +45,25 @@ class shepherdController extends Controller
 
         return view('Admin.allShepherd',compact('users'));
     }
-    public function updateShepherd()
+    public function updateShepherd($id, Request $request)
     {
-        return 404;
+        $user=User::findOrFail($id);
+
+        if (Auth::user()->hasRole('admin')) {
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'surname' => $request->surname,
+                'function' => $request->function,
+                'theological_level' => $request->theological_level,
+                'contact' => $request->contact,
+            ]);
+
+            toast('Usuario adicionado com sucesso!', 'sucess');
+
+            return redirect()->route('allShepherd');
+        }
     }
     public function deleteShepherd()
     {
