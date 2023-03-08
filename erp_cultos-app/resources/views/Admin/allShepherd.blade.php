@@ -12,7 +12,7 @@
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active">Todos Pastores</li>
                         </ol>
                     </div>
@@ -81,7 +81,7 @@
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#showModal{{$user->id}}">Editar</button>
+                                                                data-bs-target="#showModal{{ $user->id }}">Editar</button>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
@@ -93,7 +93,7 @@
                                             </tr>
 
                                             {{-- Inicio do modal para editar o pastor --}}
-                                            <div class="modal fade" id="showModal{{$user->id}}" tabindex="-1"
+                                            <div class="modal fade" id="showModal{{ $user->id }}" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -102,56 +102,68 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
-                                                        <form class="tablelist-form" autocomplete="off" action="{{route('updateShepherd',['id'=>$user->id])}}" method="post">
+                                                        <form class="tablelist-form" autocomplete="off"
+                                                            action="{{ route('updateShepherd', ['id' => $user->id]) }}"
+                                                            method="post">
                                                             @csrf
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id">
-                                                                    <label for="customername-field" class="form-label">Nome</label>
-                                                                    <input type="text" id="id-field" name="name" class="form-control"
-                                                                        value="{{$user->name}}" required />
+                                                                    <label for="customername-field"
+                                                                        class="form-label">Nome</label>
+                                                                    <input type="text" id="id-field" name="name"
+                                                                        class="form-control" value="{{ $user->name }}"
+                                                                        required />
                                                                 </div>
 
                                                                 <div class="mb-3">
-                                                                    <label for="customername-field" class="form-label">Apelido</label>
+                                                                    <label for="customername-field"
+                                                                        class="form-label">Apelido</label>
                                                                     <input type="text" id="customername-field"
-                                                                        class="form-control" value="{{$user->surname}}" name="surname"
-                                                                        required />
-                                                                    <div class="invalid-feedback">Por favor escreva bem o seu nome
+                                                                        class="form-control" value="{{ $user->surname }}"
+                                                                        name="surname" required />
+                                                                    <div class="invalid-feedback">Por favor escreva bem o seu
+                                                                        nome
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="mb-3">
                                                                     <label for="email-field" class="form-label">Email</label>
                                                                     <input type="email" id="email-field"
-                                                                        class="form-control" value="{{$user->email}}" name="email"
-                                                                        required />
-                                                                    <div class="invalid-feedback">Digite o seu email de forma correcta.</div>
+                                                                        class="form-control" value="{{ $user->email }}"
+                                                                        name="email" required />
+                                                                    <div class="invalid-feedback">Digite o seu email de forma
+                                                                        correcta.</div>
                                                                 </div>
 
                                                                 <div class="mb-3">
-                                                                    <label for="phone-field" class="form-label">Contact</label>
+                                                                    <label for="phone-field"
+                                                                        class="form-label">Contact</label>
                                                                     <input type="text" id="phone-field"
-                                                                        class="form-control" value="{{$user->contact}}" name="contact"
-                                                                        required />
+                                                                        class="form-control" value="{{ $user->contact }}"
+                                                                        name="contact" required />
                                                                     <div class="invalid-feedback">Please enter a phone.</div>
                                                                 </div>
 
                                                                 <div class="mb-3">
                                                                     <label for="date-field" class="form-label">Funcao</label>
                                                                     <input type="text" id="date-field" name="function"
-                                                                        class="form-control" value="{{$user->function}}"
+                                                                        class="form-control" value="{{ $user->function }}"
                                                                         required />
-                                                                    <div class="invalid-feedback">Digite a sua funcao de forma correcta.</div>
+                                                                    <div class="invalid-feedback">Digite a sua funcao de forma
+                                                                        correcta.</div>
                                                                 </div>
 
                                                                 <div>
-                                                                    <label for="status-field"
-                                                                        class="form-label">Nivel Teologico</label>
-                                                                    <select class="form-control"
-                                                                        name="theological_level" id="status-field" required>
-                                                                        <option value="{{$user->theological_level}}">{{$user->theological_level}}</option>
-                                                                        <option value="Caminho de Deus">Caminho de Deus</option>
-                                                                        <option value="Caminho de Joao">Caminho de Joao</option>
+                                                                    <label for="status-field" class="form-label">Nivel
+                                                                        Teologico</label>
+                                                                    <select class="form-control" name="theological_level"
+                                                                        id="status-field" required>
+                                                                        <option value="{{ $user->theological_level }}">
+                                                                            {{ $user->theological_level }}</option>
+                                                                        <option value="Caminho de Deus">Caminho de Deus
+                                                                        </option>
+                                                                        <option value="Caminho de Joao">Caminho de Joao
+                                                                        </option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -159,8 +171,9 @@
                                                                 <div class="hstack gap-2 justify-content-end">
                                                                     <button type="button" class="btn btn-light"
                                                                         data-bs-dismiss="modal">Fechar</button>
-                                                                    <button type="submit" name="submit" class="btn btn-success"
-                                                                        id="add-btn">Actualizar Pastor</button>
+                                                                    <button type="submit" name="submit"
+                                                                        class="btn btn-success" id="add-btn">Actualizar
+                                                                        Pastor</button>
                                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                 </div>
                                                             </div>
@@ -171,32 +184,39 @@
                                             {{-- Fim do modal para editar pastor --}}
 
                                             <!-- Modal -->
-                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $user->id }}" tabindex="-1"
-                                                aria-hidden="true">
+                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $user->id }}"
+                                                tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <div class="mt-2 text-center">
-                                                                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json"
-                                                                    trigger="loop" colors="primary:#f7b84b,secondary:#f06548"
-                                                                    style="width:100px;height:100px">
-                                                                </lord-icon>
-                                                                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-                                                                    <h4>Voce tem certeza ?</h4>
-                                                                    <p class="text-muted mx-4 mb-0">Voce pretende eliminar {{$user->name}} ?</p>
+                                                        <form action="{{route('deleteShepherd',['id'=>user->id])}}" method="get">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <div class="modal-body">
+                                                                <div class="mt-2 text-center">
+                                                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json"
+                                                                        trigger="loop"
+                                                                        colors="primary:#f7b84b,secondary:#f06548"
+                                                                        style="width:100px;height:100px">
+                                                                    </lord-icon>
+                                                                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                                                        <h4>Voce tem certeza ?</h4>
+                                                                        <p class="text-muted mx-4 mb-0">Voce pretende eliminar
+                                                                            {{ $user->name }} ?</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                                                    <button type="button" class="btn w-sm btn-light"
+                                                                        data-bs-dismiss="modal">Fechar</button>
+                                                                    <button type="submit" name="submit"
+                                                                        class="btn w-sm btn-danger " id="delete-record">Sim,
+                                                                        elimine!</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                                                                <button type="button" class="btn w-sm btn-light"
-                                                                    data-bs-dismiss="modal">Fechar</button>
-                                                                <button type="button" class="btn w-sm btn-danger "
-                                                                    id="delete-record">Sim, elimine!</button>
-                                                            </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
