@@ -73,8 +73,21 @@ class shepherdController extends Controller
             return redirect()->route('login');
         }
     }
-    public function deleteShepherd()
+    public function deleteShepherd($id)
     {
-        return 404;
+        if(Auth::user()->hasRole('admin'))
+        {
+            $user=User::find($id);
+
+            $user->delete();
+
+            toast('Usuario eliminado com sucesso!', 'sucess');
+
+            return redirect()->route('allShepherd');
+        }
+        else
+        {
+            return redirect()->route('login');
+        }
     }
 }
