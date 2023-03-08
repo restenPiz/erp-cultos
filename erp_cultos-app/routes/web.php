@@ -40,13 +40,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/deleteWorship_leader/{id}', [worship_leaderControllerController::class, 'deleteWorship_leader'])->middleware(['auth'])->name('deleteWorship_leader');
     
     //Inicio das rotas da parte de filiais
-    Route::get('/addWorship_leader', [branchesController::class, 'addWorship_leader'])->middleware(['auth'])->name('addWorship_leader');
-    Route::post('/storeWorship_leader', [branchesController::class, 'storeWorship_leader'])->middleware(['auth'])->name('storeWorship_leader');
-    Route::get('/allWorship_leader', [branchesController::class, 'allWorship_leader'])->middleware(['auth'])->name('allWorship_leader');
-    Route::post('/updateWorship_leader/{id}', [branchesControllerController::class, 'updateWorship_leader'])->middleware(['auth'])->name('updateWorship_leader');
-    Route::get('/deleteWorship_leader/{id}', [branchesControllerController::class, 'deleteWorship_leader'])->middleware(['auth'])->name('deleteWorship_leader');
+    Route::get('/addBranches', [branchesController::class, 'addBranches'])->middleware(['auth'])->name('addBranches');
+    Route::post('/storeBranches', [branchesController::class, 'storeBranches'])->middleware(['auth'])->name('storeBranches');
+    Route::get('/allBranches', [branchesController::class, 'allBranches'])->middleware(['auth'])->name('allBranches');
+    Route::post('/updateBranches/{id}', [branchesControllerController::class, 'updateBranches'])->middleware(['auth'])->name('updateBranches');
+    Route::get('/deleteBranches/{id}', [branchesControllerController::class, 'deleteBranches'])->middleware(['auth'])->name('deleteBranches');
     
 });
-
 
 require __DIR__.'/auth.php';
