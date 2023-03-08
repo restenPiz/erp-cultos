@@ -187,7 +187,7 @@
                                                                 </lord-icon>
                                                                 <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                                                     <h4>Voce tem certeza ?</h4>
-                                                                    <p class="text-muted mx-4 mb-0">Voce pretende eliminar este dado ?</p>
+                                                                    <p class="text-muted mx-4 mb-0">Voce pretende eliminar {{$user->name}} ?</p>
                                                                 </div>
                                                             </div>
                                                             <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
