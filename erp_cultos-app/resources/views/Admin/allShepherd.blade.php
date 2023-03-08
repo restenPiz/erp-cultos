@@ -81,7 +81,7 @@
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#showModal">Editar</button>
+                                                                data-bs-target="#showModal{{$user->id}}">Editar</button>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
@@ -105,63 +105,61 @@
                                                         <form class="tablelist-form" autocomplete="off">
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id" style="display: none;">
-                                                                    <label for="id-field" class="form-label">ID</label>
-                                                                    <input type="text" id="id-field" class="form-control"
-                                                                        placeholder="ID" readonly />
+                                                                    <label for="id-field" class="form-label">Nome</label>
+                                                                    <input type="text" id="id-field" name="name" class="form-control"
+                                                                        value="{{$user->name}}" readonly />
                                                                 </div>
 
                                                                 <div class="mb-3">
-                                                                    <label for="customername-field" class="form-label">Customer
-                                                                        Name</label>
+                                                                    <label for="customername-field" class="form-label">Apelido</label>
                                                                     <input type="text" id="customername-field"
-                                                                        class="form-control" placeholder="Enter Name"
+                                                                        class="form-control" value="{{$user->surname}}" name="surname"
                                                                         required />
-                                                                    <div class="invalid-feedback">Please enter a customer name.
+                                                                    <div class="invalid-feedback">Por favor escreva bem o seu nome
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="mb-3">
                                                                     <label for="email-field" class="form-label">Email</label>
                                                                     <input type="email" id="email-field"
-                                                                        class="form-control" placeholder="Enter Email"
+                                                                        class="form-control" value="{{$user->email}}" name="email"
                                                                         required />
-                                                                    <div class="invalid-feedback">Please enter an email.</div>
+                                                                    <div class="invalid-feedback">Digite o seu email de forma correcta.</div>
                                                                 </div>
 
                                                                 <div class="mb-3">
-                                                                    <label for="phone-field" class="form-label">Phone</label>
+                                                                    <label for="phone-field" class="form-label">Contact</label>
                                                                     <input type="text" id="phone-field"
-                                                                        class="form-control" placeholder="Enter Phone no."
+                                                                        class="form-control" value="{{$user->contact}}" name="contact"
                                                                         required />
                                                                     <div class="invalid-feedback">Please enter a phone.</div>
                                                                 </div>
 
                                                                 <div class="mb-3">
-                                                                    <label for="date-field" class="form-label">Joining
-                                                                        Date</label>
+                                                                    <label for="date-field" class="form-label">Funcao</label>
                                                                     <input type="text" id="date-field"
-                                                                        class="form-control" placeholder="Select Date"
+                                                                        class="form-control"value="{{$user->function}}"
                                                                         required />
-                                                                    <div class="invalid-feedback">Please select a date.</div>
+                                                                    <div class="invalid-feedback">Digite a sua funcao de forma correcta.</div>
                                                                 </div>
 
                                                                 <div>
                                                                     <label for="status-field"
-                                                                        class="form-label">Status</label>
+                                                                        class="form-label">Nivel Teologico</label>
                                                                     <select class="form-control" data-trigger
                                                                         name="status-field" id="status-field" required>
-                                                                        <option value="">Status</option>
-                                                                        <option value="Active">Active</option>
-                                                                        <option value="Block">Block</option>
+                                                                        <option value="{{$user->theological_level}}">{{$user->theological_level}}</option>
+                                                                        <option value="Active">Caminho de Deus</option>
+                                                                        <option value="Block">Caminho de Joao</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <div class="hstack gap-2 justify-content-end">
                                                                     <button type="button" class="btn btn-light"
-                                                                        data-bs-dismiss="modal">Close</button>
+                                                                        data-bs-dismiss="modal">Fechar</button>
                                                                     <button type="submit" class="btn btn-success"
-                                                                        id="add-btn">Add Customer</button>
+                                                                        id="add-btn">Actualizar Pastor</button>
                                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                 </div>
                                                             </div>
