@@ -1132,11 +1132,11 @@
                                 <div class="collapse menu-dropdown" id="sidebarMultilevel">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link" data-key="t-level-1.1">Adicionar lider de
+                                            <a href="{{route('addWorship_leader')}}" class="nav-link" data-key="t-level-1.1">Adicionar lider de
                                                 louvor</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link" data-key="t-level-1.1">
+                                            <a href="{{route('allWorship_leader')}}" class="nav-link" data-key="t-level-1.1">
                                                 Detalhes</a>
                                         </li>
                                     </ul>
