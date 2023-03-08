@@ -138,8 +138,8 @@
 
                                                                 <div class="mb-3">
                                                                     <label for="date-field" class="form-label">Funcao</label>
-                                                                    <input type="text" id="date-field"
-                                                                        class="form-control"value="{{$user->function}}"
+                                                                    <input type="text" id="date-field" name="function"
+                                                                        class="form-control" value="{{$user->function}}"
                                                                         required />
                                                                     <div class="invalid-feedback">Digite a sua funcao de forma correcta.</div>
                                                                 </div>
@@ -147,11 +147,11 @@
                                                                 <div>
                                                                     <label for="status-field"
                                                                         class="form-label">Nivel Teologico</label>
-                                                                    <select class="form-control" data-trigger
-                                                                        name="status-field" id="status-field" required>
+                                                                    <select class="form-control"
+                                                                        name="theological_level" id="status-field" required>
                                                                         <option value="{{$user->theological_level}}">{{$user->theological_level}}</option>
-                                                                        <option value="Active">Caminho de Deus</option>
-                                                                        <option value="Block">Caminho de Joao</option>
+                                                                        <option value="Caminho de Deus">Caminho de Deus</option>
+                                                                        <option value="Caminho de Joao">Caminho de Joao</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -159,7 +159,7 @@
                                                                 <div class="hstack gap-2 justify-content-end">
                                                                     <button type="button" class="btn btn-light"
                                                                         data-bs-dismiss="modal">Fechar</button>
-                                                                    <button type="submit" class="btn btn-success"
+                                                                    <button type="submit" name="submit" class="btn btn-success"
                                                                         id="add-btn">Actualizar Pastor</button>
                                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                 </div>
