@@ -8,8 +8,8 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class shepherdController extends Controller
 {
@@ -34,7 +34,7 @@ class shepherdController extends Controller
 
             $user->attachRole('shepherd');
 
-            toast('Usuario adicionado com sucesso!', 'sucess');
+            Alert::success('Adicionado', 'O pastor foi adicionado com sucesso!');
 
             return redirect()->route('addShepherd');
         }
@@ -64,7 +64,7 @@ class shepherdController extends Controller
 
             $user->save();
 
-            toast('Usuario adicionado com sucesso!', 'sucess');
+            Alert::success('Actualizado', 'O pastor foi actualizado com sucesso!');
 
             return redirect()->route('allShepherd');
         }
@@ -81,8 +81,8 @@ class shepherdController extends Controller
 
             $user->delete();
 
-            toast('Usuario eliminado com sucesso!', 'sucess');
-
+            Alert::success('Eliminado', 'O pastor foi eliminado com sucesso!');
+            
             return redirect()->route('allShepherd');
         }
         else

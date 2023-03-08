@@ -192,7 +192,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{route('deleteShepherd',['id'=>user->id])}}" method="get">
+                                                        <form action="{{route('deleteShepherd',['id'=>$user->id])}}" method="get">
                                                             @csrf
                                                             @method('DELETE')
                                                             <div class="modal-body">
