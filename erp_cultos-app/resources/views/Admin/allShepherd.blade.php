@@ -102,7 +102,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
-                                                        <form class="tablelist-form" autocomplete="off" action="{{route('updateShepherd')}}" method="post">
+                                                        <form class="tablelist-form" autocomplete="off" action="{{route('updateShepherd',['id'=>$user->id])}}" method="post">
                                                             @csrf
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id">
