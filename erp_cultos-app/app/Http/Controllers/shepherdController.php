@@ -38,6 +38,10 @@ class shepherdController extends Controller
 
             return redirect()->route('addShepherd');
         }
+        else
+        {
+            return redirect()->route('login');
+        }
     }
     public function allShepherd()
     {
@@ -63,6 +67,10 @@ class shepherdController extends Controller
             toast('Usuario adicionado com sucesso!', 'sucess');
 
             return redirect()->route('allShepherd');
+        }
+        else
+        {
+            return redirect()->route('login');
         }
     }
     public function deleteShepherd()
