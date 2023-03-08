@@ -5,6 +5,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\shepherdController;
 use App\Http\Controllers\treasurerController;
 use App\Http\Controllers\worship_leaderController;
+use App\Http\Controllers\branchesController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -38,7 +39,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::post('/updateWorship_leader/{id}', [worship_leaderControllerController::class, 'updateWorship_leader'])->middleware(['auth'])->name('updateWorship_leader');
     Route::get('/deleteWorship_leader/{id}', [worship_leaderControllerController::class, 'deleteWorship_leader'])->middleware(['auth'])->name('deleteWorship_leader');
     
-
+    //Inicio das rotas da parte de filiais
+    Route::get('/addWorship_leader', [branchesController::class, 'addWorship_leader'])->middleware(['auth'])->name('addWorship_leader');
+    Route::post('/storeWorship_leader', [branchesController::class, 'storeWorship_leader'])->middleware(['auth'])->name('storeWorship_leader');
+    Route::get('/allWorship_leader', [branchesController::class, 'allWorship_leader'])->middleware(['auth'])->name('allWorship_leader');
+    Route::post('/updateWorship_leader/{id}', [branchesControllerController::class, 'updateWorship_leader'])->middleware(['auth'])->name('updateWorship_leader');
+    Route::get('/deleteWorship_leader/{id}', [branchesControllerController::class, 'deleteWorship_leader'])->middleware(['auth'])->name('deleteWorship_leader');
+    
 });
 
 
