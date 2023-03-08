@@ -13,11 +13,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class worship_leaderController extends Controller
 {
-    public function addShepherd(User $user)
+    public function addWorship_leader(User $user)
     {
-        return view('Admin.addShepherd');
+        return view('Admin.addWorship_leader');
     }
-    public function storeShepherd(Request $request)
+    public function storeWorship_leader(Request $request)
     {
         if (Auth::user()->hasRole('admin')) {
 
@@ -32,24 +32,24 @@ class worship_leaderController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            $user->attachRole('shepherd');
+            $user->attachRole('Worship_leader');
 
             Alert::success('Adicionado', 'O pastor foi adicionado com sucesso!');
 
-            return redirect()->route('addShepherd');
+            return redirect()->route('addWorship_leader');
         }
         else
         {
             return redirect()->route('login');
         }
     }
-    public function allShepherd()
+    public function allWorship_leader()
     {
         $users = DB::table('users')->where('userType', 'pastor')->get();
 
-        return view('Admin.allShepherd',compact('users'));
+        return view('Admin.allWorship_leader',compact('users'));
     }
-    public function updateShepherd($id, Request $request)
+    public function updateWorship_leader($id, Request $request)
     {
         if (Auth::user()->hasRole('admin')) {
 
@@ -66,14 +66,14 @@ class worship_leaderController extends Controller
 
             Alert::success('Actualizado', 'O pastor foi actualizado com sucesso!');
 
-            return redirect()->route('allShepherd');
+            return redirect()->route('allWorship_leader');
         }
         else
         {
             return redirect()->route('login');
         }
     }
-    public function deleteShepherd($id)
+    public function deleteWorship_leader($id)
     {
         if(Auth::user()->hasRole('admin'))
         {
@@ -83,7 +83,7 @@ class worship_leaderController extends Controller
 
             Alert::success('Eliminado', 'O pastor foi eliminado com sucesso!');
             
-            return redirect()->route('allShepherd');
+            return redirect()->route('allWorship_leader');
         }
         else
         {
