@@ -43,7 +43,7 @@ class treasurerController extends Controller
             return redirect()->route('login');
         }
     }
-    public function allShepherd()
+    public function allTreasurer()
     {
         $users = DB::table('users')->where('userType', 'tesoureiro')->get();
 
@@ -73,7 +73,7 @@ class treasurerController extends Controller
             return redirect()->route('login');
         }
     }
-    public function deleteShepherd($id)
+    public function deleteTreasurer($id)
     {
         if(Auth::user()->hasRole('admin'))
         {
