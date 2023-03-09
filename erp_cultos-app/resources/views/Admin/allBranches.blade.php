@@ -171,7 +171,7 @@
                                             {{-- Fim do modal para editar pastor --}}
 
                                             <!-- Modal -->
-                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $user->id }}"
+                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $branche->id }}"
                                                 tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -179,7 +179,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{route('deleteShepherd',['id'=>$user->id])}}" method="get">
+                                                        <form action="{{route('deleteBranches',['id'=>$branche->id])}}" method="get">
                                                             @csrf
                                                             @method('DELETE')
                                                             <div class="modal-body">
@@ -192,7 +192,7 @@
                                                                     <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                                                         <h4>Voce tem certeza ?</h4>
                                                                         <p class="text-muted mx-4 mb-0">Voce pretende eliminar
-                                                                            {{ $user->name }} ?</p>
+                                                                            {{ $branche->Name }} ?</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
