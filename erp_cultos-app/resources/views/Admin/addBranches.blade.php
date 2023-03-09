@@ -48,10 +48,10 @@
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="exampleDataList" class="form-label">Nome do Responsavel</label>
-                                        <select class="form-control" name="theological_level">
+                                        <select class="form-control" name="Id_user">
                                             <option>...</option>
                                             @foreach ($users as $user)
-                                                <option value="Caminho de Deus"></option>
+                                                <option value="{{$user->id}}">{{$user->Name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
