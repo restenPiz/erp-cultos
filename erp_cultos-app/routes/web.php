@@ -44,8 +44,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/addBranches', [branchesController::class, 'addBranches'])->middleware(['auth'])->name('addBranches');
     Route::post('/storeBranches', [branchesController::class, 'storeBranches'])->middleware(['auth'])->name('storeBranches');
     Route::get('/allBranches', [branchesController::class, 'allBranches'])->middleware(['auth'])->name('allBranches');
-    Route::post('/updateBranches/{id}', [branchesControllerController::class, 'updateBranches'])->middleware(['auth'])->name('updateBranches');
-    Route::get('/deleteBranches/{id}', [branchesControllerController::class, 'deleteBranches'])->middleware(['auth'])->name('deleteBranches');
+    Route::post('/updateBranches/{id}', [branchesController::class, 'updateBranches'])->middleware(['auth'])->name('updateBranches');
+    Route::get('/deleteBranches/{id}', [branchesController::class, 'deleteBranches'])->middleware(['auth'])->name('deleteBranches');
     
 });
 
