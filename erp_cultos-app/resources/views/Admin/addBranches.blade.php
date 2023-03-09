@@ -10,7 +10,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Dados de Sistema</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Dados da Igreja Filha</h4>
                         </div><!-- end card header -->
                         <div class="card-body">
                             <div class="live-preview">
@@ -19,32 +19,41 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Nome</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu nome" name="name">
+                                                placeholder="Digite o seu nome" name="Name">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="labelInput"
-                                                placeholder="Digite o seu email" name="email">
+                                            <label for="labelInput" class="form-label">Ano de Criacao</label>
+                                            <input type="date" class="form-control" id="labelInput"
+                                             name="Creation_year">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Senha</label>
-                                            <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password">
+                                            <label for="labelInput" class="form-label">Endereco</label>
+                                            <input type="text" class="form-control" id="labelInput"
+                                                placeholder="Digite o seu endereco" name="Address">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Senha de Confirmacao</label>
-                                            <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password_confirmation">
+                                            <label for="labelInput" class="form-label">Numero de Membros</label>
+                                            <input type="number" class="form-control" id="labelInput"
+                                                placeholder="Numero de Membros" name="Number_of_members">
                                         </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label for="exampleDataList" class="form-label">Nome do Responsavel</label>
+                                        <select class="form-control" name="theological_level">
+                                            <option>...</option>
+                                            @foreach ($users as $user)
+                                                <option value="Caminho de Deus"></option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <!--end row-->
