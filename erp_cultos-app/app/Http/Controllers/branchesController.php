@@ -15,7 +15,7 @@ class branchesController extends Controller
 {
     public function addBranches()
     {
-        $users= User::orderBy('Name', 'asc')->get();
+        $users= User::orderBy('name', 'asc')->get();
 
         return view('Admin.addBranches',compact('users'));
     }

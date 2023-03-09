@@ -26,6 +26,6 @@ class Branche extends Model
     
     public function Name($id)
     {
-        return User::find($id)->Name;
+        return User::find($id)->name;
     }
 }

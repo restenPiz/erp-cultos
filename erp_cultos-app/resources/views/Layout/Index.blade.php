@@ -1092,7 +1092,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarTables">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="tables-basic.html" class="nav-link"
+                                            <a href="{{route('addBranches')}}" class="nav-link"
                                                 data-key="t-basic-tables">Adicionar filiais</a>
                                         </li>
                                         <li class="nav-item">
