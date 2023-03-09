@@ -6,6 +6,7 @@ use App\Http\Controllers\shepherdController;
 use App\Http\Controllers\treasurerController;
 use App\Http\Controllers\worship_leaderController;
 use App\Http\Controllers\branchesController;
+use App\Http\Controllers\cultController;
 
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
@@ -46,6 +47,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/allBranches', [branchesController::class, 'allBranches'])->middleware(['auth'])->name('allBranches');
     Route::post('/updateBranches/{id}', [branchesController::class, 'updateBranches'])->middleware(['auth'])->name('updateBranches');
     Route::get('/deleteBranches/{id}', [branchesController::class, 'deleteBranches'])->middleware(['auth'])->name('deleteBranches');
+    
+    //Inicio da parte de culto
+    Route::get('/addCult', [cultController::class, 'addCult'])->middleware(['auth'])->name('addCult');
+    Route::post('/storeCult', [cultController::class, 'storeCult'])->middleware(['auth'])->name('storeCult');
+    Route::get('/allCult', [cultController::class, 'allCult'])->middleware(['auth'])->name('allCult');
+    Route::post('/updateCult/{id}', [cultController::class, 'updateCult'])->middleware(['auth'])->name('updateCult');
+    Route::get('/deleteCult/{id}', [cultController::class, 'deleteCult'])->middleware(['auth'])->name('deleteCult');
     
 });
 
