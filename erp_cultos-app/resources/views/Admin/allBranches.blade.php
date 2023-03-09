@@ -126,20 +126,20 @@
                                                                 </div>
 
                                                                 <div class="mb-3">
-                                                                    <label for="email-field" class="form-label">Email</label>
-                                                                    <input type="email" id="email-field"
-                                                                        class="form-control" value="{{ $user->email }}"
-                                                                        name="email" required />
+                                                                    <label for="email-field" class="form-label">Endereco</label>
+                                                                    <input type="text" id="email-field"
+                                                                        class="form-control" value="{{ $branche->Address }}"
+                                                                        name="Address" required />
                                                                     <div class="invalid-feedback">Digite o seu email de forma
                                                                         correcta.</div>
                                                                 </div>
 
                                                                 <div class="mb-3">
                                                                     <label for="phone-field"
-                                                                        class="form-label">Contact</label>
+                                                                        class="form-label">Numero de Membros</label>
                                                                     <input type="text" id="phone-field"
-                                                                        class="form-control" value="{{ $user->contact }}"
-                                                                        name="contact" required />
+                                                                        class="form-control" value="{{ $branche->Number_of_members }}"
+                                                                        name="Number_of_members" required />
                                                                     <div class="invalid-feedback">Please enter a phone.</div>
                                                                 </div>
 
