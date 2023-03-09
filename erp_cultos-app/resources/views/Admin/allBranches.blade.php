@@ -67,14 +67,14 @@
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach ($users as $user)
+                                        @foreach ($branches as $branche)
                                             <tr>
-                                                <td class="customer_name">{{ $user->name }}</td>
-                                                <td class="email">{{ $user->email }}</td>
-                                                <td class="phone">{{ $user->surname }}</td>
-                                                <td class="date">{{ $user->function }}</td>
-                                                <td class="date">{{ $user->theological_level }}</td>
-                                                <td class="status">{{ $user->contact }}</td>
+                                                <td class="customer_name">{{ $branche->Name }}</td>
+                                                <td class="email">{{ $branche->Creation_year }}</td>
+                                                <td class="phone">{{ $branche->Address }}</td>
+                                                <td class="date">{{ $branche->Number_of_members }}</td>
+                                                <td class="date">{{ $branche->name($branche->Id_user) }}</td>
+                                                <td class="status">{{ $branche->contact }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">

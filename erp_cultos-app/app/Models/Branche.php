@@ -24,7 +24,7 @@ class Branche extends Model
         return $this->hasMany(User::class);
     }
     
-    public function Name($id)
+    public function name($id)
     {
         return User::find($id)->name;
     }
