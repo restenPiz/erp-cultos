@@ -50,7 +50,7 @@ class branchesController extends Controller
 
             Alert::success('Adicionado', 'A igreja filha foi adicionada com sucesso.');
 
-            return redirect()->route('allBranche');
+            return redirect()->route('allBranches');
         }
         else
         {
@@ -59,7 +59,7 @@ class branchesController extends Controller
             return redirect()->route('login');
         }
     }
-    public function allBranche()
+    public function allBranches()
     {
         if (Auth::user()->hasRole('admin')) 
         {
