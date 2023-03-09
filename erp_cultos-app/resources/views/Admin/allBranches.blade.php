@@ -147,10 +147,9 @@
                                                                 <div>
                                                                     <label for="status-field" class="form-label">Nome do Responsavel</label>
                                                                     <select class="form-control" name="Id_user" id="status-field" required>
-                                                                        
                                                                         <option value="{{$branche->Id_user}}">{{$branche->name($branche->Id_user)}}</option>
                                                                         @foreach ($users as $user)
-                                                                            <option value="{{$user->Id_user}}">{{$user->name}}</option>
+                                                                            <option value="{{$user->id}}">{{$user->name}}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
