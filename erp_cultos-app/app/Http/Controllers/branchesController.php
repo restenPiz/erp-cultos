@@ -45,6 +45,8 @@ class branchesController extends Controller
     {
         $branches=Branche::all();
 
-        return view('Admin.allBranche',compact('branches'));
+        $users=User::where('name','<>','admin')->orderBy('name')->get();
+
+        return view('Admin.allBranche',compact('branches','users'));
     }
 }
