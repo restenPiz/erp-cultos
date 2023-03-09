@@ -43,6 +43,8 @@ class branchesController extends Controller
     }
     public function allBranche()
     {
-        return view('Admin.allBranche');
+        $branches=Branche::all();
+
+        return view('Admin.allBranche',compact('branches'));
     }
 }
