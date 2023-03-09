@@ -1096,7 +1096,7 @@
                                                 data-key="t-basic-tables">Adicionar filiais</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="tables-gridjs.html" class="nav-link" data-key="t-grid-js">Todas
+                                            <a href="{{route('allBranches')}}" class="nav-link" data-key="t-grid-js">Todas
                                                 filiais</a>
                                         </li>
                                     </ul>
