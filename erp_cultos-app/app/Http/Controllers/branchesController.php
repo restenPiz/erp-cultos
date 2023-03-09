@@ -33,7 +33,11 @@ class branchesController extends Controller
         //Inicio da parte em que encontro a chave estrangeira
         $user=User::find(Request::input('Id_user'));
 
+        //Salvando os dados na base de dados
+        $table->save();
         $user->save();
+
+        Alert::success('Adicionado','A igreja filha foi adicionada com sucesso.');
 
         return redirect()->route('Admin.allBranche');        
     }
