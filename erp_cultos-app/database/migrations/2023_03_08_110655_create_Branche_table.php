@@ -14,7 +14,7 @@ class CreateBrancheTable extends Migration
             $table->string('Creation_year');
             $table->string('Address');
             $table->string('Number_of_members');
-            //Inicio do
+            //Inicio da chave estrangeira
             $table->integer('Id_user')->unsigned();
             $table->foreign('Id_user')->references('id')->on('users');
             $table->timestamps();
