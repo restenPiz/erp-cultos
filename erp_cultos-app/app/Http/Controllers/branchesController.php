@@ -41,4 +41,8 @@ class branchesController extends Controller
 
         return redirect()->route('Admin.allBranche');        
     }
+    public function allBranche()
+    {
+        return view('Admin.allBranche');
+    }
 }
