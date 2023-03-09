@@ -105,4 +105,23 @@ class branchesController extends Controller
             return redirect()->route('login');
         }
     }
+    public function deleteBranches($id)
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            $branche=Branche::findOrFail($id);
+        
+            $branche->delete();
+
+            Alert::success('Eliminado','A igreja filha foi eliminada com sucesso!');
+
+            return redirect()->back();
+        }
+        else
+        {
+            Alert::error('Nao Autenticado','O usuario nao esta autenticado!');
+
+            return redirect()->route('login');
+        }
+    }
 }
