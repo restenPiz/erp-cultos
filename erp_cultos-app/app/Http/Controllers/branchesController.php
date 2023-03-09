@@ -94,7 +94,7 @@ class branchesController extends Controller
             $table->save();
             $user->save();
 
-            Alert::sucess('Actualizado','A igreja filha foi adicionada com sucesso!');
+            Alert::success('Actualizado','A igreja filha foi adicionada com sucesso!');
 
             return redirect()->back();
         }
