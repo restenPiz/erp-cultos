@@ -76,4 +76,17 @@ class branchesController extends Controller
             return redirect()->route('login');
         }
     }
+    public function updateBranches($id)
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            $table=Branche::findOrFail($id);
+        }
+        else
+        {
+            Alert::error('Nao Autenticado','Usuario nao autenticado');
+            
+            return redirect()->route('login');
+        }
+    }
 }

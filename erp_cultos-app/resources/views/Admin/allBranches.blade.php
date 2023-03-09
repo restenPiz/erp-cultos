@@ -13,7 +13,7 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Todos Pastores</li>
+                            <li class="breadcrumb-item active">Todas Igrejas Filhas</li>
                         </ol>
                     </div>
 
@@ -26,7 +26,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">Todos Pastores</h4>
+                        <h4 class="card-title mb-0">Todas Igrejas Filhas</h4>
                     </div><!-- end card header -->
 
                     <div class="card-body">
@@ -34,7 +34,7 @@
                             <div class="row g-4 mb-3">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="{{ route('addShepherd') }}" class="btn btn-success add-btn"><i
+                                        <a href="{{ route('addBranches') }}" class="btn btn-success add-btn"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</a>
                                     </div>
                                 </div>
@@ -58,6 +58,7 @@
                                                         value="option">
                                                 </div>
                                             </th> --}}
+                                            <th class="sort" data-sort="customer_nam"></th>
                                             <th class="sort" data-sort="customer_name">Nome da Filial</th>
                                             <th class="sort" data-sort="email">Ano de Criacao</th>
                                             <th class="sort" data-sort="phone">Endereco</th>
@@ -69,12 +70,12 @@
                                     <tbody class="list form-check-all">
                                         @foreach ($branches as $branche)
                                             <tr>
+                                                <td class="customer_nam">{{ $branche->id }}</td>
                                                 <td class="customer_name">{{ $branche->Name }}</td>
                                                 <td class="email">{{ $branche->Creation_year }}</td>
                                                 <td class="phone">{{ $branche->Address }}</td>
                                                 <td class="date">{{ $branche->Number_of_members }}</td>
-                                                <td class="date">{{ $branche->name($branche->Id_user) }}</td>
-                                                <td class="status">{{ $branche->contact }}</td>
+                                                <td class="dat">{{ $branche->name($branche->Id_user) }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
