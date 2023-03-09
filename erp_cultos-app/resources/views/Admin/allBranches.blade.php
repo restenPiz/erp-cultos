@@ -80,19 +80,19 @@
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#showModal{{ $user->id }}">Editar</button>
+                                                                data-bs-target="#showModal{{ $branche->id }}">Editar</button>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#deleteRecordModal{{ $user->id }}">Eliminar</button>
+                                                                data-bs-target="#deleteRecordModal{{ $branche->id }}">Eliminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
 
                                             {{-- Inicio do modal para editar o pastor --}}
-                                            <div class="modal fade" id="showModal{{ $user->id }}" tabindex="-1"
+                                            <div class="modal fade" id="showModal{{ $branche->id }}" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -102,24 +102,24 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateShepherd', ['id' => $user->id]) }}"
+                                                            action="{{ route('updateBranches', ['id' => $branche->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id">
                                                                     <label for="customername-field"
-                                                                        class="form-label">Nome</label>
-                                                                    <input type="text" id="id-field" name="name"
-                                                                        class="form-control" value="{{ $user->name }}"
+                                                                        class="form-label">Nome da Filial</label>
+                                                                    <input type="text" id="id-field" name="Name"
+                                                                        class="form-control" value="{{ $branche->Name }}"
                                                                         required />
                                                                 </div>
 
                                                                 <div class="mb-3">
                                                                     <label for="customername-field"
-                                                                        class="form-label">Apelido</label>
-                                                                    <input type="text" id="customername-field"
-                                                                        class="form-control" value="{{ $user->surname }}"
-                                                                        name="surname" required />
+                                                                        class="form-label">Ano de Criacao</label>
+                                                                    <input type="date" id="customername-field"
+                                                                        class="form-control" value="{{ $branche->Creation_year }}"
+                                                                        name="Creation_year" required />
                                                                     <div class="invalid-feedback">Por favor escreva bem o seu
                                                                         nome
                                                                     </div>
