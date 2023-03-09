@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Models\User;
+use App\Models\Branche;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,8 +16,14 @@ class branchesController extends Controller
 {
     public function addBranches()
     {
-        $users= User::orderBy('name', 'asc')->get();
+        $users= User::where('name', '<>', 'admin')->orderBy('name')->get();
 
         return view('Admin.addBranches',compact('users'));
+    }
+    public function storeBranches()
+    {
+        $table=new Branche();
+
+        $table->Name=Request::input('Name');
     }
 }
