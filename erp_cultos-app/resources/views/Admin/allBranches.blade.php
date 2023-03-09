@@ -143,26 +143,14 @@
                                                                     <div class="invalid-feedback">Please enter a phone.</div>
                                                                 </div>
 
-                                                                <div class="mb-3">
-                                                                    <label for="date-field" class="form-label">Funcao</label>
-                                                                    <input type="text" id="date-field" name="function"
-                                                                        class="form-control" value="{{ $user->function }}"
-                                                                        required />
-                                                                    <div class="invalid-feedback">Digite a sua funcao de forma
-                                                                        correcta.</div>
-                                                                </div>
-
                                                                 <div>
-                                                                    <label for="status-field" class="form-label">Nivel
-                                                                        Teologico</label>
-                                                                    <select class="form-control" name="theological_level"
-                                                                        id="status-field" required>
-                                                                        <option value="{{ $user->theological_level }}">
-                                                                            {{ $user->theological_level }}</option>
-                                                                        <option value="Caminho de Deus">Caminho de Deus
-                                                                        </option>
-                                                                        <option value="Caminho de Joao">Caminho de Joao
-                                                                        </option>
+                                                                    <label for="status-field" class="form-label">Nome do Responsavel</label>
+                                                                    <select class="form-control" name="Id_user" id="status-field" required>
+                                                                        
+                                                                        <option value="{{$branche->Id_user}}">{{$branche->name($branche->Id_user)}}</option>
+                                                                        @foreach ($users as $user)
+                                                                            <option value="{{$user->Id_user}}">{{$user->name}}</option>
+                                                                        @endforeach
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -172,7 +160,7 @@
                                                                         data-bs-dismiss="modal">Fechar</button>
                                                                     <button type="submit" name="submit"
                                                                         class="btn btn-success" id="add-btn">Actualizar
-                                                                        Pastor</button>
+                                                                        Filial</button>
                                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                 </div>
                                                             </div>
