@@ -58,12 +58,11 @@
                                                         value="option">
                                                 </div>
                                             </th> --}}
-                                            <th class="sort" data-sort="customer_name">Nome</th>
-                                            <th class="sort" data-sort="email">Email</th>
-                                            <th class="sort" data-sort="phone">Apelido</th>
-                                            <th class="sort" data-sort="date">Papel</th>
-                                            <th class="sort" data-sort="status">Nivel teologico</th>
-                                            <th class="sort" data-sort="action">Contacto</th>
+                                            <th class="sort" data-sort="customer_name">Nome da Filial</th>
+                                            <th class="sort" data-sort="email">Ano de Criacao</th>
+                                            <th class="sort" data-sort="phone">Endereco</th>
+                                            <th class="sort" data-sort="date">Numero de Membros</th>
+                                            <th class="sort" data-sort="status">Nome do Responsavel</th>
                                             <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
