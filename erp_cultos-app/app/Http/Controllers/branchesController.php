@@ -25,5 +25,16 @@ class branchesController extends Controller
         $table=new Branche();
 
         $table->Name=Request::input('Name');
+        $table->Creation_year=Request::input('Creation_year');
+        $table->Address=Request::input('Address');
+        $table->Number_of_members=Request::input('Number_of_members');
+        $table->Id_user=Request::input('Id_user');
+
+        //Inicio da parte em que encontro a chave estrangeira
+        $user=User::find(Request::input('Id_user'));
+
+        $user->save();
+
+        return redirect()->route('Admin.allBranche');        
     }
 }
