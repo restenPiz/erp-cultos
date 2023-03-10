@@ -73,7 +73,7 @@ class cultController extends Controller
     }
     public function updateCult($id)
     {
-        if(Auth::user()->hasRoler('admin'))
+        if(Auth::user()->hasRole('admin'))
         {
             $cult=Cult::findOrFail($id);
 
