@@ -28,7 +28,7 @@ class cultController extends Controller
     }
     public function storeCult()
     {
-        if(Auth::user()->hasRoler('admin'))
+        if(Auth::user()->hasRole('admin'))
         {
             $table=new Cult();
 
@@ -87,7 +87,7 @@ class cultController extends Controller
             $cult->Chapter=Request::input('Chapter');
             $cult->Verse=Request::input('Verse');
             $cult->Description=Request::input('Description');
-            
+
             $cult->save();
 
             Alert::success('Actualizado','O culto foi actualizado com sucesso!');

@@ -985,28 +985,6 @@
                                 </div>
                             </li>
 
-
-                            <li class="nav-item">
-                                <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                                    <i class="ri-account-circle-line"></i> <span
-                                        data-key="t-authentication">Membros</span>
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarAuth">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="#sidebarSignIn" class="nav-link"> Adicionar membro
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarSignUp" class="nav-link"> Todos membros
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </li>
-
                             <li class="nav-item">
                                 <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarPages">
@@ -1020,29 +998,6 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarUI">
-                                    <i class="ri-pencil-ruler-2-line"></i> <span data-key="t-base-ui">Tesoureiros</span>
-                                </a>
-                                <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="{{route('addTreasurer')}}" class="nav-link"
-                                                        data-key="t-alerts">Adicionar Tesoureiro</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{route('allTreasurer')}}" class="nav-link" data-key="t-badges">Todos
-                                                        tesoureiros</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
                             </li>
 
@@ -1103,6 +1058,8 @@
                                 </div>
                             </li>
 
+                            {{--Inicio dos links contendo os caminhos dos usuarios--}}
+                            <li class="menu-title"><span data-key="t-menu">Usuarios</span></li>
                             <li class="nav-item">
                                 <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarIcons">
@@ -1120,6 +1077,29 @@
                                                 pastores</a>
                                         </li>
                                     </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse" role="button"
+                                    aria-expanded="false" aria-controls="sidebarUI">
+                                    <i class="ri-pencil-ruler-2-line"></i> <span data-key="t-base-ui">Tesoureiros</span>
+                                </a>
+                                <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="{{route('addTreasurer')}}" class="nav-link"
+                                                        data-key="t-alerts">Adicionar Tesoureiro</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{route('allTreasurer')}}" class="nav-link" data-key="t-badges">Todos
+                                                        tesoureiros</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
 
@@ -1142,6 +1122,28 @@
                                     </ul>
                                 </div>
                             </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                                    <i class="ri-account-circle-line"></i> <span
+                                        data-key="t-authentication">Membros</span>
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarAuth">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="#sidebarSignIn" class="nav-link"> Adicionar membro
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#sidebarSignUp" class="nav-link"> Todos membros
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
                         @endrole
 
                     </ul>
