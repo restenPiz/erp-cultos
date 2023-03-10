@@ -1077,7 +1077,7 @@
                                                 data-key="t-basic-elements">Adicionar culto</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="forms-select.html" class="nav-link"
+                                            <a href="{{route('allCult')}}" class="nav-link"
                                                 data-key="t-form-select">Detalhes do culto</a>
                                         </li>
                                     </ul>
