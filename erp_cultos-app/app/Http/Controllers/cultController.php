@@ -71,5 +71,17 @@ class cultController extends Controller
             return redirect()->route('login');
         }
     }
-    
+    public function updateCult($id)
+    {
+        if(Auth::user()->hasRoler('admin'))
+        {
+            
+        }
+        else
+        {
+            Alert::error('Nao Autenticado','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
