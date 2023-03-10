@@ -13,7 +13,7 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Todos Pastores</li>
+                            <li class="breadcrumb-item active">Detalhes do Culto</li>
                         </ol>
                     </div>
 
@@ -38,8 +38,6 @@
                             </div>
                         </div><!-- end card header -->
                         <div class="card-body">
-                            <p class="text-muted">Use <code>custom-accordion-border</code> class to create the border at the
-                                accordion.</p>
                             <div class="live-preview">
                                 <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box accordion-success"
                                     id="accordionBordered">
@@ -48,7 +46,7 @@
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#accor_borderedExamplecollapse1" aria-expanded="true"
                                                 aria-controls="accor_borderedExamplecollapse1">
-                                                What is User Interface Design?
+                                                Dados Temporarios?
                                             </button>
                                         </h2>
                                         <div id="accor_borderedExamplecollapse1" class="accordion-collapse collapse show"
@@ -66,7 +64,7 @@
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#accor_borderedExamplecollapse2" aria-expanded="false"
                                                 aria-controls="accor_borderedExamplecollapse2">
-                                                What is Digital Marketing?
+                                                Dados do Culto?
                                             </button>
                                         </h2>
                                         <div id="accor_borderedExamplecollapse2" class="accordion-collapse collapse"
@@ -84,7 +82,7 @@
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#accor_borderedExamplecollapse3" aria-expanded="false"
                                                 aria-controls="accor_borderedExamplecollapse3">
-                                                Where does it come from ?
+                                                Dados Adicionais ?
                                             </button>
                                         </h2>
                                         <div id="accor_borderedExamplecollapse3" class="accordion-collapse collapse"
