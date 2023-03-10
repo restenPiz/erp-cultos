@@ -3,7 +3,7 @@
 @section('content')
     @role('admin')
         {{-- Inicio do conteudo do meu sistem --}}
-        <form action="{{ route('storeShepherd') }}" method="post">
+        <form action="{{ route('storeCult') }}" method="post">
             @csrf
 
             <div class="row">
