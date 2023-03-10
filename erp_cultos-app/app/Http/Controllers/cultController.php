@@ -75,7 +75,21 @@ class cultController extends Controller
     {
         if(Auth::user()->hasRoler('admin'))
         {
-            
+            $cult=Cult::findOrFail($id);
+
+            $cult->Day_of_cult=Request::input('Day_of_cult');
+            $cult->Hour=Request::input('Hour');
+            $cult->Duration=Request::input('Duration');
+            $cult->Leader=Request::input('Leader');
+            $cult->Preacher=Request::input('Preacher');
+            $cult->Title=Request::input('Title');
+            $cult->Book=Request::input('Book');
+            $cult->Chapter=Request::input('Chapter');
+            $cult->Verse=Request::input('Verse');
+
+            $cult->save();
+
+            return redirect()->back();
         }
         else
         {
