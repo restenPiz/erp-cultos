@@ -58,8 +58,18 @@ class cultController extends Controller
     }
     public function allCult()
     {
-        $cults=Cult::all();
+        if(Auth::user()->hasRole('admin'))
+        {
+            $cults=Cult::all();
 
-        return view('Admin.allCult',compact('cults'));
+            return view('Admin.allCult',compact('cults'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
+    
 }
