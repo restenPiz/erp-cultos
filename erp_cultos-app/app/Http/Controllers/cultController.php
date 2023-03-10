@@ -17,7 +17,7 @@ class cultController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            
+            return view('Admin.addCult');   
         }
         else
         {
