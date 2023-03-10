@@ -10,40 +10,30 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Dados de Sistema</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Dados Temporarios</h4>
                         </div><!-- end card header -->
                         <div class="card-body">
                             <div class="live-preview">
                                 <div class="row gy-4">
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="basiInput" class="form-label">Nome</label>
-                                            <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu nome" name="name">
+                                            <label for="basiInput" class="form-label">Dia de Culto</label>
+                                            <input type="date" class="form-control" id="basiInput" name="Day_of_cult">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="labelInput"
-                                                placeholder="Digite o seu email" name="email">
+                                            <label for="labelInput" class="form-label">Horario</label>
+                                            <input type="time" class="form-control" id="labelInput" name="Hour">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Senha</label>
-                                            <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password">
-                                        </div>
-                                    </div>
-                                    <!--end col-->
-                                    <div class="col-xxl-6 col-md-6">
-                                        <div>
-                                            <label for="labelInput" class="form-label">Senha de Confirmacao</label>
-                                            <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password_confirmation">
+                                            <label for="labelInput" class="form-label">Duracao</label>
+                                            <input type="text" class="form-control" id="labelInput"
+                                                placeholder="Duracao do Culto" name="Duration">
                                         </div>
                                     </div>
                                 </div>
@@ -60,16 +50,16 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Dados do Pastor</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Dados do Culto</h4>
                         </div><!-- end card header -->
                         <div class="card-body">
                             <div class="live-preview">
                                 <div class="row gy-4">
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="basiInput" class="form-label">Apelido</label>
+                                            <label for="basiInput" class="form-label">Dirigente</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu nome" name="surname">
+                                                placeholder="Digite o nome do Dirigente do culto" name="Leader">
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
