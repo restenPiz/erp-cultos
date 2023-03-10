@@ -89,6 +89,8 @@ class cultController extends Controller
 
             $cult->save();
 
+            Alert::success('Actualizado','O culto foi actualizado com sucesso!');
+
             return redirect()->back();
         }
         else
