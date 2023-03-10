@@ -24,7 +24,7 @@ class CreateCultsTable extends Migration
             $table->string('Book');
             $table->string('Chapter');
             $table->string('Verse');
-            $table->string('Duration');
+            $table->string('Description')->nullable();
             $table->timestamps();
         });
     }
