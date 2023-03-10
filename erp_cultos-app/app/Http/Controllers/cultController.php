@@ -45,6 +45,8 @@ class cultController extends Controller
 
             $table->save();
 
+            Alert::success('Adicionado','O culto foi adicionado com sucesso!');
+
             return redirect()->route('allCult');
         }
         else
