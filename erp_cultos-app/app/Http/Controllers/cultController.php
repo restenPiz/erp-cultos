@@ -108,6 +108,8 @@ class cultController extends Controller
 
             $cult->delete();
 
+            Alert::success('Eliminado','O culto foi eliminao com sucesso!');
+
             return redirect()->back();
         }
         else
