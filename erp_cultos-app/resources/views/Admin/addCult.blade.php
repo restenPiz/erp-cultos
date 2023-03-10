@@ -64,30 +64,20 @@
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="basiInput" class="form-label">Contacto</label>
+                                            <label for="basiInput" class="form-label">Pregador</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu contacto" name="contact">
+                                                placeholder="Digite o nome do Pregador" name="Preacher">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Funcao</label>
+                                            <label for="labelInput" class="form-label">Tema do Culto</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Escreva a sua funcao" name="function">
+                                                placeholder="Digite o Tema do Culto" name="Title">
                                         </div>
                                     </div>
                                     <!--end col-->
-                                    <div class="col-xxl-6 col-md-6">
-                                        <label for="exampleDataList" class="form-label">Nivel Teologico</label>
-                                        <select class="form-control" name="theological_level">
-                                            <option>...</option>
-                                            <option value="Caminho de Deus">Caminho de Deus</option>
-                                            <option value="Caminho de Jesus">Caminho de Jesus</option>
-                                        </select>
-                                    </div>
-                                    <!--end col-->
-                                    <input type="hidden" class="form-control" id="labelInput" name="userType" value="pastor">
                                 </div>
                                 <!--end row-->
                             </div>
