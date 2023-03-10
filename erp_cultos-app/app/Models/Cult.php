@@ -10,5 +10,17 @@ class Cult extends Model
     use HasFactory;
 
     protected $table='cults';
-    
+
+    protected $fillable=[
+        'Day_of_cult',
+        'Hour',
+        'Duration',
+        'Leader',
+        'Preacher',
+        'Title',
+        'Book',
+        'Chapter',
+        'Verse',
+        'Duration',
+    ];
 }
