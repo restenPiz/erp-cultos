@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Models\Cult;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +22,21 @@ class cultController extends Controller
         else
         {
             Alert::error('Nao Autenticado','O usuario nao esta autenticado no sistem!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function storeCult()
+    {
+        if(Auth::user()->hasRoler('admin'))
+        {
+            $table=new Cult();
+
+            $table->Day_of_cult=Request::input('Day_of_cult');
+        }
+        else
+        {
+            Alert::error('Nao Autenticado','O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
