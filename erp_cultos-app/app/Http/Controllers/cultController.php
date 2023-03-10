@@ -41,7 +41,7 @@ class cultController extends Controller
             $table->Book=Request::input('Book');
             $table->Chapter=Request::input('Chapter');
             $table->Verse=Request::input('Verse');
-            $table->Duration=Request::input('Duration');
+            $table->Description=Request::input('Description');
 
             $table->save();
 
@@ -86,7 +86,8 @@ class cultController extends Controller
             $cult->Book=Request::input('Book');
             $cult->Chapter=Request::input('Chapter');
             $cult->Verse=Request::input('Verse');
-
+            $cult->Description=Request::input('Description');
+            
             $cult->save();
 
             Alert::success('Actualizado','O culto foi actualizado com sucesso!');

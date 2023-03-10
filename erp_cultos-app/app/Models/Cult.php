@@ -21,5 +21,6 @@ class Cult extends Model
         'Book',
         'Chapter',
         'Verse',
+        'Description',
     ];
 }
