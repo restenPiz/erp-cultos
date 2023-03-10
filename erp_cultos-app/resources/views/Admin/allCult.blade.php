@@ -119,7 +119,7 @@
 
                 <div class="modal fade" id="showModal{{ $cult->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header bg-light p-3">
                                 <h5 class="modal-title" id="exampleModalLabel"></h5>
@@ -130,66 +130,55 @@
                                 action="{{ route('updateCult', ['id' => $cult->id]) }}" method="post">
                                 @csrf
                                 <div class="modal-body">
-                                    <div class="mb-3">
-                                        <div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Dia de Culto</label>
                                             <input type="date" class="form-control" id="basiInput" name="Day_of_cult">
                                         </div>
-                                    </div>
-                                    <!--end col-->
-                                    <div class="mb-3">
-                                        <div>
+                                        <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Horario</label>
                                             <input type="time" class="form-control" id="labelInput" name="Hour">
                                         </div>
                                     </div>
                                     <!--end col-->
-                                    <div class="mb-3">
-                                        <div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Duracao</label>
                                             <input type="text" class="form-control" id="labelInput"
                                                 placeholder="Duracao do Culto" name="Duration">
                                         </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div>
+                                        <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Dirigente</label>
                                             <input type="text" class="form-control" id="basiInput"
                                                 placeholder="Digite o nome do Dirigente do culto" name="Leader">
                                         </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Pregador</label>
                                             <input type="text" class="form-control" id="basiInput"
                                                 placeholder="Digite o nome do Pregador" name="Preacher">
                                         </div>
-                                    </div>
-                                    <!--end col-->
-                                    <div class="mb-3">
-                                        <div>
+                                        <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Tema do Culto</label>
                                             <input type="text" class="form-control" id="labelInput"
                                                 placeholder="Digite o Tema do Culto" name="Title">
                                         </div>
                                     </div>
-                                    <!--end col--><div class="mb-3">
-                                        <div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Livro</label>
                                             <input type="text" class="form-control" id="basiInput"
                                                 placeholder="Digite o nome do Livro" name="Book">
                                         </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div>
+                                        <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Capitulo</label>
                                             <input type="text" class="form-control" id="basiInput"
                                                 placeholder="Digite o capitulo" name="Chapter">
                                         </div>
                                     </div>
-                                    <!--end col-->
-                                    <div class="mb-3">
-                                        <div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Versiculo</label>
                                             <input type="text" class="form-control" id="labelInput"
                                                 placeholder="Digite o Versiculo" name="Verse">
@@ -207,8 +196,7 @@
                                     <div class="hstack gap-2 justify-content-end">
                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
                                         <button type="submit" name="submit" class="btn btn-success"
-                                            id="add-btn">Actualizar
-                                            Pastor</button>
+                                            id="add-btn">Actualizar Culto</button>
                                         <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                     </div>
                                 </div>
