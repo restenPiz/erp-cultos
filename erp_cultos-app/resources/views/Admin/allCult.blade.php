@@ -133,11 +133,13 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Dia de Culto</label>
-                                            <input type="date" class="form-control" value="{{$cult->Day_of_cult}}" name="Day_of_cult">
+                                            <input type="date" class="form-control" value="{{ $cult->Day_of_cult }}"
+                                                name="Day_of_cult">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" value="{{$cult->Hour}}" name="Hour">
+                                            <input type="time" class="form-control" value="{{ $cult->Hour }}"
+                                                name="Hour">
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -145,50 +147,49 @@
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Duracao</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                            value="{{$cult->Duration}}" name="Duration">
+                                                value="{{ $cult->Duration }}" name="Duration">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Dirigente</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                            value="{{$cult->Leader}}" name="Leader">
+                                                value="{{ $cult->Leader }}" name="Leader">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Pregador</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                            value="{{$cult->Preacher}}" name="Preacher">
+                                                value="{{ $cult->Preacher }}" name="Preacher">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Tema do Culto</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                            value="{{$cult->Title}}" name="Title">
+                                                value="{{ $cult->Title }}" name="Title">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Livro</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                            value="{{$cult->Book}}" name="Book">
+                                                value="{{ $cult->Book }}" name="Book">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Capitulo</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                            value="{{$cult->Chapter}}" name="Chapter">
+                                                value="{{ $cult->Chapter }}" name="Chapter">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Versiculo</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                            value="{{$cult->Verse}}" name="Verse">
+                                                value="{{ $cult->Verse }}" name="Verse">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div>
                                             <label for="labelInput" class="form-label">Descricao</label>
-                                            <textarea type="text" class="form-control" id="labelInput"
-                                            value="{{$cult->Description}}" name="Description"></textarea>
+                                            <textarea type="text" class="form-control" id="labelInput" value="{{ $cult->Description }}" name="Description"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -209,6 +210,39 @@
 
                 {{-- Inicio do modal da parte de eliminar o culto --}}
 
+                <div class="modal fade zoomIn" id="deleteRecordModal{{ $cult->id }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    id="btn-close"></button>
+                            </div>
+                            <form action="{{ route('deleteCult', ['id' => $cult->id]) }}" method="get">
+                                @csrf
+                                @method('DELETE')
+                                <div class="modal-body">
+                                    <div class="mt-2 text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
+                                            colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px">
+                                        </lord-icon>
+                                        <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                            <h4>Voce tem certeza ?</h4>
+                                            <p class="text-muted mx-4 mb-0">Voce pretende eliminar
+                                                {{ $cult->Title }} ?</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                        <button type="button" class="btn w-sm btn-light"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button type="submit" name="submit" class="btn w-sm btn-danger "
+                                            id="delete-record">Sim,
+                                            elimine!</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
 
                 {{-- Fim do modal da parte de eliminar o culto --}}
