@@ -59,7 +59,7 @@ class cultController extends Controller
     public function allCult()
     {
         $cults=Cult::all();
-        
-        return view('Admin.allCult');
+
+        return view('Admin.allCult',compact('cults'));
     }
 }
