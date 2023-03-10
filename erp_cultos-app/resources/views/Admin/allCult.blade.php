@@ -127,58 +127,80 @@
                                     id="close-modal"></button>
                             </div>
                             <form class="tablelist-form" autocomplete="off"
-                                action="{{ route('updateShepherd', ['id' => $user->id]) }}" method="post">
+                                action="{{ route('updateCult', ['id' => $cult->id]) }}" method="post">
                                 @csrf
                                 <div class="modal-body">
-                                    <div class="mb-3" id="modal-id">
-                                        <label for="customername-field" class="form-label">Nome</label>
-                                        <input type="text" id="id-field" name="name" class="form-control"
-                                            value="{{ $user->name }}" required />
-                                    </div>
-
                                     <div class="mb-3">
-                                        <label for="customername-field" class="form-label">Apelido</label>
-                                        <input type="text" id="customername-field" class="form-control"
-                                            value="{{ $user->surname }}" name="surname" required />
-                                        <div class="invalid-feedback">Por favor escreva bem o seu
-                                            nome
+                                        <div>
+                                            <label for="basiInput" class="form-label">Dia de Culto</label>
+                                            <input type="date" class="form-control" id="basiInput" name="Day_of_cult">
                                         </div>
                                     </div>
-
+                                    <!--end col-->
                                     <div class="mb-3">
-                                        <label for="email-field" class="form-label">Email</label>
-                                        <input type="email" id="email-field" class="form-control"
-                                            value="{{ $user->email }}" name="email" required />
-                                        <div class="invalid-feedback">Digite o seu email de forma
-                                            correcta.</div>
+                                        <div>
+                                            <label for="labelInput" class="form-label">Horario</label>
+                                            <input type="time" class="form-control" id="labelInput" name="Hour">
+                                        </div>
                                     </div>
-
+                                    <!--end col-->
                                     <div class="mb-3">
-                                        <label for="phone-field" class="form-label">Contact</label>
-                                        <input type="text" id="phone-field" class="form-control"
-                                            value="{{ $user->contact }}" name="contact" required />
-                                        <div class="invalid-feedback">Please enter a phone.</div>
+                                        <div>
+                                            <label for="labelInput" class="form-label">Duracao</label>
+                                            <input type="text" class="form-control" id="labelInput"
+                                                placeholder="Duracao do Culto" name="Duration">
+                                        </div>
                                     </div>
-
                                     <div class="mb-3">
-                                        <label for="date-field" class="form-label">Funcao</label>
-                                        <input type="text" id="date-field" name="function" class="form-control"
-                                            value="{{ $user->function }}" required />
-                                        <div class="invalid-feedback">Digite a sua funcao de forma
-                                            correcta.</div>
+                                        <div>
+                                            <label for="basiInput" class="form-label">Dirigente</label>
+                                            <input type="text" class="form-control" id="basiInput"
+                                                placeholder="Digite o nome do Dirigente do culto" name="Leader">
+                                        </div>
                                     </div>
-
-                                    <div>
-                                        <label for="status-field" class="form-label">Nivel
-                                            Teologico</label>
-                                        <select class="form-control" name="theological_level" id="status-field" required>
-                                            <option value="{{ $user->theological_level }}">
-                                                {{ $user->theological_level }}</option>
-                                            <option value="Caminho de Deus">Caminho de Deus
-                                            </option>
-                                            <option value="Caminho de Joao">Caminho de Joao
-                                            </option>
-                                        </select>
+                                    <div class="mb-3">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Pregador</label>
+                                            <input type="text" class="form-control" id="basiInput"
+                                                placeholder="Digite o nome do Pregador" name="Preacher">
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="mb-3">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Tema do Culto</label>
+                                            <input type="text" class="form-control" id="labelInput"
+                                                placeholder="Digite o Tema do Culto" name="Title">
+                                        </div>
+                                    </div>
+                                    <!--end col--><div class="mb-3">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Livro</label>
+                                            <input type="text" class="form-control" id="basiInput"
+                                                placeholder="Digite o nome do Livro" name="Book">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Capitulo</label>
+                                            <input type="text" class="form-control" id="basiInput"
+                                                placeholder="Digite o capitulo" name="Chapter">
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="mb-3">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Versiculo</label>
+                                            <input type="text" class="form-control" id="labelInput"
+                                                placeholder="Digite o Versiculo" name="Verse">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Descricao</label>
+                                            <textarea type="text" class="form-control" id="labelInput"
+                                                placeholder="Digite algumas informacoes sobre o decorrer do culto" name="Description"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
