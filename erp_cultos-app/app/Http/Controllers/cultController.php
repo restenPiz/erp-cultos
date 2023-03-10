@@ -56,4 +56,10 @@ class cultController extends Controller
             return redirect()->route('login');
         }
     }
+    public function allCult()
+    {
+        $cults=Cult::all();
+        
+        return view('Admin.allCult');
+    }
 }
