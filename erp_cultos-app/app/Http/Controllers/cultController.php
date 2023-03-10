@@ -33,6 +33,15 @@ class cultController extends Controller
             $table=new Cult();
 
             $table->Day_of_cult=Request::input('Day_of_cult');
+            $table->Hour=Request::input('Hour');
+            $table->Duration=Request::input('Duration');
+            $table->Leader=Request::input('Leader');
+            $table->Preacher=Request::input('Preacher');
+            $table->Title=Request::input('Title');
+            $table->Book=Request::input('Book');
+            $table->Chapter=Request::input('Chapter');
+            $table->Verse=Request::input('Verse');
+            $table->Duration=Request::input('Duration');
         }
         else
         {
