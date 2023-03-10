@@ -44,7 +44,7 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="accordionborderedExample1">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#accor_borderedExamplecollapse1" aria-expanded="false"
+                                                data-bs-target="#accor_borderedExamplecollapse1" aria-expanded="true"
                                                 aria-controls="accor_borderedExamplecollapse1">
                                                 Dados Temporarios?
                                             </button>
@@ -100,6 +100,18 @@
                                 </div>
                             </div>
                             <div class="d-none code-view">
+
+                                {{--Inicio da parte contendo os butoes para editar e eliminar--}}
+
+                                    <button class="btn btn-sm btn-success edit-item-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#showModal{{ $cult->id }}">Editar</button>
+                                    <button class="btn btn-sm btn-danger remove-item-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteRecordModal{{ $cult->id }}">Eliminar</button>
+
+                                {{--Fim da parte contendo os butoes de editar e eliminar--}}
+
                             </div>
                         </div><!-- end card-body -->
                     </div><!-- end card -->
