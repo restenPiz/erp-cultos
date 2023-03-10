@@ -119,7 +119,7 @@
 
                 <div class="modal fade" id="showModal{{ $cult->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header bg-light p-3">
                                 <h5 class="modal-title" id="exampleModalLabel"></h5>
@@ -133,11 +133,11 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Dia de Culto</label>
-                                            <input type="date" class="form-control" id="basiInput" name="Day_of_cult">
+                                            <input type="date" class="form-control" value="{{$cult->Day_of_cult}}" name="Day_of_cult">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" id="labelInput" name="Hour">
+                                            <input type="time" class="form-control" value="{{$cult->Hour}}" name="Hour">
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -145,50 +145,50 @@
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Duracao</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Duracao do Culto" name="Duration">
+                                            value="{{$cult->Duration}}" name="Duration">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Dirigente</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o nome do Dirigente do culto" name="Leader">
+                                            value="{{$cult->Leader}}" name="Leader">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Pregador</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o nome do Pregador" name="Preacher">
+                                            value="{{$cult->Preacher}}" name="Preacher">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Tema do Culto</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Digite o Tema do Culto" name="Title">
+                                            value="{{$cult->Title}}" name="Title">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Livro</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o nome do Livro" name="Book">
+                                            value="{{$cult->Book}}" name="Book">
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="basiInput" class="form-label">Capitulo</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o capitulo" name="Chapter">
+                                            value="{{$cult->Chapter}}" name="Chapter">
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="mb-3">
                                         <div class="col-sm-6">
                                             <label for="labelInput" class="form-label">Versiculo</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Digite o Versiculo" name="Verse">
+                                            value="{{$cult->Verse}}" name="Verse">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div>
                                             <label for="labelInput" class="form-label">Descricao</label>
                                             <textarea type="text" class="form-control" id="labelInput"
-                                                placeholder="Digite algumas informacoes sobre o decorrer do culto" name="Description"></textarea>
+                                            value="{{$cult->Description}}" name="Description"></textarea>
                                         </div>
                                     </div>
                                 </div>
