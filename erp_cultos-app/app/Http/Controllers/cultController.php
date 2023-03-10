@@ -42,6 +42,10 @@ class cultController extends Controller
             $table->Chapter=Request::input('Chapter');
             $table->Verse=Request::input('Verse');
             $table->Duration=Request::input('Duration');
+
+            $table->save();
+
+            return redirect()->route('allCult');
         }
         else
         {
