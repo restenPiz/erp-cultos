@@ -56,6 +56,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::post('/updateCult/{id}', [cultController::class, 'updateCult'])->middleware(['auth'])->name('updateCult');
     Route::get('/deleteCult/{id}', [cultController::class, 'deleteCult'])->middleware(['auth'])->name('deleteCult');
     
+    //Inicios da parte de actividade
+
 });
 
 require __DIR__.'/auth.php';
