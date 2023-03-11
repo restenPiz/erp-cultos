@@ -23,10 +23,10 @@
         <!-- end page title -->
 
         <div class="container">
-            <div class="row">
+            <div>
 
                 @foreach ($cults as $cult)
-                    <div class="col-sm-4">
+                    <div class="row">
                         <div class="card">
                             <div class="card-header align-items-center d-flex">
                                 <h4 class="card-title mb-0 flex-grow-1">{{ $cult->Title }}</h4>
