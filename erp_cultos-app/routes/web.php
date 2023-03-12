@@ -58,8 +58,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     
     //Inicios da parte de actividade
     Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addCult');
-    Route::post('/storeActivity', [activityController::class, 'storeCult'])->middleware(['auth'])->name('storeCult');
-    Route::get('/allActivity', [activityController::class, 'allCult'])->middleware(['auth'])->name('allCult');
+    Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeCult');
+    Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allCult');
     Route::post('/updateActivity/{id}', [activityController::class, 'updateCult'])->middleware(['auth'])->name('updateCult');
     Route::get('/deleteActivity/{id}', [activityController::class, 'deleteCult'])->middleware(['auth'])->name('deleteCult');
     
