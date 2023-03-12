@@ -61,7 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::post('/storeCult', [activityController::class, 'storeCult'])->middleware(['auth'])->name('storeCult');
     Route::get('/allCult', [activityController::class, 'allCult'])->middleware(['auth'])->name('allCult');
     Route::post('/updateCult/{id}', [activityController::class, 'updateCult'])->middleware(['auth'])->name('updateCult');
-    Route::get('/deleteCult/{id}', [cultController::class, 'deleteCult'])->middleware(['auth'])->name('deleteCult');
+    Route::get('/deleteCult/{id}', [activityController::class, 'deleteCult'])->middleware(['auth'])->name('deleteCult');
     
 });
 
