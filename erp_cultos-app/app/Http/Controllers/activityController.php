@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Models\User;
 use App\Models\Activity;
 use Illuminate\Auth\Events\Registered;
@@ -21,5 +21,7 @@ class activityController extends Controller
     public function storeActivity()
     {
         $table=new Activity();
+
+        $table->Hour=Request::input('Hour');
     }
 }
