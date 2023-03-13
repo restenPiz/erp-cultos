@@ -23,5 +23,19 @@ class activityController extends Controller
         $table=new Activity();
 
         $table->Hour=Request::input('Hour');
+        $table->Title=Request::input('Title');
+        $table->Day=Request::input('Day');
+        $table->Group=Request::input('Group');
+        $table->Id_user=Request::input('Id_user');
+
+        $users=User::find(Request::input('Id_user'));
+
+        //Salvando os dados capturados
+        $table->save();
+        $users->save();
+
+        return redirect()->route('allActivity');
+
+
     }
 }
