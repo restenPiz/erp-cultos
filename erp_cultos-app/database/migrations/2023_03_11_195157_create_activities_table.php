@@ -15,6 +15,13 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
+            $table->string('Title');
+            $table->string('Hour');
+            $table->string('Groupt');
+
+            //Inicio da coluna contendo a chave estrangeiraa
+
+            
             $table->timestamps();
         });
     }
