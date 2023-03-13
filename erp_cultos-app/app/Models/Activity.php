@@ -11,5 +11,10 @@ class Activity extends Model
 
     protected $table='activities';
 
-    
+    protected $fillable=[
+        'Title',
+        'Hour',
+        'Id_user',
+        'Group',
+    ];
 }
