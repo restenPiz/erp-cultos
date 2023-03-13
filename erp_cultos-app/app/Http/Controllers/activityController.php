@@ -34,6 +34,8 @@ class activityController extends Controller
         $table->save();
         $users->save();
 
+        Alert::success('Adicionado com sucesso','A actividade foi adicionada com sucesso!');
+
         return redirect()->route('allActivity');
 
 
