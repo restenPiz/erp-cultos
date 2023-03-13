@@ -20,7 +20,8 @@ class CreateActivitiesTable extends Migration
             $table->string('Groupt');
 
             //Inicio da coluna contendo a chave estrangeiraa
-
+            $table->integer('Id_user')->unsigned();
+            $table->foreign('Id_user')->references('id')->on('users');
             
             $table->timestamps();
         });
