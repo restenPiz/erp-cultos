@@ -38,6 +38,12 @@ class activityController extends Controller
 
         return redirect()->route('allActivity');
 
-
+    }
+    public function allActivity()
+    {
+        if(Auth::user()->hasRole('admin')){
+            return view('Admin.allActivity');
+        }
+        
     }
 }
