@@ -41,8 +41,10 @@ class activityController extends Controller
     }
     public function allActivity()
     {
-        if(Auth::user()->hasRole('admin')){
+        if(Auth::user()->hasRole('admin'))
+        {
             $activitys=Activity::all();
+
             return view('Admin.allActivity',compact('activitys'));
         }
         else
