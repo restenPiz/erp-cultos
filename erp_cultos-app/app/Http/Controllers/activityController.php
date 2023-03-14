@@ -16,7 +16,11 @@ class activityController extends Controller
 {
     public function addActivity()
     {
-        return view('Admin.addActivity');
+        if(Auth::user()->hasRole('admin')){
+            return view('Admin.addActivity');
+        }else{
+            Alert::error('Nao autenticado!','O usuario nao esta autenticado. Faca o login!');
+        }
     }
     public function storeActivity()
     {
