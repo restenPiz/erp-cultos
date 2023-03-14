@@ -43,7 +43,7 @@ class activityController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
             $activitys=Activity::all();
-            return view('Admin.allActivity');
+            return view('Admin.allActivity',compact('activitys'));
         }
         else
         {
