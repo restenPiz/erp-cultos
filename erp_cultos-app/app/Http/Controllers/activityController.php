@@ -44,6 +44,9 @@ class activityController extends Controller
         if(Auth::user()->hasRole('admin')){
             return view('Admin.allActivity');
         }
-        
+        else
+        {
+            Alert::error('Nao autenticado!','Voce nao esta autenticado no sistema!');
+        }        
     }
 }
