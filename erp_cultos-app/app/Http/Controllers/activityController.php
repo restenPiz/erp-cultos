@@ -20,37 +20,38 @@ class activityController extends Controller
     }
     public function storeActivity()
     {
-        $table=new Activity();
+        if (Auth::user()->hasRole('admin')) {
+            $table = new Activity();
 
-        $table->Hour=Request::input('Hour');
-        $table->Title=Request::input('Title');
-        $table->Day=Request::input('Day');
-        $table->Group=Request::input('Group');
-        $table->Id_user=Request::input('Id_user');
+            $table->Hour = Request::input('Hour');
+            $table->Title = Request::input('Title');
+            $table->Day = Request::input('Day');
+            $table->Group = Request::input('Group');
+            $table->Id_user = Request::input('Id_user');
 
-        $users=User::find(Request::input('Id_user'));
+            $users = User::find(Request::input('Id_user'));
 
-        //Salvando os dados capturados
-        $table->save();
-        $users->save();
+            //Salvando os dados capturados
+            $table->save();
+            $users->save();
 
-        Alert::success('Adicionado com sucesso','A actividade foi adicionada com sucesso!');
+            Alert::success('Adicionado com sucesso', 'A actividade foi adicionada com sucesso!');
 
-        return redirect()->route('allActivity');
+            return redirect()->route('allActivity');
+        }else{
+            
+        }
 
     }
     public function allActivity()
     {
-        if(Auth::user()->hasRole('admin'))
-        {
-            $activitys=Activity::all();
+        if (Auth::user()->hasRole('admin')) {
+            $activitys = Activity::all();
 
-            return view('Admin.allActivity',compact('activitys'));
-        }
-        else
-        {
-            Alert::error('Nao autenticado!','Voce nao esta autenticado no sistema!');
+            return view('Admin.allActivity', compact('activitys'));
+        } else {
+            Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');
             return redirect()->route('login');
-        }        
+        }
     }
 }
