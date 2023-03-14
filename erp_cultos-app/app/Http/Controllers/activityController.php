@@ -20,6 +20,7 @@ class activityController extends Controller
             return view('Admin.addActivity');
         }else{
             Alert::error('Nao autenticado!','O usuario nao esta autenticado. Faca o login!');
+            return redirect()->route('login');
         }
     }
     public function storeActivity()
