@@ -40,6 +40,8 @@ class activityController extends Controller
             return redirect()->route('allActivity');
         }else{
             Alert::error('Nao autenticado!','O usuario nao esta autenticado. Faca o Login!');
+
+            return redirect()->route('login');
         }
 
     }
