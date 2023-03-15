@@ -70,30 +70,30 @@
                                     <tbody class="list form-check-all">
                                         @foreach ($activities as $activity)
                                             <tr>
-                                                <td class="customer_nam">{{ $branche->id }}</td>
-                                                <td class="customer_name">{{ $branche->Name }}</td>
-                                                <td class="email">{{ $branche->Creation_year }}</td>
-                                                <td class="phone">{{ $branche->Address }}</td>
-                                                <td class="date">{{ $branche->Number_of_members }}</td>
-                                                <td class="dat">{{ $branche->name($branche->Id_user) }}</td>
+                                                <td class="customer_nam">{{ $activity->id }}</td>
+                                                <td class="customer_name">{{ $activity->Name }}</td>
+                                                <td class="email">{{ $activity->Creation_year }}</td>
+                                                <td class="phone">{{ $activity->Address }}</td>
+                                                <td class="date">{{ $activity->Number_of_members }}</td>
+                                                <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#showModal{{ $branche->id }}">Editar</button>
+                                                                data-bs-target="#showModal{{ $activity->id }}">Editar</button>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#deleteRecordModal{{ $branche->id }}">Eliminar</button>
+                                                                data-bs-target="#deleteRecordModal{{ $activity->id }}">Eliminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
 
                                             {{-- Inicio do modal para editar o pastor --}}
-                                            <div class="modal fade" id="showModal{{ $branche->id }}" tabindex="-1"
+                                            <div class="modal fade" id="showModal{{ $activity->id }}" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -103,7 +103,7 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateBranches', ['id' => $branche->id]) }}"
+                                                            action="{{ route('updateBranches', ['id' => $activity->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
@@ -111,7 +111,7 @@
                                                                     <label for="customername-field"
                                                                         class="form-label">Nome da Filial</label>
                                                                     <input type="text" id="id-field" name="Name"
-                                                                        class="form-control" value="{{ $branche->Name }}"
+                                                                        class="form-control" value="{{ $activity->Name }}"
                                                                         required />
                                                                 </div>
 
@@ -119,7 +119,7 @@
                                                                     <label for="customername-field"
                                                                         class="form-label">Ano de Criacao</label>
                                                                     <input type="date" id="customername-field"
-                                                                        class="form-control" value="{{ $branche->Creation_year }}"
+                                                                        class="form-control" value="{{ $activity->Creation_year }}"
                                                                         name="Creation_year" required />
                                                                     <div class="invalid-feedback">Por favor escreva bem o seu
                                                                         nome
@@ -129,7 +129,7 @@
                                                                 <div class="mb-3">
                                                                     <label for="email-field" class="form-label">Endereco</label>
                                                                     <input type="text" id="email-field"
-                                                                        class="form-control" value="{{ $branche->Address }}"
+                                                                        class="form-control" value="{{ $activity->Address }}"
                                                                         name="Address" required />
                                                                     <div class="invalid-feedback">Digite o seu email de forma
                                                                         correcta.</div>
@@ -139,7 +139,7 @@
                                                                     <label for="phone-field"
                                                                         class="form-label">Numero de Membros</label>
                                                                     <input type="text" id="phone-field"
-                                                                        class="form-control" value="{{ $branche->Number_of_members }}"
+                                                                        class="form-control" value="{{ $activity->Number_of_members }}"
                                                                         name="Number_of_members" required />
                                                                     <div class="invalid-feedback">Please enter a phone.</div>
                                                                 </div>
@@ -147,7 +147,7 @@
                                                                 <div>
                                                                     <label for="status-field" class="form-label">Nome do Responsavel</label>
                                                                     <select class="form-control" name="Id_user" id="status-field" required>
-                                                                        <option value="{{$branche->Id_user}}">{{$branche->name($branche->Id_user)}}</option>
+                                                                        <option value="{{$activity->Id_user}}">{{$activity->name($activity->Id_user)}}</option>
                                                                         @foreach ($users as $user)
                                                                             <option value="{{$user->id}}">{{$user->name}}</option>
                                                                         @endforeach
@@ -171,7 +171,7 @@
                                             {{-- Fim do modal para editar pastor --}}
 
                                             <!-- Modal -->
-                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $branche->id }}"
+                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $activity->id }}"
                                                 tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -179,7 +179,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{route('deleteBranches',['id'=>$branche->id])}}" method="get">
+                                                        <form action="{{route('deleteBranches',['id'=>$activity->id])}}" method="get">
                                                             @csrf
                                                             @method('DELETE')
                                                             <div class="modal-body">
@@ -192,7 +192,7 @@
                                                                     <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                                                         <h4>Voce tem certeza ?</h4>
                                                                         <p class="text-muted mx-4 mb-0">Voce pretende eliminar
-                                                                            {{ $branche->Name }} ?</p>
+                                                                            {{ $activity->Name }} ?</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
