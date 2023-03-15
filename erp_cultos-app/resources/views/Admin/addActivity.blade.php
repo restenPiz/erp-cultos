@@ -38,7 +38,7 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Grupo</label>
-                                            <select class="form-control" name="Id_user">
+                                            <select class="form-control" name="Group">
                                                 <option>...</option>
                                                 <option value="Departamento dos jovens">Departamento dos Jovens</option>
                                                 <option value="Departamento dos Adolescentes">Departamento dos Adolescentes</option>
