@@ -75,6 +75,14 @@ class activityController extends Controller
 
             $user=User::findOrFail(Request::input('Id_user'));
 
+            //Inicio dos metodos que salvam os dados na base de dados
+            $activities->save();
+            $user->save();
+
+            Alert::success('Adicionado', 'O usuario foi adicionado com sucesso!');
+
+            return redirect()->route('allActivity');
+
         }else{
             Alert::error('Nao autenticado','O usuario nao esta autenticado no sistema. Faca login!');
 
