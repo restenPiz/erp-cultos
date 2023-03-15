@@ -17,8 +17,8 @@
                                 <div class="row gy-4">
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="basiInput" class="form-label">Dia de Culto</label>
-                                            <input type="date" class="form-control" id="basiInput" name="Day_of_cult">
+                                            <label for="basiInput" class="form-label">Titulo</label>
+                                            <input type="text" class="form-control" id="basiInput" name="Title" placeholder="Digite o titulo da actividade">
                                         </div>
                                     </div>
                                     <!--end col-->
