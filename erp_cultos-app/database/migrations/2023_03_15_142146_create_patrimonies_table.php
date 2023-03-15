@@ -15,6 +15,9 @@ class CreatePatrimoniesTable extends Migration
     {
         Schema::create('patrimonies', function (Blueprint $table) {
             $table->id();
+            $table->string('Name');
+            $table->string('Quantity');
+            $table->string('Status');
             $table->timestamps();
         });
     }
