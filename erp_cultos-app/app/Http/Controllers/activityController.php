@@ -71,7 +71,7 @@ class activityController extends Controller
     }
     public function updateActivity($id)
     {
-        if (Auth::user()->hasRole('Admin')) {
+        if (Auth::user()->hasRole('admin')) {
 
             $activities = Activity::findOrFail($id);
 
