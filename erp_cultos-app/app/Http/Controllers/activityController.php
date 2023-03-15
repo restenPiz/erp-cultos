@@ -17,7 +17,9 @@ class activityController extends Controller
     public function addActivity()
     {
         if (Auth::user()->hasRole('admin')) {
-            return view('Admin.addActivity');
+            $users=User::all();
+
+            return view('Admin.addActivity',compact('users'));
         } else {
             Alert::error('Nao autenticado!', 'O usuario nao esta autenticado. Faca o login!');
             return redirect()->route('login');

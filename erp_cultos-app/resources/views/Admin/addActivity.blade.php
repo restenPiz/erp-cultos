@@ -35,6 +35,12 @@
                                             <input type="date" class="form-control" id="labelInput" name="Day">
                                         </div>
                                     </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Grupo</label>
+                                            
+                                        </div>
+                                    </div>
                                 </div>
                                 <!--end row-->
                             </div>
