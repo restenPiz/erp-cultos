@@ -98,10 +98,11 @@ class activityController extends Controller
             $activity->delete();
  
             Alert::success('Eliminado','A actividade foi eliminada com sucesso!');
-            
+
             return redirect()->back();
         }else{
             Alert::error('Nao autenticado!','O usuario nao esta autenticado no sistema!');
+            
             return redirect()->route('login');
         }
     }
