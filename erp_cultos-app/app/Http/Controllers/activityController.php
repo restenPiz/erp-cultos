@@ -61,10 +61,15 @@ class activityController extends Controller
             return redirect()->route('login');
         }
     }
-    public function updateActivity()
+    public function updateActivity($id)
     {
         if(Auth::user()->hasRole('Admin')){
             
+            $activities=Activity::findOrFail($id);
+
+            $activities->Hour=Request::input('Hour');
+            $activities->Title=Request::input('Title');
+
         }else{
             Alert::error('Nao autenticado','O usuario nao esta autenticado no sistema. Faca login!');
 
