@@ -57,7 +57,7 @@ class activityController extends Controller
     public function allActivity()
     {
         if (Auth::user()->hasRole('admin')) {
-            $activitys = Activity::all();
+            $activities = Activity::all();
 
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
