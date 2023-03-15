@@ -59,7 +59,11 @@ class activityController extends Controller
         if (Auth::user()->hasRole('admin')) {
             $activitys = Activity::all();
 
-            return view('Admin.allActivity', compact('activitys'));
+            $users = DB::table('users')
+                ->where('userType', '<>', 'admin')
+                ->get();
+
+            return view('Admin.allActivity', compact('activities','users'));
         } else {
             Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');
             return redirect()->route('login');
