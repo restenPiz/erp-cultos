@@ -10,4 +10,10 @@ class Patrimony extends Model
     use HasFactory;
 
     protected $table='patrimonies';
+
+    protected $fillable=[
+        'Name',
+        'Quantity',
+        'Status',
+    ];
 }
