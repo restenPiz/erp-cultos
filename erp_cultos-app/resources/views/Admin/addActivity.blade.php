@@ -31,9 +31,8 @@
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Duracao</label>
-                                            <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Duracao do Culto" name="Duration">
+                                            <label for="labelInput" class="form-label">Dia</label>
+                                            <input type="date" class="form-control" id="labelInput" name="Day">
                                         </div>
                                     </div>
                                 </div>
