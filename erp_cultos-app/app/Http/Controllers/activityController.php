@@ -71,7 +71,9 @@ class activityController extends Controller
             $activities->Title=Request::input('Title');
             $activities->Day=Request::input('Day');
             $activities->Group=Request::input('Group');
-            
+            $activities->Id_user=Request::input('Id_user');
+
+            $user=User::findOrFail(Request::input('Id_user'));
 
         }else{
             Alert::error('Nao autenticado','O usuario nao esta autenticado no sistema. Faca login!');
