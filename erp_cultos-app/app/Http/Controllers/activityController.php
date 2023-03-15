@@ -21,8 +21,6 @@ class activityController extends Controller
                 ->where('userType', '<>', 'admin')
                 ->get();
 
-            Alert::success('Adicionado','A sua actividade foi adicionada com sucesso!');
-
             return view('Admin.addActivity',compact('users'));
         } else {
             Alert::error('Nao autenticado!', 'O usuario nao esta autenticado. Faca o login!');
