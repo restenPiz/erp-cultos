@@ -16,10 +16,10 @@ class activityController extends Controller
 {
     public function addActivity()
     {
-        if(Auth::user()->hasRole('admin')){
+        if (Auth::user()->hasRole('admin')) {
             return view('Admin.addActivity');
-        }else{
-            Alert::error('Nao autenticado!','O usuario nao esta autenticado. Faca o login!');
+        } else {
+            Alert::error('Nao autenticado!', 'O usuario nao esta autenticado. Faca o login!');
             return redirect()->route('login');
         }
     }
@@ -43,8 +43,8 @@ class activityController extends Controller
             Alert::success('Adicionado com sucesso', 'A actividade foi adicionada com sucesso!');
 
             return redirect()->route('allActivity');
-        }else{
-            Alert::error('Nao autenticado!','O usuario nao esta autenticado. Faca o Login!');
+        } else {
+            Alert::error('Nao autenticado!', 'O usuario nao esta autenticado. Faca o Login!');
 
             return redirect()->route('login');
         }
@@ -63,17 +63,17 @@ class activityController extends Controller
     }
     public function updateActivity($id)
     {
-        if(Auth::user()->hasRole('Admin')){
-            
-            $activities=Activity::findOrFail($id);
+        if (Auth::user()->hasRole('Admin')) {
 
-            $activities->Hour=Request::input('Hour');
-            $activities->Title=Request::input('Title');
-            $activities->Day=Request::input('Day');
-            $activities->Group=Request::input('Group');
-            $activities->Id_user=Request::input('Id_user');
+            $activities = Activity::findOrFail($id);
 
-            $user=User::findOrFail(Request::input('Id_user'));
+            $activities->Hour = Request::input('Hour');
+            $activities->Title = Request::input('Title');
+            $activities->Day = Request::input('Day');
+            $activities->Group = Request::input('Group');
+            $activities->Id_user = Request::input('Id_user');
+
+            $user = User::findOrFail(Request::input('Id_user'));
 
             //Inicio dos metodos que salvam os dados na base de dados
             $activities->save();
@@ -83,9 +83,24 @@ class activityController extends Controller
 
             return redirect()->route('allActivity');
 
-        }else{
-            Alert::error('Nao autenticado','O usuario nao esta autenticado no sistema. Faca login!');
+        } else {
+            Alert::error('Nao autenticado', 'O usuario nao esta autenticado no sistema. Faca login!');
 
+            return redirect()->route('login');
+        }
+    }
+    public function deleteActivity($id)
+    {
+        if (Auth::user()->hasRole('admin')) {
+
+            $activity = Activity::findOrFail($id);
+            
+            $activity->delete();
+ 
+            
+            return redirect()->back();
+        }else{
+            Alert::error('Nao autenticado!','O usuario nao esta autenticado no sistema!');
             return redirect()->route('login');
         }
     }
