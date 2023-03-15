@@ -34,7 +34,7 @@
                             <div class="row g-4 mb-3">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="{{ route('addBranches') }}" class="btn btn-success add-btn"><i
+                                        <a href="{{ route('addActivity') }}" class="btn btn-success add-btn"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</a>
                                     </div>
                                 </div>
