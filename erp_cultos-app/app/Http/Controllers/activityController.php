@@ -87,7 +87,7 @@ class activityController extends Controller
             $activities->save();
             $user->save();
 
-            Alert::success('Adicionado', 'O usuario foi adicionado com sucesso!');
+            Alert::success('Actualizado', 'O usuario foi actualizado com sucesso!');
 
             return redirect()->route('allActivity');
 
