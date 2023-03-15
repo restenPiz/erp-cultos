@@ -17,7 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->id();
             $table->string('Title');
             $table->string('Hour');
-            $table->string('Groupt');
+            $table->string('Group');
 
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();

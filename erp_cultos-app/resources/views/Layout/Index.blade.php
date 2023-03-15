@@ -973,12 +973,12 @@
                                 <div class="collapse menu-dropdown" id="sidebarApps">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-calendar.html" class="nav-link" data-key="t-calendar">
+                                            <a href="{{route('addActivity')}}" class="nav-link" data-key="t-calendar">
                                                 Adicionar actividades
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link" data-key="t-chat"> Todas
+                                            <a href="{{route('allActivity')}}" class="nav-link" data-key="t-chat"> Todas
                                                 actividades </a>
                                         </li>
                                     </ul>
