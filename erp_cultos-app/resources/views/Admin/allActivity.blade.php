@@ -71,10 +71,10 @@
                                         @foreach ($activities as $activity)
                                             <tr>
                                                 <td class="customer_nam">{{ $activity->id }}</td>
-                                                <td class="customer_name">{{ $activity->Name }}</td>
-                                                <td class="email">{{ $activity->Creation_year }}</td>
-                                                <td class="phone">{{ $activity->Address }}</td>
-                                                <td class="date">{{ $activity->Number_of_members }}</td>
+                                                <td class="customer_name">{{ $activity->Title }}</td>
+                                                <td class="email">{{ $activity->Hour }}</td>
+                                                <td class="phone">{{ $activity->Day }}</td>
+                                                <td class="date">{{ $activity->Group }}</td>
                                                 <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
@@ -103,7 +103,7 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateBranches', ['id' => $activity->id]) }}"
+                                                            action="{{ route('updateActivity', ['id' => $activity->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
