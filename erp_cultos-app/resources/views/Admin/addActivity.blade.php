@@ -38,7 +38,24 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Grupo</label>
-                                            
+                                            <select class="form-control" name="Id_user">
+                                                <option>...</option>
+                                                <option value="Departamento dos jovens">Departamento dos Jovens</option>
+                                                <option value="Departamento dos Adolescentes">Departamento dos Adolescentes</option>
+                                                <option value="Departamento dos Adultos">Departamento dos Adultos</option>
+                                                <option value="Departamento dos Idosos">Departamento dos Idosos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Responsavel</label>
+                                            <select class="form-control" name="Id_user">
+                                                <option>...</option>
+                                                @foreach ($users as $user)
+                                                    <option value="{{$user->id}}">{{$user->name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
