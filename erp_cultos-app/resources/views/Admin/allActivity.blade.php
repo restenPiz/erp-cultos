@@ -13,7 +13,7 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Todas Igrejas Filhas</li>
+                            <li class="breadcrumb-item active">Todas Actividades</li>
                         </ol>
                     </div>
 
@@ -26,7 +26,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">Todas Igrejas Filhas</h4>
+                        <h4 class="card-title mb-0">Todas Actividades</h4>
                     </div><!-- end card header -->
 
                     <div class="card-body">
@@ -59,16 +59,16 @@
                                                 </div>
                                             </th> --}}
                                             <th class="sort" data-sort="customer_nam"></th>
-                                            <th class="sort" data-sort="customer_name">Nome da Filial</th>
-                                            <th class="sort" data-sort="email">Ano de Criacao</th>
-                                            <th class="sort" data-sort="phone">Endereco</th>
-                                            <th class="sort" data-sort="date">Numero de Membros</th>
+                                            <th class="sort" data-sort="customer_name">Titulo</th>
+                                            <th class="sort" data-sort="email">Horario</th>
+                                            <th class="sort" data-sort="phone">Dia</th>
+                                            <th class="sort" data-sort="date">Grupo</th>
                                             <th class="sort" data-sort="status">Nome do Responsavel</th>
                                             <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach ($branches as $branche)
+                                        @foreach ($activities as $activity)
                                             <tr>
                                                 <td class="customer_nam">{{ $branche->id }}</td>
                                                 <td class="customer_name">{{ $branche->Name }}</td>
