@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateActivitiesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('activities', function (Blueprint $table) {
@@ -26,12 +21,6 @@ class CreateActivitiesTable extends Migration
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('activities');
