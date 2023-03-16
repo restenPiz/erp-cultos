@@ -31,4 +31,10 @@ class patrimonyController extends Controller
 
         return redirect()->route('allPatrimony');
     }
+    public function allPatrimony()
+    {
+        $patrimonys=Patrimony::all();
+        
+        return view('Admin.allPatrimony',compact('patrimonys'));
+    }
 }
