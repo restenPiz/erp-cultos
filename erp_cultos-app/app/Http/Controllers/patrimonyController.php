@@ -60,6 +60,9 @@ class patrimonyController extends Controller
         if(Auth::user()->hasRole('admin')){
 
             $patrimony=Patrimony::findOrFail($id);
+            $patrimony->Name=Request::input('Name');
+            $patrimony->Status=Request::input('Status');
+            $patrimony->Quantity=Request::input('Quantity');
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
