@@ -66,8 +66,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     
     //Inicio da parte de Patrimonio
     Route::get('/addActivity', [patrimonyController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
-    Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
-    Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
+    Route::post('/storeActivity', [patrimonyController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
+    Route::get('/allActivity', [patrimonyController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
     Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
     Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
     
