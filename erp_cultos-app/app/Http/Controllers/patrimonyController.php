@@ -64,6 +64,12 @@ class patrimonyController extends Controller
             $patrimony->Status=Request::input('Status');
             $patrimony->Quantity=Request::input('Quantity');
 
+            $patrimony->save();
+
+            Alert::success('Actualizado','O patrimonio foi actualizado com sucesso!');
+
+            return redirect()->back();
+
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
