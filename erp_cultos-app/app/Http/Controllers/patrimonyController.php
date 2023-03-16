@@ -55,4 +55,16 @@ class patrimonyController extends Controller
             return redirect()->route('login');
         }
     }
+    public function updatePatrimony($id)
+    {
+        if(Auth::user()->hasRole('admin')){
+
+            $patrimony=Patrimony::findOrFail($id);
+
+        }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            redirect()->route('login');
+        }
+    }
 }
