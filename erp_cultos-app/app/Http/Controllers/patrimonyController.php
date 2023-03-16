@@ -15,26 +15,44 @@ class patrimonyController extends Controller
 {
     public function addPatrimony()
     {
-        return view('Admin.addPatrimony');
+        if(Auth::user()->hasRole('admin')){
+            return view('Admin.addPatrimony');
+        }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
     public function storePatrimony()
     {
-        $table=new Patrimony();
+        if(Auth::user()->hasRole('admin')){
+            $table=new Patrimony();
 
-        $table->Name=Request::input('Name');
-        $table->Quantity=Request::input('Quantity');
-        $table->Status=Request::input('Status');
+            $table->Name=Request::input('Name');
+            $table->Quantity=Request::input('Quantity');
+            $table->Status=Request::input('Status');
 
-        $table->save();
+            $table->save();
 
-        Alert::success('Adicionado','O patrimonio foi adicionado com sucesso!');
+            Alert::success('Adicionado','O patrimonio foi adicionado com sucesso!');
 
-        return redirect()->route('allPatrimony');
+            return redirect()->route('allPatrimony');
+        }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
     public function allPatrimony()
     {
-        $patrimonys=Patrimony::all();
-        
-        return view('Admin.allPatrimony',compact('patrimonys'));
+        if(Auth::user()->hasRole('admin')){
+            $patrimonys=Patrimony::all();
+
+            return view('Admin.allPatrimony',compact('patrimonys'));    
+        }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
 }
