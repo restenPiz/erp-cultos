@@ -65,9 +65,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
     
     //Inicio da parte de Patrimonio 
-    Route::get('/addPatrimony', [patrimonyController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
-    Route::post('/storePatrimony', [patrimonyController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
-    Route::get('/allPatrimony', [patrimonyController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
+    Route::get('/addPatrimony', [patrimonyController::class, 'addPatrimony'])->middleware(['auth'])->name('addActivity');
+    Route::post('/storePatrimony', [patrimonyController::class, 'storePatrimony'])->middleware(['auth'])->name('storeActivity');
+    Route::get('/allPatrimony', [patrimonyController::class, 'allPatrimony'])->middleware(['auth'])->name('allActivity');
     Route::post('/updatePatrimony/{id}', [patrimonyController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
     Route::get('/deletePatrimony/{id}', [patrimonyController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
     
