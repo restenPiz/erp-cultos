@@ -26,5 +26,9 @@ class patrimonyController extends Controller
         $table->Status=Request::input('Status');
 
         $table->save();
+
+        Alert::success('Adicionado','O patrimonio foi adicionado com sucesso!');
+
+        return redirect()->route('allPatrimony');
     }
 }
