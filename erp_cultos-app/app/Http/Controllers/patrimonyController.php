@@ -80,6 +80,10 @@ class patrimonyController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
             
+            $patrimony=Patrimony::findOrFail($id);
+
+            $patrimony->delete();
+
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
