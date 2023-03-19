@@ -84,6 +84,10 @@ class patrimonyController extends Controller
 
             $patrimony->delete();
 
+            Alert::success('Eliminado!','O usuario foi eliminado com sucesso!');
+
+            return redirect()->back();
+
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
