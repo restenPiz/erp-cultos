@@ -76,4 +76,12 @@ class patrimonyController extends Controller
             redirect()->route('login');
         }
     }
+    public function deletePatrimony($id)
+    {
+        if(Auth::user()->hasRole('admin')){
+            
+        }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+        }
+    }
 }
