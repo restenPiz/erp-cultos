@@ -68,7 +68,7 @@ class patrimonyController extends Controller
 
             Alert::success('Actualizado','O patrimonio foi actualizado com sucesso!');
 
-            return redirect()->back();
+            return redirect()->route('allPatrimony');
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
