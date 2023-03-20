@@ -114,7 +114,7 @@
                                                                 <div class="mb-3" id="modal-id">
                                                                     <label for="customername-field"
                                                                         class="form-label">Quantidade</label>
-                                                                    <input type="text" id="id-field" name="Quantidade"
+                                                                    <input type="text" id="id-field" name="Quantity"
                                                                         class="form-control" value="{{ $patrimony->Quantity }}"
                                                                         required />
                                                                 </div>
