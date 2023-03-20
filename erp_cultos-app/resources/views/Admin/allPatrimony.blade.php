@@ -69,8 +69,9 @@
                                         @foreach ($patrimonys as $patrimony)
                                             <tr>
                                                 <td class="customer_nam">{{ $patrimony->id }}</td>
-                                                <td class="customer_name">{{ $$patrimony->Title }}</td>
-                                                <td class="email">{{$patrimony->Hour }}</td>
+                                                <td class="customer_name">{{ $patrimony->Name }}</td>
+                                                <td class="email">{{$patrimony->Quantity }}</td>
+                                                <td class="email">{{$patrimony->Status }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
