@@ -68,8 +68,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/addPatrimony', [patrimonyController::class, 'addPatrimony'])->middleware(['auth'])->name('addPatrimony');
     Route::post('/storePatrimony', [patrimonyController::class, 'storePatrimony'])->middleware(['auth'])->name('storePatrimony');
     Route::get('/allPatrimony', [patrimonyController::class, 'allPatrimony'])->middleware(['auth'])->name('allPatrimony');
-    Route::post('/updatePatrimony/{id}', [patrimonyController::class, 'updateActivity'])->middleware(['auth'])->name('updatePatrimony');
-    Route::get('/deletePatrimony/{id}', [patrimonyController::class, 'deleteActivity'])->middleware(['auth'])->name('deletePatrimony');
+    Route::post('/updatePatrimony/{id}', [patrimonyController::class, 'updatePatrimony'])->middleware(['auth'])->name('updatePatrimony');
+    Route::get('/deletePatrimony/{id}', [patrimonyController::class, 'deletePatrimony'])->middleware(['auth'])->name('deletePatrimony');
     
 });
 
