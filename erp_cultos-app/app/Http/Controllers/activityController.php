@@ -17,8 +17,13 @@ class activityController extends Controller
     public function addActivity()
     {
         if (Auth::user()->hasRole('admin')) {
+            //Usando as query builds para retornar os dados do usuario
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
+                ->get();
+
+            $users = DB::table('users')
+                ->where('userType', '=', 'pastor')
                 ->get();
 
             return view('Admin.addActivity',compact('users'));
