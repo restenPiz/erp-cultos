@@ -99,69 +99,36 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('update$patrimony', ['id' => $patrimony->id]) }}"
+                                                            action="{{ route('updatePatrimony', ['id' => $patrimony->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id">
                                                                     <label for="customername-field"
-                                                                        class="form-label">Titulo</label>
-                                                                    <input type="text" id="id-field" name="Title"
+                                                                        class="form-label">Nome do objecto</label>
+                                                                    <input type="text" id="id-field" name="Name"
                                                                         class="form-control" value="{{ $patrimony->Name }}"
                                                                         required />
                                                                 </div>
 
-                                                                <div class="mb-3">
+                                                                <div class="mb-3" id="modal-id">
                                                                     <label for="customername-field"
-                                                                        class="form-label">Dia</label>
-                                                                    <input type="date" id="customername-field"
-                                                                        class="form-control" value="{{ $$patrimony->Day }}"
-                                                                        name="Day" required />
-                                                                    <div class="invalid-feedback">Por favor escreva bem o seu
-                                                                        nome
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="email-field"
-                                                                        class="form-label">Horario</label>
-                                                                    <input type="time" id="email-field"
-                                                                        class="form-control" value="{{ $$patrimony->Hour }}"
-                                                                        name="Hour" required />
-                                                                    <div class="invalid-feedback">Digite o seu email de forma
-                                                                        correcta.</div>
+                                                                        class="form-label">Quantidade</label>
+                                                                    <input type="text" id="id-field" name="Quantidade"
+                                                                        class="form-control" value="{{ $patrimony->Quantity }}"
+                                                                        required />
                                                                 </div>
 
                                                                 <div>
-                                                                    <label for="status-field" class="form-label">Nome do Departamento</label>
-                                                                    <select class="form-control" name="Group"
+                                                                    <label for="status-field" class="form-label">Situacao</label>
+                                                                    <select class="form-control" name="Status"
                                                                         id="status-field" required>
-                                                                        <option value="{{ $$patrimony->Group }}">
-                                                                            {{ $$patrimony->Group }}</option>
+                                                                        <option value="{{ $patrimony->Status }}">
+                                                                            {{ $patrimony->Status }}</option>
 
-                                                                        <option value="Departamento dos jovens">Departamento
-                                                                            dos Jovens</option>
-                                                                        <option value="Departamento dos Adolescentes">
-                                                                            Departamento dos Adolescentes</option>
-                                                                        <option value="Departamento dos Adultos">Departamento
-                                                                            dos Adultos</option>
-                                                                        <option value="Departamento dos Idosos">Departamento
-                                                                            dos Idosos</option>
-                                                                    </select>
-                                                                </div>
-
-
-                                                                <div>
-                                                                    <label for="status-field" class="form-label">Nome do
-                                                                        Responsavel</label>
-                                                                    <select class="form-control" name="Id_user"
-                                                                        id="status-field" required>
-                                                                        <option value="{{ $$patrimony->Id_user }}">
-                                                                            {{ $$patrimony->name($$patrimony->Id_user) }}</option>
-                                                                        @foreach ($users as $user)
-                                                                            <option value="{{ $user->id }}">
-                                                                                {{ $user->name }}</option>
-                                                                        @endforeach
+                                                                            <option value="Danificado">Danificado</option>
+                                                                            <option value="Em Boas Condicoes">Em Boas Condicoes</option>
+                                                                            <option value="Em condicoes Razoaveis">Em condicoes Razoaveis</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -182,7 +149,7 @@
                                             {{-- Fim do modal para editar pastor --}}
 
                                             <!-- Modal -->
-                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $$patrimony->id }}"
+                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $patrimony->id }}"
                                                 tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -190,7 +157,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{ route('delete$patrimony', ['id' => $$patrimony->id]) }}"
+                                                        <form action="{{ route('deletePatrimony', ['id' => $patrimony->id]) }}"
                                                             method="get">
                                                             @csrf
                                                             @method('DELETE')
@@ -205,7 +172,7 @@
                                                                         <h4>Voce tem certeza ?</h4>
                                                                         <p class="text-muted mx-4 mb-0">Voce pretende eliminar
                                                                             a actividade de
-                                                                            {{ $$patrimony->Title }} ?</p>
+                                                                            {{ $patrimony->Name }} ?</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
