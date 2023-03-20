@@ -27,9 +27,13 @@ class activityController extends Controller
                 ->get();
 
             return view('Admin.addActivity',compact('users'));
+
         } else {
+
             Alert::error('Nao autenticado!', 'O usuario nao esta autenticado. Faca o login!');
+        
             return redirect()->route('login');
+        
         }
     }
     public function storeActivity()
