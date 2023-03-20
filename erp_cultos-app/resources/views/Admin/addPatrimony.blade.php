@@ -33,9 +33,9 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Situacao</label>
                                             <select class="form-control" name="Status">
-                                                <option>Danificado</option>
-                                                <option>Em Boas Condicoes</option>
-                                                <option>Em condicoes Razoaveis</option>
+                                                <option value="Danificado">Danificado</option>
+                                                <option value="Em Boas Condicoes">Em Boas Condicoes</option>
+                                                <option value="Em condicoes Razoaveis">Em condicoes Razoaveis</option>
                                             </select>
                                         </div>
                                     </div>

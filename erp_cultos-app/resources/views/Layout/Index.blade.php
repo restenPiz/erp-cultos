@@ -1009,11 +1009,11 @@
                                 <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="advance-ui-sweetalerts.html" class="nav-link"
+                                            <a href="{{route('addPatrimony')}}" class="nav-link"
                                                 data-key="t-sweet-alerts">Adicionar patrimonio</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="advance-ui-nestable.html" class="nav-link"
+                                            <a href="{{route('allPatrimony')}}" class="nav-link"
                                                 data-key="t-nestable-list">Todo patrimonio da igreja</a>
                                         </li>
                                     </ul>
