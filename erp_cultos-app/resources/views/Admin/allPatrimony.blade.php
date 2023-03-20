@@ -13,7 +13,7 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Todas Actividades</li>
+                            <li class="breadcrumb-item active">Detalhes do Patrimonio</li>
                         </ol>
                     </div>
 
@@ -26,7 +26,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">Todas Actividades</h4>
+                        <h4 class="card-title mb-0">Detalhes do Patrimonio</h4>
                     </div><!-- end card header -->
 
                     <div class="card-body">
@@ -34,7 +34,7 @@
                             <div class="row g-4 mb-3">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="{{ route('addActivity') }}" class="btn btn-success add-btn"><i
+                                        <a href="{{ route('addPatrimony') }}" class="btn btn-success add-btn"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</a>
                                     </div>
                                 </div>
@@ -59,41 +59,36 @@
                                                 </div>
                                             </th> --}}
                                             <th class="sort" data-sort="customer_nam"></th>
-                                            <th class="sort" data-sort="customer_name">Titulo</th>
-                                            <th class="sort" data-sort="email">Horario</th>
-                                            <th class="sort" data-sort="phone">Dia</th>
-                                            <th class="sort" data-sort="date">Grupo</th>
-                                            <th class="sort" data-sort="status">Nome do Responsavel</th>
+                                            <th class="sort" data-sort="customer_name">Nome do Objecto</th>
+                                            <th class="sort" data-sort="email">Quantidade</th>
+                                            <th class="sort" data-sort="phone">Situacao</th>
                                             <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach ($activities as $activity)
+                                        @foreach ($patrimonys as $patrimony)
                                             <tr>
-                                                <td class="customer_nam">{{ $activity->id }}</td>
-                                                <td class="customer_name">{{ $activity->Title }}</td>
-                                                <td class="email">{{ $activity->Hour }}</td>
-                                                <td class="phone">{{ $activity->Day }}</td>
-                                                <td class="date">{{ $activity->Group }}</td>
-                                                <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
+                                                <td class="customer_nam">{{ $patrimony->id }}</td>
+                                                <td class="customer_name">{{ $$patrimony->Title }}</td>
+                                                <td class="email">{{$patrimony->Hour }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#showModal{{ $activity->id }}">Editar</button>
+                                                                data-bs-target="#showModal{{ $patrimony->id }}">Editar</button>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#deleteRecordModal{{ $activity->id }}">Eliminar</button>
+                                                                data-bs-target="#deleteRecordModal{{ $patrimony->id }}">Eliminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
 
                                             {{-- Inicio do modal para editar o pastor --}}
-                                            <div class="modal fade" id="showModal{{ $activity->id }}" tabindex="-1"
+                                            <div class="modal fade" id="showModal{{ $patrimony->id }}" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -103,7 +98,7 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateActivity', ['id' => $activity->id]) }}"
+                                                            action="{{ route('update$patrimony', ['id' => $patrimony->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
@@ -111,7 +106,7 @@
                                                                     <label for="customername-field"
                                                                         class="form-label">Titulo</label>
                                                                     <input type="text" id="id-field" name="Title"
-                                                                        class="form-control" value="{{ $activity->Title }}"
+                                                                        class="form-control" value="{{ $patrimony->Name }}"
                                                                         required />
                                                                 </div>
 
@@ -119,7 +114,7 @@
                                                                     <label for="customername-field"
                                                                         class="form-label">Dia</label>
                                                                     <input type="date" id="customername-field"
-                                                                        class="form-control" value="{{ $activity->Day }}"
+                                                                        class="form-control" value="{{ $$patrimony->Day }}"
                                                                         name="Day" required />
                                                                     <div class="invalid-feedback">Por favor escreva bem o seu
                                                                         nome
@@ -130,7 +125,7 @@
                                                                     <label for="email-field"
                                                                         class="form-label">Horario</label>
                                                                     <input type="time" id="email-field"
-                                                                        class="form-control" value="{{ $activity->Hour }}"
+                                                                        class="form-control" value="{{ $$patrimony->Hour }}"
                                                                         name="Hour" required />
                                                                     <div class="invalid-feedback">Digite o seu email de forma
                                                                         correcta.</div>
@@ -140,8 +135,8 @@
                                                                     <label for="status-field" class="form-label">Nome do Departamento</label>
                                                                     <select class="form-control" name="Group"
                                                                         id="status-field" required>
-                                                                        <option value="{{ $activity->Group }}">
-                                                                            {{ $activity->Group }}</option>
+                                                                        <option value="{{ $$patrimony->Group }}">
+                                                                            {{ $$patrimony->Group }}</option>
 
                                                                         <option value="Departamento dos jovens">Departamento
                                                                             dos Jovens</option>
@@ -160,8 +155,8 @@
                                                                         Responsavel</label>
                                                                     <select class="form-control" name="Id_user"
                                                                         id="status-field" required>
-                                                                        <option value="{{ $activity->Id_user }}">
-                                                                            {{ $activity->name($activity->Id_user) }}</option>
+                                                                        <option value="{{ $$patrimony->Id_user }}">
+                                                                            {{ $$patrimony->name($$patrimony->Id_user) }}</option>
                                                                         @foreach ($users as $user)
                                                                             <option value="{{ $user->id }}">
                                                                                 {{ $user->name }}</option>
@@ -186,7 +181,7 @@
                                             {{-- Fim do modal para editar pastor --}}
 
                                             <!-- Modal -->
-                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $activity->id }}"
+                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $$patrimony->id }}"
                                                 tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -194,7 +189,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{ route('deleteActivity', ['id' => $activity->id]) }}"
+                                                        <form action="{{ route('delete$patrimony', ['id' => $$patrimony->id]) }}"
                                                             method="get">
                                                             @csrf
                                                             @method('DELETE')
@@ -209,7 +204,7 @@
                                                                         <h4>Voce tem certeza ?</h4>
                                                                         <p class="text-muted mx-4 mb-0">Voce pretende eliminar
                                                                             a actividade de
-                                                                            {{ $activity->Title }} ?</p>
+                                                                            {{ $$patrimony->Title }} ?</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
