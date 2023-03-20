@@ -160,10 +160,20 @@
                                                                         id="status-field" required>
                                                                         <option value="{{ $user->theological_level }}">
                                                                             {{ $user->theological_level }}</option>
-                                                                        <option value="Caminho de Deus">Caminho de Deus
-                                                                        </option>
-                                                                        <option value="Caminho de Joao">Caminho de Joao
-                                                                        </option>
+
+                                                                        <option value="Curso Basico em Teologia">Curso Basico
+                                                                            em Teologia</option>
+                                                                        <option value="Curso Medio em Teologia">Curso Medio em
+                                                                            Teologia</option>
+                                                                        <option value="Curso Superior em Teologia">Curso
+                                                                            Superior em Teologia</option>
+                                                                        <option value="Capacitacao de Lideres">Capacitacao de
+                                                                            Lideres</option>
+                                                                        <option value="Capacitacao de Obreiros">Capacitacao de
+                                                                            Obreiros</option>
+                                                                        <option value="Capacitacao de Professores Criancas">
+                                                                            Capacitacao de Professores Criancas</option>
+                                                                        <option value="Nenhum">Nenhum</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -192,7 +202,8 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{route('deleteShepherd',['id'=>$user->id])}}" method="get">
+                                                        <form action="{{ route('deleteShepherd', ['id' => $user->id]) }}"
+                                                            method="get">
                                                             @csrf
                                                             @method('DELETE')
                                                             <div class="modal-body">

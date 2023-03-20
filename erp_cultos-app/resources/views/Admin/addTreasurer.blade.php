@@ -91,8 +91,13 @@
                                         <label for="exampleDataList" class="form-label">Nivel Teologico</label>
                                         <select class="form-control" name="theological_level">
                                             <option>...</option>
-                                            <option value="Caminho de Deus">Caminho de Deus</option>
-                                            <option value="Caminho de Jesus">Caminho de Jesus</option>
+                                            <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
+                                            <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
+                                            <option value="Curso Superior em Teologia">Curso Superior em Teologia</option>
+                                            <option value="Capacitacao de Lideres">Capacitacao de Lideres</option>
+                                            <option value="Capacitacao de Obreiros">Capacitacao de Obreiros</option>
+                                            <option value="Capacitacao de Professores Criancas">Capacitacao de Professores Criancas</option>
+                                            <option value="Nenhum">Nenhum</option>
                                         </select>
                                     </div>
                                     <!--end col-->
