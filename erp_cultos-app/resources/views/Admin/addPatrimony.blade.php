@@ -18,22 +18,25 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Nome do Objecto</label>
-                                            <input type="text" class="form-control" id="basiInput" name="Name">
+                                            <input type="text" class="form-control" id="basiInput" name="Name" placeholder="Nome do Objecto">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" id="labelInput" name="Hour">
+                                            <label for="basiInput" class="form-label">Quantidade</label>
+                                            <input type="text" class="form-control" id="basiInput" name="Quantity" placeholder="Quantidade">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Duracao</label>
-                                            <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Duracao do Culto" name="Duration">
+                                            <label for="labelInput" class="form-label">Situacao</label>
+                                            <select class="form-control" name="Status">
+                                                <option>Danificado</option>
+                                                <option>Em Boas Condicoes</option>
+                                                <option>Em condicoes Razoaveis</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
