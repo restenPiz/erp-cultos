@@ -71,6 +71,10 @@ class activityController extends Controller
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
                 ->get();
+            
+            $users = DB::table('users')
+                ->where('userType', '=', 'pastor')
+                ->get();
 
             return view('Admin.allActivity', compact('activities','users'));
         } else {
