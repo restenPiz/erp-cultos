@@ -64,6 +64,13 @@
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
+                                            <label for="basiInput" class="form-label">Nome do Culto</label>
+                                            <input type="text" class="form-control" id="basiInput"
+                                                placeholder="Digite o nome do culto" name="Name_cult">
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <div>
                                             <label for="basiInput" class="form-label">Pregador</label>
                                             <input type="text" class="form-control" id="basiInput"
                                                 placeholder="Digite o nome do Pregador" name="Preacher">
