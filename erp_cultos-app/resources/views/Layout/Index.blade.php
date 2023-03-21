@@ -1247,149 +1247,18 @@
                                             data-bs-toggle="collapse" role="button" aria-expanded="false"
                                             aria-controls="sidebarAdvanceUI">
                                             <i class="ri-stack-line"></i> <span
-                                                data-key="t-advance-ui">Patrimonio</span>
+                                                data-key="t-advance-ui">Relatorio de Actividades</span>
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
                                                     <a href="{{ route('addPatrimony') }}" class="nav-link"
-                                                        data-key="t-sweet-alerts">Adicionar patrimonio</a>
+                                                        data-key="t-sweet-alerts">Adicionar Relatorio de Actividades</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="{{ route('allPatrimony') }}" class="nav-link"
-                                                        data-key="t-nestable-list">Todo patrimonio da igreja</a>
+                                                        data-key="t-nestable-list">Detalhes de Relatorio de Actividades</a>
                                                 </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarForms">
-                                            <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Culto</span>
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarForms">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="{{ route('addCult') }}" class="nav-link"
-                                                        data-key="t-basic-elements">Adicionar culto</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{ route('allCult') }}" class="nav-link"
-                                                        data-key="t-form-select">Detalhes do culto</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarTables">
-                                            <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Filiais</span>
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarTables">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="{{ route('addBranches') }}" class="nav-link"
-                                                        data-key="t-basic-tables">Adicionar filiais</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{ route('allBranches') }}" class="nav-link"
-                                                        data-key="t-grid-js">Todas
-                                                        filiais</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    {{-- Inicio dos links contendo os caminhos dos usuarios --}}
-                                    <li class="menu-title"><span data-key="t-menu">Usuarios</span></li>
-                                    <li class="nav-item">
-                                        <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarIcons">
-                                            <i class="ri-compasses-2-line"></i> <span data-key="t-icons">Pastor
-                                                Auxiliar</span>
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarIcons">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="{{ route('addShepherd') }}" class="nav-link"
-                                                        data-key="t-remix">Adicionar pastor</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{ route('allShepherd') }}" class="nav-link"
-                                                        data-key="t-boxicons">Todos
-                                                        pastores</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarUI">
-                                            <i class="ri-pencil-ruler-2-line"></i> <span
-                                                data-key="t-base-ui">Tesoureiros</span>
-                                        </a>
-                                        <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <ul class="nav nav-sm flex-column">
-                                                        <li class="nav-item">
-                                                            <a href="{{ route('addTreasurer') }}" class="nav-link"
-                                                                data-key="t-alerts">Adicionar Tesoureiro</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a href="{{ route('allTreasurer') }}" class="nav-link"
-                                                                data-key="t-badges">Todos
-                                                                tesoureiros</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link menu-link" href="#sidebarMultilevel"
-                                            data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                            aria-controls="sidebarMultilevel">
-                                            <i class="ri-share-line"></i> <span data-key="t-multi-level">Lider de
-                                                louvor</span>
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarMultilevel">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="{{ route('addWorship_leader') }}" class="nav-link"
-                                                        data-key="t-level-1.1">Adicionar lider de
-                                                        louvor</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{ route('allWorship_leader') }}" class="nav-link"
-                                                        data-key="t-level-1.1">
-                                                        Detalhes</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                                            <i class="ri-account-circle-line"></i> <span
-                                                data-key="t-authentication">Membros</span>
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarAuth">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="#sidebarSignIn" class="nav-link"> Adicionar membro
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#sidebarSignUp" class="nav-link"> Todos membros
-                                                    </a>
-                                                </li>
-
                                             </ul>
                                         </div>
                                     </li>
