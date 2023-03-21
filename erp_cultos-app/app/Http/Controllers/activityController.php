@@ -16,7 +16,7 @@ class activityController extends Controller
 {
     public function addActivity()
     {
-        if (Auth::user()->hasRole('admin') && Auth::user()->hasRole('shepherd')) {
+        if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
             //Usando as query builds para retornar os dados do usuario
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')

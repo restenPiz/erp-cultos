@@ -20,7 +20,7 @@ Route::get('/dashShepherd', [dashboardController::class, 'indexShepherd'])->midd
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 //Inicio das rotas da parte de administrador
-Route::group(['prefix' => 'admin','shepherd', 'middleware' => ['role:admin', 'role:shepherd']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
     
     //Inicio das rotas da parte de tesoureiros
     Route::get('/addTreasurer', [treasurerController::class, 'addTreasurer'])->middleware(['auth'])->name('addTreasurer');
@@ -50,20 +50,12 @@ Route::group(['prefix' => 'admin','shepherd', 'middleware' => ['role:admin', 'ro
     Route::post('/updateCult/{id}', [cultController::class, 'updateCult'])->middleware(['auth'])->name('updateCult');
     Route::get('/deleteCult/{id}', [cultController::class, 'deleteCult'])->middleware(['auth'])->name('deleteCult');
     
-    //Inicio da parte de actividade
-    Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
-    Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
-    Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
-    Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
-    Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
-    
     //Inicio da parte de Patrimonio 
     Route::get('/addPatrimony', [patrimonyController::class, 'addPatrimony'])->middleware(['auth'])->name('addPatrimony');
     Route::post('/storePatrimony', [patrimonyController::class, 'storePatrimony'])->middleware(['auth'])->name('storePatrimony');
     Route::get('/allPatrimony', [patrimonyController::class, 'allPatrimony'])->middleware(['auth'])->name('allPatrimony');
     Route::post('/updatePatrimony/{id}', [patrimonyController::class, 'updatePatrimony'])->middleware(['auth'])->name('updatePatrimony');
     Route::get('/deletePatrimony/{id}', [patrimonyController::class, 'deletePatrimony'])->middleware(['auth'])->name('deletePatrimony');
-
     
     //Inicio das rotas que serao usadas por dois usuarios em simultanes
     Route::get('/addShepherd', [shepherdController::class, 'addShepherd'])->middleware(['auth'])->name('addShepherd');
@@ -73,5 +65,14 @@ Route::group(['prefix' => 'admin','shepherd', 'middleware' => ['role:admin', 'ro
     Route::get('/deleteShepherd/{id}', [shepherdController::class, 'deleteShepherd'])->middleware(['auth'])->name('deleteShepherd');
 
 });
+
+
+//Inicio da parte de actividade
+Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
+Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
+Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
+Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
+Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
+
 
 require __DIR__.'/auth.php';
