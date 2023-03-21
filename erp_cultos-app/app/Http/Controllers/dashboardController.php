@@ -17,10 +17,8 @@ class dashboardController extends Controller
         if(Auth::user()->hasRole('admin'))
         {
             return view('Admin.Index');
-        }
-        if(Auth::user()->hasRole('shepherd'))
-        {
-            return view('Shepherd.Index');
+        }else{
+            return 404;
         }
     }
 }
