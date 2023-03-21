@@ -137,20 +137,22 @@
                                                                 </div>
 
                                                                 <div>
-                                                                    <label for="status-field" class="form-label">Nome do Departamento</label>
+                                                                    <label for="status-field" class="form-label">Nome do
+                                                                        Departamento</label>
                                                                     <select class="form-control" name="Group"
                                                                         id="status-field" required>
                                                                         <option value="{{ $activity->Group }}">
                                                                             {{ $activity->Group }}</option>
 
+
                                                                         <option value="Departamento dos jovens">Departamento
                                                                             dos Jovens</option>
-                                                                        <option value="Departamento dos Adolescentes">
-                                                                            Departamento dos Adolescentes</option>
-                                                                        <option value="Departamento dos Adultos">Departamento
-                                                                            dos Adultos</option>
-                                                                        <option value="Departamento dos Idosos">Departamento
-                                                                            dos Idosos</option>
+                                                                        <option value="Departamento dos Pais">Departamento dos
+                                                                            Pais</option>
+                                                                        <option value="Departamento dos Maes">Departamento dos
+                                                                            Maes</option>
+                                                                        <option value="Departamento dos Criancas">Departamento
+                                                                            dos Criancas</option>
                                                                     </select>
                                                                 </div>
 
