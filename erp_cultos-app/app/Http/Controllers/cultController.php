@@ -33,6 +33,7 @@ class cultController extends Controller
             $table=new Cult();
 
             $table->Day_of_cult=Request::input('Day_of_cult');
+            $table->Name_cult=Request::input('Name_cult');
             $table->Hour=Request::input('Hour');
             $table->Duration=Request::input('Duration');
             $table->Leader=Request::input('Leader');
