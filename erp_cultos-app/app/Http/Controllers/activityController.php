@@ -16,7 +16,7 @@ class activityController extends Controller
 {
     public function addActivity()
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin') && Auth::user()->hasRole('shepherd')) {
             //Usando as query builds para retornar os dados do usuario
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
@@ -38,7 +38,7 @@ class activityController extends Controller
     }
     public function storeActivity()
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin') && Auth::user()->hasRole('shepherd')) {
             $table = new Activity();
 
             $table->Hour = Request::input('Hour');
@@ -65,7 +65,7 @@ class activityController extends Controller
     }
     public function allActivity()
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin') && Auth::user()->hasRole('shepherd')) {
             $activities = Activity::all();
 
             $users = DB::table('users')
@@ -84,7 +84,7 @@ class activityController extends Controller
     }
     public function updateActivity($id)
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin') && Auth::user()->hasRole('shepherd')) {
 
             $activities = Activity::findOrFail($id);
 
@@ -112,7 +112,7 @@ class activityController extends Controller
     }
     public function deleteActivity($id)
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin') && Auth::user()->hasRole('shepherd')) {
 
             $activity = Activity::findOrFail($id);
             
