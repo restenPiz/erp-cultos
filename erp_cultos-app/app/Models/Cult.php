@@ -13,6 +13,7 @@ class Cult extends Model
 
     protected $fillable=[
         'Day_of_cult',
+        'Name_cult',
         'Hour',
         'Duration',
         'Leader',
