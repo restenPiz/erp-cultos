@@ -79,6 +79,7 @@ class cultController extends Controller
             $cult=Cult::findOrFail($id);
 
             $cult->Day_of_cult=Request::input('Day_of_cult');
+            $cult->Name_cult=Request::input('Name_cult');
             $cult->Hour=Request::input('Hour');
             $cult->Duration=Request::input('Duration');
             $cult->Leader=Request::input('Leader');
