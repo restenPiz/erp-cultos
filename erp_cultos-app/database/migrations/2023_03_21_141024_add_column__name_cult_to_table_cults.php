@@ -6,26 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 class AddColumnNameCultToTableCults extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::table('table_cults', function (Blueprint $table) {
+        Schema::table('cults', function (Blueprint $table) {
             //
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::table('table_cults', function (Blueprint $table) {
+        Schema::table('cults', function (Blueprint $table) {
             $table->string('Name_cult');
         });
     }
