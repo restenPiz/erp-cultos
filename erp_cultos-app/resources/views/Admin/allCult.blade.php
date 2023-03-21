@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="card">
                             <div class="card-header align-items-center d-flex">
-                                <h4 class="card-title mb-0 flex-grow-1">{{ $cult->Title }}</h4>
+                                <h4 class="card-title mb-0 flex-grow-1">{{ $cult->Name_cult }}</h4>
                                 <div class="flex-shrink-0">
                                     <div class="form-check form-switch form-switch-right form-switch-md">
                                         <label for="accordion-bordered-showcode" class="form-label text-muted">Accoes</label>
