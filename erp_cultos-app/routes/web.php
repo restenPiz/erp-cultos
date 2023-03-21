@@ -73,4 +73,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     
 });
 
+//Inicio das rotas da parte do pastor auxiliar
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+
+
+    
+});
+
 require __DIR__.'/auth.php';
