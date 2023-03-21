@@ -1219,14 +1219,23 @@
                                     <li class="nav-item">
                                         <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse"
                                             role="button" aria-expanded="false" aria-controls="sidebarPages">
-                                            <i class="ri-pages-line"></i> <span data-key="t-pages">Mensagem</span>
+                                            <i class="ri-pages-line"></i> <span data-key="t-pages">Comunicado</span>
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarPages">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
                                                     <a href="pages-starter.html" class="nav-link"
-                                                        data-key="t-starter"> Compor
-                                                        mensagem
+                                                        data-key="t-starter"> Inserir Comunicado
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="collapse menu-dropdown" id="sidebarPages">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="pages-starter.html" class="nav-link"
+                                                        data-key="t-starter"> Detalhes do Comunicado
                                                     </a>
                                                 </li>
                                             </ul>
