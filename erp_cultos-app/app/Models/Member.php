@@ -34,4 +34,9 @@ class Member extends Model
     {
         return $this->belongsToMany(Department::class, 'department_member');
     }
+
+    public function name($id)
+    {
+        return Department::find($id)->Name;
+    }
 }
