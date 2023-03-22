@@ -15,6 +15,14 @@ class CreateDepartmentMembersTable extends Migration
     {
         Schema::create('department_members', function (Blueprint $table) {
             $table->id();
+            
+            //Inicio da coluna contendo a chave estrangeiraa
+            $table->integer('id_member')->unsigned();
+            $table->foreign('id_member')->references('id')->on('members');
+
+            $table->integer('id_departments')->unsigned();
+            $table->foreign('id_departments')->references('id')->on('departments');
+
             $table->timestamps();
         });
     }
