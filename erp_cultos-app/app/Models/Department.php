@@ -14,4 +14,10 @@ class Department extends Model
     protected $fillable=[
         'Name'
     ];
+    
+    //Inicio do metodo responsavel por ligar as tabelas
+    public function Departments()
+    {
+        return $this->belongsToMany(Department::class, 'department_member');
+    }
 }

@@ -28,4 +28,10 @@ class Member extends Model
         'Affiliation',
         'Theological_level'
     ];
+
+    //Inicio da parte do metodo responsavel por conectar as tabelas
+    public function departments()
+    {
+        return $this->belongsToMany(Department::class, 'department_member');
+    }
 }
