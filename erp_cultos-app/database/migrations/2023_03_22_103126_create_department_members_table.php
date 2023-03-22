@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateDepartmentMembersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('department_members', function (Blueprint $table) {
@@ -26,12 +21,6 @@ class CreateDepartmentMembersTable extends Migration
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('department_members');
