@@ -11,7 +11,7 @@ class memberSeeder extends Seeder
     {
         $dados = [];
 
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 7; $i++) {
             $dados[] = [
                 'Name'=>'Mauro',
                 'Password'=>'mauro123',
