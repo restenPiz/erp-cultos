@@ -12,6 +12,20 @@ class Member extends Model
     protected $table='members';
 
     protected $fillable=[
-        
+        'Name',
+        'Password',
+        'Password_confirmation',
+        'Email',
+        'Profission',
+        'Number_of_bi',
+        'Gender',
+        'Contact',
+        'Surname',
+        'Date_of_birth',
+        'Marital_status',
+        'Baptism',
+        'Time_in_church',
+        'Affiliation',
+        'Theological_level'
     ];
 }
