@@ -981,8 +981,8 @@
                         </button>
                     </div>
                 @endrole
-                
-                @role('shepherd')
+
+                @role('worship_leader')
                 <div class="app-menu navbar-menu">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
