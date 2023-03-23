@@ -66,13 +66,19 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
 
 });
 
-
 //Inicio da parte de actividade
 Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
 Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
 Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
 Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
 Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
+
+//Inicio das rotas da parte do lider de louvor
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+
+    
+
+});
 
 
 require __DIR__.'/auth.php';
