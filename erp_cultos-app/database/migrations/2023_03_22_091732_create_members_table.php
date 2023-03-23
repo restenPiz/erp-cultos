@@ -17,7 +17,7 @@ class CreateMembersTable extends Migration
             $table->id();
             $table->string('Nome');
             $table->string('Senha');
-            $table->string('Password_confirmation');
+            $table->string('Senha_de_confirmacao');
             $table->string('Email')->unique();
             $table->string('Profission');
             $table->string('Number_of_bi');
