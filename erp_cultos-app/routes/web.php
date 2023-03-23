@@ -74,9 +74,9 @@ Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'
 Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
 
 //Inicio das rotas da parte do lider de louvor
-Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leader']], function () {
 
-    
+
 
 });
 
