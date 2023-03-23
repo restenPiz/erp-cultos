@@ -17,5 +17,6 @@ class dashboardController extends Controller
         {
             return view('Shepherd.Index');
         }
+        if(Auth::user()->hasRole('worship_leader'))
     }
 }
