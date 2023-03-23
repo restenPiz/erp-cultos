@@ -15,7 +15,7 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
+            $table->string('Nome');
             $table->string('Password');
             $table->string('Password_confirmation');
             $table->string('Email')->unique();
