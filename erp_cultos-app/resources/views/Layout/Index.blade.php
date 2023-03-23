@@ -1363,7 +1363,9 @@
                     <div class="page-content">
                         <div class="container-fluid">
 
+                            {{--Inicio do conteudo do sistemaa--}}
                             @yield('content')
+                            {{--Fim do conteudo do sistema--}}
 
                         </div>
                         <!-- container-fluid -->
