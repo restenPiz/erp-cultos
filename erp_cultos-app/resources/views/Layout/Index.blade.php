@@ -1305,7 +1305,7 @@
                                     @endrole
 
 
-                                    @role('shepherd')
+                                    @role('worship_leader')
                                         {{-- Inicio do menu da parte de pastor --}}
 
                                         <ul class="navbar-nav" id="navbar-nav">
