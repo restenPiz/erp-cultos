@@ -17,7 +17,7 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-
+            $table=new File();
         }
         else
         {
