@@ -19,8 +19,8 @@ class fileController extends Controller
         {
             $table=new File();
 
-            $Name_type = $request->file('imagem')->getClientOriginalName();
-            $File_type = $request->file('imagem')->getClientOriginalExtension();
+            $Name_type = $request->file('ficheiros')->getClientOriginalName();
+            $File_type = $request->file('ficheiros')->getClientOriginalExtension();
             $Path = $request->file('imagem')->store('imagens');
         
             $table->Name_file=$Name_type;
