@@ -26,7 +26,10 @@ class fileController extends Controller
 
             $table->save();
 
-            
+            Alert::success('Adicionado','O seu ficheiro foi adicionado com sucesso!');
+
+            return redirect()->route('allFile');
+
         }
         else
         {
