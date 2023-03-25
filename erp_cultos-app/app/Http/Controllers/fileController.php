@@ -13,15 +13,19 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class fileController extends Controller
 {
-    public function storeFile()
+    public function storeFile(Request $request)
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
             $table=new File();
 
-            $table->Name_file=Request::input('Name_file');
-            $table->File_type=Request::input('File_type');
-            $table->Path=Request::input('Path');
+            $Name_type = $request->file('imagem')->getClientOriginalName();
+            $File_type = $request->file('imagem')->getClientOriginalExtension();
+            $Path = $request->file('imagem')->store('imagens');
+        
+            $table->Name_file=$Name_type;
+            $table->File_type=$File_type;
+            $table->Path=$Path;
             $table->Description=Request::input('Description');
 
             $table->save();
@@ -29,7 +33,6 @@ class fileController extends Controller
             Alert::success('Adicionado','O seu ficheiro foi adicionado com sucesso!');
 
             return redirect()->route('allFile');
-
         }
         else
         {
