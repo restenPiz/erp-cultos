@@ -51,7 +51,7 @@
                                 <ul class="nav nav-pills animation-nav profile-nav gap-2 gap-lg-3 flex-grow-1" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link fs-14 active" data-bs-toggle="tab" href="#overview-tab" role="tab">
-                                            <i class="ri-airplay-fill d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Overview</span>
+                                            <i class="ri-airplay-fill d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Inicio</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
