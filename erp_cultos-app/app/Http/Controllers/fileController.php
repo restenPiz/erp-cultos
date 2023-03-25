@@ -15,6 +15,15 @@ class fileController extends Controller
 {
     public function storeFile()
     {
+        if(Auth::user()->hasRole('worship_leader'))
+        {
 
+        }
+        else
+        {
+            Alert::error('Nao Autenticado','Voce nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
 }
