@@ -23,6 +23,10 @@ class fileController extends Controller
             $table->File_type=Request::input('File_type');
             $table->Path=Request::input('Path');
             $table->Description=Request::input('Description');
+
+            $table->save();
+
+            
         }
         else
         {
