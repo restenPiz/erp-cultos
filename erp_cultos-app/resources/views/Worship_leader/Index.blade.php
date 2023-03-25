@@ -56,17 +56,17 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link fs-14" data-bs-toggle="tab" href="#activities" role="tab">
-                                            <i class="ri-list-unordered d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Activities</span>
+                                            <i class="ri-list-unordered d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Videos</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link fs-14" data-bs-toggle="tab" href="#projects" role="tab">
-                                            <i class="ri-price-tag-line d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Projects</span>
+                                            <i class="ri-price-tag-line d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Imagens</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link fs-14" data-bs-toggle="tab" href="#documents" role="tab">
-                                            <i class="ri-folder-4-line d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Documents</span>
+                                            <i class="ri-folder-4-line d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Documentos</span>
                                         </a>
                                     </li>
                                 </ul>
