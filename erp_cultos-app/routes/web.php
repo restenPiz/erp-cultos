@@ -77,10 +77,10 @@ Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity']
 Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leader']], function () {
 
     //Inicio das rotas para gerir os ficheiros File
-    Route::post('/storeFile', [FileController::class, 'storeFile'])->middleware(['auth'])->name('storeFile');
-    Route::get('/allFile', [FileController::class, 'allFile'])->middleware(['auth'])->name('allFile');
-    Route::post('/updateFile/{id}', [FileController::class, 'updateFile'])->middleware(['auth'])->name('updateFile');
-    Route::get('/deleteFile/{id}', [FileController::class, 'deleteFile'])->middleware(['auth'])->name('deleteFile');
+    Route::post('/storeFile', [fileController::class, 'storeFile'])->middleware(['auth'])->name('storeFile');
+    Route::get('/allFile', [fileController::class, 'allFile'])->middleware(['auth'])->name('allFile');
+    Route::post('/updateFile/{id}', [fileController::class, 'updateFile'])->middleware(['auth'])->name('updateFile');
+    Route::get('/deleteFile/{id}', [fileController::class, 'deleteFile'])->middleware(['auth'])->name('deleteFile');
 
 
 });
