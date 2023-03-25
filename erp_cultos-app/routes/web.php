@@ -82,7 +82,6 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
     Route::post('/updateFile/{id}', [fileController::class, 'updateFile'])->middleware(['auth'])->name('updateFile');
     Route::get('/deleteFile/{id}', [fileController::class, 'deleteFile'])->middleware(['auth'])->name('deleteFile');
 
-
 });
 
 
