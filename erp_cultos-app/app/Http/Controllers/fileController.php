@@ -13,20 +13,25 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class fileController extends Controller
 {
-    public function storeFile(Request $request)
+    public function storeFile()
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
             $table=new File();
 
-            $Name_type = $request->file('ficheiros')->getClientOriginalName();
-            $File_type = $request->file('ficheiros')->getClientOriginalExtension();
-            $Path = $request->file('imagem')->store('imagens');
-        
-            $table->Name_file=$Name_type;
-            $table->File_type=$File_type;
-            $table->Path=$Path;
+            $table->Name_file=Request::input('Name_file');
+            $table->File_type=Request::input('File_type');
+            $table->Path=Request::input('Path');
             $table->Description=Request::input('Description');
+
+            if(Request::file('Ficheiros')!=null)
+            {
+                $filename = Request::file('ficheiros')->getClientOriginalName();
+                $link = "fotos/book/" . $filename;
+                $table->imagen = $link;
+                $foto = Request::file('imagen');
+                $foto->move('fotos/book', $filename);
+            }
 
             $table->save();
 
