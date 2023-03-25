@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Models\File;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +18,8 @@ class fileController extends Controller
         if(Auth::user()->hasRole('worship_leader'))
         {
             $table=new File();
+
+            $table->Name_file=Request::input('Name_file');
         }
         else
         {
