@@ -46,4 +46,12 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
+
+    public function allFile()
+    {
+        if(Auth::user()->hasRole('worship_leader'))
+        {
+            return view('Worship_leader.allFile');
+        }
+    }
 }
