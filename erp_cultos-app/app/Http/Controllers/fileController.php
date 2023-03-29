@@ -27,10 +27,10 @@ class fileController extends Controller
             if(Request::file('File')!=null)
             {
                 $filename = Request::file('File')->getClientOriginalName();
-                $link = "Ficheiros" . $filename;
-                $table->imagen = $link;
-                $foto = Request::file('imagen');
-                $foto->move('fotos/book', $filename);
+                $link = "Ficheiros/" . $filename;
+                $table->File = $link;
+                $foto = Request::file('File');
+                $foto->move('Ficheiros', $filename);
             }
 
             $table->save();
