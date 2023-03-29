@@ -90,6 +90,8 @@ class fileController extends Controller
 
             $file->save();
 
+            Alert('Actualizado!','O ficheiro foi actualizado com sucesso!');
+
             return redirect()->back();
         }
         else
