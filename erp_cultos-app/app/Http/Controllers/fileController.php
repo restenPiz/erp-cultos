@@ -55,5 +55,18 @@ class fileController extends Controller
 
             return view('Worship_leader.allFile', compact('files'));
         }
+        else
+        {
+            Alert('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function updateFile()
+    {
+        if(Auth::user()->hasRole('worship_leader'))
+        {
+
+        }
     }
 }
