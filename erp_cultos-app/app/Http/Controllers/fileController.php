@@ -52,7 +52,7 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-            $files=File::all();
+            $files=Files::all();
 
             return view('Worship_leader.allFile', compact('files'));
         }
@@ -63,6 +63,7 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
+
     public function updateFile($id)
     {
         if(Auth::user()->hasRole('worship_leader'))
