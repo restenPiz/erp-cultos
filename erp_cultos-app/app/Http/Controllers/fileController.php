@@ -89,6 +89,8 @@ class fileController extends Controller
             }
 
             $file->save();
+
+            return redirect()->back();
         }
         else
         {
