@@ -68,5 +68,11 @@ class fileController extends Controller
         {
 
         }
+        else
+        {
+            Alert('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
 }
