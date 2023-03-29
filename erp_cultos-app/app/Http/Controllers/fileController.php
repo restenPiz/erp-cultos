@@ -67,7 +67,7 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-            $file=File::findOrFail($id);
+            $file=Files::findOrFail($id);
 
             $file->Name_file=Request::input('Name_file');
             $file->Type_file=Request::input('Type_file');
@@ -107,6 +107,11 @@ class fileController extends Controller
         if(Auth::user()->hasRole('worship_leader'))
         {
             $file=Files::findOrFail($id);
+
+            $local = $file->File;
+            if (File::exists($local)) {
+                File::delete($local);
+            }
 
             $file->delete();
 
