@@ -108,7 +108,7 @@ class fileController extends Controller
         {
             $file=Files::findOrFail($id);
 
-            $file->destroy();
+            $file->delete();
 
             Alert('Eliminado!','O ficheiro foi eliminado com sucesso!');
 
