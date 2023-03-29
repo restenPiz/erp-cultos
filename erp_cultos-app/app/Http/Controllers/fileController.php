@@ -71,6 +71,7 @@ class fileController extends Controller
 
             $file->Name_file=Request::input('Name_file');
             $file->Type_file=Request::input('Type_file');
+            $file->Path=Request::input('Path');
             $file->Description=Request::input('Description');
             $local = $file->File;
 
@@ -79,13 +80,15 @@ class fileController extends Controller
             }
     
             //Capturando a imagem
-            if (Request::file('imagen') != null) {
-                $filename = Request::file('imagen')->getClientOriginalName();
-                $link = "fotos/book/" . $filename;
-                $table->imagen = $link;
-                $foto = Request::file('imagen');
-                $foto->move('fotos/book', $filename);
+            if (Request::file('File') != null) {
+                $filename = Request::file('File')->getClientOriginalName();
+                $link = "Ficheiros/" . $filename;
+                $file->File = $link;
+                $foto = Request::file('File');
+                $foto->move('Ficheiros/', $filename);
             }
+
+            $file->save();
         }
         else
         {
