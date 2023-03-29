@@ -51,7 +51,9 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-            return view('Worship_leader.allFile');
+            $files=File::all();
+
+            return view('Worship_leader.allFile', compact('files'));
         }
     }
 }
