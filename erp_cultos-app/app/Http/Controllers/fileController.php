@@ -101,4 +101,24 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
+
+    public function destroyFile($id)
+    {
+        if(Auth::user()->hasRole('worship_leader'))
+        {
+            $file=Files::findOrFail($id);
+
+            $file->destroy();
+
+            Alert('Eliminado!','O ficheiro foi eliminado com sucesso!');
+
+            return redirect()->back();
+        }
+        else
+        {
+            Alert('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
