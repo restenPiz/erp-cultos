@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Request;
-use App\Models\File;
+use App\Models\Files;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\File;
 
 class fileController extends Controller
 {
@@ -17,7 +18,7 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-            $table=new File();
+            $table=new Files();
 
             $table->Name_file=Request::input('Name_file');
             $table->File_type=Request::input('File_type');
@@ -62,11 +63,29 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
-    public function updateFile()
+    public function updateFile($id)
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
+            $file=File::findOrFail($id);
 
+            $file->Name_file=Request::input('Name_file');
+            $file->Type_file=Request::input('Type_file');
+            $file->Description=Request::input('Description');
+            $local = $file->File;
+
+            if (File::exists($local)) {
+                File::delete($local);
+            }
+    
+            //Capturando a imagem
+            if (Request::file('imagen') != null) {
+                $filename = Request::file('imagen')->getClientOriginalName();
+                $link = "fotos/book/" . $filename;
+                $table->imagen = $link;
+                $foto = Request::file('imagen');
+                $foto->move('fotos/book', $filename);
+            }
         }
         else
         {
