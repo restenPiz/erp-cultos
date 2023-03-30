@@ -88,9 +88,9 @@
                                         <!--end col-->
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="phonenumberInput" class="form-label">Phone Number</label>
-                                                <input type="text" class="form-control" id="phonenumberInput"
-                                                    placeholder="Enter your phone number" value="+(1) 987 6543">
+                                                <label for="phonenumberInput" class="form-label">Descricao</label>
+                                                <input type="text" class="form-control" name="Description"
+                                                    placeholder="Digite a descricao">
                                             </div>
                                         </div>
                                         <!--end col-->
