@@ -1,6 +1,6 @@
 @extends('Layout.Index')
-
 @section('content')
+
     @role('worship_leader')
         {{-- Inicio do conteudo do sistema --}}
         <div class="position-relative mx-n4 mt-n4">
@@ -39,75 +39,6 @@
                             </div>
                             <h5 class="fs-16 mb-1">Anna Adame</h5>
                             <p class="text-muted mb-0">Lead Designer / Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end card-->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="flex-grow-1">
-                                <h5 class="card-title mb-0">Complete Your Profile</h5>
-                            </div>
-                            <div class="flex-shrink-0">
-                                <a href="javascript:void(0);" class="badge bg-light text-primary fs-12"><i
-                                        class="ri-edit-box-line align-bottom me-1"></i> Edit</a>
-                            </div>
-                        </div>
-                        <div class="progress animated-progress custom-progress progress-label">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="label">30%</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="flex-grow-1">
-                                <h5 class="card-title mb-0">Portfolio</h5>
-                            </div>
-                            <div class="flex-shrink-0">
-                                <a href="javascript:void(0);" class="badge bg-light text-primary fs-12"><i
-                                        class="ri-add-fill align-bottom me-1"></i> Add</a>
-                            </div>
-                        </div>
-                        <div class="mb-3 d-flex">
-                            <div class="avatar-xs d-block flex-shrink-0 me-3">
-                                <span class="avatar-title rounded-circle fs-16 bg-dark text-light">
-                                    <i class="ri-github-fill"></i>
-                                </span>
-                            </div>
-                            <input type="email" class="form-control" id="gitUsername" placeholder="Username"
-                                value="@daveadame">
-                        </div>
-                        <div class="mb-3 d-flex">
-                            <div class="avatar-xs d-block flex-shrink-0 me-3">
-                                <span class="avatar-title rounded-circle fs-16 bg-primary">
-                                    <i class="ri-global-fill"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="websiteInput" placeholder="www.example.com"
-                                value="www.velzon.com">
-                        </div>
-                        <div class="mb-3 d-flex">
-                            <div class="avatar-xs d-block flex-shrink-0 me-3">
-                                <span class="avatar-title rounded-circle fs-16 bg-success">
-                                    <i class="ri-dribbble-fill"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="dribbleName" placeholder="Username"
-                                value="@dave_adame">
-                        </div>
-                        <div class="d-flex">
-                            <div class="avatar-xs d-block flex-shrink-0 me-3">
-                                <span class="avatar-title rounded-circle fs-16 bg-danger">
-                                    <i class="ri-pinterest-fill"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="pinterestName" placeholder="Username"
-                                value="Advance Dave">
                         </div>
                     </div>
                 </div>
