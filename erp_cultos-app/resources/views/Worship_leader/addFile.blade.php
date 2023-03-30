@@ -64,7 +64,7 @@
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Nome do Ficheiro</label>
-                                                <input type="text" class="form-control" id="firstnameInput"
+                                                <input type="text" class="form-control" id="firstnameInput" name="Name_file"
                                                     placeholder="Enter your firstname" value="Nome do Ficheiro">
                                             </div>
                                         </div>

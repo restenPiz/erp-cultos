@@ -36,7 +36,6 @@ class fileController extends Controller
 
             $table->Name_file=Request::input('Name_file');
             $table->File_type=Request::input('File_type');
-            $table->Path=Request::input('Path');
             $table->Description=Request::input('Description');
 
             if(Request::file('File')!=null)
@@ -86,7 +85,6 @@ class fileController extends Controller
 
             $file->Name_file=Request::input('Name_file');
             $file->Type_file=Request::input('Type_file');
-            $file->Path=Request::input('Path');
             $file->Description=Request::input('Description');
             $local = $file->File;
 

@@ -15,7 +15,6 @@ class Files extends Model
         'Name_file',
         'File',
         'Type_file',
-        'Path',
         'Description',
     ];
 }
