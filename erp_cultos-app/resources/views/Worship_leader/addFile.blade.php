@@ -73,7 +73,7 @@
                                             <div class="mb-3">
                                                 <label for="lastnameInput" class="form-label">Tipo de Ficheiro</label>
 
-                                                <select class="form-control">
+                                                <select class="form-control" name="Type_file">
                                                     <option value="Arquivo_texto">Texto</option>
                                                     <option value="Arquivo_imagem">Imagem</option>
                                                     <option value="Arquivo_audio">Audio</option>
