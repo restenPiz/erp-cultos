@@ -1,9 +1,9 @@
 @extends('Layout.Index')
 
 @section('content')
-    @role('admin')
+    @role('worship_leader')
         {{-- Inicio do conteudo do meu sistem --}}
-        <form action="{{ route('storeActivity') }}" method="post">
+        <form action="{{ route('storeFile') }}" method="post">
             @csrf
 
             <div class="row">
