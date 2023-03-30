@@ -68,7 +68,7 @@ class fileController extends Controller
         {
             $files=Files::all();
 
-            return view('Worship_leader.allFile', compact('files'));
+            return view('Worship_leader.Index', compact('files'));
         }
         else
         {
