@@ -63,9 +63,9 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="firstnameInput" class="form-label">First Name</label>
+                                                <label for="firstnameInput" class="form-label">Nome do Ficheiro</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="Enter your firstname" value="Dave">
+                                                    placeholder="Enter your firstname" value="Nome do Ficheiro">
                                             </div>
                                         </div>
                                         <!--end col-->
