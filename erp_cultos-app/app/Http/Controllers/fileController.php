@@ -14,6 +14,20 @@ use Illuminate\Support\Facades\File;
 
 class fileController extends Controller
 {
+    public function addFile()
+    {
+        if(Auth::user()->hasRole('worship_leader'))
+        {
+            return view('Worship_leader.addFile');
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+
     public function storeFile()
     {
         if(Auth::user()->hasRole('worship_leader'))

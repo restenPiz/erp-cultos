@@ -78,6 +78,7 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
 
     //Inicio das rotas para gerir os ficheiros File
     Route::post('/storeFile', [fileController::class, 'storeFile'])->middleware(['auth'])->name('storeFile');
+    Route::post('/addFile', [fileController::class, 'addFile'])->middleware(['auth'])->name('addFile');
     Route::get('/allFile', [fileController::class, 'allFile'])->middleware(['auth'])->name('allFile');
     Route::post('/updateFile/{id}', [fileController::class, 'updateFile'])->middleware(['auth'])->name('updateFile');
     Route::get('/deleteFile/{id}', [fileController::class, 'deleteFile'])->middleware(['auth'])->name('deleteFile');
