@@ -1,6 +1,5 @@
 @extends('Layout.Index')
 @section('content')
-
     @role('worship_leader')
         {{-- Inicio do conteudo do sistema --}}
         <div class="position-relative mx-n4 mt-n4">
@@ -12,7 +11,7 @@
                             <input id="profile-foreground-img-file-input" type="file"
                                 class="profile-foreground-img-file-input">
                             <label for="profile-foreground-img-file-input" class="profile-photo-edit btn btn-light">
-                                <i class="ri-image-edit-line align-bottom me-1"></i> <a href="{{route('allFile')}}">Voltar</a>
+                                <i class="ri-image-edit-line align-bottom me-1"></i> <a href="{{ route('allFile') }}">Voltar</a>
                             </label>
                         </div>
                     </div>
@@ -59,7 +58,7 @@
                     <div class="card-body p-4">
                         <div class="tab-content">
                             <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                                <form action="javascript:void(0);">
+                                <form>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-3">
@@ -96,21 +95,39 @@
                                         <!--end col-->
                                         <div class="col-lg-12">
                                             <div class="mb-3">
-                                                <label for="skillsInput" class="form-label">Skills</label>
-                                                <select class="form-control" name="skillsInput" data-choices
-                                                    data-choices-text-unique-true multiple id="skillsInput">
-                                                    <option value="illustrator">Illustrator</option>
-                                                    <option value="photoshop">Photoshop</option>
-                                                    <option value="css">CSS</option>
-                                                    <option value="html">HTML</option>
-                                                    <option value="javascript" selected>Javascript</option>
-                                                    <option value="python">Python</option>
-                                                    <option value="php">PHP</option>
-                                                </select>
+                                                <div class="dropzone">
+                                                    <div class="fallback">
+                                                        <input name="File" type="file" multiple="multiple"
+                                                            class="form-control">
+                                                    </div>
+                                                    <div class="dz-message needsclick" style="text-align: center">
+                                                        <div class="mb-3">
+                                                            <i class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                                        </div>
+
+                                                        <h4>Faca o upload do seu ficheiro aqui.</h4>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!--end col-->
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div class="card">
+                        
+                                                {{-- Inicio da parte de butoes --}}
+                        
+                                                <button type="submit" name="submit" class="form-control bg-primary"
+                                                    style="color:white">Adicionar</button>
+                        
+                                                {{-- Fim da parte de butoes --}}
+                        
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <!--end row-->
                                 </form>
                             </div>
