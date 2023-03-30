@@ -58,7 +58,8 @@
                     <div class="card-body p-4">
                         <div class="tab-content">
                             <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                                <form>
+                                <form enctype="multipart/form-data" action="{{route('storeFile')}}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-3">
