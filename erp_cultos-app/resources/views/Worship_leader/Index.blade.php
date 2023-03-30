@@ -71,7 +71,7 @@
                                     </li>
                                 </ul>
                                 <div class="flex-shrink-0">
-                                    <a href="pages-profile-settings.html" class="btn btn-success"><i class="ri-edit-box-line align-bottom"></i> Adicionar Ficheiro</a>
+                                    <a href="{{route('addFile')}}" class="btn btn-success"><i class="ri-edit-box-line align-bottom"></i> Adicionar Ficheiro</a>
                                 </div>
                             </div>
                             <!-- Tab panes -->
