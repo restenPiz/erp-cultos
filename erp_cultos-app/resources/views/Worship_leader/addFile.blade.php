@@ -78,6 +78,10 @@
                                                     <option value="Arquivo_imagem">Imagem</option>
                                                     <option value="Arquivo_audio">Audio</option>
                                                     <option value="Arquivo_video">Video</option>
+                                                    <option value="Arquivo_planilha">Planilha</option>
+                                                    <option value="Arquivo_apresentacao">Apresentacao</option>
+                                                    <option value="Arquivo_programa">Programa</option>
+                                                    <option value="Arquivo_arquivo">Arquivo</option>
                                                 </select>
                                             </div>
                                         </div>
