@@ -71,9 +71,14 @@
                                         <!--end col-->
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="lastnameInput" class="form-label">Last Name</label>
-                                                <input type="text" class="form-control" id="lastnameInput"
-                                                    placeholder="Enter your lastname" value="Adame">
+                                                <label for="lastnameInput" class="form-label">Tipo de Ficheiro</label>
+
+                                                <select class="form-control">
+                                                    <option value="Arquivo_texto">Texto</option>
+                                                    <option value="Arquivo_imagem">Imagem</option>
+                                                    <option value="Arquivo_audio">Audio</option>
+                                                    <option value="Arquivo_video">Video</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <!--end col-->
