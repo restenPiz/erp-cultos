@@ -65,7 +65,7 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-            $files=Files::all();
+            $documents = DB::table('files')->where('Type_file', 'Arquivo_arquivo')->get();
 
             return view('Worship_leader.Index', compact('files'));
         }
