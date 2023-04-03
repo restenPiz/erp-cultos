@@ -69,7 +69,7 @@ class fileController extends Controller
             $images = DB::table('files')->where('Type_file', 'Arquivo_imagem')->get();
             $videos = DB::table('files')->where('Type_file', 'Arquivo_video')->get();
 
-            return view('Worship_leader.Index', compact('files'));
+            return view('Worship_leader.Index', compact('files','images','videos'));
         }
         else
         {
