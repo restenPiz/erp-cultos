@@ -86,7 +86,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <label for="phonenumberInput" class="form-label">Descricao</label>
                                                 <input type="text" class="form-control" name="Description"
