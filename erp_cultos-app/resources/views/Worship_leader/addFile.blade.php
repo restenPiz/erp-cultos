@@ -74,7 +74,7 @@
                                                 <label for="lastnameInput" class="form-label">Tipo de Ficheiro</label>
 
                                                 <select class="form-control" name="Type_file">
-                                                    <select>...</select>
+                                                    <option>...</option>
                                                     <option value="Arquivo_texto">Texto</option>
                                                     <option value="Arquivo_imagem">Imagem</option>
                                                     <option value="Arquivo_audio">Audio</option>
