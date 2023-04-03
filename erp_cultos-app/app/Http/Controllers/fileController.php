@@ -67,6 +67,7 @@ class fileController extends Controller
         {
             $documents = DB::table('files')->where('Type_file', 'Arquivo_arquivo')->get();
             $document_text = DB::table('files')->where('Type_file', 'Arquivo_texto')->get();
+            $images = DB::table('files')->where('Type_file', 'Arquivo_imagem')->get();
 
             return view('Worship_leader.Index', compact('files'));
         }
