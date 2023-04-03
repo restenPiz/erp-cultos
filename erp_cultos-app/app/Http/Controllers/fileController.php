@@ -35,7 +35,7 @@ class fileController extends Controller
             $table=new Files();
 
             $table->Name_file=Request::input('Name_file');
-            $table->File_type=Request::input('File_type');
+            $table->Type_file=Request::input('Type_file');
             $table->Description=Request::input('Description');
 
             if(Request::file('File')!=null)

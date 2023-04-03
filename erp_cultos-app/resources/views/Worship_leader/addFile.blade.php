@@ -36,7 +36,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <h5 class="fs-16 mb-1">Anna Adame</h5>
+                            <h5 class="fs-16 mb-1">{{Auth::user()->name}}</h5>
                             <p class="text-muted mb-0">Lead Designer / Developer</p>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <div class="card-body p-4">
                         <div class="tab-content">
                             <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                                <form enctype="multipart/form-data" action="{{route('storeFile')}}">
+                                <form enctype="multipart/form-data" action="{{route('storeFile')}}" method="post">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-6">
