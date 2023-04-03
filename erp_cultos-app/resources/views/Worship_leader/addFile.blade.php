@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <h5 class="fs-16 mb-1">{{Auth::user()->name}}</h5>
-                            <p class="text-muted mb-0">Lead Designer / Developer</p>
+                            <p class="text-muted mb-0">{{Auth::user()->userType}}</p>
                         </div>
                     </div>
                 </div>
