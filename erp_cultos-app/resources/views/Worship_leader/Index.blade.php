@@ -1743,63 +1743,16 @@
                                                                 id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateFile', ['id' => $user->id]) }}"
+                                                            action="{{ route('updateFile', ['id' => $image->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id">
                                                                     <label for="customername-field"
-                                                                        class="form-label">Nome</label>
+                                                                        class="form-label">Nome do Ficheiro</label>
                                                                     <input type="text" id="id-field"
-                                                                        name="name" class="form-control"
-                                                                        value="{{ $user->name }}" required />
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="customername-field"
-                                                                        class="form-label">Apelido</label>
-                                                                    <input type="text" id="customername-field"
-                                                                        class="form-control"
-                                                                        value="{{ $user->surname }}" name="surname"
-                                                                        required />
-                                                                    <div class="invalid-feedback">Por favor escreva bem o
-                                                                        seu
-                                                                        nome
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="email-field"
-                                                                        class="form-label">Email</label>
-                                                                    <input type="email" id="email-field"
-                                                                        class="form-control"
-                                                                        value="{{ $user->email }}" name="email"
-                                                                        required />
-                                                                    <div class="invalid-feedback">Digite o seu email de
-                                                                        forma
-                                                                        correcta.</div>
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="phone-field"
-                                                                        class="form-label">Contact</label>
-                                                                    <input type="text" id="phone-field"
-                                                                        class="form-control"
-                                                                        value="{{ $user->contact }}" name="contact"
-                                                                        required />
-                                                                    <div class="invalid-feedback">Please enter a phone.
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="date-field"
-                                                                        class="form-label">Funcao</label>
-                                                                    <input type="text" id="date-field"
-                                                                        name="function" class="form-control"
-                                                                        value="{{ $user->function }}" required />
-                                                                    <div class="invalid-feedback">Digite a sua funcao de
-                                                                        forma
-                                                                        correcta.</div>
+                                                                        name="Name_file" class="form-control"
+                                                                        value="{{ $image->Name_file }}" required />
                                                                 </div>
 
                                                                 <div>
