@@ -19,7 +19,7 @@ class dashboardController extends Controller
         }
         if(Auth::user()->hasRole('worship_leader'))
         {
-            return view('Worship_leader.Index');
+            return redirect()->route('allFile');
         }
     }
 }

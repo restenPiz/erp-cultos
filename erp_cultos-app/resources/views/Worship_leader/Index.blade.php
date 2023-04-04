@@ -1891,7 +1891,7 @@
                                                             <th scope="col">Nome do Ficheiro</th>
                                                             <th scope="col">Tipo de Ficheiro</th>
                                                             <th scope="col">Data de Carregamento</th>
-                                                            <th scope="col"></th>
+                                                            <th scope="col">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -1925,10 +1925,10 @@
                                                                         </a>
                                                                         <ul class="dropdown-menu dropdown-menu-end"
                                                                             aria-labelledby="dropdownMenuLink15">
-                                                                            <li><a class="dropdown-item"
+                                                                            {{---<li><a class="dropdown-item"
                                                                                     href="javascript:void(0);"><i
                                                                                         class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
-                                                                            </li>
+                                                                            </li>--}}
                                                                             <li><a class="dropdown-item" href="#"
                                                                                     download="{{ $file->File }}"><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
@@ -2006,11 +2006,11 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            {{-- <div class="text-center mt-3">
+                                             {{--<div class="text-center mt-3">
                                                 <a href="javascript:void(0);" class="text-success"><i
                                                         class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load
                                                     more </a>
-                                            </div> --}}
+                                            </div>--}}
                                         </div>
                                     </div>
                                 </div>
