@@ -1359,14 +1359,13 @@
                                                             <h5 class="mb-1"><a href="apps-nft-item-details.html">{{$image->Name_file}}</a></h5>
                                                             <p class="text-muted mb-0">{{$image->Type_file}}</p>
                                                         </div>
-                                                        <div class="card-footer border-top border-top-dashed">
+                                                        {{--<div class="card-footer border-top border-top-dashed">
                                                             <div class="d-flex align-items-center">
                                                                 <div class="flex-grow-1 fs-14">
-                                                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Highest: <span class="fw-medium">412.30ETH</span>
+                                                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Nome original: <span class="fw-medium">{{$image->filename}}</span>
                                                                 </div>
-                                                                <h5 class="flex-shrink-0 fs-14 text-primary mb-0">394.7 ETH</h5>
                                                             </div>
-                                                        </div>
+                                                        </div>--}}
                                                     </div>
                                                 </div>
                                                 @endforeach
