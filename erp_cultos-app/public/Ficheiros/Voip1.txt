@@ -1,0 +1,145 @@
+iPSTN rede de trafego de longa distancia.
+*a linha fica ocupada no momento em que a pessoa atende a chamada.
+
+nos troncos de conexao a largura de banda e maior.
+
+Caracteristicas do sistema telefonico tradicional:
+-Totalmente analogico;
+-Queda da chamada;
+-Troncos de fibra optica;
+
+Trabalho::
+Como funciona o processo de codificacao e descodificacao PCM? 
+
+Comutacao por circuitos
+*o percurso para que haja comunicacao e chamado de largura de banda.
+
+Comutacao por pacotes
+*tolerante a falhas.
+*nao ha reserva previa de largura de banda.
+
+Voip-Usa a comutacao por pacotes
+
+Reserva de largura de banda: Comutacao por pacotes-Dinamica, Comutacao por circuito-Fixa
+
+Voip-Voice over ip(Voz sobre protocolo de internet)
+
+*1995-VocalTec comunications cria o primeiro projecto de digitalizacao de voz.
+
+*2000-A nortel cria hardware para a tecnologia VOIP
+
+*A voz e agrupada em pacotes.
+
+*SoftPhones sao todos esses apps que permitem fazer chamada pela internet
+
+*Vantagens do Voip:
+-Reducao de custos
+
+*ATA dispositivo que serve para transformar dispositivos tradicionais em VOIP
+
+*Existe uma diferenca entre ATA e Softphone:
+_ATA serve para transformar dispositivos normais em dispositivos capezes de fazer uma chamada pela internet
+_Softphones sao telemoveis que podem fazer ligacoes pela internet
+
+Vantagens da rede VOIP:
+_Mobilidade
+_Integracao
+_Baixo Custo
+
+Desvantagens da rede VOIP:
+_Falta de Qualidade
+_Oscilacao
+
+//Inicio da aula 2
+
+Processos de conversao de codificacao:
+-amostragem,quantificacao e codificacao.
+
+Processos de conversao de descodificacao:
+-Descodificacao, Reconstrucao e filtro.
+
+Amostragem-o sinal analogico
+
+Asp(Provedores de servicos de voz):
+-telecom
+-voip comunication
+
+PBX - e uma linha que serve para distribuicao entre ramais(Linhas de ramais privados)
+
+PABX - Funciona de forma automatica sem precisar de um intermediario(Aceita gravacao, Toque de espera)
+
+
+***Aula 3****
+
+Qualidade de servico(QoS)
+
+*ja estamos a abordar sobre a rede VOIP(Em que temos a internet como base)
+
+O que garantem a Qualidade de servico temos alguns parametros:
+-Vazao, Latencia, Taxa de perdas, taxa de erros, 
+
+Vazao e o parametro mais baixa da qualidade de servico.
+*a menor e a de voz(10kbps)
+*a maior e a de realidade virtual(80Mbps)
+
+Latencia e o tempo de entrega de pacotes.
+
+Jiter e a avaliacao do tempo na frequencia(Ele esta directamente ligado a latencia)
+
+****TPC-Em que consiste a tecnica de buffering em relacao ao jitter****
+
+A perda de pacotes em rede acontece na:
+-Descarga de pacotes em hosts(Routers,Switches);
+-Perda de pacotes devido a erros ocorridos na camada 2;
+
+Disponibilidade refere-se a medidas contra a qualidade de servico.
+	Ex:se da ou nao, se a operadora possui sinal e se teremos quebra do sinal!
+
+*As aplicacoes multimedias sao as tem maior exigencia de QoS
+
+
+*****Aula 4******
+
+Factores que devemos tomar em conta no acordo de nivel de servico:
+-Latencia
+-Vazao
+-Jitter
+
+As aplicacoes que precisam da qualidade de servico sao as aplicacoes de multimidia.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1498,180 +1498,145 @@
                         <div class="tab-pane fade" id="activities" role="tabpanel">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-3">Activities</h5>
-                                    <div class="acitivity-timeline">
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="assets/images/users/avatar-1.jpg" alt=""
-                                                    class="avatar-xs rounded-circle acitivity-avatar" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Oliver Phillips <span
-                                                        class="badge bg-soft-primary text-primary align-middle">New</span>
-                                                </h6>
-                                                <p class="text-muted mb-2">We talked about a project on linkedin.</p>
-                                                <small class="mb-0 text-muted">Today</small>
-                                            </div>
+                                    
+                                    {{--Inicio da parte contendo os videos--}}
+
+                                    <div class="d-flex align-items-center mb-4">
+                                        <h5 class="card-title flex-grow-1 mb-0">Documents</h5>
+                                        <div class="flex-shrink-0">
+                                            <input class="form-control d-none" type="file" id="formFile">
+                                            <label for="formFile" class="btn btn-danger"><i
+                                                    class="ri-upload-2-fill me-1 align-bottom"></i> Upload File</label>
                                         </div>
-                                        <div class="acitivity-item py-3 d-flex">
-                                            <div class="flex-shrink-0 avatar-xs acitivity-avatar">
-                                                <div class="avatar-title bg-soft-success text-success rounded-circle">
-                                                    N
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Nancy Martino <span
-                                                        class="badge bg-soft-secondary text-secondary align-middle">In
-                                                        Progress</span></h6>
-                                                <p class="text-muted mb-2"><i
-                                                        class="ri-file-text-line align-middle ms-2"></i> Create new project
-                                                    Buildng product</p>
-                                                <div class="avatar-group mb-2">
-                                                    <a href="javascript: void(0);" class="avatar-group-item"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                                                        data-bs-original-title="Christi">
-                                                        <img src="assets/images/users/avatar-4.jpg" alt=""
-                                                            class="rounded-circle avatar-xs" />
-                                                    </a>
-                                                    <a href="javascript: void(0);" class="avatar-group-item"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                                                        data-bs-original-title="Frank Hook">
-                                                        <img src="assets/images/users/avatar-3.jpg" alt=""
-                                                            class="rounded-circle avatar-xs" />
-                                                    </a>
-                                                    <a href="javascript: void(0);" class="avatar-group-item"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                                                        data-bs-original-title=" Ruby">
-                                                        <div class="avatar-xs">
-                                                            <div class="avatar-title rounded-circle bg-light text-primary">
-                                                                R
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <a href="javascript: void(0);" class="avatar-group-item"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                                                        data-bs-original-title="more">
-                                                        <div class="avatar-xs">
-                                                            <div class="avatar-title rounded-circle">
-                                                                2+
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <small class="mb-0 text-muted">Yesterday</small>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item py-3 d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="assets/images/users/avatar-2.jpg" alt=""
-                                                    class="avatar-xs rounded-circle acitivity-avatar" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Natasha Carey <span
-                                                        class="badge bg-soft-success text-success align-middle">Completed</span>
-                                                </h6>
-                                                <p class="text-muted mb-2">Adding a new event with attachments</p>
-                                                <div class="row">
-                                                    <div class="col-xxl-4">
-                                                        <div class="row border border-dashed gx-2 p-2 mb-2">
-                                                            <div class="col-4">
-                                                                <img src="assets/images/small/img-2.jpg" alt=""
-                                                                    class="img-fluid rounded" />
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-4">
-                                                                <img src="assets/images/small/img-3.jpg" alt=""
-                                                                    class="img-fluid rounded" />
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-4">
-                                                                <img src="assets/images/small/img-4.jpg" alt=""
-                                                                    class="img-fluid rounded" />
-                                                            </div>
-                                                            <!--end col-->
-                                                        </div>
-                                                        <!--end row-->
-                                                    </div>
-                                                </div>
-                                                <small class="mb-0 text-muted">25 Nov</small>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item py-3 d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="assets/images/users/avatar-6.jpg" alt=""
-                                                    class="avatar-xs rounded-circle acitivity-avatar" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Bethany Johnson</h6>
-                                                <p class="text-muted mb-2">added a new member to velzon dashboard</p>
-                                                <small class="mb-0 text-muted">19 Nov</small>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item py-3 d-flex">
-                                            <div class="flex-shrink-0">
-                                                <div class="avatar-xs acitivity-avatar">
-                                                    <div class="avatar-title rounded-circle bg-soft-danger text-danger">
-                                                        <i class="ri-shopping-bag-line"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Your order is placed <span
-                                                        class="badge bg-soft-danger text-danger align-middle ms-1">Out of
-                                                        Delivery</span></h6>
-                                                <p class="text-muted mb-2">These customers can rest assured their order has
-                                                    been placed.</p>
-                                                <small class="mb-0 text-muted">16 Nov</small>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item py-3 d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="assets/images/users/avatar-7.jpg" alt=""
-                                                    class="avatar-xs rounded-circle acitivity-avatar" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Lewis Pratt</h6>
-                                                <p class="text-muted mb-2">They all have something to say
-                                                    beyond the words on the page. They can come across as
-                                                    casual or neutral, exotic or graphic. </p>
-                                                <small class="mb-0 text-muted">22 Oct</small>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item py-3 d-flex">
-                                            <div class="flex-shrink-0">
-                                                <div class="avatar-xs acitivity-avatar">
-                                                    <div class="avatar-title rounded-circle bg-soft-info text-info">
-                                                        <i class="ri-line-chart-line"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">Monthly sales report</h6>
-                                                <p class="text-muted mb-2">
-                                                    <span class="text-danger">2 days left</span> notification to submit the
-                                                    monthly sales report. <a href="javascript:void(0);"
-                                                        class="link-warning text-decoration-underline">Reports Builder</a>
-                                                </p>
-                                                <small class="mb-0 text-muted">15 Oct</small>
-                                            </div>
-                                        </div>
-                                        <div class="acitivity-item d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="assets/images/users/avatar-8.jpg" alt=""
-                                                    class="avatar-xs rounded-circle acitivity-avatar" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h6 class="mb-1">New ticket received <span
-                                                        class="badge bg-soft-success text-success align-middle">Completed</span>
-                                                </h6>
-                                                <p class="text-muted mb-2">User <span
-                                                        class="text-secondary">Erica245</span> submitted a ticket.</p>
-                                                <small class="mb-0 text-muted">26 Aug</small>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-borderless align-middle mb-0">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th scope="col">Nome do Video</th>
+                                                            <th scope="col">Data de Carregamento</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($videos as $video)
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm">
+                                                                            <div
+                                                                                class="avatar-title bg-soft-primary text-primary rounded fs-20">
+                                                                                <i class="ri-file-fill"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ms-3 flex-grow-1">
+                                                                            <h6 class="fs-15 mb-0"><a
+                                                                                    href="javascript:void(0)">{{$video->Name_file }}</a>
+                                                                            </h6>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>{{ $video->created_at }}</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <a href="javascript:void(0);"
+                                                                            class="btn btn-light btn-icon"
+                                                                            id="dropdownMenuLink15"
+                                                                            data-bs-toggle="dropdown"
+                                                                            aria-expanded="false">
+                                                                            <i class="ri-equalizer-fill"></i>
+                                                                        </a>
+                                                                        <ul class="dropdown-menu dropdown-menu-end"
+                                                                            aria-labelledby="dropdownMenuLink15">
+                                                                            {{---<li><a class="dropdown-item"
+                                                                                    href="javascript:void(0);"><i
+                                                                                        class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
+                                                                            </li>--}}
+                                                                            <li><a class="dropdown-item" href="#"
+                                                                                    download="{{$video->File }}"><i
+                                                                                        class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                            </li>
+                                                                            <li class="dropdown-divider"></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="javascript:void(0);"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#deletRecordModal{{$video->id }}"><i
+                                                                                        class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Eliminar</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+
+                                                                {{-- Inicio do modal para eliminar os ficheiros --}}
+
+                                                                <!-- Modal -->
+                                                                <div class="modal fade zoomIn"
+                                                                    id="deletRecordModal{{$video->id }}"
+                                                                    tabindex="-1" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="btn-close"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    aria-label="Close"
+                                                                                    id="btn-close"></button>
+                                                                            </div>
+                                                                            <form
+                                                                                action="{{ route('deleteFile', ['id' =>$video->id]) }}"
+                                                                                method="get" enctype="multipart/form-data">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <div class="modal-body">
+                                                                                    <div class="mt-2 text-center">
+                                                                                        <lord-icon
+                                                                                            src="https://cdn.lordicon.com/gsqxdxog.json"
+                                                                                            trigger="loop"
+                                                                                            colors="primary:#f7b84b,secondary:#f06548"
+                                                                                            style="width:100px;height:100px">
+                                                                                        </lord-icon>
+                                                                                        <div
+                                                                                            class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                                                                            <h4>Voce tem certeza ?</h4>
+                                                                                            <p
+                                                                                                class="text-muted mx-4 mb-0">
+                                                                                                Voce pretende
+                                                                                                eliminar
+                                                                                                "{{$video->Name_file }}" ?
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                                                                        <button type="button"
+                                                                                            class="btn w-sm btn-light"
+                                                                                            data-bs-dismiss="modal">Fechar</button>
+                                                                                        <button type="submit"
+                                                                                            name="submit"
+                                                                                            class="btn w-sm btn-danger "
+                                                                                            id="delete-record">Sim,
+                                                                                            elimine!</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                {{-- Fim do modal para eliminar os ficheiros --}}
+
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
+
+                                    {{--Fim da parte contendo os videos--}}
+
                                 </div>
-                                <!--end card-body-->
                             </div>
                             <!--end card-->
                         </div>
@@ -1902,7 +1867,7 @@
                                                                         <div class="avatar-sm">
                                                                             <div
                                                                                 class="avatar-title bg-soft-primary text-primary rounded fs-20">
-                                                                                <i class="ri-file-zip-fill"></i>
+                                                                                <i class="ri-file-fill"></i>
                                                                             </div>
                                                                         </div>
                                                                         <div class="ms-3 flex-grow-1">
