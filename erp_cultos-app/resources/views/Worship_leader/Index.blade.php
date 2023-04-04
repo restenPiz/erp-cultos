@@ -1344,10 +1344,12 @@
                                                             <img src="../{{$image->File}}" alt="" class="card-img-top explore-img" />
                                                             <div class="bg-overlay"></div>
                                                             <div class="place-bid-btn">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <a href="#!" class="btn btn-success edit-item-btn"> Editar</a>
-                                                                        <a href="#!" class="btn btn-danger remove-item-btn"> Eliminar</a>
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <a href="#!" class="btn btn-success edit-item-btn"><i class="ri-edit-2-line"></i></a>
+                                                                            <a href="#!" class="btn btn-danger remove-item-btn"><i class="ri-delete-bin-line"></i></a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
