@@ -1944,11 +1944,11 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <div class="text-center mt-3">
+                                            {{--<div class="text-center mt-3">
                                                 <a href="javascript:void(0);" class="text-success"><i
                                                         class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load
                                                     more </a>
-                                            </div>
+                                            </div>--}}
                                         </div>
                                     </div>
                                 </div>
