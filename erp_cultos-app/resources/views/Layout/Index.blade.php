@@ -996,7 +996,7 @@
                                 </span>
                             </a>
                             <!-- Light Logo-->
-                            <br><a href="{{ route('dashboard') }}" class="logo logo-light">
+                            <br><a href="{{ route('allFile') }}" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="../assets/images/a1.png" alt="" height="30">
                                 </span>
@@ -1311,35 +1311,13 @@
                                         <ul class="navbar-nav" id="navbar-nav">
                                             <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                                             <li class="nav-item">
-                                                <a class="nav-link menu-link" href="{{ route('dashboard') }}"
+                                                <a class="nav-link menu-link" href="{{ route('allFile') }}"
                                                     role="button">
                                                     <i class="ri-dashboard-2-line"></i> <span
                                                         data-key="t-dashboards">Index</span>
                                                 </a>
                                             </li> <!-- end Dashboard Menu -->
-                                            <li class="nav-item">
-                                                <a class="nav-link menu-link" href="#sidebarApps"
-                                                    data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                                    aria-controls="sidebarApps">
-                                                    <i class="ri-apps-2-line"></i> <span
-                                                        data-key="t-apps">Ficheiros</span>
-                                                </a>
-                                                <div class="collapse menu-dropdown" id="sidebarApps">
-                                                    <ul class="nav nav-sm flex-column">
-                                                        <li class="nav-item">
-                                                            <a href="{{ route('addActivity') }}" class="nav-link"
-                                                                data-key="t-calendar">
-                                                                Adicionar Ficheiros
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a href="{{ route('allActivity') }}" class="nav-link"
-                                                                data-key="t-chat">Todos Ficheiros</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-
+                                            
                                             {{-- Fim do menu da parte de pastor --}}
                                         @endrole
 
