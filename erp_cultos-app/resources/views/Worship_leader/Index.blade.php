@@ -1928,7 +1928,7 @@
                                                                                     class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
                                                                         </li>
                                                                         <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
+                                                                                href="#" download="{{$file->File}}"><i
                                                                                     class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
                                                                         </li>
                                                                         <li class="dropdown-divider"></li>
