@@ -1887,11 +1887,10 @@
                                                 <table class="table table-borderless align-middle mb-0">
                                                     <thead class="table-light">
                                                         <tr>
-                                                            <th scope="col">File Name</th>
-                                                            <th scope="col">Type</th>
-                                                            <th scope="col">Size</th>
-                                                            <th scope="col">Upload Date</th>
-                                                            <th scope="col">Action</th>
+                                                            <th scope="col">Nome do Ficheiro</th>
+                                                            <th scope="col">Tipo de Ficheiro</th>
+                                                            <th scope="col">Data de Carregamento</th>
+                                                            <th scope="col"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
