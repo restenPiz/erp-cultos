@@ -1738,7 +1738,7 @@
                                                             </div>
                                                             <form class="tablelist-form" autocomplete="off"
                                                                 action="{{ route('updateFile', ['id' => $image->id]) }}"
-                                                                method="post">
+                                                                method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <div class="modal-body">
                                                                     <div class="mb-3" id="modal-id">
@@ -1824,7 +1824,7 @@
                                                             </div>
                                                             <form
                                                                 action="{{ route('deleteFile', ['id' => $image->id]) }}"
-                                                                method="get">
+                                                                method="get" enctype="multipart/form-data">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <div class="modal-body">
@@ -1960,7 +1960,7 @@
                                                                             </div>
                                                                             <form
                                                                                 action="{{ route('deleteFile', ['id' => $file->id]) }}"
-                                                                                method="get">
+                                                                                method="get" enctype="multipart/form-data">
                                                                                 @csrf
                                                                                 @method('DELETE')
                                                                                 <div class="modal-body">
