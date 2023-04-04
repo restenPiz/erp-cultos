@@ -48,7 +48,7 @@ class fileController extends Controller
             }
 
             $table->save();
-
+            
             Alert::success('Adicionado','O seu ficheiro foi adicionado com sucesso!');
 
             return redirect()->route('allFile');
@@ -88,6 +88,7 @@ class fileController extends Controller
             $file->Name_file=Request::input('Name_file');
             $file->Type_file=Request::input('Type_file');
             $file->Description=Request::input('Description');
+            $file->File=Request::input('File');
             $local = $file->File;
 
             if (File::exists($local)) {
