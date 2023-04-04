@@ -1352,8 +1352,8 @@
                                                         </div>
                                                         <div class="card-body">
                                                             {{---<p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 23.63k </p>---}}
-                                                            <h5 class="mb-1"><a href="apps-nft-item-details.html">The Chirstoper</a></h5>
-                                                            <p class="text-muted mb-0">Music</p>
+                                                            <h5 class="mb-1"><a href="apps-nft-item-details.html">{{$image->Name_file}}</a></h5>
+                                                            <p class="text-muted mb-0">{{$image->Type_file}}</p>
                                                         </div>
                                                         <div class="card-footer border-top border-top-dashed">
                                                             <div class="d-flex align-items-center">
