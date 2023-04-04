@@ -20,6 +20,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if(!$request){
+            Alert::error('Falha!','Falha ao fazer login');
+        }
+
+        Alert::success('Bem Vindo!');
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -36,13 +42,13 @@ class AuthenticatedSessionController extends Controller
     }*/
     public function destroy(Request $request)
     {
+        Alert::warning('Logout Concluido',);
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
-        Alert::info('Logout!','Voce saiu do sistema, Faca login para entrar novamente!');
 
         return redirect('/');
     }
