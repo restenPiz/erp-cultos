@@ -1333,13 +1333,15 @@
                         
                                             <div class="row row-cols-xl-5 row-cols-lg-3 row-cols-md-2 row-cols-1">
                                                 {{--Inicio das imagens do sistema--}}
+
+                                                @foreach ($images as $image)
                                                 <div class="col">
                                                     <div class="card explore-box card-animate">
                                                         <div class="bookmark-icon position-absolute top-0 end-0 p-2">
                                                             <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
                                                         </div>
                                                         <div class="explore-place-bid-img">
-                                                            <img src="../assets/images/nft/img-02.jpg" alt="" class="card-img-top explore-img" />
+                                                            <img src="../{{$image->File}}" alt="" class="card-img-top explore-img" />
                                                             <div class="bg-overlay"></div>
                                                             <div class="place-bid-btn">
                                                                 <div class="col-lg-12">
@@ -1349,7 +1351,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="card-body">
-                                                            <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 23.63k </p>
+                                                            {{---<p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 23.63k </p>---}}
                                                             <h5 class="mb-1"><a href="apps-nft-item-details.html">The Chirstoper</a></h5>
                                                             <p class="text-muted mb-0">Music</p>
                                                         </div>
@@ -1363,6 +1365,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                                 {{--Fim das imagens do sistema--}}
                                             </div>
                         <!--end row-->
