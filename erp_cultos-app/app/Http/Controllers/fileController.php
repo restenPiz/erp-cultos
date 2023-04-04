@@ -90,8 +90,8 @@ class fileController extends Controller
             $file->Description=Request::input('Description');
             $local = $file->File;
 
-            if (File::exists($local)) {
-                File::delete($local);
+            if (Files::exists($local)) {
+                $local->delete();
             }
     
             //Capturando a imagem

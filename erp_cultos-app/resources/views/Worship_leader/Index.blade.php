@@ -1920,7 +1920,7 @@
                                                                             class="btn btn-light btn-icon"
                                                                             id="dropdownMenuLink15"
                                                                             data-bs-toggle="dropdown"
-                                                                            aria-expanded="true">
+                                                                            aria-expanded="false">
                                                                             <i class="ri-equalizer-fill"></i>
                                                                         </a>
                                                                         <ul class="dropdown-menu dropdown-menu-end"

@@ -1,0 +1,21 @@
+***Aula 1****
+
+Nome do docente: Eng Felix
+
+Gestao de projecto e uma solucao que vamos apresentar, desde a sua:
+-Concepcao, Implementacao e Manuntencao;
+
+Projecto e um conjunto de ideias que no final vai gerar productos e servicos.
+
+Operacao - Processos de negocio / Actividade (As operacoes sao de forma continua)
+
+Programas - Gerenciar Projectos( de forma concorrente (Programa))
+
+Portfolio - Informacoes pos-projecto (Description)
+
+Hierarquia da gestao de portfolios:
+
+******Gestao de Portfolios
+*********Gestao de Programas
+************Gestao de Projectos
+
