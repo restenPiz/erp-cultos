@@ -1933,7 +1933,8 @@
                                                                         </li>
                                                                         <li class="dropdown-divider"></li>
                                                                         <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
+                                                                                href="javascript:void(0);" data-bs-toggle="modal"
+                                                                                data-bs-target="#deleteRecordModal{{ $file->id }}"><i
                                                                                     class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Eliminar</a>
                                                                         </li>
                                                                     </ul>
