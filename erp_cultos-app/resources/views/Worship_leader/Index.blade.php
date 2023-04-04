@@ -1767,7 +1767,8 @@
 
                                                                             <option value="Arquivo_imagem">Imagem</option>
                                                                             <option value="Arquivo_video">Video</option>
-                                                                            <option value="Arquivo_arquivo">Ficheiro</option>
+                                                                            <option value="Arquivo_arquivo">Ficheiro
+                                                                            </option>
                                                                         </select>
                                                                     </div>
 
@@ -1895,61 +1896,121 @@
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($files as $file)
-                                                        <tr>
-                                                            <td>
-                                                                <div class="d-flex align-items-center">
-                                                                    <div class="avatar-sm">
-                                                                        <div
-                                                                            class="avatar-title bg-soft-primary text-primary rounded fs-20">
-                                                                            <i class="ri-file-zip-fill"></i>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm">
+                                                                            <div
+                                                                                class="avatar-title bg-soft-primary text-primary rounded fs-20">
+                                                                                <i class="ri-file-zip-fill"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ms-3 flex-grow-1">
+                                                                            <h6 class="fs-15 mb-0"><a
+                                                                                    href="javascript:void(0)">{{ $file->Name_file }}</a>
+                                                                            </h6>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="ms-3 flex-grow-1">
-                                                                        <h6 class="fs-15 mb-0"><a
-                                                                                href="javascript:void(0)">{{$file->Name_file}}</a>
-                                                                        </h6>
+                                                                </td>
+                                                                <td>{{ $image->Type_file }}</td>
+                                                                <td>{{ $image->created_at }}</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <a href="javascript:void(0);"
+                                                                            class="btn btn-light btn-icon"
+                                                                            id="dropdownMenuLink15"
+                                                                            data-bs-toggle="dropdown"
+                                                                            aria-expanded="true">
+                                                                            <i class="ri-equalizer-fill"></i>
+                                                                        </a>
+                                                                        <ul class="dropdown-menu dropdown-menu-end"
+                                                                            aria-labelledby="dropdownMenuLink15">
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="javascript:void(0);"><i
+                                                                                        class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item" href="#"
+                                                                                    download="{{ $file->File }}"><i
+                                                                                        class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                            </li>
+                                                                            <li class="dropdown-divider"></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="javascript:void(0);"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#deletRecordModal{{ $file->id }}"><i
+                                                                                        class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Eliminar</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+
+                                                                {{-- Inicio do modal para eliminar os ficheiros --}}
+
+                                                                <!-- Modal -->
+                                                                <div class="modal fade zoomIn"
+                                                                    id="deletRecordModal{{ $file->id }}"
+                                                                    tabindex="-1" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="btn-close"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    aria-label="Close"
+                                                                                    id="btn-close"></button>
+                                                                            </div>
+                                                                            <form
+                                                                                action="{{ route('deleteFile', ['id' => $file->id]) }}"
+                                                                                method="get">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <div class="modal-body">
+                                                                                    <div class="mt-2 text-center">
+                                                                                        <lord-icon
+                                                                                            src="https://cdn.lordicon.com/gsqxdxog.json"
+                                                                                            trigger="loop"
+                                                                                            colors="primary:#f7b84b,secondary:#f06548"
+                                                                                            style="width:100px;height:100px">
+                                                                                        </lord-icon>
+                                                                                        <div
+                                                                                            class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                                                                            <h4>Voce tem certeza ?</h4>
+                                                                                            <p
+                                                                                                class="text-muted mx-4 mb-0">
+                                                                                                Voce pretende
+                                                                                                eliminar
+                                                                                                "{{ $file->Name_file }}" ?
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                                                                        <button type="button"
+                                                                                            class="btn w-sm btn-light"
+                                                                                            data-bs-dismiss="modal">Fechar</button>
+                                                                                        <button type="submit"
+                                                                                            name="submit"
+                                                                                            class="btn w-sm btn-danger "
+                                                                                            id="delete-record">Sim,
+                                                                                            elimine!</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </td>
-                                                            <td>{{$image->Type_file}}</td>
-                                                            <td>{{$image->created_at}}</td>
-                                                            <td>
-                                                                <div class="dropdown">
-                                                                    <a href="javascript:void(0);"
-                                                                        class="btn btn-light btn-icon"
-                                                                        id="dropdownMenuLink15"
-                                                                        data-bs-toggle="dropdown" aria-expanded="true">
-                                                                        <i class="ri-equalizer-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        aria-labelledby="dropdownMenuLink15">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="#" download="{{$file->File}}"><i
-                                                                                    class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
-                                                                        </li>
-                                                                        <li class="dropdown-divider"></li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);" data-bs-toggle="modal"
-                                                                                data-bs-target="#deleteRecordModal{{ $file->id }}"><i
-                                                                                    class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Eliminar</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
+
+                                                                {{-- Fim do modal para eliminar os ficheiros --}}
+
+                                                            </tr>
                                                         @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            {{--<div class="text-center mt-3">
+                                            {{-- <div class="text-center mt-3">
                                                 <a href="javascript:void(0);" class="text-success"><i
                                                         class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load
                                                     more </a>
-                                            </div>--}}
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
