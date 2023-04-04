@@ -1318,7 +1318,7 @@
                                 <div class="tab-pane fade" id="projects" role="tabpanel">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div class="row">
+                                            {{--<div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="d-lg-flex align-items-center mb-4">
                                                         <div class="flex-grow-1">
@@ -1329,7 +1329,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>---}}
                         
                                             <div class="row row-cols-xl-5 row-cols-lg-3 row-cols-md-2 row-cols-1">
                                                 <div class="col">
@@ -1341,7 +1341,8 @@
                                                             <img src="../assets/images/nft/img-02.jpg" alt="" class="card-img-top explore-img" />
                                                             <div class="bg-overlay"></div>
                                                             <div class="place-bid-btn">
-                                                                <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
+                                                                <a href="#!" class="btn btn-success edit-item-btn"> Editar</a>
+                                                                <a href="#!" class="btn btn-danger remove-item-btn"> Eliminar</a>
                                                             </div>
                                                         </div>
                                                         <div class="card-body">
