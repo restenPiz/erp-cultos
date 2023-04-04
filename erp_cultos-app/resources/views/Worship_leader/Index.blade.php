@@ -1776,7 +1776,7 @@
                                                                             <div class="fallback">
                                                                                 <input name="File" type="file"
                                                                                     multiple="multiple"
-                                                                                    class="form-control">
+                                                                                    class="form-control" value="{{$image->File}}">
                                                                             </div>
                                                                             <div class="dz-message needsclick"
                                                                                 style="text-align: center">
@@ -1797,7 +1797,7 @@
                                                                         <button type="submit" name="submit"
                                                                             class="btn btn-success"
                                                                             id="add-btn">Actualizar
-                                                                            Pastor</button>
+                                                                            Ficheiro</button>
                                                                         <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                     </div>
                                                                 </div>
