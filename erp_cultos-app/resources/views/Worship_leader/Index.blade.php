@@ -338,6 +338,12 @@
                                                                 <div class="row">
                                                                     <div class="col">
                                                                         <a href="#!"
+                                                                            class="btn btn-primary edit-item-btn"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#showModal{{ $image->id }}"><i
+                                                                            class="ri-eye-fill me-2 align-middle text-muted"></i></a>
+                                                                        
+                                                                        <a href="#!"
                                                                             class="btn btn-success edit-item-btn"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#showModal{{ $image->id }}"><i
