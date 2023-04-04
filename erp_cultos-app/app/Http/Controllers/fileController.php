@@ -91,7 +91,7 @@ class fileController extends Controller
             $local = $file->File;
 
             if (Files::exists($local)) {
-                $local->delete();
+                Files::delete($local);
             }
     
             //Capturando a imagem
@@ -117,7 +117,7 @@ class fileController extends Controller
         }
     }
 
-    public function destroyFile($id)
+    public function deleteFile($id)
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
