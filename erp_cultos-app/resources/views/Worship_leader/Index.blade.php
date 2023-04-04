@@ -1755,34 +1755,42 @@
                                                                         value="{{ $image->Name_file }}" required />
                                                                 </div>
 
-                                                                <div>
-                                                                    <label for="status-field" class="form-label">Nivel
-                                                                        Teologico</label>
-                                                                    <select class="form-control"
-                                                                        name="theological_level" id="status-field"
-                                                                        required>
-                                                                        <option value="{{ $user->theological_level }}">
-                                                                            {{ $user->theological_level }}</option>
+                                                                <div class="mb-3" id="modal-id">
+                                                                    <label for="customername-field"
+                                                                        class="form-label">Descricao</label>
+                                                                    <input type="text" id="id-field"
+                                                                        name="Description" class="form-control"
+                                                                        value="{{ $image->Description }}" required />
+                                                                </div>
 
-                                                                        <option value="Curso Basico em Teologia">Curso
-                                                                            Basico
-                                                                            em Teologia</option>
-                                                                        <option value="Curso Medio em Teologia">Curso
-                                                                            Medio em
-                                                                            Teologia</option>
-                                                                        <option value="Curso Superior em Teologia">Curso
-                                                                            Superior em Teologia</option>
-                                                                        <option value="Capacitacao de Lideres">Capacitacao
-                                                                            de
-                                                                            Lideres</option>
-                                                                        <option value="Capacitacao de Obreiros">
-                                                                            Capacitacao de
-                                                                            Obreiros</option>
-                                                                        <option
-                                                                            value="Capacitacao de Professores Criancas">
-                                                                            Capacitacao de Professores Criancas</option>
-                                                                        <option value="Nenhum">Nenhum</option>
+                                                                <div>
+                                                                    <label for="status-field" class="form-label">Tipo de Ficheiro</label>
+                                                                    <select class="form-control"
+                                                                        name="Type_file" id="status-field"
+                                                                        required>
+                                                                        <option value="{{ $image->Type_file }}">
+                                                                            {{ $image->Type_file }}</option>
+
+                                                                            <option value="Arquivo_imagem">Imagem</option>
+                                                                            <option value="Arquivo_video">Video</option>
+                                                                            <option value="Arquivo_rar">Ficheiro</option>
                                                                     </select>
+                                                                </div>
+
+                                                                <div class="mb-3" id="modal-id">
+                                                                    <div class="dropzone">
+                                                                        <div class="fallback">
+                                                                            <input name="File" type="file" multiple="multiple"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                        <div class="dz-message needsclick" style="text-align: center">
+                                                                            <div class="mb-3">
+                                                                                <i class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                                                            </div>
+                    
+                                                                            <h4>Faca o upload do seu ficheiro aqui.</h4>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
