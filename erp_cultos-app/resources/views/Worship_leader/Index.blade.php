@@ -1350,7 +1350,9 @@
                                                                             <a href="#!" class="btn btn-success edit-item-btn" 
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#showModal{{ $image->id }}"><i class="ri-edit-2-line"></i></a>
-                                                                            <a href="#!" class="btn btn-danger remove-item-btn"><i class="ri-delete-bin-line"></i></a>
+                                                                            <a href="#!" class="btn btn-danger remove-item-btn"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#deleteRecordModal{{ $image->id }}"><i class="ri-delete-bin-line"></i></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
