@@ -1721,94 +1721,93 @@
                                                         <h5 class="mb-1">{{ $image->Name_file }}</h5>
                                                         <p class="text-muted mb-0">{{ $image->Type_file }}</p>
                                                     </div>
-                                                    {{-- <div class="card-footer border-top border-top-dashed">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="flex-grow-1 fs-14">
-                                                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Nome original: <span class="fw-medium">{{$image->filename}}</span>
-                                                                </div>
-                                                            </div>
-                                                        </div> --}}
                                                 </div>
-                                            </div>
 
-                                            {{-- Inicio do modal para editar o pastor --}}
-                                            <div class="modal fade" id="showModal{{ $image->id }}" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header bg-light p-3">
-                                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"
-                                                                id="close-modal"></button>
-                                                        </div>
-                                                        <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateFile', ['id' => $image->id]) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            <div class="modal-body">
-                                                                <div class="mb-3" id="modal-id">
-                                                                    <label for="customername-field"
-                                                                        class="form-label">Nome do Ficheiro</label>
-                                                                    <input type="text" id="id-field"
-                                                                        name="Name_file" class="form-control"
-                                                                        value="{{ $image->Name_file }}" required />
-                                                                </div>
 
-                                                                <div class="mb-3" id="modal-id">
-                                                                    <label for="customername-field"
-                                                                        class="form-label">Descricao</label>
-                                                                    <input type="text" id="id-field"
-                                                                        name="Description" class="form-control"
-                                                                        value="{{ $image->Description }}" required />
-                                                                </div>
+                                                {{-- Inicio do modal para editar o pastor --}}
+                                                <div class="modal fade" id="showModal{{ $image->id }}"
+                                                    tabindex="-1" aria-labelledby="exampleModalLabel"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-light p-3">
+                                                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"
+                                                                    id="close-modal"></button>
+                                                            </div>
+                                                            <form class="tablelist-form" autocomplete="off"
+                                                                action="{{ route('updateFile', ['id' => $image->id]) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <div class="modal-body">
+                                                                    <div class="mb-3" id="modal-id">
+                                                                        <label for="customername-field"
+                                                                            class="form-label">Nome do Ficheiro</label>
+                                                                        <input type="text" id="id-field"
+                                                                            name="Name_file" class="form-control"
+                                                                            value="{{ $image->Name_file }}" required />
+                                                                    </div>
 
-                                                                <div>
-                                                                    <label for="status-field" class="form-label">Tipo de Ficheiro</label>
-                                                                    <select class="form-control"
-                                                                        name="Type_file" id="status-field"
-                                                                        required>
-                                                                        <option value="{{ $image->Type_file }}">
-                                                                            {{ $image->Type_file }}</option>
+                                                                    <div class="mb-3" id="modal-id">
+                                                                        <label for="customername-field"
+                                                                            class="form-label">Descricao</label>
+                                                                        <input type="text" id="id-field"
+                                                                            name="Description" class="form-control"
+                                                                            value="{{ $image->Description }}" required />
+                                                                    </div>
+
+                                                                    <div class="mb-3" id="modal-id">
+                                                                        <label for="status-field"
+                                                                            class="form-label">Tipo de Ficheiro</label>
+                                                                        <select class="form-control" name="Type_file"
+                                                                            id="status-field" required>
+                                                                            <option value="{{ $image->Type_file }}">
+                                                                                {{ $image->Type_file }}</option>
 
                                                                             <option value="Arquivo_imagem">Imagem</option>
                                                                             <option value="Arquivo_video">Video</option>
                                                                             <option value="Arquivo_rar">Ficheiro</option>
-                                                                    </select>
-                                                                </div>
+                                                                        </select>
+                                                                    </div>
 
-                                                                <div class="mb-3" id="modal-id">
-                                                                    <div class="dropzone">
-                                                                        <div class="fallback">
-                                                                            <input name="File" type="file" multiple="multiple"
-                                                                                class="form-control">
-                                                                        </div>
-                                                                        <div class="dz-message needsclick" style="text-align: center">
-                                                                            <div class="mb-3">
-                                                                                <i class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                                                    <div class="mb-3" id="modal-id">
+                                                                        <div class="dropzone">
+                                                                            <div class="fallback">
+                                                                                <input name="File" type="file"
+                                                                                    multiple="multiple"
+                                                                                    class="form-control">
                                                                             </div>
-                    
-                                                                            <h4>Faca o upload do seu ficheiro aqui.</h4>
+                                                                            <div class="dz-message needsclick"
+                                                                                style="text-align: center">
+                                                                                <div class="mb-3">
+                                                                                    <i
+                                                                                        class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                                                                </div>
+
+                                                                                <h4>Faca o upload do seu ficheiro aqui.</h4>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <div class="hstack gap-2 justify-content-end">
-                                                                    <button type="button" class="btn btn-light"
-                                                                        data-bs-dismiss="modal">Fechar</button>
-                                                                    <button type="submit" name="submit"
-                                                                        class="btn btn-success"
-                                                                        id="add-btn">Actualizar
-                                                                        Pastor</button>
-                                                                    <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
+                                                                <div class="modal-footer">
+                                                                    <div class="hstack gap-2 justify-content-end">
+                                                                        <button type="button" class="btn btn-light"
+                                                                            data-bs-dismiss="modal">Fechar</button>
+                                                                        <button type="submit" name="submit"
+                                                                            class="btn btn-success"
+                                                                            id="add-btn">Actualizar
+                                                                            Pastor</button>
+                                                                        <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </form>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                {{-- Fim do modal para editar pastor --}}
+
                                             </div>
-                                            {{-- Fim do modal para editar pastor --}}
                                         @endforeach
                                         {{-- Fim das imagens do sistema --}}
                                     </div>
