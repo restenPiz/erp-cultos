@@ -1313,22 +1313,15 @@
                                     <!--end card-->
                                 </div>
                                 <!--end tab-pane-->
+
+                                {{--Inicio da div responsavel por exibir o conteudo da imagem--}}
                                 <div class="tab-pane fade" id="projects" role="tabpanel">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-xxl-3 col-sm-6">
                                                     <div class="col-lg-12">
-                                                        <div class="text-center">
-                                                            <ul class="list-inline categories-filter animation-nav" id="filter">
-                                                                <li class="list-inline-item"><a class="categories active" data-filter="*">All</a></li>
-                                                                <li class="list-inline-item"><a class="categories" data-filter=".project">Project</a></li>
-                                                                <li class="list-inline-item"><a class="categories" data-filter=".designing">Designing</a></li>
-                                                                <li class="list-inline-item"><a class="categories" data-filter=".photography">Photography</a></li>
-                                                                <li class="list-inline-item"><a class="categories" data-filter=".development">Development</a></li>
-                                                            </ul>
-                                                        </div>
-            
+                                               
                                                         <div class="row gallery-wrapper">
                                                             <div class="element-item col-xxl-3 col-xl-4 col-sm-6 project designing development" data-category="designing development">
                                                                 <div class="gallery-box card">
