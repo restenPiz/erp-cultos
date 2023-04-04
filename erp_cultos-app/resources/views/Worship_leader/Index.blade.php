@@ -1767,7 +1767,7 @@
 
                                                                             <option value="Arquivo_imagem">Imagem</option>
                                                                             <option value="Arquivo_video">Video</option>
-                                                                            <option value="Arquivo_rar">Ficheiro</option>
+                                                                            <option value="Arquivo_arquivo">Ficheiro</option>
                                                                         </select>
                                                                     </div>
 
@@ -1911,8 +1911,8 @@
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td>Zip File</td>
-                                                            <td>12 Dec 2021</td>
+                                                            <td>{{$image->Type_file}}</td>
+                                                            <td>{{$image->created_at}}</td>
                                                             <td>
                                                                 <div class="dropdown">
                                                                     <a href="javascript:void(0);"

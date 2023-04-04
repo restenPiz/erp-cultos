@@ -65,7 +65,7 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-            $files = DB::table('files')->where('Type_file', 'Arquivo_rar')->get();
+            $files = DB::table('files')->where('Type_file', 'Arquivo_arquivo')->get();
             $images = DB::table('files')->where('Type_file', 'Arquivo_imagem')->get();
             $videos = DB::table('files')->where('Type_file', 'Arquivo_video')->get();
 

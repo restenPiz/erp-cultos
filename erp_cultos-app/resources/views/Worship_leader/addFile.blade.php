@@ -75,7 +75,7 @@
                                                     <option>...</option>
                                                     <option value="Arquivo_imagem">Imagem</option>
                                                     <option value="Arquivo_video">Video</option>
-                                                    <option value="Arquivo_rar">Ficheiro</option>
+                                                    <option value="Arquivo_arquivo">Ficheiro</option>
                                                 </select>
                                             </div>
                                         </div>
