@@ -1724,7 +1724,7 @@
                                                 </div>
 
 
-                                                {{-- Inicio do modal para editar o pastor --}}
+                                                {{-- Inicio do modal para editar o ficheiro --}}
                                                 <div class="modal fade" id="showModal{{ $image->id }}"
                                                     tabindex="-1" aria-labelledby="exampleModalLabel"
                                                     aria-hidden="true">
@@ -1805,7 +1805,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {{-- Fim do modal para editar pastor --}}
+                                                {{-- Fim do modal para editar Ficheiros --}}
 
                                             </div>
                                         @endforeach
