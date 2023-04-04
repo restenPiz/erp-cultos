@@ -1810,7 +1810,6 @@
 
                                                 {{-- Inicio do modal para eliminar os ficheiros --}}
 
-
                                                 <!-- Modal -->
                                                 <div class="modal fade zoomIn"
                                                     id="deleteRecordModal{{ $image->id }}" tabindex="-1"
@@ -1839,7 +1838,7 @@
                                                                             <h4>Voce tem certeza ?</h4>
                                                                             <p class="text-muted mx-4 mb-0">Voce pretende
                                                                                 eliminar
-                                                                                {{ $image->Name_file }} ?</p>
+                                                                                "{{ $image->Name_file }}" ?</p>
                                                                         </div>
                                                                     </div>
                                                                     <div
