@@ -10,20 +10,20 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <link href="..assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Layout config Js -->
-    <script src="../assets/js/layout.js"></script>
+    <script src="/assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -40,19 +40,19 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-light.png" alt="" height="17">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
                                 </span>
                             </a>
                         </div>
@@ -188,7 +188,7 @@
                         <div class="dropdown ms-1 topbar-head-dropdown header-item">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img id="header-lang-img" src="../assets/images/flags/us.svg" alt="Header Language"
+                                <img id="header-lang-img" src="/assets/images/flags/us.svg" alt="Header Language"
                                     height="20" class="rounded">
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
@@ -196,7 +196,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language py-2"
                                     data-lang="en" title="English">
-                                    <img src="../assets/images/flags/us.svg" alt="user-image" class="me-2 rounded"
+                                    <img src="/assets/images/flags/us.svg" alt="user-image" class="me-2 rounded"
                                         height="18">
                                     <span class="align-middle">English</span>
                                 </a>
@@ -204,7 +204,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="sp" title="Spanish">
-                                    <img src="../assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded"
+                                    <img src="/assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded"
                                         height="18">
                                     <span class="align-middle">Española</span>
                                 </a>
@@ -212,7 +212,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="gr" title="German">
-                                    <img src="../assets/images/flags/germany.svg" alt="user-image"
+                                    <img src="/assets/images/flags/germany.svg" alt="user-image"
                                         class="me-2 rounded" height="18"> <span
                                         class="align-middle">Deutsche</span>
                                 </a>
@@ -220,7 +220,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="it" title="Italian">
-                                    <img src="../assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded"
+                                    <img src="/assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded"
                                         height="18">
                                     <span class="align-middle">Italiana</span>
                                 </a>
@@ -228,7 +228,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="ru" title="Russian">
-                                    <img src="../assets/images/flags/russia.svg" alt="user-image"
+                                    <img src="/assets/images/flags/russia.svg" alt="user-image"
                                         class="me-2 rounded" height="18">
                                     <span class="align-middle">русский</span>
                                 </a>
@@ -236,7 +236,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="ch" title="Chinese">
-                                    <img src="../assets/images/flags/china.svg" alt="user-image" class="me-2 rounded"
+                                    <img src="/assets/images/flags/china.svg" alt="user-image" class="me-2 rounded"
                                         height="18">
                                     <span class="align-middle">中国人</span>
                                 </a>
@@ -244,7 +244,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="fr" title="French">
-                                    <img src="../assets/images/flags/french.svg" alt="user-image"
+                                    <img src="/assets/images/flags/french.svg" alt="user-image"
                                         class="me-2 rounded" height="18">
                                     <span class="align-middle">français</span>
                                 </a>
@@ -252,7 +252,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="ar" title="Arabic">
-                                    <img src="../assets/images/flags/ae.svg" alt="user-image" class="me-2 rounded"
+                                    <img src="/assets/images/flags/ae.svg" alt="user-image" class="me-2 rounded"
                                         height="18">
                                     <span class="align-middle">Arabic</span>
                                 </a>
@@ -281,19 +281,19 @@
                                     <div class="row g-0">
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="../assets/images/brands/github.png" alt="Github">
+                                                <img src="/assets/images/brands/github.png" alt="Github">
                                                 <span>GitHub</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="../assets/images/brands/bitbucket.png" alt="bitbucket">
+                                                <img src="/assets/images/brands/bitbucket.png" alt="bitbucket">
                                                 <span>Bitbucket</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="../assets/images/brands/dribbble.png" alt="dribbble">
+                                                <img src="/assets/images/brands/dribbble.png" alt="dribbble">
                                                 <span>Dribbble</span>
                                             </a>
                                         </div>
@@ -302,19 +302,19 @@
                                     <div class="row g-0">
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="../assets/images/brands/dropbox.png" alt="dropbox">
+                                                <img src="/assets/images/brands/dropbox.png" alt="dropbox">
                                                 <span>Dropbox</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="../assets/images/brands/mail_chimp.png" alt="mail_chimp">
+                                                <img src="/assets/images/brands/mail_chimp.png" alt="mail_chimp">
                                                 <span>Mail Chimp</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="../assets/images/brands/slack.png" alt="slack">
+                                                <img src="/assets/images/brands/slack.png" alt="slack">
                                                 <span>Slack</span>
                                             </a>
                                         </div>
@@ -410,7 +410,7 @@
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="../assets/images/products/img-3.png"
+                                                <img src="/assets/images/products/img-3.png"
                                                     class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
@@ -436,7 +436,7 @@
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="../assets/images/products/img-6.png"
+                                                <img src="/assets/images/products/img-6.png"
                                                     class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
@@ -850,7 +850,7 @@
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user"
-                                        src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                        src="/assets/images/users/avatar-1.jpg" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
                                         <span
                                             class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
@@ -941,10 +941,10 @@
                     <!-- Light Logo-->
                     <br><a href="{{ route('dashboard') }}" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="../assets/images/a1.png" alt="" height="30">
+                            <img src="/assets/images/a1.png" alt="" height="30">
                         </span>
                         <span class="logo-lg">
-                            <img src="../assets/images/a1.png" alt="" height="30">
+                            <img src="/assets/images/a1.png" alt="" height="30">
                         </span>
                     </a>
                     <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -970,10 +970,10 @@
                         <!-- Light Logo-->
                         <br><a href="{{ route('dashboard') }}" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="../assets/images/a1.png" alt="" height="30">
+                                <img src="/assets/images/a1.png" alt="" height="30">
                             </span>
                             <span class="logo-lg">
-                                <img src="../assets/images/a1.png" alt="" height="30">
+                                <img src="/assets/images/a1.png" alt="" height="30">
                             </span>
                         </a>
                         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -999,10 +999,10 @@
                             <!-- Light Logo-->
                             <br><a href="{{ route('allFile') }}" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/a1.png" alt="" height="30">
+                                    <img src="/assets/images/a1.png" alt="" height="30">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/a1.png" alt="" height="30">
+                                    <img src="/assets/images/a1.png" alt="" height="30">
                                 </span>
                             </a>
                             <button type="button"
@@ -1422,15 +1422,15 @@
             {{-- Fim do link do sweetAlerta --}}
 
             <!-- JAVASCRIPT -->
-            <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="../assets/libs/simplebar/simplebar.min.js"></script>
-            <script src="../assets/libs/node-waves/waves.min.js"></script>
-            <script src="../assets/libs/feather-icons/feather.min.js"></script>
-            <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-            <script src="../assets/js/plugins.js"></script>
+            <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+            <script src="/assets/libs/node-waves/waves.min.js"></script>
+            <script src="/assets/libs/feather-icons/feather.min.js"></script>
+            <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+            <script src="/assets/js/plugins.js"></script>
 
             <!-- App js -->
-            <script src="../assets/js/app.js"></script>
+            <script src="/assets/js/app.js"></script>
 
         </body>
 

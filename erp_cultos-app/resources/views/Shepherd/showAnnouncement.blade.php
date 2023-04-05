@@ -1,4 +1,4 @@
-@extends('Layout.Index')
+@extends('Layout.Principal')
 
 @section('content')
     @role('shepherd')
@@ -24,7 +24,7 @@
         <div class="row justify-content-center">
             <div class="col-xxl-9">
                 <div class="card">
-                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('storeAnnouncement')}}" method="post">
+                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('updateAnnouncement',['id'=>$announcements->id])}}" method="post">
                         @csrf
                         <div class="card-body border-bottom border-bottom-dashed p-4">
                             <div class="row">
@@ -34,10 +34,10 @@
                                             <span 
                                                 class="overflow-hidden border border-dashed d-flex align-items-center justify-content-center rounded"
                                                 style="height: 60px; width: 256px;">
-                                                <img  src="../assets/images/logo-dark.png"
+                                                <img  src="/assets/images/logo-dark.png"
                                                     class="card-logo card-logo-dark user-profile-image img-fluid"
                                                     alt="logo dark">
-                                                <img src="../assets/images/logo-light.png"
+                                                <img src="/assets/images/logo-light.png"
                                                     class="card-logo card-logo-light user-profile-image img-fluid"
                                                     alt="logo light">
                                             </span>
@@ -58,7 +58,7 @@
                                     <div class="input-light">
                                         <select class="form-control bg-light border-0" data-choices data-choices-search-false
                                             id="choices-payment-status" name="Id_user" required>
-                                            <option>...</option>
+                                            <option value="{{$announcements->Id_user}}">{{$announcements->name($announcements->Id_user)}}</option>
                                             @foreach ($users as $user)
                                                 <option value="{{$user->id}}">{{$user->name}}</option>
                                             @endforeach
@@ -70,7 +70,7 @@
                                     <div>
                                         <label for="date-field">Horario</label>
                                         <input type="time" class="form-control bg-light border-0" id="date-field"
-                                            data-provider="flatpickr" data-time="true" name="Hour">
+                                            data-provider="flatpickr" data-time="true" name="Hour" value="{{$announcements->Hour}}">
                                     </div>
                                 </div>
                                 <!--end col-->
@@ -84,7 +84,7 @@
                                         <label for="billingName" class="text-muted text-uppercase fw-semibold">Descricao</label>
                                     </div>
                                     <div class="mb-2">
-                                        <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="10" placeholder="Digite o conteudo do seu comunicado..." required></textarea>
+                                        <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="10" value="{{$announcements->Description}}" required></textarea>
                                         <div class="invalid-feedback">
                                             Por favor digite uma descricao valida
                                         </div>

@@ -77,7 +77,7 @@
                                                     <ul class="dropdown-menu dropdown-menu-end"
                                                         aria-labelledby="dropdownMenuLink15" id="dropdownMenuLink15">
                                                         <li><a class="dropdown-item"
-                                                                href="javascript:void(0);"><i
+                                                                href="{{route('showAnnouncement',['id'=>$announcement->id])}}"><i
                                                                     class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
                                                         </li>
                                                         <li class="dropdown-divider"></li>

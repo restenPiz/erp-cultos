@@ -107,7 +107,7 @@ class announcementController extends Controller
             $users=User::all();
             $announcements=Announcement::findOrFail($id);
 
-            return view('Shepherd.showAnnouncement',['announcements',$announcements],compact('users'));
+            return view('Shepherd.showAnnouncement',compact('users','announcements'));
 
         }else{
             
