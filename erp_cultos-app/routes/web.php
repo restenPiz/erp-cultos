@@ -84,7 +84,7 @@ Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'
 Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
 
 //Inicio das rotas da parte de pastor
-Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leader']], function () {
+Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {
 
     //Inicio das rotas para os comunicados    
     Route::post('/storeAnnouncement', [announcementController::class, 'storeAnnouncement'])->middleware(['auth'])->name('storeAnnouncement');
