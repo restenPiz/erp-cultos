@@ -10,6 +10,7 @@ use App\Http\Controllers\cultController;
 use App\Http\Controllers\activityController;
 use App\Http\Controllers\patrimonyController;
 use App\Http\Controllers\fileController;
+use App\Http\Controllers\departmentController;
 
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
@@ -64,6 +65,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/allShepherd', [shepherdController::class, 'allShepherd'])->middleware(['auth'])->name('allShepherd');
     Route::post('/updateShepherd/{id}', [shepherdController::class, 'updateShepherd'])->middleware(['auth'])->name('updateShepherd');
     Route::get('/deleteShepherd/{id}', [shepherdController::class, 'deleteShepherd'])->middleware(['auth'])->name('deleteShepherd');
+
+    //Inicio das rotas da parte de departmentos
+    Route::get('/addDepartment', [departmentController::class, 'addDepartment'])->middleware(['auth'])->name('addDepartment');
+    Route::post('/storeDepartment', [departmentController::class, 'storeDepartment'])->middleware(['auth'])->name('storeDepartment');
+    Route::get('/allDepartment', [departmentController::class, 'allDepartment'])->middleware(['auth'])->name('allDepartment');
+    Route::post('/updateDepartment/{id}', [departmentController::class, 'updateDepartment'])->middleware(['auth'])->name('updateDepartment');
+    Route::get('/deleteDepartment/{id}', [departmentController::class, 'deleteDepartment'])->middleware(['auth'])->name('deleteDepartment');
 
 });
 

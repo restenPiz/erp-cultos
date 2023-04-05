@@ -7,6 +7,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\File;
+use App\Models\User;
 use App\Models\Department;
 use Illuminate\Support\Facades\Auth;
 
