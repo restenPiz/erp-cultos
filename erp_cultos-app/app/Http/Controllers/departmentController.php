@@ -50,6 +50,8 @@ class departmentController extends Controller
                 $insert=[
                     'Name'=>Request::input('Name'),
                     'Id_user'=>Request::input('Id_user')[$key],
+                    'created_at'=>now(),
+                    'updated_at'=>now(),
                 ];
 
                 DB::table('departments')->insert($insert);
