@@ -91,6 +91,7 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
     Route::get('/addAnnouncement', [announcementController::class, 'addAnnouncement'])->middleware(['auth'])->name('addAnnouncement');
     Route::get('/allAnnouncement', [announcementController::class, 'allAnnouncement'])->middleware(['auth'])->name('allAnnouncement');
     Route::post('/updateAnnouncement/{id}', [announcementController::class, 'updateAnnouncement'])->middleware(['auth'])->name('updateAnnouncement');
+    Route::get('/showAnnouncement/{id}', [announcementController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncement');
     Route::get('/deleteAnnouncement/{id}', [announcementController::class, 'deleteAnnouncement'])->middleware(['auth'])->name('deleteAnnouncement');
 
 });

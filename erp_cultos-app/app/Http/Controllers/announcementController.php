@@ -104,9 +104,10 @@ class announcementController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            $users=User::all();
             $announcements=Announcement::findOrFail($id);
 
-            return view('Shepherd.showAnnouncement',['announcements',$announcements]);
+            return view('Shepherd.showAnnouncement',['announcements',$announcements],compact('users'));
 
         }else{
             
