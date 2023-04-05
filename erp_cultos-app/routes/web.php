@@ -93,7 +93,6 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
     Route::post('/updateAnnouncement/{id}', [announcementController::class, 'updateAnnouncement'])->middleware(['auth'])->name('updateAnnouncement');
     Route::get('/deleteAnnouncement/{id}', [announcementController::class, 'deleteAnnouncement'])->middleware(['auth'])->name('deleteAnnouncement');
 
-
 });
 
 //Inicio das rotas da parte do lider de louvor

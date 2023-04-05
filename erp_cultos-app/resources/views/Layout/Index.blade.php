@@ -1297,7 +1297,7 @@
                                             <div class="collapse menu-dropdown" id="sidebarPages">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="pages-starter.html" class="nav-link"
+                                                        <a href="{{route('addAnnouncement')}}" class="nav-link"
                                                             data-key="t-starter"> Inserir Comunicado
                                                         </a>
                                                     </li>
@@ -1307,8 +1307,8 @@
                                             <div class="collapse menu-dropdown" id="sidebarPages">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="pages-starter.html" class="nav-link"
-                                                            data-key="t-starter"> Detalhes do Comunicado
+                                                        <a href="{{route('allAnnouncement')}}" class="nav-link"
+                                                            data-key="t-starter">Todos Comunicados
                                                         </a>
                                                     </li>
                                                 </ul>
