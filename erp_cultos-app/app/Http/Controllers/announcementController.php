@@ -17,6 +17,11 @@ class announcementController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            $users=DB::table('users')
+            ->where('userType','=','pastor')
+            ->get();
+
+            return view('shepherd.addAnnouncement',compact('users'));
 
         }else{
 
@@ -30,6 +35,21 @@ class announcementController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            $table=new Announcement();
+
+            $table->Type=Request::input('Type');
+            $table->Description=Request::input('Description');
+            $table->Hour=Request::input('Hour');
+            $table->Id_user=Request::input('Id_user');
+
+            $user=User::findOrFail(Request::input('Id_user'));
+
+            $table->save();
+            $user->save();
+
+            Alert::success('Adicionado!','O comunicado foi adicionado com sucesso!');
+
+            return redirect()->back();
 
         }else{
 
@@ -42,6 +62,21 @@ class announcementController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            $announcements=Announcement::findOrFail($id);
+
+            $announcements->Type=Request::input('Type');
+            $announcements->Description=Request::input('Description');
+            $announcements->Hour=Request::input('Hour');
+            $announcements->Id_user=Request::input('Id_user');
+
+            $user=User::findOrFail(Request::input('Id_user'));
+
+            $announcements->save();
+            $user->save();
+
+            Alert::success('Actualizado!','O comunicado foi adicionado com sucesso!');
+
+            return redirect()->back();
 
         }else{
 
@@ -54,6 +89,13 @@ class announcementController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            $announcements=Announcement::findOrFail($id);
+
+            $announcements->delete();
+
+            Alert::success('Eliminado!','O comunicado foi eliminado com sucesso!');
+
+            return redirect()->back();
 
         }else{
 
