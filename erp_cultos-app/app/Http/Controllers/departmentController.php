@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Auth;
 
 class departmentController extends Controller
 {
+    public function addDepartment()
+    {
+        if(Auth::user()->hasRole('admin')){
+
+            return view('Admin.addDepartment');
+
+        }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
+            
+            return redirect()->route('login');
+        }
+    }
     public function allDepartment()
     {
         if(Auth::user()->hasRole('admin')){

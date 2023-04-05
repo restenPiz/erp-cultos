@@ -1092,13 +1092,13 @@
                                         <div class="collapse menu-dropdown" id="sidebarApps">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="{{ route('addActivity') }}" class="nav-link"
+                                                    <a href="{{ route('addDepartment') }}" class="nav-link"
                                                         data-key="t-calendar">
                                                         Adicionar Departamento
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="{{ route('allActivity') }}" class="nav-link"
+                                                    <a href="{{ route('allDepartment') }}" class="nav-link"
                                                         data-key="t-chat">
                                                         Todas
                                                         Departamentos </a>
