@@ -924,8 +924,9 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        @role('admin')
+        
             <div class="app-menu navbar-menu">
+            @role('admin')
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
                     <!-- Dark Logo-->
