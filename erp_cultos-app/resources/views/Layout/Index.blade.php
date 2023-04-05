@@ -924,9 +924,9 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        
+        @role('admin')
             <div class="app-menu navbar-menu">
-            @role('admin')
+            
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
                     <!-- Dark Logo-->
@@ -1265,6 +1265,26 @@
                                                             actividades </a>
                                                     </li>
                                                 </ul>
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse"
+                                                role="button" aria-expanded="false" aria-controls="sidebarUI">
+                                                <i class="ri-pencil-ruler-2-line"></i> <span
+                                                    data-key="t-base-ui">Crentes</span>
+                                            </a>
+                                            <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <ul class="nav nav-sm flex-column">
+                                                            <li class="nav-item">
+                                                                <a href="{{ route('addTreasurer') }}" class="nav-link"
+                                                                    data-key="t-alerts">Todos Crentes</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </li>
 

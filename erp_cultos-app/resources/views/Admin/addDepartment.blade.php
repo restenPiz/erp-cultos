@@ -87,7 +87,7 @@
                                     <table class="table align-middle table-nowrap" id="customerTable">
                                         <thead class="table-light">
                                             <tr>
-                                                <th class="sort" data-sort="customer_nam"></th>
+                                                {{---<th class="sort" data-sort="customer_nam"></th>---}}
                                                 <th class="sort" data-sort="customer_name">Nome do Departamento</th>
                                                 <th class="sort" data-sort="actio"></th>
                                             </tr>
@@ -95,7 +95,7 @@
                                         <tbody class="list form-check-all">
                                             @foreach ($departments as $department)
                                                 <tr>
-                                                    <td class="customer_nam">{{ $department->id }}</td>
+                                                    {{---<td class="customer_nam">{{ $department->id }}</td>---}}
                                                     <td class="customer_name">{{ $department->Name }}</td>
                                                     <td class="actio">
                                                         <div class="d-flex gap-2">

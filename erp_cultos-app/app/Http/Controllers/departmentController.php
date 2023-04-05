@@ -17,8 +17,10 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
-            $departments=DB::table('departments')->distinct()->get();
-
+            $departments=DB::table('departments')
+                ->distinct()
+                ->get();
+            
             $users=User::all();
 
             return view('Admin.addDepartment',compact('users','departments'));
