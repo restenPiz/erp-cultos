@@ -103,8 +103,11 @@ class announcementController extends Controller
     public function showAnnouncement($id)
     {
         if(Auth::user()->hasRole('shepherd'))
-        {
-            $users=User::all();
+        { 
+            $users=DB::table('users')
+                ->where('userType','=','pastor')
+                ->get();
+            
             $announcements=Announcement::findOrFail($id);
 
             return view('Shepherd.showAnnouncement',compact('users','announcements'));

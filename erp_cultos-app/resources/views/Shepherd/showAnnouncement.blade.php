@@ -84,7 +84,7 @@
                                         <label for="billingName" class="text-muted text-uppercase fw-semibold">Descricao</label>
                                     </div>
                                     <div class="mb-2">
-                                        <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="10" value="{{$announcements->Description}}" required></textarea>
+                                        <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="10" required>{{$announcements->Description}}</textarea>
                                         <div class="invalid-feedback">
                                             Por favor digite uma descricao valida
                                         </div>
@@ -96,9 +96,10 @@
                             
                             <div class="hstack gap-2 justify-content-end d-print-none mt-4">
                                 <button name="submit" type="submit" class="btn btn-success"><i
-                                        class="ri-printer-line align-bottom me-1"></i> Adicionar</button>
+                                        class="ri-check-double-line align-bottom me-1"></i> Actualizar</button>
                                 <a href="javascript:void(0);" class="btn btn-primary"><i
                                         class="ri-download-2-line align-bottom me-1"></i> Download Comunicado</a>
+                                        <a href="{{route('allAnnouncement')}}" class="btn btn-secondary"> Voltar</a>
                                 {{---<a href="javascript:void(0);" class="btn btn-danger"><i
                                         class="ri-send-plane-fill align-bottom me-1"></i> Send Invoice</a>--}}
                             </div>
