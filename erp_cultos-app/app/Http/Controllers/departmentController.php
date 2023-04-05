@@ -17,23 +17,11 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
+            $departments=DB::table('departments')->distinct()->get();
+
             $users=User::all();
 
-            return view('Admin.addDepartment',compact('users'));
-
-        }else{
-            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
-            
-            return redirect()->route('login');
-        }
-    }
-    public function allDepartment()
-    {
-        if(Auth::user()->hasRole('admin')){
-
-            $departments=Department::all();
-
-            return view('Admin.allDepartment',compact('departments'));
+            return view('Admin.addDepartment',compact('users','departments'));
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
@@ -59,7 +47,7 @@ class departmentController extends Controller
             
             Alert::success('Adicionado!','O departamento foi adicionado com sucesso!');
 
-            return redirect()->back();
+            return redirect()->route('addDepartment');
 
         }else{
 
@@ -72,14 +60,17 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
-            $department=Department::find($id);
+            foreach(Request::input('Id_user') as $key=>$name)
+            {
+                $insert=[
+                    'Name'=>Request::input('Name'),
+                    'Id_user'=>Request::input('Id_user')[$key],
+                    'created_at'=>now(),
+                    'updated_at'=>now(),
+                ];
 
-            $department->Name=Request::input('Name');
-            $department->Id_user=Request::input('Id_user');
-            $user=User::find(Request::input('Id_user'));
-
-            $department->save();
-            $user->save();
+                DB::table('departments')->insert($insert);
+            }
 
             Alert::success('Actualizado!','O Departamento foi actualizado com sucesso!');
 
