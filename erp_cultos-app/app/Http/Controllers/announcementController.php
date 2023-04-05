@@ -31,6 +31,20 @@ class announcementController extends Controller
         }
     }    
 
+    public function allAnnouncement()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+
+            return view('Shepherd.allAnnouncement');
+        
+        }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+
     public function storeAnnouncement()
     {
         if(Auth::user()->hasRole('shepherd'))
