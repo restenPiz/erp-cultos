@@ -13,6 +13,6 @@ class Department extends Model
 
     protected $fillable=[
         'Name',
-        'Users',
+        'Id_users',
     ];
 }
