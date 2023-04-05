@@ -19,7 +19,7 @@ class CreateDepartmentsTable extends Migration
             
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();
-            $table->foreign('Id_user')->references('id')->on('user');
+            $table->foreign('Id_user')->references('id')->on('users');
 
             $table->timestamps();
         });
