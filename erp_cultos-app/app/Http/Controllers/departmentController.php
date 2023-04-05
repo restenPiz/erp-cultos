@@ -17,7 +17,9 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
-            return view('Admin.addDepartment');
+            $users=User::all();
+
+            return view('Admin.addDepartment',compact('users'));
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');

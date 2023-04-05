@@ -1085,11 +1085,11 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse"
+                                        <a class="nav-link menu-link" href="#sidebarAppsa" data-bs-toggle="collapse"
                                             role="button" aria-expanded="false" aria-controls="sidebarApps">
                                             <i class="ri-apps-2-line"></i> <span data-key="t-apps">Departamentos</span>
                                         </a>
-                                        <div class="collapse menu-dropdown" id="sidebarApps">
+                                        <div class="collapse menu-dropdown" id="sidebarAppsa">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
                                                     <a href="{{ route('addDepartment') }}" class="nav-link"
