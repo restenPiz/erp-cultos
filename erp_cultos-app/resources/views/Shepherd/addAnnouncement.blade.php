@@ -24,12 +24,12 @@
         <div class="row justify-content-center">
             <div class="col-xxl-9">
                 <div class="card">
-                    <form class="needs-validation" novalidate id="invoice_form">
+                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('storeAnnouncement')}}" method="post">
+                        @csrf
                         <div class="card-body border-bottom border-bottom-dashed p-4">
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="profile-user mx-auto  mb-3">
-                                        <input id="profile-img-file-input" type="file" class="profile-img-file-input" />
                                         <label for="profile-img-file-input" class="d-block" tabindex="0">
                                             <span 
                                                 class="overflow-hidden border border-dashed d-flex align-items-center justify-content-center rounded"
@@ -57,11 +57,11 @@
                                     <label for="invoicenoInput">Comunicador</label>
                                     <div class="input-light">
                                         <select class="form-control bg-light border-0" data-choices data-choices-search-false
-                                            id="choices-payment-status" required>
-                                            <option value="">Select Payment Status</option>
-                                            <option value="Paid">Paid</option>
-                                            <option value="Unpaid">Unpaid</option>
-                                            <option value="Refund">Refund</option>
+                                            id="choices-payment-status" name="Id_user" required>
+                                            <option>...</option>
+                                            @foreach ($users as $user)
+                                                <option value="{{$user->id}}">{{$user->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                     <div>
                                         <label for="date-field">Horario</label>
                                         <input type="time" class="form-control bg-light border-0" id="date-field"
-                                            data-provider="flatpickr" data-time="true">
+                                            data-provider="flatpickr" data-time="true" name="Hour">
                                     </div>
                                 </div>
                                 <!--end col-->
@@ -84,7 +84,7 @@
                                         <label for="billingName" class="text-muted text-uppercase fw-semibold">Descricao</label>
                                     </div>
                                     <div class="mb-2">
-                                        <textarea class="form-control bg-light border-0" id="billingAddress" rows="10" placeholder="Digite o conteudo do seu comunicado..." required></textarea>
+                                        <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="10" placeholder="Digite o conteudo do seu comunicado..." required></textarea>
                                         <div class="invalid-feedback">
                                             Por favor digite uma descricao valida
                                         </div>
@@ -92,14 +92,15 @@
                                 </div>
                                 <!--end col-->
                             </div>
+                            <input type="hidden" class="form-control bg-light border-0" value="admin" name="Type">
                             
                             <div class="hstack gap-2 justify-content-end d-print-none mt-4">
-                                <button type="submit" class="btn btn-success"><i
-                                        class="ri-printer-line align-bottom me-1"></i> Save</button>
+                                <button name="submit" type="submit" class="btn btn-success"><i
+                                        class="ri-printer-line align-bottom me-1"></i> Adicionar</button>
                                 <a href="javascript:void(0);" class="btn btn-primary"><i
-                                        class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a>
-                                <a href="javascript:void(0);" class="btn btn-danger"><i
-                                        class="ri-send-plane-fill align-bottom me-1"></i> Send Invoice</a>
+                                        class="ri-download-2-line align-bottom me-1"></i> Download Comunicado</a>
+                                {{---<a href="javascript:void(0);" class="btn btn-danger"><i
+                                        class="ri-send-plane-fill align-bottom me-1"></i> Send Invoice</a>--}}
                             </div>
                         </div>
                     </form>
