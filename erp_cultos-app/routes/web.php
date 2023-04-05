@@ -11,6 +11,7 @@ use App\Http\Controllers\activityController;
 use App\Http\Controllers\patrimonyController;
 use App\Http\Controllers\fileController;
 use App\Http\Controllers\departmentController;
+use App\Http\Controllers\announcementController;
 
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
@@ -81,6 +82,19 @@ Route::post('/storeActivity', [activityController::class, 'storeActivity'])->mid
 Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
 Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
 Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
+
+//Inicio das rotas da parte de pastor
+Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leader']], function () {
+
+    //Inicio das rotas para os comunicados    
+    Route::post('/storeAnnouncement', [announcementController::class, 'storeAnnouncement'])->middleware(['auth'])->name('storeAnnouncement');
+    Route::get('/addAnnouncement', [announcementController::class, 'addAnnouncement'])->middleware(['auth'])->name('addAnnouncement');
+    Route::get('/allAnnouncement', [announcementController::class, 'allAnnouncement'])->middleware(['auth'])->name('allAnnouncement');
+    Route::post('/updateAnnouncement/{id}', [announcementController::class, 'updateAnnouncement'])->middleware(['auth'])->name('updateAnnouncement');
+    Route::get('/deleteAnnouncement/{id}', [announcementController::class, 'deleteAnnouncement'])->middleware(['auth'])->name('deleteAnnouncement');
+
+
+});
 
 //Inicio das rotas da parte do lider de louvor
 Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leader']], function () {
