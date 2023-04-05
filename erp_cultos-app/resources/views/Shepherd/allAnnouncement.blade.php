@@ -35,7 +35,7 @@
                         <div class="row g-4 mb-3">
                             <div class="col-sm-auto">
                                 <div>
-                                    <a href="{{ route('addActivity') }}" class="btn btn-success add-btn"><i
+                                    <a href="{{ route('addAnnouncement') }}" class="btn btn-success add-btn"><i
                                             class="ri-add-line align-bottom me-1"></i> Adicionar</a>
                                 </div>
                             </div>
@@ -53,143 +53,36 @@
                             <table class="table align-middle table-nowrap" id="customerTable">
                                 <thead class="table-light">
                                     <tr>
-                                        {{-- <th scope="col" style="width: 50px;">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="checkAll"
-                                                    value="option">
-                                            </div>
-                                        </th> --}}
                                         <th class="sort" data-sort="customer_nam"></th>
-                                        <th class="sort" data-sort="customer_name">Titulo</th>
+                                        <th class="sort" data-sort="customer_name">Comunicador</th>
                                         <th class="sort" data-sort="email">Horario</th>
-                                        <th class="sort" data-sort="phone">Dia</th>
-                                        <th class="sort" data-sort="date">Grupo</th>
-                                        <th class="sort" data-sort="status">Nome do Responsavel</th>
                                         <th class="sort" data-sort="actio"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="list form-check-all">
-                                    @foreach ($activities as $activity)
+                                    @foreach ($announcements as $announcement)
                                         <tr>
-                                            <td class="customer_nam">{{ $activity->id }}</td>
-                                            <td class="customer_name">{{ $activity->Title }}</td>
-                                            <td class="email">{{ $activity->Hour }}</td>
-                                            <td class="phone">{{ $activity->Day }}</td>
-                                            <td class="date">{{ $activity->Group }}</td>
-                                            <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
+                                            <td class="customer_nam">{{ $announcement->id }}</td>
+                                            <td class="customer_name">{{ $announcement->name($announcement->Id_user) }}</td>
+                                            <td class="email">{{ $announcement->Hour }}</td>
                                             <td class="actio">
                                                 <div class="d-flex gap-2">
                                                     <div class="edit">
                                                         <button class="btn btn-sm btn-success edit-item-btn"
                                                             data-bs-toggle="modal"
-                                                            data-bs-target="#showModal{{ $activity->id }}">Editar</button>
+                                                            data-bs-target="#showModal{{ $announcement->id }}">Editar</button>
                                                     </div>
                                                     <div class="remove">
                                                         <button class="btn btn-sm btn-danger remove-item-btn"
                                                             data-bs-toggle="modal"
-                                                            data-bs-target="#deleteRecordModal{{ $activity->id }}">Eliminar</button>
+                                                            data-bs-target="#deleteRecordModal{{ $announcement->id }}">Eliminar</button>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
 
-                                        {{-- Inicio do modal para editar o pastor --}}
-                                        <div class="modal fade" id="showModal{{ $activity->id }}" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-header bg-light p-3">
-                                                        <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close" id="close-modal"></button>
-                                                    </div>
-                                                    <form class="tablelist-form" autocomplete="off"
-                                                        action="{{ route('updateActivity', ['id' => $activity->id]) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        <div class="modal-body">
-                                                            <div class="mb-3" id="modal-id">
-                                                                <label for="customername-field"
-                                                                    class="form-label">Titulo</label>
-                                                                <input type="text" id="id-field" name="Title"
-                                                                    class="form-control" value="{{ $activity->Title }}"
-                                                                    required />
-                                                            </div>
-
-                                                            <div class="mb-3">
-                                                                <label for="customername-field"
-                                                                    class="form-label">Dia</label>
-                                                                <input type="date" id="customername-field"
-                                                                    class="form-control" value="{{ $activity->Day }}"
-                                                                    name="Day" required />
-                                                                <div class="invalid-feedback">Por favor escreva bem o seu
-                                                                    nome
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="mb-3">
-                                                                <label for="email-field"
-                                                                    class="form-label">Horario</label>
-                                                                <input type="time" id="email-field"
-                                                                    class="form-control" value="{{ $activity->Hour }}"
-                                                                    name="Hour" required />
-                                                                <div class="invalid-feedback">Digite o seu email de forma
-                                                                    correcta.</div>
-                                                            </div>
-
-                                                            <div>
-                                                                <label for="status-field" class="form-label">Nome do
-                                                                    Departamento</label>
-                                                                <select class="form-control" name="Group"
-                                                                    id="status-field" required>
-                                                                    <option value="{{ $activity->Group }}">
-                                                                        {{ $activity->Group }}</option>
-
-
-                                                                    <option value="Departamento dos jovens">Departamento
-                                                                        dos Jovens</option>
-                                                                    <option value="Departamento dos Pais">Departamento dos
-                                                                        Pais</option>
-                                                                    <option value="Departamento dos Maes">Departamento dos
-                                                                        Maes</option>
-                                                                    <option value="Departamento dos Criancas">Departamento
-                                                                        dos Criancas</option>
-                                                                </select>
-                                                            </div>
-
-
-                                                            <div>
-                                                                <label for="status-field" class="form-label">Nome do
-                                                                    Responsavel</label>
-                                                                <select class="form-control" name="Id_user"
-                                                                    id="status-field" required>
-                                                                    <option value="{{ $activity->Id_user }}">
-                                                                        {{ $activity->name($activity->Id_user) }}</option>
-                                                                    @foreach ($users as $user)
-                                                                        <option value="{{ $user->id }}">
-                                                                            {{ $user->name }}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <div class="hstack gap-2 justify-content-end">
-                                                                <button type="button" class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Fechar</button>
-                                                                <button type="submit" name="submit"
-                                                                    class="btn btn-success" id="add-btn">Actualizar
-                                                                    Actividade</button>
-                                                                <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- Fim do modal para editar pastor --}}
-
                                         <!-- Modal -->
-                                        <div class="modal fade zoomIn" id="deleteRecordModal{{ $activity->id }}"
+                                        <div class="modal fade zoomIn" id="deleteRecordModal{{ $announcement->id }}"
                                             tabindex="-1" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
@@ -197,7 +90,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close" id="btn-close"></button>
                                                     </div>
-                                                    <form action="{{ route('deleteActivity', ['id' => $activity->id]) }}"
+                                                    <form action="{{ route('deleteAnnouncement', ['id' => $announcement->id]) }}"
                                                         method="get">
                                                         @csrf
                                                         @method('DELETE')
@@ -211,8 +104,7 @@
                                                                 <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                                                     <h4>Voce tem certeza ?</h4>
                                                                     <p class="text-muted mx-4 mb-0">Voce pretende eliminar
-                                                                        a actividade de
-                                                                        {{ $activity->Title }} ?</p>
+                                                                     este comunicado ?</p>
                                                                 </div>
                                                             </div>
                                                             <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
