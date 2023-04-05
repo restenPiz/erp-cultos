@@ -17,13 +17,8 @@ class Department extends Model
     ];
 
     //Inicio dos metodos responsaveis por interligar a tabela de departamentos com a de usuarios
-    public function users()
+    public function usuarios()
     {
         return $this->hasMany(User::class);
-    }
-    
-    public function name($id)
-    {
-        return User::find($id)->name;
     }
 }

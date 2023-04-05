@@ -29,7 +29,7 @@
                                                 @foreach ($users as $user)
                                                 <li>
                                                     <div class="form-check d-flex align-items-center">
-                                                        <input class="form-check-input me-3" type="checkbox" name="Id_user" value="{{ $user->id }}" id="anna-adame">
+                                                        <input class="form-check-input me-3" type="checkbox" name="Id_user[]" value="{{ $user->id }}"  id="anna-adame">
                                                         <label class="form-check-label d-flex align-items-center" for="anna-adame">
                                                             <span class="flex-shrink-0">
                                                                 <img src="../assets/images/users/avatar-1.jpg" alt="" class="avatar-xxs rounded-circle" />

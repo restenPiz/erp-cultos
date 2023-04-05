@@ -41,20 +41,20 @@ class departmentController extends Controller
             return redirect()->route('login');
         }
     }
-    public function storeDepartment()
+    public function storeDepartment( Request $request)
     {
         if(Auth::user()->hasRole('admin')){
 
-            $table=new Department();
-
-            $table->Name=Request::input('Name');
-            $table->Id_user=Request::input('Id_user');
+            $departamento = Department::create([
+                'Name' => $request->input('Name')
+            ]);
             
-            $user=User::find(Request::input('Id_user'));
-
-            $table->save();
-            $user->save();
-
+            $usuariosSelecionados = $request->input('Id_user');
+            
+            if (!empty($usuariosSelecionados)) {
+                $departamento->usuarios()->attach($usuariosSelecionados);
+            }
+            
             Alert::success('Adicionado!','O departamento foi adicionado com sucesso!');
 
             return redirect()->back();
