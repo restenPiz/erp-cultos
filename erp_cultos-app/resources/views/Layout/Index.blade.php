@@ -25,15 +25,6 @@
     <!-- custom Css-->
     <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
-    
-    <!-- dropzone css -->
-    <link rel="stylesheet" href="../assets/libs/dropzone/dropzone.css" type="text/css" />
-
-    <!-- Sweet Alert css-->
-    <link href="../assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-
-    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
 </head>
 
 <body>
@@ -1437,22 +1428,6 @@
             <script src="../assets/libs/feather-icons/feather.min.js"></script>
             <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
             <script src="../assets/js/plugins.js"></script>
-
-            <!-- App js -->
-            <script src="../assets/js/app.js"></script>
-             <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- dropzone min -->
-            <script src="../assets/libs/dropzone/dropzone-min.js"></script>
-
-            <!-- cleave.js -->
-            <script src="../assets/libs/cleave.js/cleave.min.js"></script>
-
-            <!--Invoice create init js-->
-            <script src="../assets/js/pages/invoicecreate.init.js"></script>
-
-            <!-- Sweet Alerts js -->
-            <script src="../assets/libs/sweetalert2/sweetalert2.min.js"></script>
 
             <!-- App js -->
             <script src="../assets/js/app.js"></script>

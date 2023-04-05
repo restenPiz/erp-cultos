@@ -66,17 +66,28 @@
                                             <td class="customer_name">{{ $announcement->name($announcement->Id_user) }}</td>
                                             <td class="email">{{ $announcement->Hour }}</td>
                                             <td class="actio">
-                                                <div class="d-flex gap-2">
-                                                    <div class="edit">
-                                                        <button class="btn btn-sm btn-success edit-item-btn"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#showModal{{ $announcement->id }}">Editar</button>
-                                                    </div>
-                                                    <div class="remove">
-                                                        <button class="btn btn-sm btn-danger remove-item-btn"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#deleteRecordModal{{ $announcement->id }}">Eliminar</button>
-                                                    </div>
+                                                <div class="dropdown">
+                                                    <a href="#dropdownMenuLink15"
+                                                        class="btn btn-light btn-icon"
+                                                        id="dropdownMenuLink15"
+                                                        data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="ri-equalizer-fill"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                        aria-labelledby="dropdownMenuLink15" id="dropdownMenuLink15">
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);"><i
+                                                                    class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
+                                                        </li>
+                                                        <li class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item"
+                                                                href="javascript:void(0);"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deletRecordModal{{$announcement->id }}"><i
+                                                                    class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Eliminar</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </td>
                                         </tr>
