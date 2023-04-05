@@ -1083,6 +1083,28 @@
                                             </ul>
                                         </div>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse"
+                                            role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-apps-2-line"></i> <span data-key="t-apps">Departamentos</span>
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarApps">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="{{ route('addActivity') }}" class="nav-link"
+                                                        data-key="t-calendar">
+                                                        Adicionar Departamento
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ route('allActivity') }}" class="nav-link"
+                                                        data-key="t-chat">
+                                                        Todas
+                                                        Departamentos </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
 
                                     <li class="nav-item">
                                         <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse"
