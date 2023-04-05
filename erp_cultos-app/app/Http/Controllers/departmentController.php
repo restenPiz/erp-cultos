@@ -34,6 +34,7 @@ class departmentController extends Controller
             $table=new Department();
 
             $table->Name=Request::input('Name');
+            $table->Id_user=Request::input('Id_user');
             
             $user=User::find(Request::input('Id_user'));
 
@@ -58,6 +59,7 @@ class departmentController extends Controller
             $department=Department::find($id);
 
             $department->Name=Request::input('Name');
+            $department->Id_user=Request::input('Id_user');
             $user=User::find(Request::input('Id_user'));
 
             $department->save();
