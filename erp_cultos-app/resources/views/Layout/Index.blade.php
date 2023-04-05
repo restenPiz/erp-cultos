@@ -1094,14 +1094,8 @@
                                                 <li class="nav-item">
                                                     <a href="{{ route('addDepartment') }}" class="nav-link"
                                                         data-key="t-calendar">
-                                                        Adicionar Departamento
+                                                        Departamento
                                                     </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{ route('allDepartment') }}" class="nav-link"
-                                                        data-key="t-chat">
-                                                        Todas
-                                                        Departamentos </a>
                                                 </li>
                                             </ul>
                                         </div>
