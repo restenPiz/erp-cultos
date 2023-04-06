@@ -39,6 +39,7 @@ class activityController extends Controller
     public function storeActivity()
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
+            
             $table = new Activity();
 
             $table->Hour = Request::input('Hour');
@@ -66,7 +67,11 @@ class activityController extends Controller
     public function allActivity()
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
-            $activities = Activity::all();
+            
+            $activities = DB::table('activities')
+                ->select('Title','Hour','Day','Group','id')
+                ->where('Group','<>','Admin')
+                ->get();
 
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')

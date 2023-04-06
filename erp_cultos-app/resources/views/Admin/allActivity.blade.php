@@ -267,8 +267,7 @@
     @endrole
 
     @role('shepherd')
-
-            {{-- Inicio da view que possui todo o codigo fonte --}}
+        {{-- Inicio da view que possui todo o codigo fonte --}}
 
         <!-- start page title -->
         <div class="row">
@@ -324,7 +323,6 @@
                                                         value="option">
                                                 </div>
                                             </th> --}}
-                                            <th class="sort" data-sort="customer_nam"></th>
                                             <th class="sort" data-sort="customer_name">Titulo</th>
                                             <th class="sort" data-sort="email">Horario</th>
                                             <th class="sort" data-sort="phone">Dia</th>
@@ -336,12 +334,14 @@
                                     <tbody class="list form-check-all">
                                         @foreach ($activities as $activity)
                                             <tr>
-                                                <td class="customer_nam">{{ $activity->id }}</td>
                                                 <td class="customer_name">{{ $activity->Title }}</td>
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
                                                 <td class="date">{{ $activity->Group }}</td>
-                                                <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
+
+                                                @if (property_exists($activity, 'name') && is_callable([$activity, 'name']))
+                                                    <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
+                                                @endif
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
@@ -428,8 +428,10 @@
                                                                         Responsavel</label>
                                                                     <select class="form-control" name="Id_user"
                                                                         id="status-field" required>
-                                                                        <option value="{{ $activity->Id_user }}">
-                                                                            {{ $activity->name($activity->Id_user) }}</option>
+                                                                        @if (property_exists($activity, 'name') && is_callable([$activity, 'name']))
+                                                                            <option value="{{ $activity->Id_user }}">
+                                                                                {{ $activity->name($activity->Id_user) }}</option>
+                                                                        @endif
                                                                         @foreach ($users as $user)
                                                                             <option value="{{ $user->id }}">
                                                                                 {{ $user->name }}</option>
@@ -530,6 +532,5 @@
         <!-- end row -->
 
         {{-- Fim da view que possui o codigo fonte --}}
-        
     @endrole
 @endsection

@@ -324,7 +324,6 @@
                                                         value="option">
                                                 </div>
                                             </th> --}}
-                                            <th class="sort" data-sort="customer_nam"></th>
                                             <th class="sort" data-sort="customer_name">Titulo</th>
                                             <th class="sort" data-sort="email">Horario</th>
                                             <th class="sort" data-sort="phone">Dia</th>
@@ -335,7 +334,6 @@
                                     <tbody class="list form-check-all">
                                         @foreach ($activities as $activity)
                                             <tr>
-                                                <td class="customer_nam">{{ $activity->id }}</td>
                                                 <td class="customer_name">{{ $activity->Title }}</td>
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
@@ -367,7 +365,7 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateActivity', ['id' => $activity->id]) }}"
+                                                            action="{{ route('updateReportActivities', ['id' => $activity->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
@@ -420,9 +418,7 @@
                                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                 </div>
                                                             </div>
-                                                            <input type="hidden" id="email-field"
-                                                                        class="form-control" value="Admin"
-                                                                        name="Group" required />
+                                                            <input type="hidden" id="email-field" class="form-control" value="Admin" name="Group" required />
                                                         </form>
                                                     </div>
                                                 </div>
@@ -438,7 +434,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{ route('deleteActivity', ['id' => $activity->id]) }}"
+                                                        <form action="{{ route('deleteReportActivities', ['id' => $activity->id]) }}"
                                                             method="get">
                                                             @csrf
                                                             @method('DELETE')
