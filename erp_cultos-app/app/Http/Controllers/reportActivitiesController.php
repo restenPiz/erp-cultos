@@ -62,7 +62,7 @@ class reportActivitiesController extends Controller
     
             Alert::success('Adicionado!','O seu relatorio de actividades foi adicionado com sucesso!');
     
-            return redirect()->back();
+            return view('Shepherd.addReportActivities');
         }
         else{
             
@@ -89,7 +89,7 @@ class reportActivitiesController extends Controller
 
             Alert::success('Actualizado!','O seu relatorio de actividades foi actualizado com sucesso!');
 
-            return redirect()->back();
+            return redirect()->route('allReportActivities');
         }
         else
         {
@@ -108,6 +108,8 @@ class reportActivitiesController extends Controller
             $table->delete();
 
             Alert::success('Eliminado!','O relatorio de actividades foi eliminado com sucesso!');
+            
+            return redirect()->route('allReportActivities');
         }
         else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
