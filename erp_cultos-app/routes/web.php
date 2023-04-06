@@ -94,12 +94,12 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
     Route::get('/showAnnouncement/{id}', [announcementController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncement');
     Route::get('/deleteAnnouncement/{id}', [announcementController::class, 'deleteAnnouncement'])->middleware(['auth'])->name('deleteAnnouncement');
 
-    //Inicio das rotas da parte de adicionar relatorio de actividades
-    Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
-    Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
-    Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
-    Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
-    Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
+    //Inicio das rotas da parte de adicionar relatorio de actividades 
+    Route::get('/addReportActivities', [reportActivitiesController::class, 'addReportActivities'])->middleware(['auth'])->name('addReportActivities');
+    Route::post('/storeReportActivities', [reportActivitiesController::class, 'storeReportActivities'])->middleware(['auth'])->name('storeReportActivities');
+    Route::get('/allReportActivities', [reportActivitiesController::class, 'allReportActivities'])->middleware(['auth'])->name('allReportActivities');
+    Route::post('/updateReportActivities/{id}', [reportActivitiesController::class, 'updateReportActivities'])->middleware(['auth'])->name('updateReportActivities');
+    Route::get('/deleteReportActivities/{id}', [reportActivitiesController::class, 'deleteReportActivities'])->middleware(['auth'])->name('deleteReportActivities');
     
 
 });
