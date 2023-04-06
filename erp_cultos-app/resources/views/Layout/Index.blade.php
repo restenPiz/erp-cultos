@@ -1325,12 +1325,12 @@
                                             <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="{{ route('addPatrimony') }}" class="nav-link"
+                                                        <a href="{{ route('addReportActivities') }}" class="nav-link"
                                                             data-key="t-sweet-alerts">Adicionar Relatorio de
                                                             Actividades</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="{{ route('allPatrimony') }}" class="nav-link"
+                                                        <a href="{{ route('allReportActivities') }}" class="nav-link"
                                                             data-key="t-nestable-list">Detalhes de Relatorio de
                                                             Actividades</a>
                                                     </li>

@@ -12,6 +12,7 @@ use App\Http\Controllers\patrimonyController;
 use App\Http\Controllers\fileController;
 use App\Http\Controllers\departmentController;
 use App\Http\Controllers\announcementController;
+use App\Http\Controllers\reportActivitiesController;
 
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
