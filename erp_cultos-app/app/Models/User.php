@@ -38,4 +38,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Department::class);
     }
+    public function Activity()
+    {
+        return $this->belongsTo(Activity::class);
+    }
 }

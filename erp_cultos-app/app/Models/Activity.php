@@ -24,9 +24,4 @@ class Activity extends Model
     {
         return $this->hasMany(User::class);
     }
-    
-    public function name($id)
-    {
-        return User::find($id)->name;
-    }
 }
