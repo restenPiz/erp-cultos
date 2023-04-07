@@ -4,7 +4,7 @@
 
     @role('shepherd')
         {{-- Inicio do conteudo do meu sistem --}}
-        <form action="{{ route('storeActivity') }}" method="post">
+        <form action="{{ route('storeReportActivities') }}" method="post">
             @csrf
 
             <div class="row">

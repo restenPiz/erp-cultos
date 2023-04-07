@@ -292,7 +292,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">Todas Actividades</h4>
+                        <h4 class="card-title mb-0">Todos os Relatorios de Actividades</h4>
                     </div><!-- end card header -->
 
                     <div class="card-body">
