@@ -317,12 +317,6 @@
                                 <table class="table align-middle table-nowrap" id="customerTable">
                                     <thead class="table-light">
                                         <tr>
-                                            {{-- <th scope="col" style="width: 50px;">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="checkAll"
-                                                        value="option">
-                                                </div>
-                                            </th> --}}
                                             <th class="sort" data-sort="customer_name">Titulo</th>
                                             <th class="sort" data-sort="email">Horario</th>
                                             <th class="sort" data-sort="phone">Dia</th>
@@ -338,10 +332,7 @@
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
                                                 <td class="date">{{ $activity->Group }}</td>
-
-                                                @if (property_exists($activity, 'name') && is_callable([$activity, 'name']))
-                                                    <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
-                                                @endif
+                                                <td class="dat">{{ $activity->Id_user->name}}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
