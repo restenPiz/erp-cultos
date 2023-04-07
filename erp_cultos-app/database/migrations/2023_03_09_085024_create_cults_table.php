@@ -23,6 +23,7 @@ class CreateCultsTable extends Migration
             $table->string('Title');
             $table->string('Book');
             $table->string('Chapter');
+            $table->string('Name_cult');
             $table->string('Verse');
             $table->string('Description')->nullable();
             $table->timestamps();

@@ -332,7 +332,7 @@
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
                                                 <td class="date">{{ $activity->Group }}</td>
-                                                <td class="dat">{{ $activity->Activity->name}}</td>
+                                                <td class="dat">{{ $activity->User->Id_user->name}}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">

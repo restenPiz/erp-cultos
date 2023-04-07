@@ -68,10 +68,7 @@ class activityController extends Controller
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
             
-            $activities = DB::table('activities')
-                ->select('Title','Hour','Day','Group','id','Id_user')
-                ->where('Group','<>','Admin')
-                ->get();
+            $activities = Activity::all();
 
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
