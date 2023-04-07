@@ -38,8 +38,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Department::class);
     }
-    public function Activity()
+    public function activitys()
     {
-        return $this->belongsTo(Activity::class);
+        return $this->hasMany(Activity::class,'Id_user');
     }
 }

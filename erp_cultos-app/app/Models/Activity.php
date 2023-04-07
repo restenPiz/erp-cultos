@@ -20,8 +20,8 @@ class Activity extends Model
     ];
 
     //Inicio dos metodos que fazem a captura dos dados
-    public function User()
+    public function users()
     {
-        return $this->hasMany(User::class,'Id_user','id');
+        return $this->belongsTo(User::class,'Id_user');
     }
 }

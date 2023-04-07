@@ -332,7 +332,7 @@
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
                                                 <td class="date">{{ $activity->Group }}</td>
-                                                <td class="dat">{{ $activity->User->Id_user->name}}</td>
+                                                <td class="dat">{{ $activity->users->name }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
@@ -421,7 +421,8 @@
                                                                         id="status-field" required>
                                                                         @if (property_exists($activity, 'name') && is_callable([$activity, 'name']))
                                                                             <option value="{{ $activity->Id_user }}">
-                                                                                {{ $activity->name($activity->Id_user) }}</option>
+                                                                                {{ $activity->name($activity->Id_user) }}
+                                                                            </option>
                                                                         @endif
                                                                         @foreach ($users as $user)
                                                                             <option value="{{ $user->id }}">
