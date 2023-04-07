@@ -52,6 +52,7 @@ class reportActivitiesController extends Controller
 
             $table->Title=Request::input('Title');
             $table->Hour=Request::input('Hour');
+            $table->Day=Request::input('Day');
             $table->Group=Request::input('Group');
             $table->Id_user=Request::input('Id_user');
     
@@ -79,6 +80,7 @@ class reportActivitiesController extends Controller
 
             $table->Title=Request::input('Title');
             $table->Hour=Request::input('Hour');
+            $table->Day=Request::input('Day');
             $table->Group=Request::input('Group');
             $table->Id_user=Request::input('Id_user');
 
