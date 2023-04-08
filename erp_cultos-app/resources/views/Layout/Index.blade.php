@@ -910,6 +910,36 @@
                 </div>
             @endrole
 
+            @role('treasurer')
+            <div class="app-menu navbar-menu">
+            
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <!-- Dark Logo-->
+                    <a href="index.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="assets/images/a1.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/a1.png" alt="" height="17">
+                        </span>
+                    </a>
+                    <!-- Light Logo-->
+                    <br><a href="{{ route('dashboard') }}" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="../assets/images/a1.png" alt="" height="30">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="../assets/images/a1.png" alt="" height="30">
+                        </span>
+                    </a>
+                    <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                        id="vertical-hover">
+                        <i class="ri-record-circle-line"></i>
+                    </button>
+                </div>
+            @endrole
+
             @role('shepherd')
                 <div class="app-menu navbar-menu">
                     <!-- LOGO -->
@@ -1330,6 +1360,65 @@
                                             
                                             {{-- Fim do menu da parte de pastor --}}
                                         @endrole
+
+                                        @role('treasurer')
+                                        {{-- Inicio do menu da parte de pastor --}}
+    
+                                        <ul class="navbar-nav" id="navbar-nav">
+                                            <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                                            <li class="nav-item">
+                                                <a class="nav-link menu-link" href="{{ route('dashboard') }}"
+                                                    role="button">
+                                                    <i class="ri-dashboard-2-line"></i> <span
+                                                        data-key="t-dashboards">Index</span>
+                                                </a>
+                                            </li> <!-- end Dashboard Menu -->
+                                            <li class="nav-item">
+                                                <a class="nav-link menu-link" href="#sidebarApps"
+                                                    data-bs-toggle="collapse" role="button" aria-expanded="false"
+                                                    aria-controls="sidebarApps">
+                                                    <i class="ri-apps-2-line"></i> <span
+                                                        data-key="t-apps">Entradas</span>
+                                                </a>
+                                                <div class="collapse menu-dropdown" id="sidebarApps">
+                                                    <ul class="nav nav-sm flex-column">
+                                                        <li class="nav-item">
+                                                            <a href="{{ route('addInput') }}" class="nav-link"
+                                                                data-key="t-calendar">
+                                                                Inserir Entradas
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="{{ route('allInput') }}" class="nav-link"
+                                                                data-key="t-chat"> Detalhes das Entradas </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            
+                                            <li class="nav-item">
+                                                <a class="nav-link menu-link" href="#sidebarAdvanceUI"
+                                                    data-bs-toggle="collapse" role="button" aria-expanded="false"
+                                                    aria-controls="sidebarAdvanceUI">
+                                                    <i class="ri-stack-line"></i> <span data-key="t-advance-ui">Saidas</span>
+                                                </a>
+                                                <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
+                                                    <ul class="nav nav-sm flex-column">
+                                                        <li class="nav-item">
+                                                            <a href="{{ route('addOutput') }}" class="nav-link"
+                                                                data-key="t-sweet-alerts">Adicionar Saidas da Igreja</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="{{ route('allOutput') }}" class="nav-link"
+                                                                data-key="t-nestable-list">Detalhes das Saidas</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+    
+                                            {{-- Fim do menu da parte de pastor --}}
+                                        @endrole    
+    
 
                                     </ul>
                                 
