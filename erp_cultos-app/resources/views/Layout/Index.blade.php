@@ -1316,6 +1316,23 @@
                                         </li>
 
                                         <li class="nav-item">
+                                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse"
+                                                role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                                                <i class="ri-account-circle-line"></i> <span
+                                                    data-key="t-authentication">Pedidos de Oracao</span>
+                                            </a>
+                                            <div class="collapse menu-dropdown" id="sidebarAuth">
+                                                <ul class="nav nav-sm flex-column">
+                                                    <li class="nav-item">
+                                                        <a href="#sidebarSignIn" class="nav-link"> Mais Detalhes
+                                                        </a>
+                                                    </li>
+    
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="nav-item">
                                             <a class="nav-link menu-link" href="#sidebarAdvanceUI"
                                                 data-bs-toggle="collapse" role="button" aria-expanded="false"
                                                 aria-controls="sidebarAdvanceUI">
