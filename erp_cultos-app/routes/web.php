@@ -76,7 +76,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/allDepartment', [departmentController::class, 'allDepartment'])->middleware(['auth'])->name('allDepartment');
     Route::post('/updateDepartment/{id}', [departmentController::class, 'updateDepartment'])->middleware(['auth'])->name('updateDepartment');
     Route::get('/deleteDepartment/{id}', [departmentController::class, 'deleteDepartment'])->middleware(['auth'])->name('deleteDepartment');
-
 });
 
 //Inicio da parte de actividade
@@ -103,8 +102,6 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
     Route::get('/allReportActivities', [reportActivitiesController::class, 'allReportActivities'])->middleware(['auth'])->name('allReportActivities');
     Route::post('/updateReportActivities/{id}', [reportActivitiesController::class, 'updateReportActivities'])->middleware(['auth'])->name('updateReportActivities');
     Route::get('/deleteReportActivities/{id}', [reportActivitiesController::class, 'deleteReportActivities'])->middleware(['auth'])->name('deleteReportActivities');
-    
-
 });
 
 //Inicio das rotas da parte do lider de louvor
@@ -116,24 +113,24 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
     Route::get('/allFile', [fileController::class, 'allFile'])->middleware(['auth'])->name('allFile');
     Route::post('/updateFile/{id}', [fileController::class, 'updateFile'])->middleware(['auth'])->name('updateFile');
     Route::get('/deleteFile/{id}', [fileController::class, 'deleteFile'])->middleware(['auth'])->name('deleteFile');
-
 });
 
 //Inicio das rotas da parte de tesoureiro treasurer
 Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {
     
+    //Inicio da parte de insercao de entradas
     Route::post('/storeInput', [inputController::class, 'storeInput'])->middleware(['auth'])->name('storeInput');
     Route::get('/addInput', [inputController::class, 'addInput'])->middleware(['auth'])->name('addInput');
     Route::get('/allInput', [inputController::class, 'allInput'])->middleware(['auth'])->name('allInput');
     Route::post('/updateInput/{id}', [inputController::class, 'updateInput'])->middleware(['auth'])->name('updateInput');
     Route::get('/deleteInput/{id}', [inputController::class, 'deleteInput'])->middleware(['auth'])->name('deleteInput');
 
+    //Inicio da parte de insercao de saidas
     Route::post('/storeOutput', [outputController::class, 'storeOutput'])->middleware(['auth'])->name('storeOutput');
     Route::get('/addOutput', [outputController::class, 'addOutput'])->middleware(['auth'])->name('addOutput');
     Route::get('/allOutput', [outputController::class, 'allOutput'])->middleware(['auth'])->name('allOutput');
     Route::post('/updateOutput/{id}', [outputController::class, 'updateOutput'])->middleware(['auth'])->name('updateOutput');
     Route::get('/deleteOutput/{id}', [outputController::class, 'deleteOutput'])->middleware(['auth'])->name('deleteOutput');
-
 });
 
 require __DIR__.'/auth.php';
