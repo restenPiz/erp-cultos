@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body bg-soft-light border border-dashed border-start-0 border-end-0">
+                {{---<div class="card-body bg-soft-light border border-dashed border-start-0 border-end-0">
                     <form>
                         <div class="row g-3">
                             <div class="col-xxl-5 col-sm-12">
@@ -190,7 +190,7 @@
                         </div>
                         <!--end row-->
                     </form>
-                </div>
+                </div>--}}
                 <div class="card-body">
                     <div>
                         <div class="table-responsive table-card">

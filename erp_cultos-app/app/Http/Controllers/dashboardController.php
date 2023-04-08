@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\File;
+use App\Models\User;
+use App\Models\Branche;
 
 class dashboardController extends Controller
 {
@@ -14,7 +16,11 @@ class dashboardController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            return view('Admin.Index');
+            $branches = Branche::all();
+
+            $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
+
+            return view('Admin.Index',compact('branches', 'users'));
         }
         if(Auth::user()->hasRole('shepherd'))
         {
