@@ -117,5 +117,9 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
 
 });
 
+//Inicio das rotas da parte de tesoureiro treasurer
+Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {
+
+});
 
 require __DIR__.'/auth.php';
