@@ -141,90 +141,207 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <div class="card" id="invoiceList">
-                <div class="card-header border-0">
-                    <div class="d-flex align-items-center">
-                        <h5 class="card-title mb-0 flex-grow-1">Invoices</h5>
-                        <div class="flex-shrink-0">
-                            <div class="d-flex gap-2 flex-wrap">
-                                <button class="btn btn-primary" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
-                                <a href="apps-invoices-create.html" class="btn btn-danger"><i class="ri-add-line align-bottom me-1"></i> Create Invoice</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{---<div class="card-body bg-soft-light border border-dashed border-start-0 border-end-0">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-xxl-5 col-sm-12">
-                                <div class="search-box">
-                                    <input type="text" class="form-control search bg-light border-light" placeholder="Search for customer, email, country, status or something...">
-                                    <i class="ri-search-line search-icon"></i>
-                                </div>
-                            </div>
-                            <!--end col-->
-                            <div class="col-xxl-3 col-sm-4">
-                                <input type="text" class="form-control bg-light border-light" id="datepicker-range" placeholder="Select date">
-                            </div>
-                            <!--end col-->
-                            <div class="col-xxl-3 col-sm-4">
-                                <div class="input-light">
-                                    <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idStatus">
-                                        <option value="">Status</option>
-                                        <option value="all" selected>All</option>
-                                        <option value="Unpaid">Unpaid</option>
-                                        <option value="Paid">Paid</option>
-                                        <option value="Cancel">Cancel</option>
-                                        <option value="Refund">Refund</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!--end col-->
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">Todas Igrejas Filhas</h4>
+                </div><!-- end card header -->
 
-                            <div class="col-xxl-1 col-sm-4">
-                                <button type="button" class="btn btn-primary w-100" onclick="SearchData();">
-                                    <i class="ri-equalizer-fill me-1 align-bottom"></i> Filters
-                                </button>
-                            </div>
-                            <!--end col-->
-                        </div>
-                        <!--end row-->
-                    </form>
-                </div>--}}
                 <div class="card-body">
-                    <div>
-                        <div class="table-responsive table-card">
-                            <table class="table align-middle table-nowrap" id="invoiceTable">
-                                <thead class="text-muted">
+                    <div id="customerList">
+                        <div class="row g-4 mb-3">
+                            <div class="col-sm-auto">
+                                <div>
+                                    <a href="{{ route('addBranches') }}" class="btn btn-success add-btn"><i
+                                            class="ri-add-line align-bottom me-1"></i> Adicionar</a>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="d-flex justify-content-sm-end">
+                                    <div class="search-box ms-2">
+                                        <input type="text" class="form-control search" placeholder="Search...">
+                                        <i class="ri-search-line search-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive table-card mt-3 mb-1">
+                            <table class="table align-middle table-nowrap" id="customerTable">
+                                <thead class="table-light">
                                     <tr>
-                                        <th scope="col" style="width: 50px;">
+                                        {{-- <th scope="col" style="width: 50px;">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                <input class="form-check-input" type="checkbox" id="checkAll"
+                                                    value="option">
                                             </div>
-                                        </th>
-                                        <th class="sort text-uppercase" data-sort="invoice_id">ID</th>
-                                        <th class="sort text-uppercase" data-sort="customer_name">Customer</th>
-                                        <th class="sort text-uppercase" data-sort="email">Email</th>
-                                        <th class="sort text-uppercase" data-sort="country">Country</th>
-                                        <th class="sort text-uppercase" data-sort="date">Date</th>
-                                        <th class="sort text-uppercase" data-sort="invoice_amount">Amount</th>
-                                        <th class="sort text-uppercase" data-sort="status">Payment Status</th>
-                                        <th class="sort text-uppercase" data-sort="action">Action</th>
+                                        </th> --}}
+                                        <th class="sort" data-sort="customer_nam"></th>
+                                        <th class="sort" data-sort="customer_name">Nome da Filial</th>
+                                        <th class="sort" data-sort="email">Ano de Criacao</th>
+                                        <th class="sort" data-sort="phone">Endereco</th>
+                                        <th class="sort" data-sort="date">Numero de Membros</th>
+                                        <th class="sort" data-sort="status">Nome do Responsavel</th>
+                                        <th class="sort" data-sort="actio"></th>
                                     </tr>
                                 </thead>
-                                <tbody class="list form-check-all" id="invoice-list-data">
+                                <tbody class="list form-check-all">
+                                    @foreach ($branches as $branche)
+                                        <tr>
+                                            <td class="customer_nam">{{ $branche->id }}</td>
+                                            <td class="customer_name">{{ $branche->Name }}</td>
+                                            <td class="email">{{ $branche->Creation_year }}</td>
+                                            <td class="phone">{{ $branche->Address }}</td>
+                                            <td class="date">{{ $branche->Number_of_members }}</td>
+                                            <td class="dat">{{ $branche->name($branche->Id_user) }}</td>
+                                            <td class="actio">
+                                                <div class="d-flex gap-2">
+                                                    <div class="edit">
+                                                        <button class="btn btn-sm btn-success edit-item-btn"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#showModal{{ $branche->id }}">Editar</button>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <button class="btn btn-sm btn-danger remove-item-btn"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#deleteRecordModal{{ $branche->id }}">Eliminar</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
 
+                                        {{-- Inicio do modal para editar o pastor --}}
+                                        <div class="modal fade" id="showModal{{ $branche->id }}" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header bg-light p-3">
+                                                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close" id="close-modal"></button>
+                                                    </div>
+                                                    <form class="tablelist-form" autocomplete="off"
+                                                        action="{{ route('updateBranches', ['id' => $branche->id]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        <div class="modal-body">
+                                                            <div class="mb-3" id="modal-id">
+                                                                <label for="customername-field"
+                                                                    class="form-label">Nome da Filial</label>
+                                                                <input type="text" id="id-field" name="Name"
+                                                                    class="form-control" value="{{ $branche->Name }}"
+                                                                    required />
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="customername-field"
+                                                                    class="form-label">Ano de Criacao</label>
+                                                                <input type="date" id="customername-field"
+                                                                    class="form-control" value="{{ $branche->Creation_year }}"
+                                                                    name="Creation_year" required />
+                                                                <div class="invalid-feedback">Por favor escreva bem o seu
+                                                                    nome
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="email-field" class="form-label">Endereco</label>
+                                                                <input type="text" id="email-field"
+                                                                    class="form-control" value="{{ $branche->Address }}"
+                                                                    name="Address" required />
+                                                                <div class="invalid-feedback">Digite o seu email de forma
+                                                                    correcta.</div>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="phone-field"
+                                                                    class="form-label">Numero de Membros</label>
+                                                                <input type="text" id="phone-field"
+                                                                    class="form-control" value="{{ $branche->Number_of_members }}"
+                                                                    name="Number_of_members" required />
+                                                                <div class="invalid-feedback">Please enter a phone.</div>
+                                                            </div>
+
+                                                            <div>
+                                                                <label for="status-field" class="form-label">Nome do Responsavel</label>
+                                                                <select class="form-control" name="Id_user" id="status-field" required>
+                                                                    <option value="{{$branche->Id_user}}">{{$branche->name($branche->Id_user)}}</option>
+                                                                    @foreach ($users as $user)
+                                                                        <option value="{{$user->id}}">{{$user->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div class="hstack gap-2 justify-content-end">
+                                                                <button type="button" class="btn btn-light"
+                                                                    data-bs-dismiss="modal">Fechar</button>
+                                                                <button type="submit" name="submit"
+                                                                    class="btn btn-success" id="add-btn">Actualizar
+                                                                    Filial</button>
+                                                                <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Fim do modal para editar pastor --}}
+
+                                        <!-- Modal -->
+                                        <div class="modal fade zoomIn" id="deleteRecordModal{{ $branche->id }}"
+                                            tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close" id="btn-close"></button>
+                                                    </div>
+                                                    <form action="{{route('deleteBranches',['id'=>$branche->id])}}" method="get">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <div class="modal-body">
+                                                            <div class="mt-2 text-center">
+                                                                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json"
+                                                                    trigger="loop"
+                                                                    colors="primary:#f7b84b,secondary:#f06548"
+                                                                    style="width:100px;height:100px">
+                                                                </lord-icon>
+                                                                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                                                    <h4>Voce tem certeza ?</h4>
+                                                                    <p class="text-muted mx-4 mb-0">Voce pretende eliminar
+                                                                        {{ $branche->Name }} ?</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                                                <button type="button" class="btn w-sm btn-light"
+                                                                    data-bs-dismiss="modal">Fechar</button>
+                                                                <button type="submit" name="submit"
+                                                                    class="btn w-sm btn-danger " id="delete-record">Sim,
+                                                                    elimine!</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{-- Fim dos dois modais --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                             <div class="noresult" style="display: none">
                                 <div class="text-center">
-                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
+                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                        colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                    </lord-icon>
                                     <h5 class="mt-2">Sorry! No Result Found</h5>
-                                    <p class="text-muted mb-0">We've searched more than 150+ invoices We did not find any invoices for you search.</p>
+                                    <p class="text-muted mb-0">We've searched more than 150+ Orders We did not find any
+                                        orders for you search.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-end mt-3">
+
+                        <div class="d-flex justify-content-end">
                             <div class="pagination-wrap hstack gap-2">
                                 <a class="page-item pagination-prev disabled" href="#">
                                     Previous
@@ -236,33 +353,13 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade flip" id="deleteOrder" tabindex="-1" aria-labelledby="deleteOrderLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-body p-5 text-center">
-                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
-                                    <div class="mt-4 text-center">
-                                        <h4>You are about to delete a order ?</h4>
-                                        <p class="text-muted fs-15 mb-4">Deleting your order will remove all of your information from our database.</p>
-                                        <div class="hstack gap-2 justify-content-center remove">
-                                            <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-                                            <button class="btn btn-danger" id="delete-record">Yes, Delete It</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end modal -->
-                </div>
+                </div><!-- end card -->
             </div>
-
+            <!-- end col -->
         </div>
-        <!--end col-->
+        <!-- end col -->
     </div>
-    <!--end row-->
+    <!-- end row -->
 
     {{--Fim do conteudo do sistema--}}
 

@@ -34,5 +34,9 @@ class dashboardController extends Controller
 
             return view('Worship_leader.Index', compact('files','images','videos'));
         }
+        if(Auth::user()->hasRole('treasurer'))
+        {
+            return view('Treasurer.Index');
+        }
     }
 }
