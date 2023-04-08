@@ -19,6 +19,7 @@ class departmentController extends Controller
 
             $departments=DB::table('departments')
                 ->distinct()
+                ->select('id', 'Name')
                 ->get();
             
             $users=User::all();

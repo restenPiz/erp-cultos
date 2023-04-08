@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Request;
 use App\Models\User;
 use App\Models\Activity;
+use App\Models\Department;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -26,7 +27,12 @@ class activityController extends Controller
                 ->where('userType', '=', 'pastor')
                 ->get();
 
-            return view('Admin.addActivity',compact('users'));
+            $departments=DB::table('departments')
+                ->distinct()
+                ->select('id', 'Name')
+                ->get();
+                
+            return view('Admin.addActivity',compact('users','departments'));
 
         } else {
 
@@ -78,7 +84,13 @@ class activityController extends Controller
                 ->where('userType', '=', 'pastor')
                 ->get();
 
-            return view('Admin.allActivity', compact('activities','users'));
+
+            $departments=DB::table('departments')
+                ->distinct()
+                ->select('id', 'Name')
+                ->get();        
+            
+                return view('Admin.allActivity', compact('activities','users','departments'));
         } else {
             Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');
             return redirect()->route('login');
