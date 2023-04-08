@@ -13,6 +13,8 @@ use App\Http\Controllers\fileController;
 use App\Http\Controllers\departmentController;
 use App\Http\Controllers\announcementController;
 use App\Http\Controllers\reportActivitiesController;
+use App\Http\Controllers\inputController;
+use App\Http\Controllers\outputController;
 
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
@@ -119,6 +121,18 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
 
 //Inicio das rotas da parte de tesoureiro treasurer
 Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {
+    
+    Route::post('/storeInput', [inputController::class, 'storeInput'])->middleware(['auth'])->name('storeInput');
+    Route::get('/addInput', [inputController::class, 'addInput'])->middleware(['auth'])->name('addInput');
+    Route::get('/allInput', [inputController::class, 'allInput'])->middleware(['auth'])->name('allInput');
+    Route::post('/updateInput/{id}', [inputController::class, 'updateInput'])->middleware(['auth'])->name('updateInput');
+    Route::get('/deleteInput/{id}', [inputController::class, 'deleteInput'])->middleware(['auth'])->name('deleteInput');
+
+    Route::post('/storeOutput', [outputController::class, 'storeOutput'])->middleware(['auth'])->name('storeOutput');
+    Route::get('/addOutput', [outputController::class, 'addOutput'])->middleware(['auth'])->name('addOutput');
+    Route::get('/allOutput', [outputController::class, 'allOutput'])->middleware(['auth'])->name('allOutput');
+    Route::post('/updateOutput/{id}', [outputController::class, 'updateOutput'])->middleware(['auth'])->name('updateOutput');
+    Route::get('/deleteOutput/{id}', [outputController::class, 'deleteOutput'])->middleware(['auth'])->name('deleteOutput');
 
 });
 
