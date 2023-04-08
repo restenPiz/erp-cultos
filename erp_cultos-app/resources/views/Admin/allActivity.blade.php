@@ -314,6 +314,7 @@
                             </div>
 
                             <div class="table-responsive table-card mt-3 mb-1">
+                                @if(count($activities)>0)
                                 <table class="table align-middle table-nowrap" id="customerTable">
                                     <thead class="table-light">
                                         <tr>
@@ -483,9 +484,10 @@
                                             </div>
 
                                             {{-- Fim dos dois modais --}}
-                                        @endforeach
+                                      @endforeach  
                                     </tbody>
                                 </table>
+                                @else
                                 <div class="noresult" style="display: none">
                                     <div class="text-center">
                                         <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
@@ -496,6 +498,7 @@
                                             orders for you search.</p>
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <div class="d-flex justify-content-end">
