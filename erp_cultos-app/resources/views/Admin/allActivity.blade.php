@@ -402,14 +402,9 @@
                                                                             {{ $activity->Group }}</option>
 
 
-                                                                        <option value="Departamento dos jovens">Departamento
-                                                                            dos Jovens</option>
-                                                                        <option value="Departamento dos Pais">Departamento dos
-                                                                            Pais</option>
-                                                                        <option value="Departamento dos Maes">Departamento dos
-                                                                            Maes</option>
-                                                                        <option value="Departamento dos Criancas">Departamento
-                                                                            dos Criancas</option>
+                                                                            @foreach ($departments as $department)
+                                                                            <option value="{{$department->id}}">{{$department->Name}}</option>
+                                                                            @endforeach
                                                                     </select>
                                                                 </div>
 
