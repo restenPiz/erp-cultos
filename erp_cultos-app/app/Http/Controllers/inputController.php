@@ -41,4 +41,43 @@ class inputController extends Controller
             return redirect()->route('login');
         }
     }
+    public function storeInput()
+    {
+        if(Auth::user()->hasRole('treasurer'))
+        {
+            $input=new Input();
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function updateInput()
+    {
+        if(Auth::user()->hasRole('treasurer'))
+        {
+            
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function deleteInput()
+    {
+        if(Auth::user()->hasRole('treasurer'))
+        {
+            
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
