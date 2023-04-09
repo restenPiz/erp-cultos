@@ -46,6 +46,11 @@ class inputController extends Controller
         if(Auth::user()->hasRole('treasurer'))
         {
             $input=new Input();
+
+            $input->Offert_value=Request::input('Offert_value');
+            $input->Input_type=Request::input('Input_type');
+            $input->Inpput_type=Request::input('Description');
+            $input->Id_user=Request::input('Id_user');
         }
         else
         {
