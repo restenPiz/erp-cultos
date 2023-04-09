@@ -82,11 +82,17 @@ class inputController extends Controller
             return redirect()->route('login');
         }
     }
-    public function deleteInput()
+    public function deleteInput($id)
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            $input = Input::findOrFail($id);
+
+            $input->delete();
             
+            Alert::success('Eliminado!','A sua entrada foi eliminada com sucesso!');
+
+            return redirect()->back();
         }
         else
         {
