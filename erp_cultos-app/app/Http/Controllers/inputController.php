@@ -69,11 +69,25 @@ class inputController extends Controller
             return redirect()->route('login');
         }
     }
-    public function updateInput()
+    public function updateInput($id)
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            $input=Input::findOrFail($id);
+
+            $input->Offert_value=Request::input('Offert_value');
+            $input->Input_type=Request::input('Input_type');
+            $input->Inpput_type=Request::input('Description');
+            $input->Id_user=Request::input('Id_user');
+
+            $user=User::findOrFail(Request::input('Id_user'));
             
+            $input->save();
+            $user->save();   
+
+            Alert::success('Actualizado!','A sua entrada foi actualizada com sucesso!');
+
+            return redirect()->back();
         }
         else
         {
