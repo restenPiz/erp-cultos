@@ -51,7 +51,7 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Descricao</label>
-                                            <input type="text" class="form-control" id="labelInput" name="Description">
+                                            <input type="text" class="form-control" id="labelInput" name="Description" placeholder="Descricao da sua entrada">
                                         </div>
                                     </div>
                                 </div>

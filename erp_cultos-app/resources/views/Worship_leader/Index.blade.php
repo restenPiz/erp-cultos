@@ -184,6 +184,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="table-responsive">
+                                                @if(count($videos)>0)
                                                 <table class="table table-borderless align-middle mb-0">
                                                     <thead class="table-light">
                                                         <tr>
@@ -301,6 +302,18 @@
                                                         @endforeach
                                                     </tbody>
                                                 </table>
+                                                @else
+                                                <div class="noresult">
+                                                    <div class="text-center">
+                                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                            colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                                        </lord-icon>
+                                                        <h5 class="mt-2">Desculpe! Nenhum resultado encontrado</h5>
+                                                        {{---<p class="text-muted mb-0">We've searched more than 150+ Orders We did not find any
+                                                            orders for you search.</p>---}}
+                                                    </div>
+                                                </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -318,6 +331,7 @@
                             <div class="card">
                                 <div class="card-body">
 
+                                    @if(count($images)>0)
                                     <div class="row row-cols-xl-5 row-cols-lg-3 row-cols-md-2 row-cols-1">
                                         {{-- Inicio das imagens do sistema --}}
 
@@ -500,6 +514,18 @@
                                         @endforeach
                                         {{-- Fim das imagens do sistema --}}
                                     </div>
+                                    @else
+                                    <div class="noresult">
+                                        <div class="text-center">
+                                            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                            </lord-icon>
+                                            <h5 class="mt-2">Desculpe! Nenhum resultado encontrado</h5>
+                                            {{---<p class="text-muted mb-0">We've searched more than 150+ Orders We did not find any
+                                                orders for you search.</p>---}}
+                                        </div>
+                                    </div>
+                                    @endif
                                     <!--end row-->
                                 </div>
                                 <!--end card-body-->
@@ -510,17 +536,18 @@
                         <div class="tab-pane fade" id="documents" role="tabpanel">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="d-flex align-items-center mb-4">
+                                    {{---<div class="d-flex align-items-center mb-4">
                                         <h5 class="card-title flex-grow-1 mb-0">Documents</h5>
                                         <div class="flex-shrink-0">
                                             <input class="form-control d-none" type="file" id="formFile">
                                             <label for="formFile" class="btn btn-danger"><i
                                                     class="ri-upload-2-fill me-1 align-bottom"></i> Upload File</label>
                                         </div>
-                                    </div>
+                                    </div>---}}
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="table-responsive">
+                                                @if(count($files)>0)
                                                 <table class="table table-borderless align-middle mb-0">
                                                     <thead class="table-light">
                                                         <tr>
@@ -641,6 +668,18 @@
                                                         @endforeach
                                                     </tbody>
                                                 </table>
+                                                @else
+                                                <div class="noresult">
+                                                    <div class="text-center">
+                                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                            colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                                        </lord-icon>
+                                                        <h5 class="mt-2">Desculpe! Nenhum resultado encontrado</h5>
+                                                        {{---<p class="text-muted mb-0">We've searched more than 150+ Orders We did not find any
+                                                            orders for you search.</p>---}}
+                                                    </div>
+                                                </div>
+                                                @endif
                                             </div>
                                              {{--<div class="text-center mt-3">
                                                 <a href="javascript:void(0);" class="text-success"><i
