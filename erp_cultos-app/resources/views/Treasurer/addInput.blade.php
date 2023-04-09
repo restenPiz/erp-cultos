@@ -3,59 +3,54 @@
 @section('content')
     @role('treasurer')
         {{-- Inicio do conteudo do meu sistem --}}
-        <form action="{{ route('storeActivity') }}" method="post">
+        <form action="{{ route('storeInput') }}" method="post">
             @csrf
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Dados da Actividade</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Dados da Entrada</h4>
                         </div><!-- end card header -->
                         <div class="card-body">
                             <div class="live-preview">
                                 <div class="row gy-4">
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="basiInput" class="form-label">Titulo</label>
-                                            <input type="text" class="form-control" id="basiInput" name="Title"
-                                                placeholder="Digite o titulo da actividade">
+                                            <label for="basiInput" class="form-label">Valor de Ofertorio</label>
+                                            <input type="text" class="form-control" id="basiInput" name="Offert_value"
+                                                placeholder="Valor de ofertorio">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" id="labelInput" name="Hour">
-                                        </div>
-                                    </div>
-                                    <!--end col-->
-                                    <div class="col-xxl-6 col-md-6">
-                                        <div>
-                                            <label for="labelInput" class="form-label">Dia</label>
-                                            <input type="date" class="form-control" id="labelInput" name="Day">
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-6 col-md-6">
-                                        <div>
-                                            <label for="labelInput" class="form-label">Grupo</label>
-                                            <select class="form-control" name="Group">
-                                                <option>...</option>
-                                                @foreach ($departments as $department)
-                                                    <option value="{{$department->id}}">{{$department->Name}}</option>
-                                                @endforeach
+                                            <label for="labelInput" class="form-label">Tipo de Entrada</label>
+                                            <select class="form-control" name="Input_type">
+                                                <option>Cash</option>
+                                                <option>M-pesa</option>
+                                                <option>E-mola</option>
+                                                <option>M-kesh</option>
+                                                <option>Conta-bancaria</option>
                                             </select>
                                         </div>
                                     </div>
+                                    <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Responsavel</label>
+                                            <label for="labelInput" class="form-label">Nome do Usuario</label>
                                             <select class="form-control" name="Id_user">
                                                 <option>...</option>
                                                 @foreach ($users as $user)
                                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Dia</label>
+                                            <input type="date" class="form-control" id="labelInput" name="Day">
                                         </div>
                                     </div>
                                 </div>

@@ -18,7 +18,9 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-            $users=User::all();
+            $users=DB::table('users')
+                ->where('name','<>','Admin')
+                ->get();
 
             return view('Treasurer.addInput',compact('users'));
         }
@@ -33,7 +35,10 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-            $users=User::all();
+            $users=DB::table('users')
+                ->where('name','<>','Admin')
+                ->get();
+                
             $inputs=Input::all();
 
             return view('Treasurer.allInput',compact('inputs','users'));
