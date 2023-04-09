@@ -27,11 +27,12 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Tipo de Entrada</label>
                                             <select class="form-control" name="Input_type">
-                                                <option>Cash</option>
-                                                <option>M-pesa</option>
-                                                <option>E-mola</option>
-                                                <option>M-kesh</option>
-                                                <option>Conta-bancaria</option>
+                                                <option>...</option>
+                                                <option value="Cash">Cash</option>
+                                                <option value="M-pesa">M-pesa</option>
+                                                <option value="E-mola">E-mola</option>
+                                                <option value="M-kesh">M-kesh</option>
+                                                <option value="Conta-bancaria">Conta-bancaria</option>
                                             </select>
                                         </div>
                                     </div>
@@ -49,8 +50,8 @@
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Dia</label>
-                                            <input type="date" class="form-control" id="labelInput" name="Day">
+                                            <label for="labelInput" class="form-label">Descricao</label>
+                                            <input type="text" class="form-control" id="labelInput" name="Description">
                                         </div>
                                     </div>
                                 </div>
