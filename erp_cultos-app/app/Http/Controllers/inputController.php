@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Models\Input;
+use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -51,6 +52,15 @@ class inputController extends Controller
             $input->Input_type=Request::input('Input_type');
             $input->Inpput_type=Request::input('Description');
             $input->Id_user=Request::input('Id_user');
+
+            $user=User::findOrFail(Request::input('Id_user'));
+            
+            $input->save();
+            $user->save();
+
+            Alert::success('Adicionado!','A sua entrada foi adicionada com sucesso!');
+
+            return redirect()->back();
         }
         else
         {
