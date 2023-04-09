@@ -14,4 +14,10 @@ class Input extends Model
     protected $fillable=[
         'Offert_value','Input_type','Description','Id_user',
     ];
+
+    //Inicio dos metodos que fazem a captura dos dados
+    public function users()
+    {
+        return $this->belongsTo(User::class,'Id_user');
+    }
 }

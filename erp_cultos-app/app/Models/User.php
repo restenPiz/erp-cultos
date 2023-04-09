@@ -42,4 +42,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Activity::class,'Id_user');
     }
+    public function inputs()
+    {
+        return $this->hasMany(Input::class,'Id_user');
+    }
 }
