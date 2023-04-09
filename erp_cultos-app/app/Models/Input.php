@@ -12,6 +12,6 @@ class Input extends Model
     protected $table='inputs';
 
     protected $fillable=[
-        
+        'Offert_value','Input_type','Description','Id_user',
     ];
 }
