@@ -11,6 +11,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class fileController extends Controller
 {
@@ -142,11 +143,17 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
-    public function dowloandFile()
+    public function dowloandFile($file)
     {
         if(Auth::user()->hasRole('worship_leader')){
+            // Verifica se o arquivo existe
+            if (!Storage::exists($file)) {
+                abort(404);
+            }
 
-        }
+            // Faz o download do arquivo
+            return Storage::download($file);
+            }
         else
         {
             Alert::success('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
