@@ -1,4 +1,4 @@
-@extends('Layout.Index')
+@extends('Layout.Principal')
 @section('content')
 
     @role('worship_leader')

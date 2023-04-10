@@ -142,4 +142,24 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
+    public function dowloandFile($id)
+    {
+        $file = Files::find($id);
+
+        if (!$file) {
+            return response()->json(['message' => 'Arquivo não encontrado.']);
+        }
+
+        $filepath = storage_path('app/public/Ficheiros/' . $file->File);
+
+        if (!file_exists($filepath)) {
+            return response()->json(['message' => 'Arquivo não encontrado.']);
+        }
+
+        $headers = [
+            'Content-Type' => 'video/mp4',
+        ];
+
+        return response()->download($filepath, $file->File, $headers);
+    }
 }
