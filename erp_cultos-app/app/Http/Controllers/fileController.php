@@ -17,13 +17,10 @@ class fileController extends Controller
 {
     public function addFile()
     {
-        if(Auth::user()->hasRole('worship_leader'))
-        {
+        if (Auth::user()->hasRole('worship_leader')) {
             return view('Worship_leader.addFile');
-        }
-        else
-        {
-            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+        } else {
+            Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
@@ -31,16 +28,14 @@ class fileController extends Controller
 
     public function storeFile()
     {
-        if(Auth::user()->hasRole('worship_leader'))
-        {
-            $table=new Files();
+        if (Auth::user()->hasRole('worship_leader')) {
+            $table = new Files();
 
-            $table->Name_file=Request::input('Name_file');
-            $table->Type_file=Request::input('Type_file');
-            $table->Description=Request::input('Description');
+            $table->Name_file = Request::input('Name_file');
+            $table->Type_file = Request::input('Type_file');
+            $table->Description = Request::input('Description');
 
-            if(Request::file('File')!=null)
-            {
+            if (Request::file('File') != null) {
                 $filename = Request::file('File')->getClientOriginalName();
                 $link = "Ficheiros/" . $filename;
                 $table->File = $link;
@@ -49,14 +44,12 @@ class fileController extends Controller
             }
 
             $table->save();
-            
-            Alert::success('Adicionado','O seu ficheiro foi adicionado com sucesso!');
+
+            Alert::success('Adicionado', 'O seu ficheiro foi adicionado com sucesso!');
 
             return redirect()->back();
-        }
-        else
-        {
-            Alert::error('Nao Autenticado','Voce nao esta autenticado no sistema!');
+        } else {
+            Alert::error('Nao Autenticado', 'Voce nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
@@ -64,17 +57,14 @@ class fileController extends Controller
 
     public function allFile()
     {
-        if(Auth::user()->hasRole('worship_leader'))
-        {
+        if (Auth::user()->hasRole('worship_leader')) {
             $files = DB::table('files')->where('Type_file', 'Arquivo_arquivo')->get();
             $images = DB::table('files')->where('Type_file', 'Arquivo_imagem')->get();
             $videos = DB::table('files')->where('Type_file', 'Arquivo_video')->get();
 
-            return view('Worship_leader.Index', compact('files','images','videos'));
-        }
-        else
-        {
-            Alert('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+            return view('Worship_leader.Index', compact('files', 'images', 'videos'));
+        } else {
+            Alert('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
@@ -82,20 +72,19 @@ class fileController extends Controller
 
     public function updateFile($id)
     {
-        if(Auth::user()->hasRole('worship_leader'))
-        {
-            $file=Files::findOrFail($id);
+        if (Auth::user()->hasRole('worship_leader')) {
+            $file = Files::findOrFail($id);
 
-            $file->Name_file=Request::input('Name_file');
-            $file->Type_file=Request::input('Type_file');
-            $file->Description=Request::input('Description');
-            $file->File=Request::input('File');
+            $file->Name_file = Request::input('Name_file');
+            $file->Type_file = Request::input('Type_file');
+            $file->Description = Request::input('Description');
+            $file->File = Request::input('File');
             $local = $file->File;
 
             if (File::exists($local)) {
                 File::delete($local);
             }
-    
+
             //Capturando a imagem
             if (Request::file('File') != null) {
                 $filename = Request::file('File')->getClientOriginalName();
@@ -107,13 +96,11 @@ class fileController extends Controller
 
             $file->save();
 
-            Alert('Actualizado!','O ficheiro foi actualizado com sucesso!');
+            Alert('Actualizado!', 'O ficheiro foi actualizado com sucesso!');
 
             return redirect()->back();
-        }
-        else
-        {
-            Alert('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+        } else {
+            Alert('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
@@ -121,9 +108,8 @@ class fileController extends Controller
 
     public function deleteFile($id)
     {
-        if(Auth::user()->hasRole('worship_leader'))
-        {
-            $file=Files::findOrFail($id);
+        if (Auth::user()->hasRole('worship_leader')) {
+            $file = Files::findOrFail($id);
 
             $local = $file->File;
             if (File::exists($local)) {
@@ -132,20 +118,18 @@ class fileController extends Controller
 
             $file->delete();
 
-            Alert('Eliminado!','O ficheiro foi eliminado com sucesso!');
+            Alert('Eliminado!', 'O ficheiro foi eliminado com sucesso!');
 
             return redirect()->back();
-        }
-        else
-        {
-            Alert('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+        } else {
+            Alert('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
     }
     public function dowloandFile($file)
     {
-        if(Auth::user()->hasRole('worship_leader')){
+        if (Auth::user()->hasRole('worship_leader')) {
             // Verifica se o arquivo existe
             if (!Storage::exists($file)) {
                 abort(404);
@@ -153,10 +137,8 @@ class fileController extends Controller
 
             // Faz o download do arquivo
             return Storage::download($file);
-            }
-        else
-        {
-            Alert::success('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+        } else {
+            Alert::success('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
