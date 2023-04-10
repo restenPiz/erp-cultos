@@ -142,4 +142,16 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
+    public function dowloandFile()
+    {
+        if(Auth::user()->hasRole('worship_leader')){
+
+        }
+        else
+        {
+            Alert::success('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
