@@ -129,15 +129,12 @@ class fileController extends Controller
     }
     public function playVideo($id)
     {
-        if(Auth::user()->hasRole('worship_leader'))
-        {
-            $files=Files::findOrFail($id);
+        if (Auth::user()->hasRole('worship_leader')) {
+            $files = Files::findOrFail($id);
 
-            return view('Worship_leader.playVideo',compact('files'));
-        }
-        else
-        {
-            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+            return view('Worship_leader.playVideo', compact('files'));
+        } else {
+            Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
@@ -146,20 +143,14 @@ class fileController extends Controller
     {
         $file = Files::find($id);
 
-        if (!$file) {
-            return response()->json(['message' => 'Arquivo não encontrado.']);
+        $filepath = storage_path($file->File);
+
+        if (File::exists($file)) {
+            $headers = [
+                'Content-Type' => 'video/mp4',
+            ];
+    
+            return response()->download($filepath, $file->File, $headers);   
         }
-
-        $filepath = storage_path('app/public/Ficheiros/' . $file->File);
-
-        if (!file_exists($filepath)) {
-            return response()->json(['message' => 'Arquivo não encontrado.']);
-        }
-
-        $headers = [
-            'Content-Type' => 'video/mp4',
-        ];
-
-        return response()->download($filepath, $file->File, $headers);
     }
 }
