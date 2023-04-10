@@ -131,7 +131,7 @@ class fileController extends Controller
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
-            $files=File::findOrFail($id);
+            $files=Files::findOrFail($id);
 
             return view('Worship_leader.playVideo',compact('files'));
         }

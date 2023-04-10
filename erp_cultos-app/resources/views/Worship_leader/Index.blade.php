@@ -302,7 +302,6 @@
                                                         @endforeach
                                                     </tbody>
                                                 </table>
-                                                <div id="video-container"></div>
                                                 @else
                                                 <div class="noresult">
                                                     <div class="text-center">

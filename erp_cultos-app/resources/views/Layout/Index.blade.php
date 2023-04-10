@@ -1494,34 +1494,6 @@
             <!-- App js -->
             <script src="../assets/js/app.js"></script>
 
-            <script>
-                const videoLink = document.querySelector('#show');
-                const videoContainer = document.querySelector('#video-container');
-            
-                videoLink.addEventListener('click', function(event) {
-                    event.preventDefault();
-            
-                    // Remove o link e exibe o elemento de vídeo
-                    videoLink.style.display = 'none';
-                    videoContainer.style.display = 'block';
-            
-                    // Cria o elemento de vídeo
-                    const video = document.createElement('video');
-                    video.setAttribute('width', '640');
-                    video.setAttribute('height', '360');
-                    video.setAttribute('controls', '');
-            
-                    // Adiciona a fonte do vídeo
-                    const source = document.createElement('source');
-                    source.setAttribute('src', videoLink.getAttribute('href'));
-                    source.setAttribute('type', 'video/mp4');
-                    video.appendChild(source);
-            
-                    // Adiciona o elemento de vídeo ao contêiner
-                    videoContainer.appendChild(video);
-                });
-            </script>
-
         </body>
 
 
