@@ -17,7 +17,7 @@ class treasurerController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
-            return view('Admin.addTreasurer')
+            return view('Admin.addTreasurer');
 
         }
         else{
