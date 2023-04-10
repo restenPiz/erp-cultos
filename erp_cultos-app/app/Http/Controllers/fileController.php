@@ -127,18 +127,17 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
-    public function dowloandFile($file)
+    public function playVideo($id)
     {
-        if (Auth::user()->hasRole('worship_leader')) {
-            // Verifica se o arquivo existe
-            if (!Storage::exists($file)) {
-                abort(404);
-            }
+        if(Auth::user()->hasRole('worship_leader'))
+        {
+            $files=File::findOrFail($id);
 
-            // Faz o download do arquivo
-            return Storage::download($file);
-        } else {
-            Alert::success('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
+            return view('Worship_leader.playVideo',compact('files'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
         }
