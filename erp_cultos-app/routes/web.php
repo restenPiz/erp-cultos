@@ -113,6 +113,7 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
     Route::get('/allFile', [fileController::class, 'allFile'])->middleware(['auth'])->name('allFile');
     Route::post('/updateFile/{id}', [fileController::class, 'updateFile'])->middleware(['auth'])->name('updateFile');
     Route::get('/deleteFile/{id}', [fileController::class, 'deleteFile'])->middleware(['auth'])->name('deleteFile');
+    Route::get('/dowloadnFile/{File}', [fileController::class, 'dowloandFile'])->middleware(['auth'])->name('dowloandFile');
 });
 
 //Inicio das rotas da parte de tesoureiro treasurer
