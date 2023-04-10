@@ -41,7 +41,9 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Responsavel</label>
                                             <select class="form-control" name="Id_user">
-                                                <option value="{{Auth::user()->id}}">{{Auth::user()->name}}</option>
+                                                @foreach ($users as $user)
+                                                    <option value="{{$user->id}}">{{$user->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

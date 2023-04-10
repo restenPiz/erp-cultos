@@ -18,7 +18,11 @@ class reportActivitiesController extends Controller
     {
         if(Auth::user()->hasRole('shepherd')){
 
-            return view('Shepherd.addReportActivities');
+            $users=DB::table('users')
+                ->where('name','=',Auth::user()->name)
+                ->get();
+
+            return view('Shepherd.addReportActivities',compact('users'));
         }
         else{
 
@@ -33,6 +37,10 @@ class reportActivitiesController extends Controller
 
             $activities=DB::table('activities')
                 ->where('Group','=','Admin')
+                ->get();
+
+            $users=DB::table('users')
+                ->where('name','=',Auth::user()->name)
                 ->get();
 
             return view('Shepherd.allReportActivities' ,compact('activities'));            
