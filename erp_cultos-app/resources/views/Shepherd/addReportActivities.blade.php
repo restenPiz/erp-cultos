@@ -47,7 +47,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <input type="hidden" value="Admin" class="form-control" id="labelInput" name="Group">
                                 </div>
                                 <!--end row-->
                             </div>

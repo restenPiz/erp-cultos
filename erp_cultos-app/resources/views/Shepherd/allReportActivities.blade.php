@@ -412,7 +412,6 @@
                                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                 </div>
                                                             </div>
-                                                            <input type="hidden" id="email-field" class="form-control" value="Admin" name="Group" required />
                                                         </form>
                                                     </div>
                                                 </div>

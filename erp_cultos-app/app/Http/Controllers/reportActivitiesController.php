@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Models\User;
-use App\Models\Activity;
+use App\Models\ReportActivity;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +19,7 @@ class reportActivitiesController extends Controller
     {
         if (Auth::user()->hasRole('shepherd')) {
 
-            $users = DB::table('users')
+            $users = DB::table('report_activities')
                 ->where('name', '=', Auth::user()->name)
                 ->get();
 
@@ -37,10 +37,7 @@ class reportActivitiesController extends Controller
 
             $users = User::where('name', Auth::user()->name)->first();
 
-            $activities= DB::table('activity')
-            ->join('users', 'users.id', '=', 'activity.Id_user')
-            ->select('activity.*', 'users.name AS nome')
-            ->get();
+            $activities=ReportActivity::all();
 
             return view('Shepherd.allReportActivities', compact('activities', 'users'));
         } else {
@@ -53,12 +50,11 @@ class reportActivitiesController extends Controller
     public function storeReportActivities()
     {
         if (Auth::user()->hasRole('shepherd')) {
-            $table = new Activity();
+            $table = new ReportActivity();
 
             $table->Title = Request::input('Title');
             $table->Hour = Request::input('Hour');
             $table->Day = Request::input('Day');
-            $table->Group = Request::input('Group');
             $table->Id_user = Request::input('Id_user');
 
             $user = User::find(Request::input('Id_user'));
@@ -79,12 +75,11 @@ class reportActivitiesController extends Controller
     public function updateReportActivities($id)
     {
         if (Auth::user()->hasRole('shepherd')) {
-            $table = Activity::findOrFail($id);
+            $table = ReportActivity::findOrFail($id);
 
             $table->Title = Request::input('Title');
             $table->Hour = Request::input('Hour');
             $table->Day = Request::input('Day');
-            $table->Group = Request::input('Group');
             $table->Id_user = Request::input('Id_user');
 
             $user = User::find(Request::input('Id_user'));
@@ -105,7 +100,7 @@ class reportActivitiesController extends Controller
     public function deleteReportActivities($id)
     {
         if (Auth::user()->hasRole('shepherd')) {
-            $table = Activity::findOrFail($id);
+            $table = ReportActivity::findOrFail($id);
 
             $table->delete();
 
