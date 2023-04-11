@@ -43,7 +43,7 @@ class reportActivitiesController extends Controller
                 ->where('name','=',Auth::user()->name)
                 ->get();
 
-            return view('Shepherd.allReportActivities' ,compact('activities'));            
+            return view('Shepherd.allReportActivities' ,compact('activities','users'));            
         }
         else{
             

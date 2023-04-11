@@ -318,12 +318,6 @@
                                 <table class="table align-middle table-nowrap" id="customerTable">
                                     <thead class="table-light">
                                         <tr>
-                                            {{-- <th scope="col" style="width: 50px;">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="checkAll"
-                                                        value="option">
-                                                </div>
-                                            </th> --}}
                                             <th class="sort" data-sort="customer_name">Titulo</th>
                                             <th class="sort" data-sort="email">Horario</th>
                                             <th class="sort" data-sort="phone">Dia</th>
@@ -337,7 +331,7 @@
                                                 <td class="customer_name">{{ $activity->Title }}</td>
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
-                                                <td class="dat">{{ Auth::user()->name }}</td>
+                                                <td class="dat">{{ $activity->users->name }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
