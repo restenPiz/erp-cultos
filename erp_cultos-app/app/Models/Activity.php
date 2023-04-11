@@ -22,6 +22,6 @@ class Activity extends Model
     //Inicio dos metodos que fazem a captura dos dados
     public function users()
     {
-        return $this->belongsToMany(User::class,'Id_user');
+        return $this->belongsTo(User::class,'Id_user');
     }
 }

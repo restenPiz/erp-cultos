@@ -43,6 +43,10 @@ class reportActivitiesController extends Controller
                 ->where('name','=',Auth::user()->name)
                 ->get();
 
+            $users=DB::table('users')
+                ->where('name','<>','Admin')
+                ->get();
+
             return view('Shepherd.allReportActivities' ,compact('activities','users'));            
         }
         else{

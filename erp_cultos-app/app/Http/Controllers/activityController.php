@@ -74,8 +74,6 @@ class activityController extends Controller
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
             
-            $activities = Activity::where('Group','<>','Admin')->get();
-
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
                 ->get();
@@ -84,13 +82,13 @@ class activityController extends Controller
                 ->where('userType', '=', 'pastor')
                 ->get();
 
-
             $departments=DB::table('departments')
                 ->distinct()
                 ->select('id', 'Name')
                 ->get();        
-            
-                return view('Admin.allActivity', compact('activities','users','departments'));
+
+            return view('Admin.allActivity', compact('activities','users','departments'));
+
         } else {
             Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');
             return redirect()->route('login');
