@@ -35,10 +35,8 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-            $users=DB::table('users')
-                ->where('name','<>','Admin')
-                ->get();
-                
+            $users=Input::select('SELECT * FROM inputs WHERE id > 1');
+            
             $inputs=Input::all();
 
             return view('Treasurer.allInput',compact('inputs','users'));
@@ -58,7 +56,7 @@ class inputController extends Controller
 
             $input->Offert_value=Request::input('Offert_value');
             $input->Input_type=Request::input('Input_type');
-            $input->Inpput_type=Request::input('Description');
+            $input->Description=Request::input('Description');
             $input->Id_user=Request::input('Id_user');
             $input->Day=Request::input('Day');
 

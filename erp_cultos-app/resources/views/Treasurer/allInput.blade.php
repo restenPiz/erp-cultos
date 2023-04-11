@@ -1,7 +1,7 @@
 @extends('Layout.Index')
 
 @section('content')
-    @role('admin')
+    @role('treasurer')
         {{-- Inicio da view que possui todo o codigo fonte --}}
 
         <!-- start page title -->
@@ -59,41 +59,41 @@
                                                 </div>
                                             </th> --}}
                                             <th class="sort" data-sort="customer_nam"></th>
-                                            <th class="sort" data-sort="customer_name">Titulo</th>
-                                            <th class="sort" data-sort="email">Horario</th>
-                                            <th class="sort" data-sort="phone">Dia</th>
-                                            <th class="sort" data-sort="date">Grupo</th>
-                                            <th class="sort" data-sort="status">Nome do Responsavel</th>
+                                            <th class="sort" data-sort="customer_name">Valor de Ofertorio</th>
+                                            <th class="sort" data-sort="email">Tipo de Entrada</th>
+                                            <th class="sort" data-sort="phone">Nome do Usuario</th>
+                                            <th class="sort" data-sort="date">Dia</th>
+                                            {{---<th class="sort" data-sort="status">Descricacao</th>--}}
                                             <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach ($activities as $activity)
+                                        @foreach ($inputs as $input)
                                             <tr>
-                                                <td class="customer_nam">{{ $activity->id }}</td>
-                                                <td class="customer_name">{{ $activity->Title }}</td>
-                                                <td class="email">{{ $activity->Hour }}</td>
-                                                <td class="phone">{{ $activity->Day }}</td>
-                                                <td class="date">{{ $activity->Group }}</td>
-                                                <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
+                                                <td class="customer_nam">{{ $input->id }}</td>
+                                                <td class="customer_name">{{ $input->Offert_value }}</td>
+                                                <td class="email">{{ $input->Input_type }}</td>
+                                                <td class="phone">{{ $input->users->name }}</td>
+                                                <td class="date">{{ $input->Day }}</td>
+                                                {{---<td class="date">{{ $input->Description }}</td>---}}
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#showModal{{ $activity->id }}">Editar</button>
+                                                                data-bs-target="#showModal{{ $input->id }}">Editar</button>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#deleteRecordModal{{ $activity->id }}">Eliminar</button>
+                                                                data-bs-target="#deleteRecordModal{{ $input->id }}">Eliminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
 
                                             {{-- Inicio do modal para editar o pastor --}}
-                                            <div class="modal fade" id="showModal{{ $activity->id }}" tabindex="-1"
+                                            <div class="modal fade" id="showModal{{ $input->id }}" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -103,15 +103,15 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateActivity', ['id' => $activity->id]) }}"
+                                                            action="{{ route('updateInput', ['id' => $input->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id">
                                                                     <label for="customername-field"
-                                                                        class="form-label">Titulo</label>
-                                                                    <input type="text" id="id-field" name="Title"
-                                                                        class="form-control" value="{{ $activity->Title }}"
+                                                                        class="form-label">Valor de Ofertorio</label>
+                                                                    <input type="text" id="id-field" name="Offert_value"
+                                                                        class="form-control" value="{{ $input->Offert_value }}"
                                                                         required />
                                                                 </div>
 
@@ -119,56 +119,36 @@
                                                                     <label for="customername-field"
                                                                         class="form-label">Dia</label>
                                                                     <input type="date" id="customername-field"
-                                                                        class="form-control" value="{{ $activity->Day }}"
+                                                                        class="form-control" value="{{ $input->Day }}"
                                                                         name="Day" required />
                                                                     <div class="invalid-feedback">Por favor escreva bem o seu
                                                                         nome
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="mb-3">
-                                                                    <label for="email-field"
-                                                                        class="form-label">Horario</label>
-                                                                    <input type="time" id="email-field"
-                                                                        class="form-control" value="{{ $activity->Hour }}"
-                                                                        name="Hour" required />
-                                                                    <div class="invalid-feedback">Digite o seu email de forma
-                                                                        correcta.</div>
-                                                                </div>
-
-                                                                <div>
-                                                                    <label for="status-field" class="form-label">Nome do
-                                                                        Departamento</label>
-                                                                    <select class="form-control" name="Group"
-                                                                        id="status-field" required>
-                                                                        <option value="{{ $activity->Group }}">
-                                                                            {{ $activity->Group }}</option>
-
-
-                                                                        <option value="Departamento dos jovens">Departamento
-                                                                            dos Jovens</option>
-                                                                        <option value="Departamento dos Pais">Departamento dos
-                                                                            Pais</option>
-                                                                        <option value="Departamento dos Maes">Departamento dos
-                                                                            Maes</option>
-                                                                        <option value="Departamento dos Criancas">Departamento
-                                                                            dos Criancas</option>
-                                                                    </select>
-                                                                </div>
-
-
                                                                 <div>
                                                                     <label for="status-field" class="form-label">Nome do
                                                                         Responsavel</label>
                                                                     <select class="form-control" name="Id_user"
                                                                         id="status-field" required>
-                                                                        <option value="{{ $activity->Id_user }}">
-                                                                            {{ $activity->name($activity->Id_user) }}</option>
+                                                                        <option value="{{ $input->Id_user }}">
+                                                                            {{ $input->users->name }}</option>
                                                                         @foreach ($users as $user)
                                                                             <option value="{{ $user->id }}">
                                                                                 {{ $user->name }}</option>
                                                                         @endforeach
                                                                     </select>
+                                                                </div>
+
+                                                                <div class="mb-3">
+                                                                    <label for="customername-field"
+                                                                        class="form-label">Descricacao</label>
+                                                                    <input type="text" id="customername-field"
+                                                                        class="form-control" value="{{ $input->Description }}"
+                                                                        name="Description" required />
+                                                                    <div class="invalid-feedback">Por favor escreva bem o seu
+                                                                        nome
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -188,7 +168,7 @@
                                             {{-- Fim do modal para editar pastor --}}
 
                                             <!-- Modal -->
-                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $activity->id }}"
+                                            <div class="modal fade zoomIn" id="deleteRecordModal{{ $input->id }}"
                                                 tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -196,7 +176,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{ route('deleteActivity', ['id' => $activity->id]) }}"
+                                                        <form action="{{ route('deleteActivity', ['id' => $input->id]) }}"
                                                             method="get">
                                                             @csrf
                                                             @method('DELETE')
@@ -211,7 +191,7 @@
                                                                         <h4>Voce tem certeza ?</h4>
                                                                         <p class="text-muted mx-4 mb-0">Voce pretende eliminar
                                                                             a actividade de
-                                                                            {{ $activity->Title }} ?</p>
+                                                                            {{ $input->Title }} ?</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex gap-2 justify-content-center mt-4 mb-2">

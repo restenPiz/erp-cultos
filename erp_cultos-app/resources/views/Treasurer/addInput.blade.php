@@ -50,8 +50,19 @@
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
+                                            <label for="labelInput" class="form-label">Dia</label>
+                                            <input type="date" class="form-control" id="labelInput" name="Day">
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
                                             <label for="labelInput" class="form-label">Descricao</label>
-                                            <input type="text" class="form-control" id="labelInput" name="Description" placeholder="Descricao da sua entrada">
+
+                                            <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="7"
+                                                placeholder="Digite o conteudo do seu comunicado..." required></textarea>
+                                            <div class="invalid-feedback">
+                                                Por favor digite uma descricao valida
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
