@@ -12,6 +12,9 @@ class Output extends Model
     protected $table='outputs';
 
     protected $fillable=[
-        
+        'Value',
+        'Id_user',
+        'Id_input',
+        'Description'
     ];
 }

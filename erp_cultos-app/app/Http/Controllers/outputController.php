@@ -18,7 +18,7 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-
+            return view('Treasurer.addOutput');
         }
         else
         {
@@ -31,7 +31,7 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-
+            return view('Treasurer.allOutput')
         }
         else
         {
