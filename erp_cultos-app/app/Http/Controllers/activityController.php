@@ -87,6 +87,8 @@ class activityController extends Controller
                 ->select('id', 'Name')
                 ->get();        
 
+            $activities=Activity::all();
+
             return view('Admin.allActivity', compact('activities','users','departments'));
 
         } else {

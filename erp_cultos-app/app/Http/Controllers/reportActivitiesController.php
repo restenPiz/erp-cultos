@@ -19,7 +19,7 @@ class reportActivitiesController extends Controller
     {
         if (Auth::user()->hasRole('shepherd')) {
 
-            $users = DB::table('report_activities')
+            $users = DB::table('users')
                 ->where('name', '=', Auth::user()->name)
                 ->get();
 

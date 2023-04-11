@@ -75,7 +75,7 @@
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
                                                 <td class="date">{{ $activity->Group }}</td>
-                                                <td class="dat">{{ $activity->users->Id_user }}</td>
+                                                <td class="dat">{{ $activity->users->name }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
@@ -333,7 +333,7 @@
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
                                                 <td class="date">{{ $activity->Group }}</td>
-                                                <td class="dat">{{ $activity->users->Id_user }}</td>
+                                                <td class="dat">{{ $activity->users->name }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
