@@ -18,6 +18,7 @@ class CreateInputsTable extends Migration
             $table->Integer('Offert_value');
             $table->string('Input_type');
             $table->string('Description');
+            $table->string('Day');
             
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();

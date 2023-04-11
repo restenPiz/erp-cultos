@@ -60,6 +60,7 @@ class inputController extends Controller
             $input->Input_type=Request::input('Input_type');
             $input->Inpput_type=Request::input('Description');
             $input->Id_user=Request::input('Id_user');
+            $input->Day=Request::input('Day');
 
             $user=User::findOrFail(Request::input('Id_user'));
             
@@ -87,6 +88,7 @@ class inputController extends Controller
             $input->Input_type=Request::input('Input_type');
             $input->Inpput_type=Request::input('Description');
             $input->Id_user=Request::input('Id_user');
+            $input->Day=Request::input('Day');
 
             $user=User::findOrFail(Request::input('Id_user'));
             
