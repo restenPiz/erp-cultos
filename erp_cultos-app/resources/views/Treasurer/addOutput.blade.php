@@ -25,7 +25,7 @@
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Metodo de Pagamento</label>
+                                            <label for="labelInput" class="form-label">Nome de Usuario</label>
                                             <select class="form-control" name="Input_type">
                                                 <option>...</option>
                                                 @foreach ($users as $user)
@@ -41,7 +41,7 @@
                                             <select class="form-control" name="Id_input">
                                                 <option>...</option>
                                                 @foreach ($inputs as $input)
-                                                    <option value="{{ $input->id }}">{{ $user->Day }}</option>
+                                                    <option value="{{ $input->id }}">{{ $input->Day }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -49,7 +49,7 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Descricao</label>
-                                            <input type="text" class="form-control" id="labelInput" name="Description">
+                                            <input type="text" class="form-control" id="labelInput" name="Description" placeholder="Digite as razoes para efectuar essa saida!">
                                         </div>
                                     </div>
                                 </div>
