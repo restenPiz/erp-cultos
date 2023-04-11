@@ -17,15 +17,22 @@
                                 <div class="row gy-4">
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="basiInput" class="form-label">Valor de Ofertorio</label>
+                                            <label for="basiInput" class="form-label">Valor</label>
                                             <input type="text" class="form-control" id="basiInput" name="Offert_value"
                                                 placeholder="Valor de ofertorio">
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Valor de Confirmacao</label>
+                                            <input type="text" class="form-control" id="basiInput" name="Offert_value_confirmation"
+                                                placeholder="Digite novamente o valor para confirmar">
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Tipo de Entrada</label>
+                                            <label for="labelInput" class="form-label">Metodo de Pagamento</label>
                                             <select class="form-control" name="Input_type">
                                                 <option>...</option>
                                                 <option value="Cash">Cash</option>
@@ -56,13 +63,14 @@
                                     </div>
                                     <div class="col-xxl-12 col-md-12">
                                         <div>
-                                            <label for="labelInput" class="form-label">Descricao</label>
+                                            <label for="labelInput" class="form-label">Tipo de Entrada</label>
 
-                                            <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="7"
-                                                placeholder="Digite o conteudo do seu comunicado..." required></textarea>
-                                            <div class="invalid-feedback">
-                                                Por favor digite uma descricao valida
-                                            </div>
+                                            <select class="form-control" name="Description">
+                                                <option>...</option>
+                                                <option value="Ofertorio">Ofertorio</option>
+                                                <option value="Dizimo">Dizimo</option>
+                                                <option value="Contribuicao">Contribuicao</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

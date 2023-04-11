@@ -55,6 +55,7 @@ class inputController extends Controller
             $input=new Input();
 
             $input->Offert_value=Request::input('Offert_value');
+            $input->Offert_value_confirmation=Request::input('Offert_value_confirmation');
             $input->Input_type=Request::input('Input_type');
             $input->Description=Request::input('Description');
             $input->Id_user=Request::input('Id_user');
@@ -83,6 +84,7 @@ class inputController extends Controller
             $input=Input::findOrFail($id);
 
             $input->Offert_value=Request::input('Offert_value');
+            $input->Offert_value_confirmation=Request::input('Offert_value_confirmation');
             $input->Input_type=Request::input('Input_type');
             $input->Inpput_type=Request::input('Description');
             $input->Id_user=Request::input('Id_user');

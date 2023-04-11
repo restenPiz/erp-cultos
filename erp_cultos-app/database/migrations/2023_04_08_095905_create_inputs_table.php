@@ -15,10 +15,11 @@ class CreateInputsTable extends Migration
     {
         Schema::create('inputs', function (Blueprint $table) {
             $table->id();
-            $table->Integer('Offert_value');
+            $table->float('Offert_value');
             $table->string('Input_type');
             $table->string('Description',1000);
             $table->string('Day');
+            $table->float('Offert_value_confirmation');
 
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();

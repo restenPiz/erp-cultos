@@ -59,9 +59,11 @@
                                                 </div>
                                             </th> --}}
                                             <th class="sort" data-sort="customer_nam"></th>
-                                            <th class="sort" data-sort="customer_name">Valor de Ofertorio</th>
-                                            <th class="sort" data-sort="email">Tipo de Entrada</th>
+                                            <th class="sort" data-sort="customer_name">Valor</th>
+                                            <th class="sort" data-sort="email">Metodo de Pagemento</th>
+                                            <th class="sort" data-sort="date">Valor Total</th>
                                             <th class="sort" data-sort="phone">Nome do Usuario</th>
+                                            <th class="sort" data-sort="date">Tipo de Entrada</th>
                                             <th class="sort" data-sort="date">Dia</th>
                                             {{---<th class="sort" data-sort="status">Descricacao</th>--}}
                                             <th class="sort" data-sort="actio"></th>
@@ -73,7 +75,9 @@
                                                 <td class="customer_nam">{{ $input->id }}</td>
                                                 <td class="customer_name">{{ $input->Offert_value }}</td>
                                                 <td class="email">{{ $input->Input_type }}</td>
+                                                <td class="email">{{ $input->Offert_value_confirmation }}</td>
                                                 <td class="phone">{{ $input->users->name }}</td>
+                                                <td class="phone">{{ $input->Description }}</td>
                                                 <td class="date">{{ $input->Day }}</td>
                                                 {{---<td class="date">{{ $input->Description }}</td>---}}
                                                 <td class="actio">
@@ -109,9 +113,16 @@
                                                             <div class="modal-body">
                                                                 <div class="mb-3" id="modal-id">
                                                                     <label for="customername-field"
-                                                                        class="form-label">Valor de Ofertorio</label>
+                                                                        class="form-label">Valor</label>
                                                                     <input type="text" id="id-field" name="Offert_value"
                                                                         class="form-control" value="{{ $input->Offert_value }}"
+                                                                        required />
+                                                                </div>
+                                                                <div class="mb-3" id="modal-id">
+                                                                    <label for="customername-field"
+                                                                        class="form-label">Valor de Confirmacao</label>
+                                                                    <input type="text" id="id-field" name="Offert_value"
+                                                                        class="form-control" value="{{ $input->Offert_value_confirmation }}"
                                                                         required />
                                                                 </div>
 

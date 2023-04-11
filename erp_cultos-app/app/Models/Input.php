@@ -12,7 +12,7 @@ class Input extends Model
     protected $table='inputs';
 
     protected $fillable=[
-        'Offert_value','Input_type','Description','Id_user','Day'
+        'Offert_value','Input_type','Description','Id_user','Day','Offert_value_confirmation'
     ];
 
     //Inicio dos metodos que fazem a captura dos dados
