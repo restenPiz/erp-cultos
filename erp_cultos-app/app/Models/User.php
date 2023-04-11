@@ -50,4 +50,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(ReportActivity::class,'Id_user');    
     }
+    public function outputs()
+    {
+        return $this->hasMany(Output::class,'Id_user');    
+    }
 }

@@ -15,6 +15,17 @@ class Output extends Model
         'Value',
         'Id_user',
         'Id_input',
-        'Description'
+        'Description',
+        'Day'
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class,'Id_user');
+    }
+
+    public function inputs()
+    {
+        return $this->belongsTo(Input::class,'Id_input');
+    }
 }

@@ -17,7 +17,7 @@ class CreateOutputsTable extends Migration
             $table->id();
             $table->float('Value');
             $table->string('Description',5000);
-
+            $table->string('Day');
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();
             $table->foreign('Id_user')->references('id')->on('users');

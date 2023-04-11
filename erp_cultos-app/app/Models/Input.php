@@ -20,4 +20,9 @@ class Input extends Model
     {
         return $this->belongsTo(User::class,'Id_user');
     }
+
+    public function outputs()
+    {
+        return $this->hasMany(Output::class,'Id_input');    
+    }
 }

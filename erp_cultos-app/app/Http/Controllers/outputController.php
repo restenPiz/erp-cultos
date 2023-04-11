@@ -18,7 +18,10 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-            return view('Treasurer.addOutput');
+            $users=User::all();
+            $inputs=Input::all();
+
+            return view('Treasurer.addOutput', compact('users','inputs'));
         }
         else
         {
