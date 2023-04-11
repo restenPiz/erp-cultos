@@ -68,7 +68,11 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-            return view('Treasurer.allOutput');
+            $users=User::all();
+            $inputs=Input::all();
+            $outputs=Output::all();
+
+            return view('Treasurer.allOutput',compact('users','outputs','inputs'));
         }
         else
         {
@@ -77,11 +81,31 @@ class outputController extends Controller
             return redirect()->route('login');
         }
     }
-    public function updateOutput()
+    public function updateOutput($id)
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            $table=Output::find($id);
+            
+            $table->Value=Request::input('Value');
+            $table->Description=Request::input('Description');
+            $table->Id_user=Request::input('Id_user');
+            $table->Id_input=Request::input('Id_input');
+            $table->Day=Request::input('Day');
 
+            $user=User::find(Request::input('Id_user'));
+
+            $input=Input::find(Request::input('Id_input'));
+
+            $input->Offert_value_confirmation-=$table->Value;
+
+            $table->save();
+            $user->save();
+            $input->save();
+
+            Alert::success('Actualizado!','A sua saida foi actualizada com sucesso!');
+
+            return redirect()->back();
         }
         else
         {
@@ -90,11 +114,17 @@ class outputController extends Controller
             return redirect()->route('login');
         }
     }
-    public function deleteOutput()
+    public function deleteOutput($id)
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            $output=Output::find($id);
 
+            $output->delete();
+
+            Alert::success('Eliminado!','O usuario foi eliminado com sucesso!');
+
+            return redirect()->back();
         }
         else
         {
