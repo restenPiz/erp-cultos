@@ -39,7 +39,10 @@ class inputController extends Controller
             
             $inputs=Input::all();
 
-            return view('Treasurer.allInput',compact('inputs','users'));
+            $count=DB::table('inputs')
+                ->sum('Offert_value_confirmation');
+
+            return view('Treasurer.allInput',compact('inputs','users'), ['count'=>$count]);
         }
         else
         {

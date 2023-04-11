@@ -62,7 +62,7 @@
                                             <th class="sort" data-sort="customer_nam"></th>
                                             <th class="sort" data-sort="customer_name">Valor</th>
                                             <th class="sort" data-sort="email">Metodo de Pagemento</th>
-                                            <th class="sort" data-sort="date">Valor Total</th>
+                                            {{---<th class="sort" data-sort="date">Valor Total</th>--}}
                                             <th class="sort" data-sort="phone">Nome do Usuario</th>
                                             <th class="sort" data-sort="date">Tipo de Entrada</th>
                                             <th class="sort" data-sort="date">Dia</th>
@@ -76,7 +76,7 @@
                                                 <td class="customer_nam">{{ $input->id }}</td>
                                                 <td class="customer_name">{{ $input->Offert_value }}</td>
                                                 <td class="email">{{ $input->Input_type }}</td>
-                                                <td class="email">{{ $input->Offert_value_confirmation }}</td>
+                                                {{---<td class="email">{{ $input->Offert_value_confirmation }}</td>---}}
                                                 <td class="phone">{{ $input->users->name }}</td>
                                                 <td class="phone">{{ $input->Description }}</td>
                                                 <td class="date">{{ $input->Day }}</td>
@@ -235,9 +235,12 @@
                                     </div>
                                 </div>
                                 @endif
+                                
                             </div>
-
+                            
+                            <h4>Valor Total: {{$count}}</h4>
                             <div class="d-flex justify-content-end">
+                                
                                 <div class="pagination-wrap hstack gap-2">
                                     <a class="page-item pagination-prev disabled" href="#">
                                         Previous

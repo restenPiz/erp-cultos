@@ -41,6 +41,7 @@ class outputController extends Controller
             $table->Description=Request::input('Description');
             $table->Id_user=Request::input('Id_user');
             $table->Id_input=Request::input('Id_input');
+            $table->Day=Request::input('Day');
 
             $user=User::find(Request::input('Id_user'));
 
