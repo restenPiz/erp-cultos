@@ -20,7 +20,7 @@ class reportActivitiesController extends Controller
         if (Auth::user()->hasRole('shepherd')) {
 
             $users = DB::table('users')
-                ->where('name', Auth::user()->name)
+                ->where('name', '=', Auth::user()->name)
                 ->get();
 
             return view('Shepherd.addReportActivities', compact('users'));
@@ -37,11 +37,10 @@ class reportActivitiesController extends Controller
 
             $users = User::where('name', Auth::user()->name)->first();
 
-            $activities = Activity::whereHas('users', function ($query) use ($users) {
-                $query->where('id', $users->id);
-            })->get();
-
-           $activities=Activity::where('SELECT * FROM activities WHERE "Groupt"="Admin"');
+            $activities= DB::table('activity')
+            ->join('users', 'users.id', '=', 'activity.Id_user')
+            ->select('activity.*', 'users.name AS nome')
+            ->get();
 
             return view('Shepherd.allReportActivities', compact('activities', 'users'));
         } else {
@@ -70,7 +69,6 @@ class reportActivitiesController extends Controller
             Alert::success('Adicionado!', 'O seu relatorio de actividades foi adicionado com sucesso!');
 
             return redirect()->back();
-            
         } else {
 
             Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
