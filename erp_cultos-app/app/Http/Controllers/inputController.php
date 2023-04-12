@@ -133,15 +133,19 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {        
-            $users=Input::select('SELECT * FROM inputs WHERE id > 1');
-            
-            $inputs=Input::all();
-
             $count=DB::table('inputs')
                 ->sum('Offert_value_confirmation');
-            
-            $pdf = PDF::loadView('Treasurer.allInput', compact('inputs','users'), ['count'=>$count]);
-            return $pdf->download('Relatorio.pdf');
+
+            $inputs = Input::all();
+            $html = '<table><thead><tr><th>ID</th><th>Valor</th><th>Metodo de Pagamento</th><th>Nome</th> <th>Tipo de Entrada</th><th>Dia</th></tr></thead><tbody>';
+
+            foreach ($inputs as $input) {
+                $html .= "<tr><td>{$input->id}</td><td>{$input->Offert_value}</td><td>{$input->Input_type}</td><td>{$input->users->name}</td><td>{$input->Description}</td><td>{$input->Day}</td></tr>";
+            }
+            $html .= '</tbody></table>'."<br><h4>Valor Total: {$count}</h4>";
+
+            $pdf = PDF::loadHTML($html);
+            return $pdf->stream('relatorio.pdf');
         }
         else
         {
