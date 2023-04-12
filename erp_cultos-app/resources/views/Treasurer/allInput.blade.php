@@ -36,6 +36,9 @@
                                     <div>
                                         <a href="{{ route('addActivity') }}" class="btn btn-success add-btn"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</a>
+                                    
+                                        <a href="{{ route('dowloandPdf') }}" class="btn btn-primary add-btn"><i
+                                                class="ri-add-line align-bottom me-1"></i> Baixar Relatorio</a>
                                     </div>
                                 </div>
                                 <div class="col-sm">
