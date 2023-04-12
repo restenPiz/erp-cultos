@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class inputController extends Controller
 {
@@ -131,8 +132,16 @@ class inputController extends Controller
     public function dowloandPdf()
     {
         if(Auth::user()->hasRole('treasurer'))
-        {
+        {        
+            $users=Input::select('SELECT * FROM inputs WHERE id > 1');
+            
+            $inputs=Input::all();
 
+            $count=DB::table('inputs')
+                ->sum('Offert_value_confirmation');
+            
+            $pdf = PDF::loadView('Treasurer.allInput', compact('inputs','users'), ['count'=>$count]);
+            return $pdf->download('Relatorio.pdf');
         }
         else
         {
