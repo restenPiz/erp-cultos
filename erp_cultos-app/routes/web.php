@@ -134,6 +134,7 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
     Route::get('/allOutput', [outputController::class, 'allOutput'])->middleware(['auth'])->name('allOutput');
     Route::post('/updateOutput/{id}', [outputController::class, 'updateOutput'])->middleware(['auth'])->name('updateOutput');
     Route::get('/deleteOutput/{id}', [outputController::class, 'deleteOutput'])->middleware(['auth'])->name('deleteOutput');
+    Route::get('/dowloandPdf', [outputController::class, 'dowloandPdf'])->middleware(['auth'])->name('dowloandPdf');
 });
 
 require __DIR__.'/auth.php';

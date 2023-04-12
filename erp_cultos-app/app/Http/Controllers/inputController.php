@@ -137,7 +137,7 @@ class inputController extends Controller
                 ->sum('Offert_value_confirmation');
 
             $inputs = Input::all();
-            $html = '<table><thead><tr><th>ID</th><th>Valor</th><th>Metodo de Pagamento</th><th>Nome</th> <th>Tipo de Entrada</th><th>Dia</th></tr></thead><tbody>';
+            $html = '<table class=table align-middle table-nowrap><thead class=table-light><tr><th class="sort">ID</th><th class="sort">Valor</th><th class="sort">Metodo de Pagamento</th><th class="sort">Nome</th><th class="sort">Tipo de Entrada</th><th class="sort">Dia</th></tr></thead><tbody class="list form-check-all">';
 
             foreach ($inputs as $input) {
                 $html .= "<tr><td>{$input->id}</td><td>{$input->Offert_value}</td><td>{$input->Input_type}</td><td>{$input->users->name}</td><td>{$input->Description}</td><td>{$input->Day}</td></tr>";
