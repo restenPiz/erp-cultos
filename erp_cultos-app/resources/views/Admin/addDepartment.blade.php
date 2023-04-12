@@ -99,6 +99,11 @@
                                                     <td class="customer_name">{{ $department->Name }}</td>
                                                     <td class="actio">
                                                         <div class="d-flex gap-2">
+                                                            <div class="remove">
+                                                                <button class="btn btn-sm btn-primary remove-item-btn"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#deleteRecordModal{{ $department->id }}">Ver</button>
+                                                            </div>
                                                             <div class="edit">
                                                                 <button class="btn btn-sm btn-success edit-item-btn"
                                                                     data-bs-toggle="modal"

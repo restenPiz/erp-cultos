@@ -76,6 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/allDepartment', [departmentController::class, 'allDepartment'])->middleware(['auth'])->name('allDepartment');
     Route::post('/updateDepartment/{id}', [departmentController::class, 'updateDepartment'])->middleware(['auth'])->name('updateDepartment');
     Route::get('/deleteDepartment/{id}', [departmentController::class, 'deleteDepartment'])->middleware(['auth'])->name('deleteDepartment');
+    Route::get('/showDepartment/{id}', [departmentController::class, 'showDepartment'])->middleware(['auth'])->name('showDepartment');
 });
 
 //Inicio da parte de actividade
