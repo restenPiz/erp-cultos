@@ -133,4 +133,26 @@ class outputController extends Controller
             return redirect()->route('login');
         }
     }
+    public function dowloandPdf()
+    {
+        if(Auth::user()->hasRole('treasurer'))
+        {
+            $outputs = Output::all();
+            $html = '<table class=table align-middle table-nowrap><thead class=table-light><tr><th class="sort">ID</th><th class="sort">Valor</th><th class="sort">Data de Saida</th><th class="sort">Nome</th><th class="sort">Data de Entrada</th><th class="sort">Descricao</th></tr></thead><tbody class="list form-check-all">';
+
+            foreach ($outputs as $output) {
+                $html .= "<tr><td>{$output->id}</td><td>{$output->Value}</td><td>{$output->Day}</td><td>{$output->users->name}</td><td>{$output->inputs->Day}</td><td>{$output->Description}</td></tr>";
+            }
+            $html .= '</tbody></table>';
+
+            $pdf = PDF::loadHTML($html);
+            return $pdf->stream('relatorio_de_saida.pdf');
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }

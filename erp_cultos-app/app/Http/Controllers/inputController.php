@@ -145,7 +145,7 @@ class inputController extends Controller
             $html .= '</tbody></table>'."<br><h4>Valor Total: {$count}</h4>";
 
             $pdf = PDF::loadHTML($html);
-            return $pdf->stream('relatorio.pdf');
+            return $pdf->stream('relatorio_de_entrada.pdf');
         }
         else
         {
