@@ -56,7 +56,7 @@
 
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-2">
                         <div class="card">
 
@@ -87,7 +87,7 @@
                                     <table class="table align-middle table-nowrap" id="customerTable">
                                         <thead class="table-light">
                                             <tr>
-                                                {{---<th class="sort" data-sort="customer_nam"></th>---}}
+                                                {{-- -<th class="sort" data-sort="customer_nam"></th>- --}}
                                                 <th class="sort" data-sort="customer_name">Nome do Departamento</th>
                                                 <th class="sort" data-sort="actio"></th>
                                             </tr>
@@ -95,14 +95,14 @@
                                         <tbody class="list form-check-all">
                                             @foreach ($departments as $department)
                                                 <tr>
-                                                    {{---<td class="customer_nam">{{ $department->id }}</td>---}}
+                                                    {{-- -<td class="customer_nam">{{ $department->id }}</td>- --}}
                                                     <td class="customer_name">{{ $department->Name }}</td>
                                                     <td class="actio">
                                                         <div class="d-flex gap-2">
                                                             <div class="remove">
                                                                 <button class="btn btn-sm btn-primary remove-item-btn"
                                                                     data-bs-toggle="modal"
-                                                                    data-bs-target="#deleteRecordModal{{ $department->id }}">Ver</button>
+                                                                    data-bs-target="#showRecordModal{{ $department->id }}">Ver</button>
                                                             </div>
                                                             <div class="edit">
                                                                 <button class="btn btn-sm btn-success edit-item-btn"
@@ -140,6 +140,40 @@
                                                                             class="form-control"
                                                                             value="{{ $department->Name }}" required />
                                                                     </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="tasks-progress"
+                                                                            class="form-label">Membros</label>
+                                                                        <div data-simplebar style="height: 95px;">
+                                                                            <ul class="list-unstyled vstack gap-2 mb-0">
+                                                                                @foreach ($users as $user)
+                                                                                    <li>
+                                                                                        <div
+                                                                                            class="form-check d-flex align-items-center">
+                                                                                            <input
+                                                                                                class="form-check-input me-3 active"
+                                                                                                type="checkbox"
+                                                                                                name="Id_user[]"
+                                                                                                value="{{ $user->id }}"
+                                                                                                id="anna-adame">
+                                                                                            <label
+                                                                                                class="form-check-label d-flex align-items-center"
+                                                                                                for="anna-adame">
+                                                                                                <span class="flex-shrink-0">
+                                                                                                    <img src="../assets/images/users/avatar-1.jpg"
+                                                                                                        alt=""
+                                                                                                        class="avatar-xxs rounded-circle" />
+                                                                                                </span>
+                                                                                                <span class="flex-grow-1 ms-2">
+                                                                                                    {{ $user->name }}
+                                                                                                </span>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                @endforeach
+
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <div class="hstack gap-2 justify-content-end">
@@ -156,6 +190,28 @@
                                                     </div>
                                                 </div>
                                                 {{-- Fim do modal para editar pastor --}}
+
+                                                {{-- Inicio do modal para fazer o show das informacoes dos departamentos --}}
+
+                                                <div class="modal fade" id="showRecordModal{{ $department->id }}"
+                                                    tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-light p-3">
+                                                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"
+                                                                    id="close-modal"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {{-- Fim do modal para fazer o show dos departamentos --}}
 
                                                 <!-- Modal -->
                                                 <div class="modal fade zoomIn" id="deleteRecordModal{{ $department->id }}"
