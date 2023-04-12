@@ -32,6 +32,26 @@ class departmentController extends Controller
             return redirect()->route('login');
         }
     }
+    public function allDepartment()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            $departments=DB::table('departments')
+                ->distinct()
+                ->select('id', 'Name')
+                ->get();
+            
+            $users=User::all();
+
+            return view('Admin.allDepartment',compact('departments','users'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
     public function storeDepartment()
     {
         if(Auth::user()->hasRole('admin')){

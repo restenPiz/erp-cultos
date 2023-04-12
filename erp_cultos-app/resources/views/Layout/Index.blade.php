@@ -1080,7 +1080,17 @@
                                                 <li class="nav-item">
                                                     <a href="{{ route('addDepartment') }}" class="nav-link"
                                                         data-key="t-calendar">
-                                                        Departamento
+                                                        Adicionar Departamento
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="collapse menu-dropdown" id="sidebarAppsa">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="{{ route('allDepartment') }}" class="nav-link"
+                                                        data-key="t-calendar">
+                                                        Todos Departamentos
                                                     </a>
                                                 </li>
                                             </ul>
