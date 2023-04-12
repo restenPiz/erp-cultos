@@ -128,4 +128,17 @@ class inputController extends Controller
             return redirect()->route('login');
         }
     }
+    public function dowloandPdf()
+    {
+        if(Auth::user()->hasRole('treasurer'))
+        {
+
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
