@@ -335,8 +335,11 @@
                                         {{-- Inicio das imagens do sistema --}}
 
                                         @foreach ($images as $image)
+                                        
+
+                                        <div class="col-sm-6 ">
                                                 
-                                                <div class="element-item col-xxl-3 col-xl-4 col-sm-6 photography" data-category="photography">
+                                                <div class="element-item col-xxl-12 col-xl-4 col-sm-6 photography" data-category="photography">
                                                     <div class="gallery-box card">
                                                         <div class="gallery-container">
                                                             <a class="image-popup" href="../{{$image->File}}" title="">
@@ -382,8 +385,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                            <div class="col">
                                                 {{-- Inicio do modal para editar o ficheiro --}}
                                                 <div class="modal fade" id="showModal{{ $image->id }}"
                                                     tabindex="-1" aria-labelledby="exampleModalLabel"

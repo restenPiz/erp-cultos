@@ -41,6 +41,7 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'max_size' => 10485760,
+            'max_filesize' => 10485760,
         ],
 
         's3' => [
