@@ -48,11 +48,11 @@
                                                 <td class="customer_name">{{ $department->Name }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
-                                                        <div class="remove">
+                                                        {{---<div class="remove">
                                                             <button class="btn btn-sm btn-primary remove-item-btn"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#showRecordModal{{ $department->id }}">Ver</button>
-                                                        </div>
+                                                        </div>---}}
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn"
                                                                 data-bs-toggle="modal"
@@ -102,7 +102,9 @@
                                                                                             class="form-check-input me-3 active"
                                                                                             type="checkbox"
                                                                                             name="Id_user[]"
-                                                                                            value="{{ $user->id }}"
+                                                                                            value="{{ $user->id }}" @foreach ($departments as $department)
+                                                                                            {{ $department->Id_user ? 'checked' : '' }}
+                                                                                            @endforeach
                                                                                             id="anna-adame">
                                                                                         <label
                                                                                             class="form-check-label d-flex align-items-center"

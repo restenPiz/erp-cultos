@@ -15,7 +15,7 @@
                         <div class="card-body">
                             <div class="live-preview">
                                 <div class="row gy-4">
-                                    <div class="col-xxl-6 col-md-6">
+                                    <div class="col-xxl-12 col-md-12">
                                         <div>
                                             <label for="basiInput" class="form-label">Titulo</label>
                                             <input type="text" class="form-control" id="basiInput" name="Title"
