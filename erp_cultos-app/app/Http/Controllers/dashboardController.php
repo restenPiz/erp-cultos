@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Cult;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,11 +18,19 @@ class dashboardController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=Cult::count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+
             $branches = Branche::all();
 
             $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
 
-            return view('Admin.Index',compact('branches', 'users'));
+            return view('Admin.Index',compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds'));
         }
         if(Auth::user()->hasRole('shepherd'))
         {
