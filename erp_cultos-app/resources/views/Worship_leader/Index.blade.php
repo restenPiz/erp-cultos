@@ -223,8 +223,8 @@
                                                                         <ul class="dropdown-menu dropdown-menu-end"
                                                                             aria-labelledby="dropdownMenuLink15">
                                                                             <li><a class="dropdown-item"
-                                                                                    href="{{route('playVideo',$video->id)}}"><i
-                                                                                        class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
+                                                                                class="image-popup" href="../{{$video->File}}"><i
+                                                                                        class="ri-eye-fill me-2 align-middle text-muted"></i>Reproduzir</a>
                                                                             </li>
                                                                             <li><a href="#" class="dropdown-item" download="{{$video->File}}"><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
