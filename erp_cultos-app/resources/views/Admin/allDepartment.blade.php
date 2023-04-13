@@ -130,7 +130,7 @@
                                                                         data-bs-dismiss="modal">Fechar</button>
                                                                     <button type="submit" name="submit"
                                                                         class="btn btn-success" id="add-btn">Actualizar
-                                                                        Actividade</button>
+                                                                        Departamento</button>
                                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                                 </div>
                                                             </div>
