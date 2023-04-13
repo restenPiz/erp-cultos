@@ -335,44 +335,55 @@
                                         {{-- Inicio das imagens do sistema --}}
 
                                         @foreach ($images as $image)
-                                            <div class="col">
-                                                <div class="card explore-box card-animate">
-                                                    <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                                                        <button type="button" class="btn btn-icon active"
-                                                            data-bs-toggle="button" aria-pressed="true"><i
-                                                                class="mdi mdi-cards-heart fs-16"></i></button>
-                                                    </div>
-                                                    <div class="explore-place-bid-img">
-                                                        <img src="../{{ $image->File }}" alt=""
-                                                            class="card-img-top explore-img" />
-                                                        <div class="bg-overlay"></div>
-                                                        <div class="place-bid-btn">
-                                                            <div class="container">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                        <a href="#!"
-                                                                            class="btn btn-success edit-item-btn"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#showModal{{ $image->id }}"><i
-                                                                                class="ri-edit-2-line"></i></a>
-                                                                        <a href="#!"
-                                                                            class="btn btn-danger remove-item-btn"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#deleteRecordModal{{ $image->id }}"><i
-                                                                                class="ri-delete-bin-line"></i></a>
+                                                
+                                                <div class="element-item col-xxl-3 col-xl-4 col-sm-6 photography" data-category="photography">
+                                                    <div class="gallery-box card">
+                                                        <div class="gallery-container">
+                                                            <a class="image-popup" href="../{{$image->File}}" title="">
+                                                                <img class="gallery-img img-fluid mx-auto" src="../{{$image->File}}" alt="" />
+                                                                <div class="gallery-overlay">
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <a href="#!"
+                                                                                    class="btn btn-success edit-item-btn"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#showModal{{ $image->id }}"><i
+                                                                                        class="ri-edit-2-line"></i></a>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <a href="#!"
+                                                                                    class="btn btn-danger remove-item-btn"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#deleteRecordModal{{ $image->id }}"><i
+                                                                                        class="ri-delete-bin-line"></i></a>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+                                                            </a>
+        
+                                                        </div>
+        
+                                                        <div class="box-content">
+                                                            <div class="d-flex align-items-center mt-1">
+                                                                <div class="flex-grow-1 text-muted"> <a href="#" class="text-body text-truncate">{{$image->Name_file}}</a></div>
+                                                                {{--<div class="flex-shrink-0">
+                                                                    <div class="d-flex gap-3">
+                                                                        <button type="button" class="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
+                                                                            <i class="ri-thumb-up-fill text-muted align-bottom me-1"></i> 3.2K
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
+                                                                            <i class="ri-question-answer-fill text-muted align-bottom me-1"></i> 1.1K
+                                                                        </button>
+                                                                    </div>
+                                                                </div>--}}
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="card-body">
-                                                        {{-- -<p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 23.63k </p>- --}}
-                                                        <a class="image-popup" href="{{$image->File}}" title=""><h5 class="mb-1">{{ $image->Name_file }}</h5></a>
-                                                        <p class="text-muted mb-0">{{ $image->Type_file }}</p>
-                                                    </div>
                                                 </div>
 
-
+                                            <div class="col">
                                                 {{-- Inicio do modal para editar o ficheiro --}}
                                                 <div class="modal fade" id="showModal{{ $image->id }}"
                                                     tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -512,6 +523,7 @@
                                             </div>
                                         @endforeach
                                         {{-- Fim das imagens do sistema --}}
+                                        
                                     </div>
                                     @else
                                     <div class="noresult">
