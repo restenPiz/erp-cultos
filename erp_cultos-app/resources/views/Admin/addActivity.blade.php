@@ -7,7 +7,7 @@
             @csrf
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1">Dados da Actividade</h4>
@@ -15,7 +15,7 @@
                         <div class="card-body">
                             <div class="live-preview">
                                 <div class="row gy-4">
-                                    <div class="col-xxl-12 col-md-12">
+                                    <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Titulo</label>
                                             <input type="text" class="form-control" id="basiInput" name="Title"
