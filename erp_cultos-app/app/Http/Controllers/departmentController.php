@@ -16,15 +16,10 @@ class departmentController extends Controller
     public function addDepartment()
     {
         if(Auth::user()->hasRole('admin')){
-
-            $departments=DB::table('departments')
-                ->distinct()
-                ->select('id', 'Name')
-                ->get();
             
             $users=User::all();
 
-            return view('Admin.addDepartment',compact('users','departments'));
+            return view('Admin.addDepartment',compact('users'));
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
