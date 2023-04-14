@@ -33,7 +33,7 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $departments=Department::all()->distinct();
+            $departments=DB::table('departments')->distinct('Name','id')->pluck('Name','id');
 
             $users=DB::table('users')
                 ->where('id','<>',1)

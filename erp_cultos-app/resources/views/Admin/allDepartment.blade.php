@@ -43,6 +43,7 @@
                                     </thead>
                                     <tbody class="list form-check-all">
                                         @foreach ($departments as $department)
+                                        @if(isset($department))
                                             <tr>
                                                 {{-- -<td class="customer_nam">{{ $department->id }}</td>- --}}
                                                 <td class="customer_name">{{ $department->Name }}</td>
@@ -209,6 +210,7 @@
                                             </div>
 
                                             {{-- Fim dos dois modais --}}
+                                            @endif
                                         @endforeach
                                     </tbody>
                                 </table>
