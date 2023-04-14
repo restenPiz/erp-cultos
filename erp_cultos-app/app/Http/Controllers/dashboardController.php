@@ -31,11 +31,13 @@ class dashboardController extends Controller
 
             $count_announcement=Announcement::count();
 
+            $announcements=Announcement::all();
+
             $total=$count_activities+$count_announcement;
 
             $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
 
-            return view('Admin.Index',compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds','total'));
+            return view('Admin.Index',compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds','total','announcements'));
         }
         if(Auth::user()->hasRole('shepherd'))
         {
