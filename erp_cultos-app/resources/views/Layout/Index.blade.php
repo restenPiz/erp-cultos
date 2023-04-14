@@ -185,7 +185,7 @@
                                 data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                 <i class='bx bx-bell fs-22'></i>
                                 <span
-                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">3<span
+                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{$total}}<span
                                         class="visually-hidden">unread messages</span></span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"

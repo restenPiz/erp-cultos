@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Announcement;
 use App\Models\Cult;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,9 +29,13 @@ class dashboardController extends Controller
 
             $branches = Branche::all();
 
+            $count_announcement=Announcement::count();
+
+            $total=$count_activities+$count_announcement;
+
             $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
 
-            return view('Admin.Index',compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds'));
+            return view('Admin.Index',compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds','total'));
         }
         if(Auth::user()->hasRole('shepherd'))
         {
