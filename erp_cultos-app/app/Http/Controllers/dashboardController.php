@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use App\Models\Announcement;
 use App\Models\Cult;
+use App\Models\ReportActivity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -33,11 +34,15 @@ class dashboardController extends Controller
 
             $announcements=Announcement::all();
 
-            $total=$count_activities+$count_announcement;
+            $count_report=ReportActivity::count();
+            
+            $activities=ReportActivity::all();
+
+            $total=$count_report+$count_announcement;
 
             $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
 
-            return view('Admin.Index',compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds','total','announcements'));
+            return view('Admin.Index',compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         if(Auth::user()->hasRole('shepherd'))
         {
