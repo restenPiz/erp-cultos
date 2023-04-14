@@ -28,6 +28,9 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['au
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
     
+    //Inicio da rota para poder ter acesso ao comunicado
+    Route::get('/showAnnouncements/{id}', [dashboardController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncements');
+
     //Inicio das rotas da parte de tesoureiros
     Route::get('/addTreasurer', [treasurerController::class, 'addTreasurer'])->middleware(['auth'])->name('addTreasurer');
     Route::post('/storeTreasurer', [treasurerController::class, 'storeTreasurer'])->middleware(['auth'])->name('storeTreasurer');

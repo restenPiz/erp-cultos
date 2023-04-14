@@ -239,7 +239,7 @@
                                                         <img src="assets/images/users/avatar-8.jpg"
                                                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                         <div class="flex-1">
-                                                            <a href="#!" class="stretched-link">
+                                                            <a href="{{route('showAnnouncements',['id'=>$announcement->id])}}" class="stretched-link">
                                                                 <h6 class="mt-0 mb-1 fs-13 fw-semibold">{{$announcement->Type}}</h6>
                                                             </a>
                                                             <div class="fs-13 text-muted">
@@ -263,13 +263,6 @@
                                                 </div>
                                                 @endforeach
                                                 
-
-                                                <div class="my-3 text-center view-all">
-                                                    <button type="button"
-                                                        class="btn btn-soft-success waves-effect waves-light">View
-                                                        All Notifications <i
-                                                            class="ri-arrow-right-line align-middle"></i></button>
-                                                </div>
                                             </div>
 
                                         </div>
@@ -284,7 +277,7 @@
                                                             <img src="assets/images/users/avatar-3.jpg"
                                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                             <div class="flex-1">
-                                                                <a href="#!" class="stretched-link">
+                                                                <a href="#" class="stretched-link">
                                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">{{$activity->users->name}}</h6>
                                                                 </a>
                                                                 <div class="fs-13 text-muted">
@@ -303,12 +296,6 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
-
-                                                <div class="my-3 text-center view-all">
-                                                    <button type="button"
-                                                        class="btn btn-soft-success waves-effect waves-light">Ver todas Actividades <i
-                                                            class="ri-arrow-right-line align-middle"></i></button>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"

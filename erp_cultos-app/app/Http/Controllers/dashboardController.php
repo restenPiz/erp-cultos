@@ -61,4 +61,23 @@ class dashboardController extends Controller
             return view('Treasurer.Index');
         }
     }
+    public function showAnnouncement($id)
+    {
+        if(Auth::user()->hasRole('admin'))
+        { 
+            $users=DB::table('users')
+                ->where('userType','=','pastor')
+                ->get();
+            
+            $announcements=Announcement::findOrFail($id);
+
+            return view('Admin.showAnnouncement',compact('users','announcements'));
+
+        }else{
+            
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
