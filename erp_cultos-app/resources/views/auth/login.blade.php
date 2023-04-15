@@ -56,27 +56,6 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card mt-4">
-
-                            {{--Inicio da parte de erros do sistema--}}
-
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-
-                            {{--Fim da parte de erros do sistema--}}
-
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
                                     <h5 class="text-primary">Bem vindo de volta !</h5>
@@ -84,6 +63,25 @@
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form action="{{route('login')}}" method="post">
+                                        {{--Inicio da parte de erros do sistema--}}
+
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+
+                                        @if (session('status'))
+                                            <div class="alert alert-success">
+                                                {{ session('status') }}
+                                            </div>
+                                        @endif
+
+                                        {{--Fim da parte de erros do sistema--}}
                                         @csrf
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email</label>
