@@ -28,28 +28,15 @@ class AuthenticatedSessionController extends Controller
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
-
-
-    /*protected function authenticate(Request $request,$user)
-    {
-    if($user->hasRole('admin')){
-    return redirect()->route('dashboard');
-    }
-    else if($user->hasRole('shepherd'))
-    {
-    return redirect()->route('dashShepherd');
-    }
-    }*/
     public function destroy(Request $request)
     {
+        Alert::success('Logout concluido');
 
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
-        Alert::warning('Logout Concluido',);
 
         return redirect('/');
     }
