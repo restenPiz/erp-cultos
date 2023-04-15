@@ -59,8 +59,21 @@
 
                             {{--Inicio da parte de erros do sistema--}}
 
-                            <x-auth-session-status class="mb-4" :status="session('status')" />
-                            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
 
                             {{--Fim da parte de erros do sistema--}}
 
