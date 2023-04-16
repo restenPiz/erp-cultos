@@ -587,8 +587,8 @@
                                                                         </div>
                                                                     </div>
                                                                 </td>
-                                                                <td>{{ $image->Type_file }}</td>
-                                                                <td>{{ $image->created_at }}</td>
+                                                                <td>{{ $file->Type_file }}</td>
+                                                                <td>{{ $file->created_at }}</td>
                                                                 <td>
                                                                     <div class="dropdown">
                                                                         <a href="javascript:void(0);"

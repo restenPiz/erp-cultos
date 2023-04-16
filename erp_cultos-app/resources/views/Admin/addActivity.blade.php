@@ -494,14 +494,14 @@
                                         </li> <!-- end Dashboard Menu -->
                                         <li class="nav-item">
                                             <a class="nav-link menu-link active" href="#sidebarApps" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="true" aria-controls="sidebarApps">
+                                                role="button" aria-expanded="false" aria-controls="sidebarApps">
                                                 <i class="ri-apps-2-line"></i> <span data-key="t-apps">Actividades</span>
                                             </a>
                                             <div class="collapse menu-dropdown" id="sidebarApps">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="{{ route('addActivity') }}" class="nav-link active"
-                                                            data-key="t-calendar">
+                                                        <a href="/addActivity" class="nav-link active"
+                                                        data-key="t-ecommerce">
                                                             Adicionar actividades
                                                         </a>
                                                     </li>

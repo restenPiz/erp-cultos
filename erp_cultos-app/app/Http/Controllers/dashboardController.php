@@ -23,7 +23,8 @@ class dashboardController extends Controller
             //Retornando os dados para se usar nas cards
             $count_branches=Branche::count();
             $count_activities=Activity::count();
-            $count_cults=Cult::count();
+            $count_cults=DB::table('cults')
+            ->count();
             $count_shepherds=DB::table('users')
                 ->where('userType','pastor')
                 ->count();

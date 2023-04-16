@@ -187,9 +187,9 @@
                                     id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                     <i class='bx bx-bell fs-22'></i>
-                                    {{--<span
+                                    <span
                                         class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ $total }}<span
-                                            class="visually-hidden">unread messages</span></span>--}}
+                                            class="visually-hidden">unread messages</span></span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                                     aria-labelledby="page-header-notifications-dropdown">
@@ -230,7 +230,7 @@
                                     <div class="tab-content position-relative" id="notificationItemsTabContent">
                                         <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
                                             role="tabpanel">
-                                            {{---<div data-simplebar style="max-height: 300px;" class="pe-2">
+                                            <div data-simplebar style="max-height: 300px;" class="pe-2">
                                                 @foreach ($announcements as $announcement)
                                                     
                                                 <div
@@ -246,7 +246,7 @@
                                                                 <p class="mb-1">{{$announcement->Description}}
                                                                 </p>
                                                             </div>
-                                                            {{---<p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
                                                                 <span><i class="mdi mdi-clock-outline"></i> 4 hrs
                                                                     ago</span>
                                                             </p>
@@ -263,11 +263,11 @@
                                                 </div>
                                                 @endforeach
                                                 
-                                            </div>--}}
+                                            </div>
 
                                         </div>
 
-                                        {{---<div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
+                                        <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
                                             aria-labelledby="messages-tab">
                                             <div data-simplebar style="max-height: 300px;" class="pe-2">
                                                 
@@ -309,7 +309,7 @@
                                                     data-bs-target="#removeNotificationModal">Remove</button>
                                             </div>
                                         </div>
-                                    </div>--}}
+                                    </div>
                                 </div>
                             </div>
 

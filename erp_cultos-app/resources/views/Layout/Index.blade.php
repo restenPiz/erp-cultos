@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="pt" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
     data-sidebar-image="none" data-preloader="disable">
 
@@ -12,7 +12,7 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-    <link href="..assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="../assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Layout config Js -->
     <script src="../assets/js/layout.js"></script>
@@ -486,7 +486,7 @@
                                     <ul class="navbar-nav" id="navbar-nav">
                                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                                         <li class="nav-item">
-                                            <a class="nav-link menu-link" href="{{ route('dashboard') }}" role="button">
+                                            <a class="nav-link menu-link" href="#sidebarApps" href="{{ route('dashboard') }}" role="button">
                                                 <i class="ri-dashboard-2-line"></i> <span
                                                     data-key="t-dashboards">Index</span>
                                             </a>
@@ -991,6 +991,9 @@
                 <script src="../assets/libs/feather-icons/feather.min.js"></script>
                 <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
                 <script src="../assets/js/plugins.js"></script>
+                            
+                <!-- apexcharts -->
+                <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
 
                 <!-- App js -->
                 <script src="../assets/js/app.js"></script>

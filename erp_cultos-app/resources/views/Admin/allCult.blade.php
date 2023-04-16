@@ -135,7 +135,7 @@
                                             <div class="col-sm-6">
                                                 <label for="basiInput" class="form-label">Nome do Culto</label>
                                                 <input type="text" class="form-control" value="{{ $cult->Name_cult }}"
-                                                    name="Day_of_cult">
+                                                    name="Name_cult">
                                             </div>
                                             <div class="col-sm-6">
                                                 <label for="basiInput" class="form-label">Dia de Culto</label>
