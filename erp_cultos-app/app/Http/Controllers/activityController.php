@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
+use App\Models\Branche;
+use App\Models\ReportActivity;
 use Request;
 use App\Models\User;
 use App\Models\Activity;
@@ -19,6 +22,22 @@ class activityController extends Controller
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
             //Usando as query builds para retornar os dados do usuario
+
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
                 ->get();
@@ -31,8 +50,12 @@ class activityController extends Controller
                 ->distinct()
                 ->select('id', 'Name')
                 ->get();
-                
-            return view('Admin.addActivity',compact('users','departments'));
+
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+    
+            return view('Admin.addActivity',compact('users','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
         } else {
 
@@ -73,6 +96,20 @@ class activityController extends Controller
     public function allActivity()
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
             
             $users = DB::table('users')
                 ->where('userType', '<>', 'admin')
@@ -87,9 +124,13 @@ class activityController extends Controller
                 ->select('id', 'Name')
                 ->get();        
 
-            $activities=Activity::all();
+            $activitie=Activity::all();
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
 
-            return view('Admin.allActivity', compact('activities','users','departments'));
+            return view('Admin.allActivity', compact('activitie','users','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
         } else {
             Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');

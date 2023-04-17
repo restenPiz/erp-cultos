@@ -1,4 +1,4 @@
-@extends('Layout.Index')
+@extends('Layout.Principal')
 
 @section('content')
     @role('admin')
@@ -68,7 +68,7 @@
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach ($activities as $activity)
+                                        @foreach ($activitie as $activity)
                                             <tr>
                                                 <td class="customer_nam">{{ $activity->id }}</td>
                                                 <td class="customer_name">{{ $activity->Title }}</td>

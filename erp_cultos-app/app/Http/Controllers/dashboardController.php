@@ -28,18 +28,18 @@ class dashboardController extends Controller
             $count_shepherds=DB::table('users')
                 ->where('userType','pastor')
                 ->count();
-
-            $branches = Branche::all();
+            
+            $count_report=ReportActivity::count();
 
             $count_announcement=Announcement::count();
 
-            $announcements=Announcement::all();
+            $total=$count_report+$count_announcement;
+            
+            $branches = Branche::all();
 
-            $count_report=ReportActivity::count();
+            $announcements=Announcement::all();
             
             $activities=ReportActivity::all();
-
-            $total=$count_report+$count_announcement;
 
             $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
 

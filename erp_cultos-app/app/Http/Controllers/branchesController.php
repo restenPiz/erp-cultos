@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Announcement;
+use App\Models\ReportActivity;
 use Request;
 use App\Models\User;
 use App\Models\Branche;
@@ -18,9 +21,30 @@ class branchesController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            
+            
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
 
-            return view('Admin.addBranches', compact('users'));
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+
+            return view('Admin.addBranches', compact('users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         else
         {
@@ -63,11 +87,30 @@ class branchesController extends Controller
     {
         if (Auth::user()->hasRole('admin')) 
         {
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
             $branches = Branche::all();
 
             $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
 
-            return view('Admin.allBranches', compact('branches', 'users'));
+            return view('Admin.allBranches', compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         else
         {

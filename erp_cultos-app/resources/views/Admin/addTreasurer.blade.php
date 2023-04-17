@@ -1,6 +1,7 @@
-@extends('Layout.Index')
 
+@extends('Layout.Principal')
 @section('content')
+
     @role('admin')
         {{-- Inicio do conteudo do meu sistem --}}
         <form action="{{ route('storeTreasurer') }}" method="post">

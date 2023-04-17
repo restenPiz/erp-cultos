@@ -1,6 +1,7 @@
-@extends('Layout.Index')
 
+@extends('Layout.Principal')
 @section('content')
+
     @role('admin')
         {{-- Inicio da view que possui todo o codigo fonte --}}
 

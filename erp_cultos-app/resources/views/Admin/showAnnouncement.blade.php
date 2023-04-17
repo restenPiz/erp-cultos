@@ -1,6 +1,7 @@
-@extends('Layout.Principal')
 
+@extends('Layout.Principal')
 @section('content')
+
     @role('admin')
         {{-- Inicio do conteudo da parte de comunicado --}}
         <!-- start page title -->

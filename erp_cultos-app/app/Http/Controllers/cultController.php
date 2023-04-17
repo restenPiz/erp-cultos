@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Announcement;
+use App\Models\Branche;
+use App\Models\ReportActivity;
 use Request;
 use App\Models\Cult;
 use Illuminate\Auth\Events\Registered;
@@ -17,7 +21,26 @@ class cultController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            return view('Admin.addCult');   
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+
+            return view('Admin.addCult',compact('count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));   
         }
         else
         {
@@ -30,6 +53,7 @@ class cultController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            
             $table=new Cult();
 
             $table->Day_of_cult=Request::input('Day_of_cult');
@@ -61,9 +85,28 @@ class cultController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $cults=Cult::all();
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
 
-            return view('Admin.allCult',compact('cults'));
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $cults=Cult::all();
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+
+            return view('Admin.allCult',compact('cults','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         else
         {

@@ -10,18 +10,40 @@ use Illuminate\Support\Facades\File;
 use App\Models\User;
 use App\Models\Department;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Branche;
+use App\Models\Activity;
+use App\Models\Announcement;
+use App\Models\Cult;
+use App\Models\ReportActivity;
 class departmentController extends Controller
 {
     public function addDepartment()
     {
         if(Auth::user()->hasRole('admin')){
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
             
             $users=DB::table('users')
                 ->where('id','<>',1)
                 ->get();
 
-            return view('Admin.addDepartment',compact('users'));
+            return view('Admin.addDepartment',compact('users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
@@ -33,13 +55,32 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
             $departments=Department::all();
+
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
 
             $users=DB::table('users')
                 ->where('id','<>',1)
                 ->get();
 
-            return view('Admin.allDepartment',compact('departments','users'));
+            return view('Admin.allDepartment',compact('departments','users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         else
         {
