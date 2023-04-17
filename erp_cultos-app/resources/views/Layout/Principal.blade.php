@@ -212,9 +212,8 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="gr" title="German">
-                                    <img src="/assets/images/flags/germany.svg" alt="user-image"
-                                        class="me-2 rounded" height="18"> <span
-                                        class="align-middle">Deutsche</span>
+                                    <img src="/assets/images/flags/germany.svg" alt="user-image" class="me-2 rounded"
+                                        height="18"> <span class="align-middle">Deutsche</span>
                                 </a>
 
                                 <!-- item-->
@@ -228,8 +227,8 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="ru" title="Russian">
-                                    <img src="/assets/images/flags/russia.svg" alt="user-image"
-                                        class="me-2 rounded" height="18">
+                                    <img src="/assets/images/flags/russia.svg" alt="user-image" class="me-2 rounded"
+                                        height="18">
                                     <span class="align-middle">русский</span>
                                 </a>
 
@@ -244,8 +243,8 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="fr" title="French">
-                                    <img src="/assets/images/flags/french.svg" alt="user-image"
-                                        class="me-2 rounded" height="18">
+                                    <img src="/assets/images/flags/french.svg" alt="user-image" class="me-2 rounded"
+                                        height="18">
                                     <span class="align-middle">français</span>
                                 </a>
 
@@ -926,7 +925,7 @@
 
         @role('admin')
             <div class="app-menu navbar-menu">
-            
+
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
                     <!-- Dark Logo-->
@@ -1297,7 +1296,7 @@
                                             <div class="collapse menu-dropdown" id="sidebarPages">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="{{route('addAnnouncement')}}" class="nav-link"
+                                                        <a href="{{ route('addAnnouncement') }}" class="nav-link"
                                                             data-key="t-starter"> Inserir Comunicado
                                                         </a>
                                                     </li>
@@ -1307,7 +1306,7 @@
                                             <div class="collapse menu-dropdown" id="sidebarPages">
                                                 <ul class="nav nav-sm flex-column">
                                                     <li class="nav-item">
-                                                        <a href="{{route('allAnnouncement')}}" class="nav-link"
+                                                        <a href="{{ route('allAnnouncement') }}" class="nav-link"
                                                             data-key="t-starter">Todos Comunicados
                                                         </a>
                                                     </li>
@@ -1354,87 +1353,79 @@
                                                         data-key="t-dashboards">Index</span>
                                                 </a>
                                             </li> <!-- end Dashboard Menu -->
-                                            
+
                                             {{-- Fim do menu da parte de pastor --}}
                                         @endrole
 
                                     </ul>
-                                
-                        </div>
-                        <!-- Sidebar -->
-                    </div>
-
-                    <div class="sidebar-background"></div>
-                </div>
-                <!-- Left Sidebar End -->
-                <!-- Vertical Overlay-->
-                <div class="vertical-overlay"></div>
-
-                <!-- ============================================================== -->
-                <!-- Start right Content here -->
-                <!-- ============================================================== -->
-                <div class="main-content">
-
-                    <div class="page-content">
-                        <div class="container-fluid">
-
-                            {{--Inicio do conteudo do sistemaa--}}
-                            @yield('content')
-                            {{--Fim do conteudo do sistema--}}
-
-                        </div>
-                        <!-- container-fluid -->
-                    </div>
-                    <!-- End Page-content -->
-
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <script>
-                                        document.write(new Date().getFullYear())
-                                    </script> © Erp-Culto.
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="text-sm-end d-none d-sm-block">
-                                        Desenhado e Desenvolvido por Mauro Peniel
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </footer>
+                    </div>
                 </div>
-                <!-- end main content-->
+            </div>
+        </div>
+        <!-- Sidebar -->
+    </div>
+
+    <div class="sidebar-background"></div>
+    </div>
+
+    <div class="vertical-overlay"></div>
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+                {{-- Inicio do conteudo do sistemaa --}}
+                @yield('content')
+                {{-- Fim do conteudo do sistema --}}
 
             </div>
-            <!-- END layout-wrapper -->
+            <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> © Erp-Culto.
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end d-none d-sm-block">
+                            Desenhado e Desenvolvido por Mauro Peniel
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- end main content-->
 
 
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
 
-            <!--start back-to-top-->
-            <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
-                <i class="ri-arrow-up-line"></i>
-            </button>
-            <!--end back-to-top-->
+    {{-- Inicio do link de sweetAlerta --}}
+    @include('sweetalert::alert')
+    {{-- Fim do link do sweetAlerta --}}
 
-            {{-- Inicio do link de sweetAlerta --}}
-            @include('sweetalert::alert')
-            {{-- Fim do link do sweetAlerta --}}
+    <!-- JAVASCRIPT -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="/assets/js/plugins.js"></script>
 
-            <!-- JAVASCRIPT -->
-            <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="/assets/libs/simplebar/simplebar.min.js"></script>
-            <script src="/assets/libs/node-waves/waves.min.js"></script>
-            <script src="/assets/libs/feather-icons/feather.min.js"></script>
-            <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-            <script src="/assets/js/plugins.js"></script>
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
 
-            <!-- App js -->
-            <script src="/assets/js/app.js"></script>
-
-        </body>
-
-
-<!-- Mirrored from themesbrand.com/velzon/html/default/pages-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Mar 2023 09:55:00 GMT -->
+</body>
 
 </html>
