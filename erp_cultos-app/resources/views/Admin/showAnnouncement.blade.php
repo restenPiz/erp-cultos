@@ -1,7 +1,5 @@
-
-@extends('Layout.Principal')
+@extends('Layout.Index')
 @section('content')
-
     @role('admin')
         {{-- Inicio do conteudo da parte de comunicado --}}
         <!-- start page title -->
@@ -25,7 +23,7 @@
         <div class="row justify-content-center">
             <div class="col-xxl-9">
                 <div class="card">
-                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('updateAnnouncement',['id'=>$announcements->id])}}" method="post">
+                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('updateAnnouncement',['id'=>$announcementss->id])}}" method="post">
                         @csrf
                         <div class="card-body border-bottom border-bottom-dashed p-4">
                             <div class="row">
@@ -59,7 +57,7 @@
                                     <div class="input-light">
                                         <select class="form-control bg-light border-0" data-choices data-choices-search-false
                                             id="choices-payment-status" name="Id_user" required>
-                                            <option value="{{$announcements->Id_user}}">{{$announcements->name($announcements->Id_user)}}</option>
+                                            <option value="{{$announcementss->Id_user}}">{{$announcementss->name($announcementss->Id_user)}}</option>
                                             @foreach ($users as $user)
                                                 <option value="{{$user->id}}">{{$user->name}}</option>
                                             @endforeach
@@ -71,7 +69,7 @@
                                     <div>
                                         <label for="date-field">Horario</label>
                                         <input type="time" class="form-control bg-light border-0" id="date-field"
-                                            data-provider="flatpickr" data-time="true" name="Hour" value="{{$announcements->Hour}}">
+                                            data-provider="flatpickr" data-time="true" name="Hour" value="{{$announcementss->Hour}}">
                                     </div>
                                 </div>
                                 <!--end col-->
@@ -85,7 +83,7 @@
                                         <label for="billingName" class="text-muted text-uppercase fw-semibold">Descricao</label>
                                     </div>
                                     <div class="mb-2">
-                                        <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="10" required>{{$announcements->Description}}</textarea>
+                                        <textarea class="form-control bg-light border-0" name="Description" id="billingAddress" rows="10" required>{{$announcementss->Description}}</textarea>
                                         <div class="invalid-feedback">
                                             Por favor digite uma descricao valida
                                         </div>
