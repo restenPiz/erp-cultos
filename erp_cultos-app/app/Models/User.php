@@ -23,6 +23,19 @@ class User extends Authenticatable
         'contact',
         'userType',
         'password',
+        
+        //Novas colunas tendo em conta a adicao dos atributos do membro
+        'Number_bi',
+        'Profission',
+        'Baptism',
+        'Time_of_church',
+        'Affiliation',
+        'File',
+        'Gender',
+        'Household',
+        'Date_of_birth',
+        'Marital_status',
+
     ];
 
     protected $hidden = [
