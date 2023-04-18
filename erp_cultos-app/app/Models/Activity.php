@@ -29,4 +29,9 @@ class Activity extends Model
     {
         return User::find($id)->name;
     }
+    //Inicio do metodo que retorna a chave estrangeira do departamento
+    public function department()
+    {
+        return $this->belongsTo(Department::class,'Group');
+    }
 }
