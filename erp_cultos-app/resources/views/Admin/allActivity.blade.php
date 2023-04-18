@@ -403,7 +403,7 @@
                                                                     <select class="form-control" name="Group"
                                                                         id="status-field" required>
                                                                         <option value="{{ $activity->Group }}">
-                                                                            {{ $activity->Group }}</option>
+                                                                            {{ $activity->department->Name }}</option>
 
 
                                                                             @foreach ($departments as $department)
