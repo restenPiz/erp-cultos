@@ -236,6 +236,8 @@
                                 @endif
                                 
                             </div>
+                            {{--Inicio da parte contendo o valor total--}}
+                            <h4>Valor Total: {{$count}}</h4>
                             
                             <div class="d-flex justify-content-end">
                                 

@@ -48,11 +48,12 @@ class dashboardController extends Controller
             return view('Shepherd.Index');
         }
         if (Auth::user()->hasRole('worship_leader')) {
-            $files = DB::table('files')->where('Type_file', 'Arquivo_arquivo')->get();
-            $images = DB::table('files')->where('Type_file', 'Arquivo_imagem')->get();
-            $videos = DB::table('files')->where('Type_file', 'Arquivo_video')->get();
+            $files = DB::table('files')->where('Type_file', 'Arquivo')->get();
+            $images = DB::table('files')->where('Type_file', 'Imagem')->get();
+            $videos = DB::table('files')->where('Type_file', 'Video')->get();
+            $audios = DB::table('files')->where('Type_file', 'Audio')->get();
 
-            return view('Worship_leader.Index', compact('files', 'images', 'videos'));
+            return view('Worship_leader.Index', compact('files', 'images', 'videos','audios'));
         }
         if (Auth::user()->hasRole('treasurer')) {
             return view('Treasurer.Index');

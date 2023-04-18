@@ -69,6 +69,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link fs-14" data-bs-toggle="tab" href="#audio" role="tab">
+                                    <i class="ri-folder-4-line d-inline-block d-md-none"></i> <span
+                                        class="d-none d-md-inline-block">Audio</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link fs-14" data-bs-toggle="tab" href="#documents" role="tab">
                                     <i class="ri-folder-4-line d-inline-block d-md-none"></i> <span
                                         class="d-none d-md-inline-block">Documentos</span>
@@ -704,6 +710,157 @@
                             </div>
                         </div>
                         <!--end tab-pane-->
+
+                        <div class="tab-pane fade" id="audio" role="tabpanel">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                                    {{--Inicio da parte contendo os Audios--}}
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="table-responsive">
+                                                @if(count($audios)>0)
+                                                <table class="table table-borderless align-middle mb-0">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th scope="col">Nome do Audio</th>
+                                                            <th scope="col">Data de Carregamento</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($audios as $audio)
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm">
+                                                                            <div class="avatar-title bg-soft-secondary text-secondary rounded fs-20">
+                                                                                <i class="ri-file-line"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ms-3 flex-grow-1">
+                                                                            <h6 class="fs-15 mb-0"><a
+                                                                                    href="javascript:void(0)">{{$audio->Name_file }}</a>
+                                                                            </h6>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>{{ $audio->created_at }}</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <a href="javascript:void(0);"
+                                                                            class="btn btn-light btn-icon"
+                                                                            id="show"
+                                                                            data-bs-toggle="dropdown"
+                                                                            aria-expanded="false">
+                                                                            <i class="ri-equalizer-fill"></i>
+                                                                        </a>
+                                                                        <ul class="dropdown-menu dropdown-menu-end"
+                                                                            aria-labelledby="dropdownMenuLink15">
+                                                                            {{---<li><a class="dropdown-item"
+                                                                                class="image-popup" href="../{{$audio->File}}"><i
+                                                                                        class="ri-eye-fill me-2 align-middle text-muted"></i>Reproduzir</a>
+                                                                            </li>---}}
+                                                                            <li><a href="#" class="dropdown-item" download="{{$audio->File}}"><i
+                                                                                        class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                            </li>
+                                                                            <li class="dropdown-divider"></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="javascript:void(0);"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#deletRecordModal{{$audio->id }}"><i
+                                                                                        class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Eliminar</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+
+                                                                {{-- Inicio do modal para eliminar os ficheiros --}}
+
+                                                                <!-- Modal -->
+                                                                <div class="modal fade zoomIn"
+                                                                    id="deletRecordModal{{$audio->id }}"
+                                                                    tabindex="-1" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="btn-close"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    aria-label="Close"
+                                                                                    id="btn-close"></button>
+                                                                            </div>
+                                                                            <form
+                                                                                action="{{ route('deleteFile', ['id' =>$audio->id]) }}"
+                                                                                method="get" enctype="multipart/form-data">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <div class="modal-body">
+                                                                                    <div class="mt-2 text-center">
+                                                                                        <lord-icon
+                                                                                            src="https://cdn.lordicon.com/gsqxdxog.json"
+                                                                                            trigger="loop"
+                                                                                            colors="primary:#f7b84b,secondary:#f06548"
+                                                                                            style="width:100px;height:100px">
+                                                                                        </lord-icon>
+                                                                                        <div
+                                                                                            class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                                                                            <h4>Voce tem certeza ?</h4>
+                                                                                            <p
+                                                                                                class="text-muted mx-4 mb-0">
+                                                                                                Voce pretende
+                                                                                                eliminar
+                                                                                                "{{$audio->Name_file }}" ?
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                                                                        <button type="button"
+                                                                                            class="btn w-sm btn-light"
+                                                                                            data-bs-dismiss="modal">Fechar</button>
+                                                                                        <button type="submit"
+                                                                                            name="submit"
+                                                                                            class="btn w-sm btn-danger "
+                                                                                            id="delete-record">Sim,
+                                                                                            elimine!</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                {{-- Fim do modal para eliminar os ficheiros --}}
+
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                                @else
+                                                <div class="noresult">
+                                                    <div class="text-center">
+                                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                            colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                                        </lord-icon>
+                                                        <h5 class="mt-2">Desculpe! Nenhum resultado encontrado</h5>
+                                                        {{---<p class="text-muted mb-0">We've searched more than 150+ Orders We did not find any
+                                                            orders for you search.</p>---}}
+                                                    </div>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{--Fim da parte contendo os videos--}}
+
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end tab-pane-->
+
                     </div>
                     <!--end tab-content-->
                 </div>
