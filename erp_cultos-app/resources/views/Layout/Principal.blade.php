@@ -189,7 +189,7 @@
                                     <i class='bx bx-bell fs-22'></i>
                                     <span
                                         class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ $total }}<span
-                                            class="visually-hidden">unread messages</span></span>
+                                            class="visually-hidden"></span></span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                                     aria-labelledby="page-header-notifications-dropdown">
@@ -201,9 +201,6 @@
                                                     <h6 class="m-0 fs-16 fw-semibold text-white"> Relatorio de Actividades
                                                     </h6>
                                                 </div>
-                                                {{-- -<div class="col-auto dropdown-tabs">
-                                                <span class="badge badge-soft-light fs-13"> 4 New</span>
-                                            </div> --}}
                                             </div>
                                         </div>
 
@@ -247,10 +244,6 @@
                                                                     <p class="mb-1">{{ $announcement->Description }}
                                                                     </p>
                                                                 </div>
-                                                                <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                                    <span><i class="mdi mdi-clock-outline"></i> 4 hrs
-                                                                        ago</span>
-                                                                </p>
                                                             </div>
                                                             <div class="px-2 fs-15">
                                                                 <div class="form-check notification-check">

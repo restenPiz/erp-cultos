@@ -141,4 +141,11 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
     Route::get('/dowloandPdf', [outputController::class, 'dowloandPdf'])->middleware(['auth'])->name('dowloandPdf');
 });
 
+//Inicio das rotas da parte de membro
+Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
+    
+
+    
+});
+
 require __DIR__.'/auth.php';
