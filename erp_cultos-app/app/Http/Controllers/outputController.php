@@ -41,14 +41,18 @@ class outputController extends Controller
             $table->Value=Request::input('Value');
             $table->Description=Request::input('Description');
             $table->Id_user=Request::input('Id_user');
+            $table->Id_input=Request::input('Id_input');
             $table->Hour=Request::input('Hour');
             $table->Day=Request::input('Day');
+
+            $user=User::find(Request::input('Id_user'));
 
             $input=Input::find(Request::input('Id_input'));
 
             $input->Offert_value_confirmation-=$table->Value;
 
             $table->save();
+            $user->save();
             $input->save();
 
             Alert::success('Adicionado!','A sua saida foi introduzida com sucesso!');
@@ -91,14 +95,18 @@ class outputController extends Controller
             $table->Value=Request::input('Value');
             $table->Description=Request::input('Description');
             $table->Id_user=Request::input('Id_user');
+            $table->Id_input=Request::input('Id_input');
             $table->Hour=Request::input('Hour');
             $table->Day=Request::input('Day');
+
+            $user=User::find(Request::input('Id_user'));
 
             $input=Input::find(Request::input('Id_input'));
 
             $input->Offert_value_confirmation-=$table->Value;
 
             $table->save();
+            $user->save();
             $input->save();
 
             Alert::success('Actualizado!','A sua saida foi actualizada com sucesso!');
@@ -136,10 +144,10 @@ class outputController extends Controller
         if(Auth::user()->hasRole('treasurer'))
         {
             $outputs = Output::all();
-            $html = '<table class=table align-middle table-nowrap><thead class=table-light><tr><th class="sort">ID</th><th class="sort">Valor</th><th class="sort">Horario</th><th class="sort">Nome</th><th class="sort">Data de Entrada</th><th class="sort">Descricao</th></tr></thead><tbody class="list form-check-all">';
+            $html = '<table class=table align-middle table-nowrap><thead class=table-light><tr><th class="sort">ID</th><th class="sort">Valor</th><th class="sort">Data de Saida</th><th class="sort">Nome</th><th class="sort">Data de Entrada</th><th class="sort">Descricao</th></tr></thead><tbody class="list form-check-all">';
 
             foreach ($outputs as $output) {
-                $html .= "<tr><td>{$output->id}</td><td>{$output->Value}</td><td>{$output->Day}</td><td>{$output->users->name}</td><td>{$output->Hour}</td><td>{$output->Description}</td></tr>";
+                $html .= "<tr><td>{$output->id}</td><td>{$output->Value}</td><td>{$output->Day}</td><td>{$output->users->name}</td><td>{$output->inputs->Day}</td><td>{$output->Description}</td></tr>";
             }
             $html .= '</tbody></table>';
 

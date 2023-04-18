@@ -23,6 +23,9 @@ class CreateOutputsTable extends Migration
             $table->integer('Id_user')->unsigned();
             $table->foreign('Id_user')->references('id')->on('users');
 
+            $table->integer('Id_input')->unsigned();
+            $table->foreign('Id_input')->references('id')->on('inputs');
+
             $table->timestamps();
         });
     }

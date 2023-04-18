@@ -53,6 +53,9 @@
                                             <input type="text" class="form-control" id="labelInput" name="Description" placeholder="Digite as razoes para efectuar essa saida!">
                                         </div>
                                     </div>
+                                    @foreach ($inputs as $input)
+                                    <input type="hidden" value="{{$input->id}}" name="Id_input">
+                                    @endforeach
                                 </div>
                                 <!--end row-->
                             </div>
