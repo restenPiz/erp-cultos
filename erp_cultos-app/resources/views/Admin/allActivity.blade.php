@@ -75,7 +75,7 @@
                                                 <td class="customer_name">{{ $activity->Title }}</td>
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
-                                                <td class="date">{{ $activity->Group }}</td>
+                                                <td class="date">{{ $activity->department->Name }}</td>
                                                 <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
@@ -143,17 +143,12 @@
                                                                     <select class="form-control" name="Group"
                                                                         id="status-field" required>
                                                                         <option value="{{ $activity->Group }}">
-                                                                            {{ $activity->Group }}</option>
+                                                                            {{ $activity->department->Name }}</option>
 
 
-                                                                        <option value="Departamento dos jovens">Departamento
-                                                                            dos Jovens</option>
-                                                                        <option value="Departamento dos Pais">Departamento dos
-                                                                            Pais</option>
-                                                                        <option value="Departamento dos Maes">Departamento dos
-                                                                            Maes</option>
-                                                                        <option value="Departamento dos Criancas">Departamento
-                                                                            dos Criancas</option>
+                                                                            @foreach ($departments as $department)
+                                                                                <option value="{{$department->id}}">{{$department->Name}}</option>
+                                                                            @endforeach
                                                                     </select>
                                                                 </div>
 
