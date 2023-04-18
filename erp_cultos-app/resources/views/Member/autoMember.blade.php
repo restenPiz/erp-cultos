@@ -46,7 +46,7 @@
                                         alt="user-profile-image">
                                     <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
                                         <input id="profile-img-file-input" type="file" class="profile-img-file-input"
-                                            name="file">
+                                            name="File">
                                         <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
                                             <span class="avatar-title rounded-circle bg-light text-body">
                                                 <i class="ri-camera-fill"></i>
@@ -196,7 +196,7 @@
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Contacto</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="EX: 868749382" name="Contact">
+                                                    placeholder="EX: 868749382" name="contact">
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -258,7 +258,7 @@
                                                     </div>
                                                 </div>
                                                 <input type="hidden" value="membro" name="function">
-                                                <input type="hidden" value="membro" name="usertype">
+                                                <input type="hidden" value="membro" name="userType">
                                                 <!--end col-->
                                                 <div class="hstack gap-2 justify-content-end">
                                                     <button type="submit" name="submit" class="btn btn-primary">Cadastrar-me</a>

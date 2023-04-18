@@ -10,48 +10,62 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-
+use Illuminate\Support\Facades\File;
 class memberController extends Controller
 {
     public function loginMember()
-    {   
-        $user = User::create( 
-            [
-            'name'=>Request::input('name'),
-            'email'=>Request::input('email'),
-            'password'=>Request::input('password'),
-            'number_bi'=>Request::input('number_bi'),
-            'profission'=>Request::input('profission'),
-            'baptism'=>Request::input('baptism'),
-            'time_of_church'=>Request::input('time_of_church'),
-            'affiliation'=>Request::input('affiliation'),
-            'gender'=>Request::input('gender'),
-            'household'=>Request::input('household'),
-            'date_of_birth'=>Request::input('date_of_birth'),
-            'marital_status'=>Request::input('marital_status'),
-            'surname'=>Request::input('surname'),
-            'function'=>Request::input('function'),
-            'theological_level'=>Request::input('theological_level'),
-            'contact'=>Request::input('contact'),
-            'userType'=>Request::input('userType'),
-        ]);
-        
-        if(Request::file('file') != null) {
-            $filename = Request::file('file')->getClientOriginalName();
+    {
+        $table=new User();
+
+        $table->name=Request::input('name');
+        $table->email=Request::input('email');
+        $table->password=Request::input('password');
+        $table->number_bi=Request::input('number_bi');
+        $table->profission=Request::input('profission');
+        $table->baptism=Request::input('baptism');
+        $table->time_of_church=Request::input('time_of_church');
+        $table->affiliation=Request::input('affiliation');
+        $table->gender=Request::input('gender');
+        $table->household=Request::input('household');
+        $table->date_of_birth=Request::input('date_of_birth');
+        $table->marital_status=Request::input('marital_status');
+        $table->surname=Request::input('surname');
+        $table->function=Request::input('function');
+        $table->theological_level=Request::input('theological_level');
+        $table->contact=Request::input('contact');
+        $table->userType=Request::input('userType');
+
+        if (Request::file('File') != null) {
+            $filename = Request::file('File')->getClientOriginalName();
             $link = "Ficheiros/" . $filename;
-            $user->file = $link;
+            $table->File = $link;
             $foto = Request::file('File');
             $foto->move('Ficheiros', $filename);
         }
 
-        $user->attachRole('member');
+        $table->save();
 
-        event(new Registered($user));
+        $table->attachRole('admin');
 
-        Auth::login($user);
+        event(new Registered($table));
+
+        Auth::login($table);
 
         Alert::success('Adicionado!','O membro foi adicionaod com sucesso!');
 
         return redirect()->back();
+    }
+    public function dashboardMember()
+    {
+        if(Auth::user()->hasRole('member'))
+        {
+            return view('Member.Index');
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
 }

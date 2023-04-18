@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('baptism')->nullable();
             $table->string('time_of_church')->nullable();
             $table->string('affiliation')->nullable();
-            $table->string('file')->nullable();
+            $table->string('File')->nullable();
             $table->string('gender')->nullable();
             $table->string('household')->nullable();
             $table->string('date_of_birth')->nullable();

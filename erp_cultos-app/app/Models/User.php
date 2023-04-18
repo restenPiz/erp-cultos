@@ -30,7 +30,7 @@ class User extends Authenticatable
         'baptism',
         'time_of_church',
         'affiliation',
-        'file',
+        'File',
         'gender',
         'household',
         'date_of_birth',
