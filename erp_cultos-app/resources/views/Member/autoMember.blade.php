@@ -44,7 +44,7 @@
                                     class="rounded-circle avatar-xl img-thumbnail user-profile-image"
                                     alt="user-profile-image">
                                 <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                    <input id="profile-img-file-input" type="file" class="profile-img-file-input">
+                                    <input id="profile-img-file-input" type="file" class="profile-img-file-input" name="file">
                                     <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
                                         <span class="avatar-title rounded-circle bg-light text-body">
                                             <i class="ri-camera-fill"></i>
@@ -64,8 +64,7 @@
                     <div class="card-header">
                         <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#personalDetails"
-                                    role="tab">
+                                <a class="nav-link active" data-bs-toggle="tab" role="tab" href="#personalDetails">
                                     <i class="fas fa-home"></i> Detalhes de Acesso
                                 </a>
                             </li>
@@ -118,12 +117,12 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-lg-12">
+                                        {{---<div class="col-lg-12">
                                             <div class="hstack gap-2 justify-content-end">
-                                                <button type="submit" class="btn btn-primary">Adicionar</button>
-                                                <button type="button" class="btn btn-soft-success">Cancel</button>
+                                                <a href="#changePassword" data-bs-toggle="tab" role="tab" class="btn btn-success add-btn"><i
+                                                    class="ri-add-line align-bottom me-1"></i> Seguinte</a>
                                             </div>
-                                        </div>
+                                        </div>--}}
                                         <!--end col-->
                                     </div>
                                     <!--end row-->
@@ -200,11 +199,12 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-lg-12">
+                                        {{--<div class="col-lg-12">
                                             <div class="text-end">
-                                                <button type="submit" class="btn btn-success">Seguinte</button>
+                                                <a href="#experience" data-bs-toggle="tab" role="tab" class="btn btn-success add-btn"><i
+                                                    class="ri-add-line align-bottom me-1"></i> Seguinte</a>
                                             </div>
-                                        </div>
+                                        </div>--}}
                                         <!--end col-->
                                     </div>
                                     <!--end row-->
@@ -231,7 +231,7 @@
                                                     <div class="mb-3">
                                                         <label for="firstnameInput" class="form-label">Tempo na Igreja</label>
                                                         <input type="text" class="form-control" id="firstnameInput"
-                                                            placeholder="" name="time_of_church">
+                                                            placeholder="EX: 5 anos" name="time_of_church">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -254,22 +254,12 @@
                                                    <!--end col-->
                                                 <div class="hstack gap-2 justify-content-end">
                                                     <a class="btn btn-success"
-                                                        href="javascript:deleteEl(1)">Delete</a>
+                                                        href="javascript:deleteEl(1)">Cadastrar-me</a>
                                                 </div>
                                             </div>
                                             <!--end row-->
                                         </div>
                                     </div>
-                                    <div id="newForm" style="display: none;">
-
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="hstack gap-2">
-                                            <button type="submit" class="btn btn-success">Update</button>
-                                            <a href="javascript:new_link()" class="btn btn-primary">Add New</a>
-                                        </div>
-                                    </div>
-                                    <!--end col-->
                                 </form>
                             </div>
                             <!--end tab-pane-->
