@@ -76,10 +76,12 @@ class activityController extends Controller
             $table->Id_user = Request::input('Id_user');
 
             $users = User::find(Request::input('Id_user'));
+            $departments=Department::find(Request::input('Group'));
 
             //Salvando os dados capturados
             $table->save();
             $users->save();
+            $departments->save();
 
             Alert::success('Adicionado com sucesso', 'A actividade foi adicionada com sucesso!');
 
@@ -146,10 +148,12 @@ class activityController extends Controller
             $activities->Id_user = Request::input('Id_user');
 
             $user = User::findOrFail(Request::input('Id_user'));
+            $departments=Department::find(Request::input('Group'));
 
             //Inicio dos metodos que salvam os dados na base de dados
             $activities->save();
             $user->save();
+            $departments->save();
 
             Alert::success('Actualizado', 'A actividade foi actualizada com sucesso!');
 

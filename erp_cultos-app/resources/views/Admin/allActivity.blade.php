@@ -407,7 +407,7 @@
 
 
                                                                             @foreach ($departments as $department)
-                                                                            <option value="{{$department->id}}">{{$department->Name}}</option>
+                                                                                <option value="{{$department->id}}">{{$department->Name}}</option>
                                                                             @endforeach
                                                                     </select>
                                                                 </div>
@@ -418,11 +418,9 @@
                                                                         Responsavel</label>
                                                                     <select class="form-control" name="Id_user"
                                                                         id="status-field" required>
-                                                                        @if (property_exists($activity, 'name') && is_callable([$activity, 'name']))
                                                                             <option value="{{ $activity->Id_user }}">
                                                                                 {{ $activity->name($activity->Id_user) }}
                                                                             </option>
-                                                                        @endif
                                                                         @foreach ($users as $user)
                                                                             <option value="{{ $user->id }}">
                                                                                 {{ $user->name }}</option>
