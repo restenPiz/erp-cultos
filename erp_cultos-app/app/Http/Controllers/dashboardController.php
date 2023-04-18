@@ -97,4 +97,8 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
+    public function autoMember()
+    {
+        return view('Member.autoMember');
+    }
 }
