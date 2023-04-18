@@ -12,12 +12,15 @@ class CreateActivitiesTable extends Migration
             $table->id();
             $table->string('Title');
             $table->string('Hour');
-            $table->string('Group')->nullable();
             $table->string('Day');
 
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();
             $table->foreign('Id_user')->references('id')->on('users');
+
+            //Inicio da coluna contendo a chave estrangeira do departamento
+            $table->integer('Group')->unsigned();
+            $table->foreign('Group')->references('id')->on('departments');
             
             $table->timestamps();
         });

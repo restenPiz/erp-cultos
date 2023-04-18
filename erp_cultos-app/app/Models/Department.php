@@ -25,4 +25,8 @@ class Department extends Model
     {
         return User::find($id)->name;
     }
+    public function activitys()
+    {
+        return $this->hasMany(Activity::class,'Group');
+    }
 }
