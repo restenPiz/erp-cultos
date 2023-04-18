@@ -141,11 +141,12 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
     Route::get('/dowloandPdf', [outputController::class, 'dowloandPdf'])->middleware(['auth'])->name('dowloandPdf');
 });
 
+//Inicio da rota de auto-cadastro do membro
+Route::get('/autoMember', [dashboardController::class, 'autoMember'])->name('autoMember');
+
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
-    //Inicio da rota de auto-cadastro do membro
-    Route::get('/autoMember', [dashboardController::class, 'autoMember'])->middleware(['auth'])->name('autoMember');
 });
 
 require __DIR__.'/auth.php';
