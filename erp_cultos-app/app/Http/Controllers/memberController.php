@@ -14,8 +14,9 @@ use Illuminate\Validation\Rules;
 class memberController extends Controller
 {
     public function loginMember()
-    {
-        $user = User::create([
+    {   
+        $user = User::create( 
+            [
             'name'=>Request::input('name'),
             'email'=>Request::input('email'),
             'password'=>Request::input('password'),
@@ -24,7 +25,6 @@ class memberController extends Controller
             'baptism'=>Request::input('baptism'),
             'time_of_church'=>Request::input('time_of_church'),
             'affiliation'=>Request::input('affiliation'),
-            'file'=>Request::input('file'),
             'gender'=>Request::input('gender'),
             'household'=>Request::input('household'),
             'date_of_birth'=>Request::input('date_of_birth'),
@@ -34,7 +34,15 @@ class memberController extends Controller
             'theological_level'=>Request::input('theological_level'),
             'contact'=>Request::input('contact'),
             'userType'=>Request::input('userType'),
-       ]);
+        ]);
+        
+        if(Request::file('file') != null) {
+            $filename = Request::file('file')->getClientOriginalName();
+            $link = "Ficheiros/" . $filename;
+            $user->file = $link;
+            $foto = Request::file('File');
+            $foto->move('Ficheiros', $filename);
+        }
 
         $user->attachRole('member');
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\announcementController;
 use App\Http\Controllers\reportActivitiesController;
 use App\Http\Controllers\inputController;
 use App\Http\Controllers\outputController;
+use App\Http\Controllers\memberController;
 
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
@@ -143,6 +144,7 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
 
 //Inicio da rota de auto-cadastro do membro
 Route::get('/autoMember', [dashboardController::class, 'autoMember'])->name('autoMember');
+Route::post('/loginMember', [memberController::class, 'loginMember'])->name('loginMember');
 
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
