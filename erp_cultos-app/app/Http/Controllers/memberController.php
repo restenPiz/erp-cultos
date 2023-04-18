@@ -52,6 +52,6 @@ class memberController extends Controller
 
         Alert::success('Adicionado!','O membro foi adicionaod com sucesso!');
 
-        return redirect()->route('index');
+        return redirect()->back();
     }
 }

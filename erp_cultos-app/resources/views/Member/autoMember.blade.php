@@ -33,57 +33,59 @@
 
     <div class="container">
         <br><br><br><br><br>
-
-        <div class="row">
-            <div class="col-xxl-3">
-                <div class="card mt-n5">
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <div class="profile-user position-relative d-inline-block mx-auto  mb-4">
-                                <img src="assets/images/users/avatar-1.jpg"
-                                    class="rounded-circle avatar-xl img-thumbnail user-profile-image"
-                                    alt="user-profile-image">
-                                <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                    <input id="profile-img-file-input" type="file" class="profile-img-file-input" name="file">
-                                    <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
-                                        <span class="avatar-title rounded-circle bg-light text-body">
-                                            <i class="ri-camera-fill"></i>
-                                        </span>
-                                    </label>
+        <form action="{{route('loginMember')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-xxl-3">
+                    <div class="card mt-n5">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <div class="profile-user position-relative d-inline-block mx-auto  mb-4">
+                                    <img src="assets/images/users/avatar-1.jpg"
+                                        class="rounded-circle avatar-xl img-thumbnail user-profile-image"
+                                        alt="user-profile-image">
+                                    <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
+                                        <input id="profile-img-file-input" type="file" class="profile-img-file-input"
+                                            name="file">
+                                        <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
+                                            <span class="avatar-title rounded-circle bg-light text-body">
+                                                <i class="ri-camera-fill"></i>
+                                            </span>
+                                        </label>
+                                    </div>
                                 </div>
+                                <h5 class="fs-16 mb-1">Upload da sua foto</h5>
                             </div>
-                            <h5 class="fs-16 mb-1">Upload da sua foto</h5>
                         </div>
                     </div>
+                    <!--end card-->
                 </div>
-                <!--end card-->
-            </div>
-            <!--end col-->
-            <div class="col-xxl-9">
-                <div class="card mt-xxl-n5">
-                    <div class="card-header">
-                        <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" role="tab" href="#personalDetails">
-                                    <i class="fas fa-home"></i> Detalhes de Acesso
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#changePassword" role="tab">
-                                    <i class="far fa-user"></i> Detalhes Pessoais
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#experience" role="tab">
-                                    <i class="far fa-envelope"></i> Detalhes Adicionais
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                                <form action="javascript:void(0);">
+                <!--end col-->
+                <div class="col-xxl-9">
+                    <div class="card mt-xxl-n5">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" role="tab"
+                                        href="#personalDetails">
+                                        <i class="fas fa-home"></i> Detalhes de Acesso
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#changePassword" role="tab">
+                                        <i class="far fa-user"></i> Detalhes Pessoais
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#experience" role="tab">
+                                        <i class="far fa-envelope"></i> Detalhes Adicionais
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="personalDetails" role="tabpanel">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-3">
@@ -111,26 +113,24 @@
                                         <!--end col-->
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="phonenumberInput" class="form-label">Password de Confirmacao</label>
+                                                <label for="phonenumberInput" class="form-label">Password de
+                                                    Confirmacao</label>
                                                 <input type="password" class="form-control" id="phonenumberInput"
                                                     placeholder="Digite a sua senha" name="password_confirmation">
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        {{---<div class="col-lg-12">
+                                        {{-- -<div class="col-lg-12">
                                             <div class="hstack gap-2 justify-content-end">
                                                 <a href="#changePassword" data-bs-toggle="tab" role="tab" class="btn btn-success add-btn"><i
                                                     class="ri-add-line align-bottom me-1"></i> Seguinte</a>
                                             </div>
-                                        </div>--}}
+                                        </div> --}}
                                         <!--end col-->
                                     </div>
-                                    <!--end row-->
-                                </form>
-                            </div>
-                            <!--end tab-pane-->
-                            <div class="tab-pane" id="changePassword" role="tabpanel">
-                                <form action="javascript:void(0);">
+                                </div>
+                                <!--end tab-pane-->
+                                <div class="tab-pane" id="changePassword" role="tabpanel">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-3">
@@ -179,7 +179,8 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="firstnameInput" class="form-label">Data de Nascimento</label>
+                                                <label for="firstnameInput" class="form-label">Data de
+                                                    Nascimento</label>
                                                 <input type="date" class="form-control" id="firstnameInput"
                                                     placeholder="EX: filho de Peniel e Assuncao" name="date_of_birth">
                                             </div>
@@ -199,27 +200,25 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        {{--<div class="col-lg-12">
+                                        {{-- <div class="col-lg-12">
                                             <div class="text-end">
                                                 <a href="#experience" data-bs-toggle="tab" role="tab" class="btn btn-success add-btn"><i
                                                     class="ri-add-line align-bottom me-1"></i> Seguinte</a>
                                             </div>
-                                        </div>--}}
+                                        </div> --}}
                                         <!--end col-->
                                     </div>
-                                    <!--end row-->
-                                </form>
-                                
-                            </div>
-                            <!--end tab-pane-->
-                            <div class="tab-pane" id="experience" role="tabpanel">
-                                <form>
+
+                                </div>
+                                <!--end tab-pane-->
+                                <div class="tab-pane" id="experience" role="tabpanel">
                                     <div id="newlink">
                                         <div id="1">
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
-                                                        <label for="firstnameInput" class="form-label">Baptismo</label>
+                                                        <label for="firstnameInput"
+                                                            class="form-label">Baptismo</label>
                                                         <select class="form-control" name="baptism">
                                                             <option>...</option>
                                                             <option value="Baptizado">Baptizado</option>
@@ -229,47 +228,55 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
-                                                        <label for="firstnameInput" class="form-label">Tempo na Igreja</label>
-                                                        <input type="text" class="form-control" id="firstnameInput"
-                                                            placeholder="EX: 5 anos" name="time_of_church">
+                                                        <label for="firstnameInput" class="form-label">Tempo na
+                                                            Igreja</label>
+                                                        <input type="text" class="form-control"
+                                                            id="firstnameInput" placeholder="EX: 5 anos"
+                                                            name="time_of_church">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
-                                                        <label for="firstnameInput" class="form-label">Nivel Teologico</label>
+                                                        <label for="firstnameInput" class="form-label">Nivel
+                                                            Teologico</label>
                                                         <select class="form-control" name="theological_level">
                                                             <option>...</option>
-                                                            <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
-                                                            <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
-                                                            <option value="Curso Superior em Teologia">Curso Superior em Teologia</option>
-                                                            <option value="Capacitacao de Lideres">Capacitacao de Lideres</option>
-                                                            <option value="Capacitacao de Obreiros">Capacitacao de Obreiros</option>
-                                                            <option value="Capacitacao de Professores Criancas">Capacitacao de Professores Criancas</option>
+                                                            <option value="Curso Basico em Teologia">Curso Basico em
+                                                                Teologia</option>
+                                                            <option value="Curso Medio em Teologia">Curso Medio em
+                                                                Teologia</option>
+                                                            <option value="Curso Superior em Teologia">Curso Superior
+                                                                em Teologia</option>
+                                                            <option value="Capacitacao de Lideres">Capacitacao de
+                                                                Lideres</option>
+                                                            <option value="Capacitacao de Obreiros">Capacitacao de
+                                                                Obreiros</option>
+                                                            <option value="Capacitacao de Professores Criancas">
+                                                                Capacitacao de Professores Criancas</option>
                                                             <option value="Nenhum">Nenhum</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <input type="hidden" value="membro" name="function">
                                                 <input type="hidden" value="membro" name="usertype">
-                                                   <!--end col-->
+                                                <!--end col-->
                                                 <div class="hstack gap-2 justify-content-end">
-                                                    <a class="btn btn-success"
-                                                        href="javascript:deleteEl(1)">Cadastrar-me</a>
+                                                    <button type="submit" name="submit" class="btn btn-primary">Cadastrar-me</a>
                                                 </div>
                                             </div>
                                             <!--end row-->
                                         </div>
                                     </div>
-                                </form>
+                                </div>
+                                <!--end tab-pane-->
                             </div>
-                            <!--end tab-pane-->
                         </div>
                     </div>
                 </div>
+                <!--end col-->
             </div>
-            <!--end col-->
-        </div>
-        <!--end row-->
+            <!--end row-->
+        </form>
 
     </div>
     <!-- container-fluid -->
