@@ -19,6 +19,19 @@ class CreateUsersTable extends Migration
             $table->string('theological_level')->nullable();
             $table->string('contact')->nullable();
             $table->string('userType')->nullable();
+
+            //Inicio das colunas que vao complementar aos membros
+            $table->string('number_bi')->nullable();
+            $table->string('profission')->nullable();
+            $table->string('baptism')->nullable();
+            $table->string('time_of_church')->nullable();
+            $table->string('affiliation')->nullable();
+            $table->string('file')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('household')->nullable();
+            $table->string('date_of_birth')->nullable();
+            $table->string('marital_status')->nullable();
+            
             $table->rememberToken();
             $table->timestamps();
         });
