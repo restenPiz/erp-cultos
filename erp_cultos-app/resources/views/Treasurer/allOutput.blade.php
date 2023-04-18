@@ -60,7 +60,7 @@
                                             <th class="sort" data-sort="customer_name">Valor</th>
                                             <th class="sort" data-sort="email">Data de Saida</th>
                                             <th class="sort" data-sort="phone">Nome do Usuario</th>
-                                            <th class="sort" data-sort="date">Data de Entrada</th>
+                                            <th class="sort" data-sort="date">Horario</th>
                                             <th class="sort" data-sort="date">Descricacao</th>
                                             {{---<th class="sort" data-sort="status">Descricacao</th>--}}
                                             <th class="sort" data-sort="actio"></th>
@@ -73,7 +73,7 @@
                                                 <td class="customer_name">{{ $output->Value }}</td>
                                                 <td class="email">{{ $output->Day }}</td>
                                                 <td class="phone">{{ $output->users->name }}</td>
-                                                <td class="phone">{{ $output->inputs->Day }}</td>
+                                                <td class="phone">{{ $output->Hour }}</td>
                                                 <td class="date">{{ $output->Description }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
@@ -139,16 +139,8 @@
                                                                 </div>
 
                                                                 <div>
-                                                                    <label for="status-field" class="form-label">Data de Entrada</label>
-                                                                    <select class="form-control" name="Id_input"
-                                                                        id="status-field" required>
-                                                                        <option value="{{ $output->Id_input}}">
-                                                                            {{ $output->inputs->Day }}</option>
-                                                                        @foreach ($inputs as $input)
-                                                                            <option value="{{ $input->id }}">
-                                                                                {{ $input->Day }}</option>
-                                                                        @endforeach
-                                                                    </select>
+                                                                    <label for="basiInput" class="form-label">Horario</label>
+                                                                    <input value="{{$output->Hour}}" type="time" class="form-control" id="basiInput" name="Hour">
                                                                 </div>
 
                                                                 <div class="mb-3">

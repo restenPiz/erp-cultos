@@ -37,13 +37,8 @@
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Data de Entrada</label>
-                                            <select class="form-control" name="Id_input">
-                                                <option>...</option>
-                                                @foreach ($inputs as $input)
-                                                    <option value="{{ $input->id }}">{{ $input->Day }}</option>
-                                                @endforeach
-                                            </select>
+                                             <label for="basiInput" class="form-label">Horario</label>
+                                            <input type="time" class="form-control" id="basiInput" name="Hour">
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">

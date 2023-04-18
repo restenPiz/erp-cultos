@@ -18,12 +18,10 @@ class CreateOutputsTable extends Migration
             $table->float('Value');
             $table->string('Description',5000);
             $table->string('Day');
+            $table->string('Hour');
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();
             $table->foreign('Id_user')->references('id')->on('users');
-
-            $table->integer('Id_input')->unsigned();
-            $table->foreign('Id_input')->references('id')->on('inputs');
 
             $table->timestamps();
         });

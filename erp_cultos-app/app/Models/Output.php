@@ -14,7 +14,7 @@ class Output extends Model
     protected $fillable=[
         'Value',
         'Id_user',
-        'Id_input',
+        'Hour',
         'Description',
         'Day'
     ];
@@ -22,10 +22,5 @@ class Output extends Model
     public function users()
     {
         return $this->belongsTo(User::class,'Id_user');
-    }
-
-    public function inputs()
-    {
-        return $this->belongsTo(Input::class,'Id_input');
     }
 }
