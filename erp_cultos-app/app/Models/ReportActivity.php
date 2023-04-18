@@ -21,11 +21,6 @@ class ReportActivity extends Model
     //Inicio dos metodos que fazem a captura dos dados
     public function users()
     {
-        return $this->hasMany(User::class);
-    }
-    
-    public function name($id)
-    {
-        return User::find($id)->name;
+        return $this->belongsTo(User::class,'Id_user');
     }
 }
