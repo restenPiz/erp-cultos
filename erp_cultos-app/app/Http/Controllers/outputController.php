@@ -72,8 +72,11 @@ class outputController extends Controller
             $users=User::all();
             $inputs=Input::all();
             $outputs=Output::all();
+            
+            $count=DB::table('inputs')
+                ->sum('Offert_value_confirmation');
 
-            return view('Treasurer.allOutput',compact('users','outputs','inputs'));
+            return view('Treasurer.allOutput',compact('users','outputs','inputs'),['count'=>$count]);
         }
         else
         {
