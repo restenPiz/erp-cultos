@@ -20,10 +20,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if(!$request){
-            Alert::error('Falha!','Falha ao fazer login');
-        }
-
         Alert::success('Bem Vindo!');
 
         return redirect()->intended(RouteServiceProvider::HOME);
