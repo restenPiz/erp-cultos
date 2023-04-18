@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Request;
 use Alert;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class memberController extends Controller
 {
@@ -31,7 +36,7 @@ class memberController extends Controller
             'userType'=>Request::input('userType'),
        ]);
 
-        $user->attachRole('admin');
+        $user->attachRole('member');
 
         event(new Registered($user));
 
