@@ -73,9 +73,10 @@
 
                                                 <select class="form-control" name="Type_file">
                                                     <option>...</option>
-                                                    <option value="Arquivo_imagem">Imagem</option>
-                                                    <option value="Arquivo_video">Video</option>
-                                                    <option value="Arquivo_arquivo">Ficheiro</option>
+                                                    <option value="Imagem">Imagem</option>
+                                                    <option value="Video">Video</option>
+                                                    <option value="Documento">Documento</option>
+                                                    <option value="Audio">Audio</option>
                                                 </select>
                                             </div>
                                         </div>
