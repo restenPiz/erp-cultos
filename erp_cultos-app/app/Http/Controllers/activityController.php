@@ -47,8 +47,6 @@ class activityController extends Controller
                 ->get();
 
             $departments=DB::table('departments')
-                ->distinct()
-                ->select('id', 'Name')
                 ->get();
 
             $announcements=Announcement::all();
@@ -120,8 +118,6 @@ class activityController extends Controller
                 ->get();
 
             $departments=DB::table('departments')
-                ->distinct()
-                ->select('id', 'Name')
                 ->get();        
 
             $activitie=Activity::all();

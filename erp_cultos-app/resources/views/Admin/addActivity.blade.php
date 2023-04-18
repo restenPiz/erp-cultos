@@ -38,13 +38,12 @@
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Grupo</label>
+                                            <label for="labelInput" class="form-label">Departamento</label>
                                             <select class="form-control" name="Group">
                                                 <option>...</option>
-                                                <option value="Departamento dos jovens">Departamento dos Jovens</option>
-                                                <option value="Departamento dos Pais">Departamento dos Pais</option>
-                                                <option value="Departamento dos Maes">Departamento dos Maes</option>
-                                                <option value="Departamento dos Criancas">Departamento dos Criancas</option>
+                                                @foreach ($departments as $department)
+                                                    <option value="{{$department->id}}">{{$department->Name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

@@ -317,7 +317,7 @@
                             </div>
 
                             <div class="table-responsive table-card mt-3 mb-1">
-                                @if(count($activities)>0)
+                                @if(count($activitie)>0)
                                 <table class="table align-middle table-nowrap" id="customerTable">
                                     <thead class="table-light">
                                         <tr>
@@ -330,12 +330,12 @@
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach ($activities as $activity)
+                                        @foreach ($activitie as $activity)
                                             <tr>
                                                 <td class="customer_name">{{ $activity->Title }}</td>
                                                 <td class="email">{{ $activity->Hour }}</td>
                                                 <td class="phone">{{ $activity->Day }}</td>
-                                                <td class="date">{{ $activity->Group }}</td>
+                                                <td class="date">{{ $activity->department->Name }}</td>
                                                 <td class="dat">{{ $activity->name($activity->Id_user) }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
