@@ -130,7 +130,7 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
     Route::get('/allInput', [inputController::class, 'allInput'])->middleware(['auth'])->name('allInput');
     Route::post('/updateInput/{id}', [inputController::class, 'updateInput'])->middleware(['auth'])->name('updateInput');
     Route::get('/deleteInput/{id}', [inputController::class, 'deleteInput'])->middleware(['auth'])->name('deleteInput');
-    Route::get('/dowloandPdf', [inputController::class, 'dowloandPdf'])->middleware(['auth'])->name('dowloandPdf');
+    Route::get('/dowloandPDF', [inputController::class, 'dowloandPdf'])->middleware(['auth'])->name('dowloandPDF');
    
     //Inicio da parte de insercao de saidas
     Route::post('/storeOutput', [outputController::class, 'storeOutput'])->middleware(['auth'])->name('storeOutput');
