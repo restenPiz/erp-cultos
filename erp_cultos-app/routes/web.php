@@ -147,12 +147,12 @@ Route::get('/autoMember', [dashboardController::class, 'autoMember'])->name('aut
 Route::get('/loginMembers', [dashboardController::class, 'loginMembers'])->name('loginMembers');
 Route::post('/loginMember', [memberController::class, 'loginMember'])->name('loginMember');
 Route::get('/logoutMember', [memberController::class, 'destroy'])->name('logoutMember');
+Route::post('/Login_member', [memberController::class, 'Login_member'])->name('Login_member');
 
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
     //Inicio das views que se encontram no sistema
-    Route::get('/dashboardMember', [memberController::class, 'dashboardMember'])->name('dasboardMember');
 
 });
 

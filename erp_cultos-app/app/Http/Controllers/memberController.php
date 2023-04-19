@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\File;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
 class memberController extends Controller
 {
     public function loginMember()
@@ -70,17 +72,24 @@ class memberController extends Controller
     }
     public function destroy(Request $request)
     {
-        if(Auth::user()->hasRole('member'))
-        {
-            Alert::success('Logout concluido');
+        Alert::success('Logout concluido');
 
-            Auth::guard('web')->logout();
+        Auth::guard('web')->logout();
 
-            $request->session()->invalidate();
+        Request::session()->invalidate();
 
-            $request->session()->regenerateToken();
+        Request::session()->regenerateToken();
 
-            return view('Member.login');
-        }
+        return view('Member.login');
+    }
+    public function Login_member(LoginRequest $request)
+    {
+        $request->authenticate();
+
+        $request->session()->regenerate();
+
+        Alert::success('Bem Vindo!');
+
+        return view('Member.Index');
     }
 }
