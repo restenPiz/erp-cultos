@@ -93,7 +93,7 @@ class memberController extends Controller
 
         if(Auth::user()->hasRole('member'))
         {
-            $files = DB::table('files')->where('Type_file', 'Arquivo')->get();
+            $files = DB::table('files')->where('Type_file', 'Documento')->get();
             $images = DB::table('files')->where('Type_file', 'Imagem')->get();
             $videos = DB::table('files')->where('Type_file', 'Video')->get();
             $audios = DB::table('files')->where('Type_file', 'Audio')->get();
