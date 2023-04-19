@@ -152,6 +152,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
 
     //Inicio das views que se encontram no sistema
     Route::get('/dashboardMember', [memberController::class, 'dashboardMember'])->name('dasboardMember');
+    Route::get('/logoutMember', [memberController::class, 'destroy'])->name('logoutMember');
 
 });
 

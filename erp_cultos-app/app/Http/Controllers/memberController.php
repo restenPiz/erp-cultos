@@ -68,4 +68,19 @@ class memberController extends Controller
             return redirect()->route('login');
         }
     }
+    public function destroy(Request $request)
+    {
+        if(Auth::user()->hasRole('member'))
+        {
+            Alert::success('Logout concluido');
+
+            Auth::guard('web')->logout();
+
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
+            return view('Member.login');
+        }
+    }
 }
