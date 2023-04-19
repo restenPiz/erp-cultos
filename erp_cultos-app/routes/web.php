@@ -142,17 +142,17 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
     Route::get('/dowloandPdf', [outputController::class, 'dowloandPdf'])->middleware(['auth'])->name('dowloandPdf');
 });
 
-//Inicio da rota de auto-cadastro do membro
+//Inicio das rotas da parte de membros
 Route::get('/autoMember', [dashboardController::class, 'autoMember'])->name('autoMember');
 Route::get('/loginMembers', [dashboardController::class, 'loginMembers'])->name('loginMembers');
 Route::post('/loginMember', [memberController::class, 'loginMember'])->name('loginMember');
+Route::get('/logoutMember', [memberController::class, 'destroy'])->name('logoutMember');
 
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
     //Inicio das views que se encontram no sistema
     Route::get('/dashboardMember', [memberController::class, 'dashboardMember'])->name('dasboardMember');
-    Route::get('/logoutMember', [memberController::class, 'destroy'])->name('logoutMember');
 
 });
 
