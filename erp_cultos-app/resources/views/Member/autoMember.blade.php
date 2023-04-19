@@ -29,10 +29,21 @@
 </head>
 
 <body>
-
-
+    <br><br>
     <div class="container">
-        <br><br><br><br><br>
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card" style="text-align:center">
+                    <h4>Formulario de Auto-Cadastro de Membros</h4>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <br><br><br>
+    <div class="container">
+        
         <form action="{{route('loginMember')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -260,9 +271,6 @@
                                                 <input type="hidden" value="membro" name="function">
                                                 <input type="hidden" value="member" name="userType">
                                                 <!--end col-->
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <button type="submit" name="submit" class="btn btn-primary">Cadastrar-me</a>
-                                                </div>
                                             </div>
                                             <!--end row-->
                                         </div>
@@ -274,6 +282,12 @@
                     </div>
                 </div>
                 <!--end col-->
+                <div class="col">
+                    <div class="hstack gap-2 justify-content-end">
+                        <a href="{{route('loginMembers')}}" class="btn btn-success">Login</a>
+                        <button type="submit" name="submit" class="btn btn-primary">Cadastrar-me</a>
+                    </div>
+                </div>
             </div>
             <!--end row-->
         </form>

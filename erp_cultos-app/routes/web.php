@@ -144,6 +144,7 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
 
 //Inicio da rota de auto-cadastro do membro
 Route::get('/autoMember', [dashboardController::class, 'autoMember'])->name('autoMember');
+Route::get('/loginMembers', [dashboardController::class, 'loginMembers'])->name('loginMembers');
 Route::post('/loginMember', [memberController::class, 'loginMember'])->name('loginMember');
 
 //Inicio das rotas da parte de membro

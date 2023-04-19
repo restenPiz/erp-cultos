@@ -58,6 +58,10 @@ class dashboardController extends Controller
         if (Auth::user()->hasRole('treasurer')) {
             return view('Treasurer.Index');
         }
+        if(Auth::user()->hasRole('Member'))
+        {
+            return view('Member.Index');
+        }
     }
     public function showAnnouncement($id)
     {
@@ -100,5 +104,9 @@ class dashboardController extends Controller
     public function autoMember()
     {
         return view('Member.autoMember');
+    }
+    public function loginMembers()
+    {
+        return view('Member.login');
     }
 }
