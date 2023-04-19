@@ -53,7 +53,7 @@ class memberController extends Controller
 
         Alert::success('Adicionado!','O membro foi adicionaod com sucesso!');
 
-        return redirect()->back();
+        return view('Member.Index');
     }
     public function dashboardMember()
     {

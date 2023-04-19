@@ -258,7 +258,7 @@
                                                     </div>
                                                 </div>
                                                 <input type="hidden" value="membro" name="function">
-                                                <input type="hidden" value="membro" name="userType">
+                                                <input type="hidden" value="member" name="userType">
                                                 <!--end col-->
                                                 <div class="hstack gap-2 justify-content-end">
                                                     <button type="submit" name="submit" class="btn btn-primary">Cadastrar-me</a>

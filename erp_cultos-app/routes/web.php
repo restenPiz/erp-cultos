@@ -149,6 +149,9 @@ Route::post('/loginMember', [memberController::class, 'loginMember'])->name('log
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
+    //Inicio das views que se encontram no sistema
+    Route::get('/dashboardMember', [memberController::class, 'dashboardMember'])->name('dasboardMember');
+
 });
 
 require __DIR__.'/auth.php';
