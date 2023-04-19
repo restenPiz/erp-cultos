@@ -66,6 +66,12 @@ class dashboardController extends Controller
         {
             return view('Member.Index');
         }
+        else
+        {
+            Alert::error('Erro!','Falha ao tentar acessar ao sistema. Tente novamente');
+
+            return redirect()->back();
+        }
     }
     public function showAnnouncement($id)
     {
