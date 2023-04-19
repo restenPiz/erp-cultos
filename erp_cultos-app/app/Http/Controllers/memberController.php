@@ -13,6 +13,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Support\Facades\DB;
 class memberController extends Controller
 {
     public function loginMember()
@@ -92,7 +93,12 @@ class memberController extends Controller
 
         if(Auth::user()->hasRole('member'))
         {
-            return view('Member.Index');
+            $files = DB::table('files')->where('Type_file', 'Arquivo')->get();
+            $images = DB::table('files')->where('Type_file', 'Imagem')->get();
+            $videos = DB::table('files')->where('Type_file', 'Video')->get();
+            $audios = DB::table('files')->where('Type_file', 'Audio')->get();
+
+            return view('Member.Index', compact('files', 'images', 'videos','audios'));
         }
         else
         {
