@@ -45,7 +45,7 @@ class memberController extends Controller
 
         $table->save();
 
-        $table->attachRole('admin');
+        $table->attachRole('member');
 
         event(new Registered($table));
 
