@@ -18,7 +18,8 @@ class dashboardController extends Controller
 {
     public function index()
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin')) 
+        {
             //Retornando os dados para se usar nas cards
             $count_branches = Branche::count();
             $count_activities = Activity::count();
@@ -44,10 +45,12 @@ class dashboardController extends Controller
 
             return view('Admin.Index', compact('branches', 'users', 'count_branches', 'count_activities', 'count_cults', 'count_shepherds', 'total', 'announcements', 'activities'));
         }
-        if (Auth::user()->hasRole('shepherd')) {
+        if (Auth::user()->hasRole('shepherd')) 
+        {
             return view('Shepherd.Index');
         }
-        if (Auth::user()->hasRole('worship_leader')) {
+        if (Auth::user()->hasRole('worship_leader')) 
+        {
             $files = DB::table('files')->where('Type_file', 'Arquivo')->get();
             $images = DB::table('files')->where('Type_file', 'Imagem')->get();
             $videos = DB::table('files')->where('Type_file', 'Video')->get();
@@ -55,10 +58,11 @@ class dashboardController extends Controller
 
             return view('Worship_leader.Index', compact('files', 'images', 'videos','audios'));
         }
-        if (Auth::user()->hasRole('treasurer')) {
+        if (Auth::user()->hasRole('treasurer')) 
+        {
             return view('Treasurer.Index');
         }
-        if(Auth::user()->hasRole('Member'))
+        if(Auth::user()->hasRole('member'))
         {
             return view('Member.Index');
         }
