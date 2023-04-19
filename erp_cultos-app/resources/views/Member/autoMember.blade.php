@@ -34,8 +34,8 @@
         
         <div class="row">
             <div class="col-sm-12">
-                <div class="card" style="text-align:center">
-                    <h4>Formulario de Auto-Cadastro de Membros</h4>
+                <div class="card" style="text-align:center"><br>
+                    <h4>Formulario de Auto-Cadastro de Membros</h4><br>
                 </div>
             </div>
         </div>

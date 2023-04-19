@@ -9,7 +9,7 @@ use App\Models\ReportActivity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use RealRashid\SweetAlert\Facades\Alert;
+use Alert;
 use Illuminate\Support\Facades\File;
 use App\Models\User;
 use App\Models\Branche;

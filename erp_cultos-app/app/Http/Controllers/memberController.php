@@ -21,7 +21,7 @@ class memberController extends Controller
 
         $table->name=Request::input('name');
         $table->email=Request::input('email');
-        $table->password=Request::input('password');
+        $table->password=Hash::make(Request::input('password'));
         $table->number_bi=Request::input('number_bi');
         $table->profission=Request::input('profission');
         $table->baptism=Request::input('baptism');
@@ -70,7 +70,7 @@ class memberController extends Controller
             return redirect()->route('login');
         }
     }
-    public function destroy(Request $request)
+    public function logout(Request $request)
     {
         Alert::success('Logout concluido');
 
@@ -90,6 +90,14 @@ class memberController extends Controller
 
         Alert::success('Bem Vindo!');
 
-        return view('Member.Index');
+        if(Auth::user()->hasRole('member'))
+        {
+            return view('Member.Index');
+        }
+        else
+        {
+            return redirect()->back();
+        }
+
     }
 }

@@ -1,4 +1,3 @@
-@role('member')
 @extends('Layout.PrincipalMember')
 @section('content')
     <!-- start page title -->
@@ -803,10 +802,6 @@
             </div><!-- end card -->
         </div><!-- end col -->
     </div><!-- end row -->
-
-    </div>
-    <!-- container-fluid -->
-    </div>
     <!-- End Page-content -->
 
     <footer class="footer">
@@ -827,4 +822,3 @@
     </footer>
 
 @endsection
-@endrole

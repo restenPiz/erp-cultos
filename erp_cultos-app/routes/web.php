@@ -146,7 +146,7 @@ Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], func
 Route::get('/autoMember', [dashboardController::class, 'autoMember'])->name('autoMember');
 Route::get('/loginMembers', [dashboardController::class, 'loginMembers'])->name('loginMembers');
 Route::post('/loginMember', [memberController::class, 'loginMember'])->name('loginMember');
-Route::get('/logoutMember', [memberController::class, 'destroy'])->name('logoutMember');
+Route::get('/logoutMember', [memberController::class, 'logout'])->name('logoutMember');
 Route::post('/Login_member', [memberController::class, 'Login_member'])->name('Login_member');
 
 //Inicio das rotas da parte de membro
