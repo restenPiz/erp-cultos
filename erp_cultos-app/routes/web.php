@@ -153,12 +153,12 @@ Route::post('/Login_member', [memberController::class, 'Login_member'])->name('L
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
   //Inicio das rotas para os comunicados    
-  Route::post('/storeAnnouncement', [memberAnnouncementController::class, 'storeAnnouncement'])->middleware(['auth'])->name('storeAnnouncement');
-  Route::get('/addAnnouncement', [memberAnnouncementController::class, 'addAnnouncement'])->middleware(['auth'])->name('addAnnouncement');
-  Route::get('/allAnnouncement', [memberAnnouncementController::class, 'allAnnouncement'])->middleware(['auth'])->name('allAnnouncement');
-  Route::post('/updateAnnouncement/{id}', [memberAnnouncementController::class, 'updateAnnouncement'])->middleware(['auth'])->name('updateAnnouncement');
-  Route::get('/showAnnouncement/{id}', [memberAnnouncementController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncement');
-  Route::get('/deleteAnnouncement/{id}', [memberAnnouncementController::class, 'deleteAnnouncement'])->middleware(['auth'])->name('deleteAnnouncement');
+  Route::post('/storeAnnouncementMember', [memberAnnouncementController::class, 'storeAnnouncementMember'])->middleware(['auth'])->name('storeAnnouncementMember');
+  Route::get('/addAnnouncementMember', [memberAnnouncementController::class, 'addAnnouncementMember'])->middleware(['auth'])->name('addAnnouncementMember');
+  Route::get('/allAnnouncementMember', [memberAnnouncementController::class, 'allAnnouncementMember'])->middleware(['auth'])->name('allAnnouncementMember');
+  Route::post('/updateAnnouncementMember/{id}', [memberAnnouncementController::class, 'updateAnnouncementMember'])->middleware(['auth'])->name('updateAnnouncementMember');
+  Route::get('/showAnnouncementMember/{id}', [memberAnnouncementController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementMember');
+  Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
 
 
 
