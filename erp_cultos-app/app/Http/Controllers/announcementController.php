@@ -15,7 +15,7 @@ class announcementController extends Controller
 {
     public function addAnnouncement()
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
         {
             $users=DB::table('users')
             ->where('userType','=','pastor')
@@ -33,7 +33,7 @@ class announcementController extends Controller
 
     public function allAnnouncement()
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
         {
             $announcements=Announcement::all();
 
@@ -48,7 +48,7 @@ class announcementController extends Controller
 
     public function storeAnnouncement()
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
         {
             $table=new Announcement();
 
@@ -75,7 +75,7 @@ class announcementController extends Controller
     }
     public function updateAnnouncement($id)
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
         {
             $announcements=Announcement::findOrFail($id);
 
@@ -102,7 +102,7 @@ class announcementController extends Controller
     }
     public function showAnnouncement($id)
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
         { 
             $users=DB::table('users')
                 ->where('userType','=','pastor')
@@ -121,7 +121,7 @@ class announcementController extends Controller
     }
     public function deleteAnnouncement($id)
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
         {
             $announcements=Announcement::findOrFail($id);
 

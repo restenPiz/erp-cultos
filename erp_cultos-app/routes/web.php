@@ -152,8 +152,9 @@ Route::post('/Login_member', [memberController::class, 'Login_member'])->name('L
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
-    //Inicio das views que se encontram no sistema
+    //Inicio da parte que faz a insercao de comunicado
 
+    
 });
 
 require __DIR__.'/auth.php';
