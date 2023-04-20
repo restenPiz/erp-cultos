@@ -160,8 +160,6 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
   Route::get('/showAnnouncementMember/{id}', [memberAnnouncementController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementMember');
   Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
 
-
-
     //Inicio da parte responsavel por fazer a insercao de pedidos de oracao
 
 
