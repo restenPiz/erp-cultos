@@ -33,7 +33,7 @@ class announcementController extends Controller
 
     public function allAnnouncement()
     {
-        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
+        if(Auth::user()->hasRole('shepherd'))
         {
             $announcements=Announcement::all();
 
