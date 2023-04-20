@@ -16,7 +16,7 @@ use App\Http\Controllers\reportActivitiesController;
 use App\Http\Controllers\inputController;
 use App\Http\Controllers\outputController;
 use App\Http\Controllers\memberController;
-
+use App\Http\Controllers\memberAnnouncementController;
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
     return view('auth.login');
@@ -100,7 +100,7 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
     Route::post('/updateAnnouncement/{id}', [announcementController::class, 'updateAnnouncement'])->middleware(['auth'])->name('updateAnnouncement');
     Route::get('/showAnnouncement/{id}', [announcementController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncement');
     Route::get('/deleteAnnouncement/{id}', [announcementController::class, 'deleteAnnouncement'])->middleware(['auth'])->name('deleteAnnouncement');
-
+  
     //Inicio das rotas da parte de adicionar relatorio de actividades 
     Route::get('/addReportActivities', [reportActivitiesController::class, 'addReportActivities'])->middleware(['auth'])->name('addReportActivities');
     Route::post('/storeReportActivities', [reportActivitiesController::class, 'storeReportActivities'])->middleware(['auth'])->name('storeReportActivities');
@@ -152,9 +152,19 @@ Route::post('/Login_member', [memberController::class, 'Login_member'])->name('L
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
-    //Inicio da parte que faz a insercao de comunicado
+  //Inicio das rotas para os comunicados    
+  Route::post('/storeAnnouncement', [memberAnnouncementController::class, 'storeAnnouncement'])->middleware(['auth'])->name('storeAnnouncement');
+  Route::get('/addAnnouncement', [memberAnnouncementController::class, 'addAnnouncement'])->middleware(['auth'])->name('addAnnouncement');
+  Route::get('/allAnnouncement', [memberAnnouncementController::class, 'allAnnouncement'])->middleware(['auth'])->name('allAnnouncement');
+  Route::post('/updateAnnouncement/{id}', [memberAnnouncementController::class, 'updateAnnouncement'])->middleware(['auth'])->name('updateAnnouncement');
+  Route::get('/showAnnouncement/{id}', [memberAnnouncementController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncement');
+  Route::get('/deleteAnnouncement/{id}', [memberAnnouncementController::class, 'deleteAnnouncement'])->middleware(['auth'])->name('deleteAnnouncement');
 
-    
+
+
+    //Inicio da parte responsavel por fazer a insercao de pedidos de oracao
+
+
 });
 
 require __DIR__.'/auth.php';

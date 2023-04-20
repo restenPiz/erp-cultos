@@ -1,8 +1,10 @@
-@extends('Layout.Index')
 
-@section('content')
     @role('shepherd')
-        {{-- Inicio do conteudo da parte de comunicado --}}
+
+    @extends('Layout.Index')
+
+    @section('content')
+    {{-- Inicio do conteudo da parte de comunicado --}}
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
@@ -111,9 +113,13 @@
         <!--end row-->
 
         {{-- Fim do conteudo da parte de comunicado --}}
+        @endsection
     @endrole
 
     @role('member')
+    @extends('Layout.PrincipalMember')
+
+    @section('content')
     {{-- Inicio do conteudo da parte de comunicado --}}
     <!-- start page title -->
     <div class="row">
@@ -223,6 +229,6 @@
     <!--end row-->
 
     {{-- Fim do conteudo da parte de comunicado --}}
-@endrole
 
-@endsection
+    @endsection
+    @endrole
