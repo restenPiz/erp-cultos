@@ -1,7 +1,7 @@
 @extends('Layout.PrincipalMember')
 
 @section('content')
-    @role('shepherd')
+    @role('member')
 
     {{--Inicio do conteudo da parte de todos comunicados--}}
 

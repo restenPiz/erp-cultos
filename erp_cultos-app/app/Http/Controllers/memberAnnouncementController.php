@@ -14,7 +14,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class memberAnnouncementController extends Controller
 {
-    public function addAnnouncement()
+    public function addAnnouncementMember()
     {
         if(Auth::user()->hasRole('member'))
         {
@@ -22,7 +22,7 @@ class memberAnnouncementController extends Controller
             ->where('userType','=','member')
             ->get();
 
-            return view('shepherd.addAnnouncement',compact('users'));
+            return view('Member.addAnnouncement',compact('users'));
 
         }else{
 
@@ -32,7 +32,7 @@ class memberAnnouncementController extends Controller
         }
     }    
 
-    public function allAnnouncement()
+    public function allAnnouncementMember()
     {
         if(Auth::user()->hasRole('member'))
         {
@@ -40,7 +40,7 @@ class memberAnnouncementController extends Controller
                 ->where('Type','member')
                 ->get();
 
-            return view('Shepherd.allAnnouncement',compact('announcements'));
+            return view('Member.allAnnouncement',compact('announcements'));
         
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
@@ -49,7 +49,7 @@ class memberAnnouncementController extends Controller
         }
     }
 
-    public function storeAnnouncement()
+    public function storeAnnouncementMember()
     {
         if(Auth::user()->hasRole('member'))
         {
@@ -76,7 +76,7 @@ class memberAnnouncementController extends Controller
             return redirect()->route('login');
         }
     }
-    public function updateAnnouncement($id)
+    public function updateAnnouncementMember($id)
     {
         if(Auth::user()->hasRole('member'))
         {
@@ -103,7 +103,7 @@ class memberAnnouncementController extends Controller
             return redirect()->route('login');
         }
     }
-    public function showAnnouncement($id)
+    public function showAnnouncementMember($id)
     {
         if(Auth::user()->hasRole('member'))
         { 
@@ -122,7 +122,7 @@ class memberAnnouncementController extends Controller
             return redirect()->route('login');
         }
     }
-    public function deleteAnnouncement($id)
+    public function deleteAnnouncementMember($id)
     {
         if(Auth::user()->hasRole('member'))
         {
