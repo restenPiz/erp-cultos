@@ -1,4 +1,4 @@
-@extends('Layout.Index')
+@extends('Layout.PrincipalMember')
 
 @section('content')
     @role('member')
