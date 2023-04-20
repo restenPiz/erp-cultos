@@ -142,6 +142,8 @@ class fileController extends Controller
     }
     public function dowloandFile($id)
     {
+        //Capturando os dados do ficheiro
+        
         $file = Files::find($id);
 
         $filepath = storage_path($file->File);
