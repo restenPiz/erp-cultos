@@ -39,6 +39,15 @@ class announcementController extends Controller
 
             return view('Shepherd.allAnnouncement',compact('announcements'));
         
+        }
+        elseif(Auth::user()->hasRole('member'))
+        {
+            $announcements=DB::table('announcements')
+                ->where('Type','=','Member')
+                ->get();
+                
+            return view('Shepherd.allAnnouncement',compact('announcements'));
+        
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
