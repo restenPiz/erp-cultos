@@ -19,7 +19,7 @@ class memberAnnouncementController extends Controller
         if(Auth::user()->hasRole('member'))
         {
             $users=DB::table('users')
-            ->where('userType','=','pastor')
+            ->where('userType','=','member')
             ->get();
 
             return view('shepherd.addAnnouncement',compact('users'));
@@ -108,7 +108,7 @@ class memberAnnouncementController extends Controller
         if(Auth::user()->hasRole('member'))
         { 
             $users=DB::table('users')
-                ->where('userType','=','pastor')
+                ->where('userType','=','member')
                 ->get();
             
             $announcements=Announcement::findOrFail($id);
