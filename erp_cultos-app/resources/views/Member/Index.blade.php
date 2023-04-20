@@ -81,10 +81,10 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="flex-shrink-0">
+                        {{--<div class="flex-shrink-0">
                             <a href="{{ route('addFile') }}" class="btn btn-success"><i
                                     class="ri-edit-box-line align-bottom"></i> Adicionar Ficheiro</a>
-                        </div>
+                        </div>---}}
                     </div>
                     <!-- Tab panes -->
                     <div class="tab-content pt-4 text-muted">
@@ -235,7 +235,6 @@
                                                                             <li><a href="#" class="dropdown-item" download="{{$video->File}}"><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
                                                                             </li>
-                                                                            <li class="dropdown-divider"></li>
                                                                         </ul>
                                                                     </div>
                                                                 </td>
@@ -396,7 +395,6 @@
                                                                                     download="{{ $file->File }}"><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
                                                                             </li>
-                                                                            <li class="dropdown-divider"></li>
                                                                         </ul>
                                                                     </div>
                                                                 </td>
