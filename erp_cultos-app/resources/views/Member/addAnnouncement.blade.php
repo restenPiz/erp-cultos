@@ -1,7 +1,7 @@
 @extends('Layout.Index')
 
 @section('content')
-    @role('shepherd')
+    @role('member')
         {{-- Inicio do conteudo da parte de comunicado --}}
         <!-- start page title -->
         <div class="row">
@@ -92,7 +92,7 @@
                                 </div>
                                 <!--end col-->
                             </div>
-                            <input type="hidden" class="form-control bg-light border-0" value="admin" name="Type">
+                            <input type="hidden" class="form-control bg-light border-0" value="member" name="Type">
                             
                             <div class="hstack gap-2 justify-content-end d-print-none mt-4">
                                 <button name="submit" type="submit" class="btn btn-success"><i

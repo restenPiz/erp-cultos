@@ -15,7 +15,7 @@ class announcementController extends Controller
 {
     public function addAnnouncement()
     {
-        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
+        if(Auth::user()->hasRole('shepherd'))
         {
             $users=DB::table('users')
             ->where('userType','=','pastor')
@@ -39,15 +39,6 @@ class announcementController extends Controller
 
             return view('Shepherd.allAnnouncement',compact('announcements'));
         
-        }
-        elseif(Auth::user()->hasRole('member'))
-        {
-            $announcements=DB::table('announcements')
-                ->where('Type','=','member')
-                ->get();
-
-            return view('Shepherd.allAnnouncement',compact('announcements'));
-        
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
@@ -57,7 +48,7 @@ class announcementController extends Controller
 
     public function storeAnnouncement()
     {
-        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
+        if(Auth::user()->hasRole('shepherd'))
         {
             $table=new Announcement();
 
@@ -84,7 +75,7 @@ class announcementController extends Controller
     }
     public function updateAnnouncement($id)
     {
-        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
+        if(Auth::user()->hasRole('shepherd'))
         {
             $announcements=Announcement::findOrFail($id);
 
@@ -111,7 +102,7 @@ class announcementController extends Controller
     }
     public function showAnnouncement($id)
     {
-        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
+        if(Auth::user()->hasRole('shepherd'))
         { 
             $users=DB::table('users')
                 ->where('userType','=','pastor')
@@ -130,7 +121,7 @@ class announcementController extends Controller
     }
     public function deleteAnnouncement($id)
     {
-        if(Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member'))
+        if(Auth::user()->hasRole('shepherd'))
         {
             $announcements=Announcement::findOrFail($id);
 
