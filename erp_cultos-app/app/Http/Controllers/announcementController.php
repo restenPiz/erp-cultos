@@ -43,9 +43,9 @@ class announcementController extends Controller
         elseif(Auth::user()->hasRole('member'))
         {
             $announcements=DB::table('announcements')
-                ->where('Type','=','Member')
+                ->where('Type','=','member')
                 ->get();
-                
+
             return view('Shepherd.allAnnouncement',compact('announcements'));
         
         }else{
