@@ -18,6 +18,7 @@ use App\Http\Controllers\outputController;
 use App\Http\Controllers\memberController;
 use App\Http\Controllers\memberAnnouncementController;
 use App\Http\Controllers\prayerController;
+use App\Http\Controllers\anotherController;
 
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
