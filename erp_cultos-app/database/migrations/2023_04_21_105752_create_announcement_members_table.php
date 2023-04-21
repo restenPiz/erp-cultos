@@ -15,6 +15,13 @@ class CreateAnnouncementMembersTable extends Migration
     {
         Schema::create('announcement_members', function (Blueprint $table) {
             $table->id();
+            $table->string('Type');
+            $table->string('Description',10000);
+            $table->string('Hour');
+
+            //Inicio da coluna contendo a chave estrangeiraa
+            $table->integer('Id_user')->unsigned();
+            $table->foreign('Id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }
