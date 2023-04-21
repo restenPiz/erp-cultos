@@ -395,7 +395,7 @@
         <div class="main-content">
 
             <div class="page-content">
-                <div class="container-fluid">
+                <div class="container">
 
                     {{-- Inicio do conteudo do meu layout --}}
 
