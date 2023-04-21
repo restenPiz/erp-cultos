@@ -17,6 +17,8 @@ use App\Http\Controllers\inputController;
 use App\Http\Controllers\outputController;
 use App\Http\Controllers\memberController;
 use App\Http\Controllers\memberAnnouncementController;
+use App\Http\Controllers\prayerController;
+
 //Rota inicial de acesso a tela de login
 Route::get('/', function () {
     return view('auth.login');
@@ -152,16 +154,20 @@ Route::post('/Login_member', [memberController::class, 'Login_member'])->name('L
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
-  //Inicio das rotas para os comunicados    
-  Route::post('/storeAnnouncementMember', [memberAnnouncementController::class, 'storeAnnouncementMember'])->middleware(['auth'])->name('storeAnnouncementMember');
-  Route::get('/addAnnouncementMember', [memberAnnouncementController::class, 'addAnnouncementMember'])->middleware(['auth'])->name('addAnnouncementMember');
-  Route::get('/allAnnouncementMember', [memberAnnouncementController::class, 'allAnnouncementMember'])->middleware(['auth'])->name('allAnnouncementMember');
-  Route::post('/updateAnnouncementMember/{id}', [memberAnnouncementController::class, 'updateAnnouncementMember'])->middleware(['auth'])->name('updateAnnouncementMember');
-  Route::get('/showAnnouncementMember/{id}', [memberAnnouncementController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementMember');
-  Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
+    //Inicio das rotas para os comunicados    
+    Route::post('/storeAnnouncementMember', [memberAnnouncementController::class, 'storeAnnouncementMember'])->middleware(['auth'])->name('storeAnnouncementMember');
+    Route::get('/addAnnouncementMember', [memberAnnouncementController::class, 'addAnnouncementMember'])->middleware(['auth'])->name('addAnnouncementMember');
+    Route::get('/allAnnouncementMember', [memberAnnouncementController::class, 'allAnnouncementMember'])->middleware(['auth'])->name('allAnnouncementMember');
+    Route::post('/updateAnnouncementMember/{id}', [memberAnnouncementController::class, 'updateAnnouncementMember'])->middleware(['auth'])->name('updateAnnouncementMember');
+    Route::get('/showAnnouncementMember/{id}', [memberAnnouncementController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementMember');
+    Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
 
-    //Inicio da parte responsavel por fazer a insercao de pedidos de oracao
-
+    //Inicio da parte responsavel por fazer a insercao de pedidos de oracao 
+    Route::post('/storePrayer', [prayerControllerController::class, 'storePrayer'])->middleware(['auth'])->name('storePrayer');
+    Route::get('/addPrayer', [prayerControllerController::class, 'addPrayer'])->middleware(['auth'])->name('addPrayer');
+    Route::get('/allPrayer', [prayerControllerController::class, 'allPrayer'])->middleware(['auth'])->name('allPrayer');
+    Route::post('/updatePrayer/{id}', [prayerControllerController::class, 'updatePrayer'])->middleware(['auth'])->name('updatePrayer');
+    Route::get('/deletePrayer/{id}', [prayerControllerController::class, 'deletePrayer'])->middleware(['auth'])->name('deletePrayer');  
 
 });
 
