@@ -15,6 +15,14 @@ class CreatePrayerRequestsTable extends Migration
     {
         Schema::create('prayer_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('Description');
+            $table->string('Date');
+            $table->string('Hour');
+
+            //Inicio da coluna contendo a chave estrangeira
+            $table->integer('Id_user')->unsigned();
+            $table->foreign('Id_user')->references('id')->on('users');
+            
             $table->timestamps();
         });
     }
