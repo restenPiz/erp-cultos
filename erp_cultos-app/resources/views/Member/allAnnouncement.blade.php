@@ -102,7 +102,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close" id="btn-close"></button>
                                                     </div>
-                                                    <form action="{{ route('deleteAnnouncement', ['id' => $announcement->id]) }}"
+                                                    <form action="{{ route('deleteAnnouncementMember', ['id' => $announcement->id]) }}"
                                                         method="get">
                                                         @csrf
                                                         @method('DELETE')

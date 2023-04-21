@@ -26,7 +26,7 @@
         <div class="row justify-content-center">
             <div class="col-xxl-9">
                 <div class="card">
-                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('storeAnnouncement')}}" method="post">
+                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('storeAnnouncementMember')}}" method="post">
                         @csrf
                         <div class="card-body border-bottom border-bottom-dashed p-4">
                             <div class="row">
