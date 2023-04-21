@@ -19,7 +19,7 @@ class memberAnnouncementController extends Controller
         if(Auth::user()->hasRole('member'))
         {
             $users=DB::table('users')
-            ->where('userType','=','member')
+            ->where('name',Auth::user()->name)
             ->get();
 
             return view('Member.addAnnouncement',compact('users'));
@@ -106,7 +106,7 @@ class memberAnnouncementController extends Controller
         if(Auth::user()->hasRole('member'))
         { 
             $users=DB::table('users')
-                ->where('userType','=','member')
+                ->where('name',Auth::user()->name)
                 ->get();
             
             $announcements=Announcement_member::findOrFail($id);
