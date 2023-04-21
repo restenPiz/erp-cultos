@@ -429,6 +429,10 @@
 
     </div>
     <!-- END layout-wrapper -->
+    
+    {{-- Inicio do link de sweetAlerta --}}
+    @include('sweetalert::alert')
+    {{-- Fim do link do sweetAlerta --}}
 
     <!-- JAVASCRIPT -->
     <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>

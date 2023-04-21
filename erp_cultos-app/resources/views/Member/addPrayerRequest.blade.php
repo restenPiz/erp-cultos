@@ -33,7 +33,7 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Dia</label>
-                                            <input type="date" class="form-control" id="labelInput" name="Day">
+                                            <input type="date" class="form-control" id="labelInput" name="Date">
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
