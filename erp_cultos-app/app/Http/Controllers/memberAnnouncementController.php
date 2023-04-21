@@ -111,7 +111,7 @@ class memberAnnouncementController extends Controller
             
             $announcements=Announcement_member::findOrFail($id);
 
-            return view('Shepherd.showAnnouncement',compact('users','announcements'));
+            return view('Member.showAnnouncementMember',compact('users','announcements'));
 
         }else{
             
