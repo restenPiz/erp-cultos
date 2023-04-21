@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prayer_request;
-use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Request;
+use Illuminate\Support\Facades\Auth;
+use Alert;
 
 class prayerController extends Controller
 {
