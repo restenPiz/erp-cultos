@@ -11,20 +11,12 @@ class anotherController extends Controller
 {
     public function lockScreen(Request $request)
     {
-        // Validação dos dados de entrada
-        $request->validate([
-            'password' => 'required',
-        ]);
+        session(['lock_screen' => true]);
 
-        // Verifica se a senha fornecida pelo usuário é a mesma que a senha do usuário logado
-        if (Auth::attempt(['email' => Auth::user()->email, 'password' => $request->input('password')])) {
-            // Se a senha for válida, redirecione o usuário para a página de lock screen
-            return redirect()->route('lockScreenPage');
-        } else {
-            // Se a senha for inválida, volte para a página anterior com uma mensagem de erro
-            Alert::error('Senha Incorrecta!');
-
-            return redirect()->back();
-        }
+        return redirect()->route('lock');
+    }
+    public function lock()
+    {
+        return view('Another.lock-screen');
     }
 }

@@ -265,7 +265,7 @@
                                         class="align-middle">Settings</span></a> --}}
                                 <a class="dropdown-item" href="{{route('lockScreen')}}}"><i
                                         class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Lock screen</span></a>
+                                        class="align-middle" id="lock-screen">Lock screen</span></a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"><i
                                         class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle" data-key="t-logout">Logout</span></a>
@@ -433,6 +433,25 @@
     {{-- Inicio do link de sweetAlerta --}}
     @include('sweetalert::alert')
     {{-- Fim do link do sweetAlerta --}}
+
+    <script>
+
+        // Quando o botão de bloqueio for clicado, enviar uma solicitação AJAX ao endpoint Laravel para bloquear a sessão do usuário
+        $(document).on('click', '#lock-screen', function () {
+            $.ajax({
+                type: 'POST',
+                url: '/lock-screen',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function (response) {
+                    // Redirecionar para a página de bloqueio de tela
+                    window.location.href = '/lock-screen';
+                }
+            });
+        });
+
+    </script>
 
     <!-- JAVASCRIPT -->
     <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
