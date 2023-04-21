@@ -21,11 +21,6 @@ class Announcement extends Model
     //Inicio dos metodos responsaveis pela chave estrangeira
     public function users()
     {
-        return $this->hasMany(User::class);
-    }
-    
-    public function name($id)
-    {
-        return User::find($id)->name;
+        return $this->belongsTo(User::class,'Id_user');
     }
 }

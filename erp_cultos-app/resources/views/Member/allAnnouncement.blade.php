@@ -64,7 +64,7 @@
                                     @foreach ($announcements as $announcement)
                                         <tr>
                                             <td class="customer_nam">{{ $announcement->id }}</td>
-                                            <td class="customer_name">{{ $announcement->name($announcement->Id_user) }}</td>
+                                            <td class="customer_name">{{ $announcement->users->name }}</td>
                                             <td class="email">{{ $announcement->Hour }}</td>
                                             <td class="actio">
                                                 <div class="dropdown">

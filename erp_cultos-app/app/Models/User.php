@@ -67,4 +67,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Output::class,'Id_user');    
     }
+    public function announcements()
+    {
+        return $this->hasMany(Announcement::class,'Id_user');    
+    }
 }
