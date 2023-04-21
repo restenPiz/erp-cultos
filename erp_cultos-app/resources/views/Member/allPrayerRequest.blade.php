@@ -34,7 +34,7 @@
                             <div class="row g-4 mb-3">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="{{ route('addActivity') }}" class="btn btn-success add-btn"><i
+                                        <a href="{{ route('addPrayer') }}" class="btn btn-success add-btn"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</a>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                                                 aria-label="Close" id="close-modal"></button>
                                                         </div>
                                                         <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updateActivity', ['id' => $prayer->id]) }}"
+                                                            action="{{ route('updatePrayer', ['id' => $prayer->id]) }}"
                                                             method="post">
                                                             @csrf
                                                             <div class="modal-body">
@@ -119,7 +119,7 @@
                                                                         class="form-label">Dia</label>
                                                                     <input type="date" id="customername-field"
                                                                         class="form-control" value="{{ $prayer->Date }}"
-                                                                        name="Day" required />
+                                                                        name="Date" required />
                                                                     <div class="invalid-feedback">Por favor escreva bem o seu
                                                                         nome
                                                                     </div>
@@ -147,6 +147,13 @@
                                                                                 {{ $user->name }}</option>
                                                                         @endforeach
                                                                     </select>
+                                                                </div><br>
+                                                                <div class="mb-3" id="modal-id">
+                                                                    <label for="customername-field"
+                                                                        class="form-label">Descricao</label>
+                                                                    <input type="text" id="id-field" name="Description"
+                                                                        class="form-control" value="{{ $prayer->Description }}"
+                                                                        required />
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -174,7 +181,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close" id="btn-close"></button>
                                                         </div>
-                                                        <form action="{{ route('deleteActivity', ['id' => $prayer->id]) }}"
+                                                        <form action="{{ route('deletePrayer', ['id' => $prayer->id]) }}"
                                                             method="get">
                                                             @csrf
                                                             @method('DELETE')
