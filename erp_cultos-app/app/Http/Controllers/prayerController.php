@@ -19,7 +19,7 @@ class prayerController extends Controller
                 ->where('name',Auth::user()->name)
                 ->get();
 
-            return view ('Member.addPrayer',compact('users'));
+            return view ('Member.addPrayerRequest',compact('users'));
         }
         else
         {
@@ -38,7 +38,7 @@ class prayerController extends Controller
             ->where('name',Auth::user()->name)
             ->get();
 
-            return view('Member.allPrayer',compact('users','prayers'));
+            return view('Member.allPrayerRequest',compact('users','prayers'));
         }
         else
         {

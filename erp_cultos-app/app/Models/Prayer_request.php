@@ -12,7 +12,7 @@ class Prayer_request extends Model
     protected $table='prayer_requests';
 
     protected $fillable=[
-        'Id_user','Description','Date','Hour'
+        'Id_user','Description','Date','Hour','Title'
     ];
 
     //Inicio da parte de chaves estrangeiras
