@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Announcement_member extends Model
 {
     use HasFactory;
-    protected $table='announcements_members';
+    protected $table='announcement_members';
 
     protected $fillable=[
         'Type',
