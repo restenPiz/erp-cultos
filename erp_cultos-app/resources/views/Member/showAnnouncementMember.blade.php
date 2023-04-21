@@ -1,20 +1,22 @@
 @extends('Layout.Another')
 @section('content')
-    @role('admin')
+    @role('member')
         {{-- Inicio do conteudo da parte de comunicado --}}
         <!-- start page title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Detalhes do Comunicado</h4>
-
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Comunicado</a></li>
-                            <li class="breadcrumb-item active">Detalhes do Comunicado</li>
-                        </ol>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0">Detalhes do Comunicado</h4>
+    
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Comunicado</a></li>
+                                <li class="breadcrumb-item active">Detalhes do Comunicado</li>
+                            </ol>
+                        </div>
+    
                     </div>
-
                 </div>
             </div>
         </div>
@@ -23,7 +25,7 @@
         <div class="row justify-content-center">
             <div class="col-xxl-9">
                 <div class="card">
-                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('updateAnnouncement',['id'=>$announcementss->id])}}" method="post">
+                    <form class="needs-validation" novalidate id="invoice_form" action="{{route('updateAnnouncementMember',['id'=>$announcementss->id])}}" method="post">
                         @csrf
                         <div class="card-body border-bottom border-bottom-dashed p-4">
                             <div class="row">
@@ -57,7 +59,7 @@
                                     <div class="input-light">
                                         <select class="form-control bg-light border-0" data-choices data-choices-search-false
                                             id="choices-payment-status" name="Id_user" required>
-                                            <option value="{{$announcementss->Id_user}}">{{$announcementss->name($announcementss->Id_user)}}</option>
+                                            <option value="{{$announcementss->Id_user}}">{{$announcementss->users->name}}</option>
                                             @foreach ($users as $user)
                                                 <option value="{{$user->id}}">{{$user->name}}</option>
                                             @endforeach

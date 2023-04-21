@@ -12,18 +12,18 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- plugin css -->
-    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Layout config Js -->
-    <script src="assets/js/layout.js"></script>
+    <script src="/assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -40,19 +40,19 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="./assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="./assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="./assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="./assets/images/logo-light.png" alt="" height="17">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
                                 </span>
                             </a>
                         </div>
@@ -70,7 +70,7 @@
                         <!-- App Search-->
                         <form class="app-search d-none d-md-block">
                             <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off"
+                                <input type="text" class="form-control" placeholder="Search." autocomplete="off"
                                     id="search-options" value="">
                                 <span class="mdi mdi-magnify search-widget-icon"></span>
                                 <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
@@ -92,7 +92,7 @@
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ..."
+                                            <input type="text" class="form-control" placeholder="Search ."
                                                 aria-label="Recipient's username">
                                             <button class="btn btn-primary" type="submit"><i
                                                     class="mdi mdi-magnify"></i></button>
@@ -431,25 +431,25 @@
     <!-- END layout-wrapper -->
 
     <!-- JAVASCRIPT -->
-    <script src="./assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="./assets/libs/node-waves/waves.min.js"></script>
-    <script src="./assets/libs/feather-icons/feather.min.js"></script>
-    <script src="./assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="./assets/js/plugins.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="/assets/js/plugins.js"></script>
 
     <!-- apexcharts -->
-    <script src="./assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
 
     <!-- Vector map-->
-    <script src="./assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-    <script src="./assets/libs/jsvectormap/maps/world-merc.js"></script>
+    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
 
     <!-- Dashboard init -->
-    <script src="./assets/js/pages/dashboard-analytics.init.js"></script>
+    <script src="/assets/js/pages/dashboard-analytics.init.js"></script>
 
     <!-- App js -->
-    <script src="./assets/js/app.js"></script>
+    <script src="/assets/js/app.js"></script>
 </body>
 
 </html>

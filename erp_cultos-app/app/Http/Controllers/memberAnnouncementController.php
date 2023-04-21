@@ -109,9 +109,9 @@ class memberAnnouncementController extends Controller
                 ->where('name',Auth::user()->name)
                 ->get();
             
-            $announcements=Announcement_member::findOrFail($id);
+            $announcementss=Announcement_member::findOrFail($id);
 
-            return view('Member.showAnnouncementMember',compact('users','announcements'));
+            return view('Member.showAnnouncementMember',compact('users','announcementss'));
 
         }else{
             
