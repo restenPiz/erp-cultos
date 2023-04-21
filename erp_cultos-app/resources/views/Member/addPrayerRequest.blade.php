@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
-                                            <label for="labelInput" class="form-label">Responsavel</label>
+                                            <label for="labelInput" class="form-label">Usuario</label>
                                             <select class="form-control" name="Id_user">
                                                 <option>...</option>
                                                 @foreach ($users as $user)
