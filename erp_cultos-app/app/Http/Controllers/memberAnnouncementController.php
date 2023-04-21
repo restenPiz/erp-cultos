@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Models\User;
-use App\Models\Announcement;
+use App\Models\Announcement_member;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -36,9 +36,7 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
-            $announcements=DB::table('announcements')
-                ->where('Type','member')
-                ->get();
+            $announcements=Announcement_member::all();
 
             return view('Member.allAnnouncement',compact('announcements'));
         
@@ -53,7 +51,7 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
-            $table=new Announcement();
+            $table=new Announcement_member();
 
             $table->Type=Request::input('Type');
             $table->Description=Request::input('Description');
@@ -80,7 +78,7 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
-            $announcements=Announcement::findOrFail($id);
+            $announcements=Announcement_member::findOrFail($id);
 
             $announcements->Type=Request::input('Type');
             $announcements->Description=Request::input('Description');
@@ -111,7 +109,7 @@ class memberAnnouncementController extends Controller
                 ->where('userType','=','member')
                 ->get();
             
-            $announcements=Announcement::findOrFail($id);
+            $announcements=Announcement_member::findOrFail($id);
 
             return view('Shepherd.showAnnouncement',compact('users','announcements'));
 
@@ -126,7 +124,7 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
-            $announcements=Announcement::findOrFail($id);
+            $announcements=Announcement_member::findOrFail($id);
 
             $announcements->delete();
 
