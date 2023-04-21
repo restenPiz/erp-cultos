@@ -171,4 +171,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
     Route::get('/deletePrayer/{id}', [prayerController::class, 'deletePrayer'])->middleware(['auth'])->name('deletePrayer');  
 });
 
+//Inicio das outras rotas do sistema
+Route::post('/lockScreen', [anotherController::class, 'lockScreen'])->middleware(['auth'])->name('lockScreen');
+  
 require __DIR__.'/auth.php';

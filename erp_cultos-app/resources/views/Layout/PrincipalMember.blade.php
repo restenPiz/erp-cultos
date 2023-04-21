@@ -263,7 +263,7 @@
                                         class="badge bg-soft-success text-success mt-1 float-end">New</span><i
                                         class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Settings</span></a> --}}
-                                <a class="dropdown-item" href="auth-lockscreen-basic.html"><i
+                                <a class="dropdown-item" href="{{route('lockScreen')}}}"><i
                                         class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Lock screen</span></a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"><i
@@ -429,7 +429,7 @@
 
     </div>
     <!-- END layout-wrapper -->
-    
+
     {{-- Inicio do link de sweetAlerta --}}
     @include('sweetalert::alert')
     {{-- Fim do link do sweetAlerta --}}
