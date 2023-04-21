@@ -54,6 +54,7 @@ class prayerController extends Controller
             $table=new Prayer_request();
 
             $table->Description=Request::input('Description');
+            $table->Title=Request::input('Title');
             $table->Date=Request::input('Date');
             $table->Hour=Request::input('Hour');
             $table->Id_user=Request::input('Id_user');
@@ -81,6 +82,7 @@ class prayerController extends Controller
             $table=Prayer_request::find($id);
 
             $table->Description=Request::input('Description');
+            $table->Title=Request::input('Title');
             $table->Date=Request::input('Date');
             $table->Hour=Request::input('Hour');
             $table->Id_user=Request::input('Id_user');

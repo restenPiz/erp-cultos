@@ -19,7 +19,7 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Titulo</label>
                                             <input type="text" class="form-control" id="basiInput" name="Title"
-                                                placeholder="Digite o titulo da actividade">
+                                                placeholder="Digite o titulo do pedido">
                                         </div>
                                     </div>
                                     <!--end col-->
