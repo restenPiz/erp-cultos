@@ -3,14 +3,14 @@
 @section('content')
 
         {{-- Inicio do conteudo do meu sistem --}}
-        <form action="{{ route('storeActivity') }}" method="post">
+        <form action="{{ route('storePrayer') }}" method="post">
             @csrf
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Dados da Actividade</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Dados do Pedido de Oracao</h4>
                         </div><!-- end card header -->
                         <div class="card-body">
                             <div class="live-preview">
