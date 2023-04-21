@@ -168,7 +168,6 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
     Route::get('/allPrayer', [prayerControllerController::class, 'allPrayer'])->middleware(['auth'])->name('allPrayer');
     Route::post('/updatePrayer/{id}', [prayerControllerController::class, 'updatePrayer'])->middleware(['auth'])->name('updatePrayer');
     Route::get('/deletePrayer/{id}', [prayerControllerController::class, 'deletePrayer'])->middleware(['auth'])->name('deletePrayer');  
-
 });
 
 require __DIR__.'/auth.php';
