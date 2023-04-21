@@ -4,7 +4,7 @@
     @role('member')
         {{-- Inicio do conteudo da parte de comunicado --}}
         <!-- start page title -->
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
