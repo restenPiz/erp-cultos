@@ -8,7 +8,7 @@
             @csrf
 
             <div class="row">
-                <div class="col-xxl-12 col-xl-12">
+                <div class="col-xxl-6 col-xl-6">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1">Dados do Departamento</h4>
@@ -23,6 +23,7 @@
                                                 placeholder="Nome do Departamento">
                                         </div>
                                     </div>
+                                    
 
                                 </div>
 
@@ -45,6 +46,12 @@
                         </div>
                     </div>
                 </div>
+
+                {{--Inicio da parte contendo a tabela de todos os departamentos--}}
+                <div class="col-xxl-6 col-xl-6">
+
+                </div>
+                {{--Fim da div contendo todos os departamentos--}}
 
             </div>
 
