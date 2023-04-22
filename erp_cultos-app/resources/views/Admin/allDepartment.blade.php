@@ -140,7 +140,7 @@
                                                                         id="close-modal"></button>
                                                                 </div>
                                                                 <form class="tablelist-form" autocomplete="off"
-                                                                    action="{{ route('updateDepartment', ['id' => $department->id]) }}"
+                                                                    action="{{ route('updateDepartmentMember', ['id' => $department->id]) }}"
                                                                     method="post">
                                                                     @csrf
                                                                     <div class="modal-body">
@@ -269,7 +269,7 @@
                                                                         id="btn-close"></button>
                                                                 </div>
                                                                 <form
-                                                                    action="{{ route('deleteDepartment', ['id' => $department->id]) }}"
+                                                                    action="{{ route('deleteDepartmentMember', ['id' => $department->id]) }}"
                                                                     method="get">
                                                                     @csrf
                                                                     @method('DELETE')
