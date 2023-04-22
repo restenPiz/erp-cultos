@@ -151,16 +151,62 @@ class departmentController extends Controller
     }
     public function connectDepartment()
     {
-        for ($i = 0; $i < sizeof(Request::input('Id_user')); $i++) {
+        if(Auth::user()->hasRole('admin'))
+        {
+            for ($i = 0; $i < sizeof(Request::input('Id_user')); $i++) {
 
-            $department = new member_department();
-
-            $department->Id_department = Request::input('Id_department');
-            $department->Id_user = Request::input('Id_user')[$i];
-            $department->save();
+                $department = new member_department();
+    
+                $department->Id_department = Request::input('Id_department');
+                $department->Id_user = Request::input('Id_user')[$i];
+                $department->save();
+            }
+            Alert::success('Conectado!','O seu membro foi conectado ao departamento!');
+    
+            return redirect()->back();
         }
-        Alert::success('Conectado!','O seu membro foi conectado ao departamento!');
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
-        return redirect()->back();
+            return redirect()->route('login');
+        }
+    }
+    public function updateDepartmentMember($id)
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            for ($i = 0; $i < sizeof(Request::input('Id_user')); $i++) {
+
+                $department = member_department::find($id);
+    
+                $department->Id_department = Request::input('Id_department');
+                $department->Id_user = Request::input('Id_user')[$i];
+                $department->save();
+            }
+
+            Alert::sucess('Actualizado!','Os seus dados foram actualizados com sucesso!');
+
+            return redirect()->back();
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function deleteDepartmentMember()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
 }
