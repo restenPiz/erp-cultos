@@ -172,30 +172,6 @@ class departmentController extends Controller
             return redirect()->route('login');
         }
     }
-    public function updateDepartmentMember($id)
-    {
-        if(Auth::user()->hasRole('admin'))
-        {
-            for ($i = 0; $i < sizeof(Request::input('Id_user')); $i++) {
-
-                $department = member_department::find($id);
-    
-                $department->Id_department = Request::input('Id_department');
-                $department->Id_user = Request::input('Id_user')[$i];
-                $department->save();
-            }
-
-            Alert::sucess('Actualizado!','Os seus dados foram actualizados com sucesso!');
-
-            return redirect()->back();
-        }
-        else
-        {
-            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
-
-            return redirect()->route('login');
-        }
-    }
     public function deleteDepartmentMember($id)
     {
         if(Auth::user()->hasRole('admin'))

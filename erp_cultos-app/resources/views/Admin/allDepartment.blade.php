@@ -114,11 +114,11 @@
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#showRecordModal{{ $department->id }}">Ver</button>
                                                         </div>- --}}
-                                                                <div class="edit">
+                                                                {{--<div class="edit">
                                                                     <button class="btn btn-sm btn-success edit-item-btn"
                                                                         data-bs-toggle="modal"
                                                                         data-bs-target="#showModal{{ $department->id }}">Editar</button>
-                                                                </div>
+                                                                </div>--}}
                                                                 <div class="remove">
                                                                     <button class="btn btn-sm btn-danger remove-item-btn"
                                                                         data-bs-toggle="modal"
@@ -127,135 +127,6 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-
-                                                    {{-- Inicio do modal para editar o pastor --}}
-                                                    <div class="modal fade" id="showModal{{ $department->id }}" tabindex="-1"
-                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header bg-light p-3">
-                                                                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                                                    <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal" aria-label="Close"
-                                                                        id="close-modal"></button>
-                                                                </div>
-                                                                <form class="tablelist-form" autocomplete="off"
-                                                                    action="{{ route('updateDepartmentMember', ['id' => $department->id]) }}"
-                                                                    method="post">
-                                                                    @csrf
-                                                                    <div class="modal-body">
-                                                                        <div class="mb-3" id="modal-id">
-                                                                            <label for="basiInput" class="form-label">Nome do
-                                                                                Departamento</label>
-                                                                            <select class="form-control" name="Id_department">
-                                                                                <option>...</option>
-                                                                                @foreach ($depart as $dep)
-                                                                                    <option value="{{ $dep->id }}">
-                                                                                        {{ $dep->Name }}</option>
-                                                                                @endforeach
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label for="tasks-progress"
-                                                                                class="form-label">Membros</label>
-                                                                            <div data-simplebar style="height: 95px;">
-                                                                                <ul class="list-unstyled vstack gap-2 mb-0">
-                                                                                    <li>
-                                                                                        <div
-                                                                                            class="form-check d-flex align-items-center">
-                                                                                            <input
-                                                                                                class="form-check-input me-3"
-                                                                                                type="checkbox"
-                                                                                                name="Id_user[]"
-                                                                                                value="{{ $department->Id_user }}"
-                                                                                                id="anna-adame" checked>
-                                                                                            <label
-                                                                                                class="form-check-label d-flex align-items-center"
-                                                                                                for="anna-adame">
-                                                                                                <span
-                                                                                                    class="flex-shrink-0">
-                                                                                                    <img src="../assets/images/users/avatar-1.jpg"
-                                                                                                        alt=""
-                                                                                                        class="avatar-xxs rounded-circle" />
-                                                                                                </span>
-                                                                                                <span
-                                                                                                    class="flex-grow-1 ms-2">
-                                                                                                    {{ $department->users->name }}
-                                                                                                </span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    @foreach ($users as $user)
-                                                                                        <li>
-                                                                                            <div
-                                                                                                class="form-check d-flex align-items-center">
-                                                                                                <input
-                                                                                                    class="form-check-input me-3"
-                                                                                                    type="checkbox"
-                                                                                                    name="Id_user[]"
-                                                                                                    value="{{ $user->id }}"
-                                                                                                    id="anna-adame">
-                                                                                                <label
-                                                                                                    class="form-check-label d-flex align-items-center"
-                                                                                                    for="anna-adame">
-                                                                                                    <span
-                                                                                                        class="flex-shrink-0">
-                                                                                                        <img src="../assets/images/users/avatar-1.jpg"
-                                                                                                            alt=""
-                                                                                                            class="avatar-xxs rounded-circle" />
-                                                                                                    </span>
-                                                                                                    <span
-                                                                                                        class="flex-grow-1 ms-2">
-                                                                                                        {{ $user->name }}
-                                                                                                    </span>
-                                                                                                </label>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    @endforeach
-
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <div class="hstack gap-2 justify-content-end">
-                                                                            <button type="button" class="btn btn-light"
-                                                                                data-bs-dismiss="modal">Fechar</button>
-                                                                            <button type="submit" name="submit"
-                                                                                class="btn btn-success"
-                                                                                id="add-btn">Actualizar
-                                                                                Departamento</button>
-                                                                            <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {{-- Fim do modal para editar pastor --}}
-
-                                                    {{-- Inicio do modal para fazer o show das informacoes dos departamentos --}}
-
-                                                    <div class="modal fade" id="showRecordModal{{ $department->id }}"
-                                                        tabindex="-1" aria-labelledby="exampleModalLabel"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header bg-light p-3">
-                                                                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                                                    <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal" aria-label="Close"
-                                                                        id="close-modal"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {{-- Fim do modal para fazer o show dos departamentos --}}
 
                                                     <!-- Modal -->
                                                     <div class="modal fade zoomIn"
