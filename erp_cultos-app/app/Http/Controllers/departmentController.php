@@ -196,11 +196,17 @@ class departmentController extends Controller
             return redirect()->route('login');
         }
     }
-    public function deleteDepartmentMember()
+    public function deleteDepartmentMember($id)
     {
         if(Auth::user()->hasRole('admin'))
         {
+            $departments=member_department::find($id);
 
+            $departments->delete();
+
+            Alert::success('Eliminado!','Os seus dados foram eliminados com sucesso!');
+
+            return redirect()->back();
         }
         else
         {
