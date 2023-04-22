@@ -13,7 +13,6 @@ class Department extends Model
 
     protected $fillable=[
         'Name',
-        'Id_user',
     ];
 
     //Inicio dos metodos responsaveis por interligar a tabela de departamentos com a de usuarios

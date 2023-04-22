@@ -23,32 +23,6 @@
                                                 placeholder="Nome do Departamento">
                                         </div>
                                     </div>
-                                    <div class="col-xxl-6 col-md-6">
-                                        <label for="tasks-progress" class="form-label">Membros</label>
-                                        <div data-simplebar style="height: 95px;">
-                                            <ul class="list-unstyled vstack gap-2 mb-0">
-                                                @foreach ($users as $user)
-                                                    <li>
-                                                        <div class="form-check d-flex align-items-center">
-                                                            <input class="form-check-input me-3" type="checkbox"
-                                                                name="Id_user[]" value="{{ $user->id }}" id="anna-adame">
-                                                            <label class="form-check-label d-flex align-items-center"
-                                                                for="anna-adame">
-                                                                <span class="flex-shrink-0">
-                                                                    <img src="../assets/images/users/avatar-1.jpg"
-                                                                        alt="" class="avatar-xxs rounded-circle" />
-                                                                </span>
-                                                                <span class="flex-grow-1 ms-2">
-                                                                    {{ $user->name }}
-                                                                </span>
-                                                            </label>
-                                                        </div>
-                                                    </li>
-                                                @endforeach
-
-                                            </ul>
-                                        </div>
-                                    </div>
 
                                 </div>
 
