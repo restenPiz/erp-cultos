@@ -49,6 +49,7 @@ class worship_leaderController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'surname' => $request->surname,
+                'File' => $request->File,
                 'function' => $request->function,
                 'theological_level' => $request->theological_level,
                 'contact' => $request->contact,
@@ -101,6 +102,7 @@ class worship_leaderController extends Controller
             $user->name=$request->name;
             $user->email=$request->email;
             $user->surname=$request->surname;
+            $user->File=$request->File;
             $user->contact=$request->contact;
             $user->function=$request->function;
             $user->theological_level=$request->theological_level;
