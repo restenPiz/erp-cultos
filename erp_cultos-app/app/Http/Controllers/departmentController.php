@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\member_department;
 use Request;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
@@ -68,13 +69,17 @@ class departmentController extends Controller
 
             $total=$count_report+$count_announcement;
             
-            $departments=Department::all();
+            $departments=member_department::all();
+
+            $depart=Department::all();
+
+            $users=User::all();
 
             $announcements=Announcement::all();
             
             $activities=ReportActivity::all();
 
-            return view('Admin.allDepartment',compact('departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
+            return view('Admin.allDepartment',compact('users','depart','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         else
         {
@@ -144,5 +149,8 @@ class departmentController extends Controller
             return redirect()->route('login');
         }
     }
+    public function connectDepartment()
+    {
 
+    }
 }
