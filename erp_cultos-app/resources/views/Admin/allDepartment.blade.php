@@ -20,6 +20,7 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Nome do Departamento</label>
                                             <select class="form-control" name="Id_department">
+                                                <option>...</option>
                                                 @foreach ($depart as $dep)
                                                     <option value="{{ $dep->id }}">{{ $dep->Name }}</option>
                                                 @endforeach
@@ -104,7 +105,7 @@
                                                 @if (isset($department))
                                                     <tr>
                                                         {{-- -<td class="customer_nam">{{ $department->id }}</td>- --}}
-                                                        <td class="customer_name">{{ $department->Name }}</td>
+                                                        <td class="customer_name">{{ $department->department->Name }}</td>
                                                         <td class="customer_name">{{ $department->users->name }}</td>
                                                         <td class="actio">
                                                             <div class="d-flex gap-2">
