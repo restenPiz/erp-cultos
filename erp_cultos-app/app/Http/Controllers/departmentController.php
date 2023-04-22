@@ -38,8 +38,10 @@ class departmentController extends Controller
             $announcements=Announcement::all();
             
             $activities=ReportActivity::all();
+
+            $departments=Department::all();
             
-            return view('Admin.addDepartment',compact('count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
+            return view('Admin.addDepartment',compact('departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
