@@ -39,11 +39,7 @@ class departmentController extends Controller
             
             $activities=ReportActivity::all();
             
-            $users=DB::table('users')
-                ->where('id','<>',1)
-                ->get();
-
-            return view('Admin.addDepartment',compact('users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
+            return view('Admin.addDepartment',compact('count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
@@ -76,11 +72,7 @@ class departmentController extends Controller
             
             $activities=ReportActivity::all();
 
-            $users=DB::table('users')
-                ->where('id','<>',1)
-                ->get();
-
-            return view('Admin.allDepartment',compact('departments','users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
+            return view('Admin.allDepartment',compact('departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         else
         {
@@ -93,17 +85,11 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
-            foreach(Request::input('Id_user') as $key=>$name)
-            {
-                $insert=[
-                    'Name'=>Request::input('Name'),
-                    'Id_user'=>Request::input('Id_user')[$key],
-                    'created_at'=>now(),
-                    'updated_at'=>now(),
-                ];
+            $table=new Department();
 
-                DB::table('departments')->insert($insert);
-            }
+            $table->Name=Request::input('Name');
+
+            $table->save();
             
             Alert::success('Adicionado!','O departamento foi adicionado com sucesso!');
 
@@ -120,17 +106,9 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
-            foreach(Request::input('Id_user') as $key=>$name)
-            {
-                $insert=[
-                    'Name'=>Request::input('Name'),
-                    'Id_user'=>Request::input('Id_user')[$key],
-                    'created_at'=>now(),
-                    'updated_at'=>now(),
-                ];
+            $table=Department::find(Request::input('id'));
 
-                DB::table('departments')->insert($insert);
-            }
+            $table->save();
 
             Alert::success('Actualizado!','O Departamento foi actualizado com sucesso!');
 
