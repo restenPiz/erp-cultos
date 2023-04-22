@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="user-thumb text-center">
                                             <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail avatar-lg" alt="thumbnail">
-                                            <h5 class="mt-3">Anna Adame</h5>
+                                            <h5 class="mt-3">{{Auth::user()->name}}</h5>
                                         </div>
 
                                         <div class="mt-4">
