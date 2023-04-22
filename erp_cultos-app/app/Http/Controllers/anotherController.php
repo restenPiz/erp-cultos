@@ -8,15 +8,4 @@ use App\Http\Controllers\Controller;
 use Alert;
 
 class anotherController extends Controller
-{
-    public function lockScreen(Request $request)
-    {
-        session(['lock_screen' => true]);
-
-        return redirect()->route('lock');
-    }
-    public function lock()
-    {
-        return view('Another.lock-screen');
-    }
-}
+{ }

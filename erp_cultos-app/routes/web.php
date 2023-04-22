@@ -172,7 +172,13 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
 });
 
 //Inicio das outras rotas do sistema
-Route::post('/lock-screen', [anotherController::class, 'lock-screen'])->middleware(['auth'])->name('lock-screen');
-Route::get('/lock', [anotherController::class, 'lock'])->middleware(['auth'])->name('lock');
+Route::post('/lock-screen', function () {
+    session(['lock_screen' => true]);
+});
+
+Route::get('/lock-screen', function () {
+    return view('Another.lock-screen');
+})->name('lock-screen');
+
   
 require __DIR__.'/auth.php';
