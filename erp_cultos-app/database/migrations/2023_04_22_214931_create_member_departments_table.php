@@ -21,7 +21,6 @@ class CreateMemberDepartmentsTable extends Migration
             $table->integer('Id_user')->unsigned();
             $table->foreign('Id_user')->references('id')->on('users');
 
-            
             $table->integer('Id_departments')->unsigned();
             $table->foreign('Id_departments')->references('id')->on('departments');
 

@@ -108,7 +108,9 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
-            $table=Department::find(Request::input('id'));
+            $table=Department::find($id);
+
+            $table->Name=Request::input('Name');
 
             $table->save();
 
