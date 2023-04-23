@@ -115,6 +115,16 @@ class prayerController extends Controller
 
             return redirect()->back();
         }
+        elseif(Auth::user()->hasRole('shepherd'))
+        {
+            $table=Prayer_request::find($id);
+
+            $table->delete();
+
+            Alert::success('Eliminado!','O seu pedido de oracao foi eliminado com sucesso!');
+
+            return redirect()->back();    
+        }
         else
         {
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
