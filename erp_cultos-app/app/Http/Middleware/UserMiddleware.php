@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Alert;
+use Illuminate\Http\RedirectResponse;
 
 class UserMiddleware
 {
@@ -31,5 +32,6 @@ class UserMiddleware
             Alert::error('Bloqueado!','Sua conta foi bloqueada, por favor contacte o administrador');
             return redirect()->route('login');       
         }
+        //return $next($request);
     }
 }

@@ -81,11 +81,11 @@
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="remove">
-                                                            @if($user->isBan=='0')
+                                                            @if($user->status=='0')
                                                             <a href="" class="btn btn-sm btn-primary remove-item-btn" >Bloquear</a>
                                                             @else
                                                             <a href="" class="btn btn-sm btn-success remove-item-btn" >Desbloquear</a>
-                                                            @elseif($user->isBan=='1')
+                                                            @elseif($user->status=='1')
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#deleteRecordModal{{ $user->id }}">Eliminar</button>
