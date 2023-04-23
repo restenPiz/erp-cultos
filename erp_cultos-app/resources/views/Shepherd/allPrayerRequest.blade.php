@@ -1,4 +1,4 @@
-@extends('Layout.Principal')
+@extends('Layout.Index')
 
 @section('content')
     @role('shepherd')

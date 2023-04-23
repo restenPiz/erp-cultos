@@ -3,7 +3,6 @@
     @role('shepherd')
         {{-- Inicio do conteudo da parte de comunicado --}}
         <!-- start page title -->
-        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -19,7 +18,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <!-- end page title -->
 
         <div class="row justify-content-center">
@@ -98,7 +96,7 @@
                             <div class="hstack gap-2 justify-content-end d-print-none mt-4">
                                 {{--<a href="javascript:void(0);" class="btn btn-primary"><i
                                         class="ri-download-2-line align-bottom me-1"></i> Download Comunicado</a>--}}
-                                        <a href="{{route('allAnnouncementMember')}}" class="btn btn-secondary"> Voltar</a>
+                                        <a href="{{route('allReport')}}" class="btn btn-secondary"> Voltar</a>
                                 {{---<a href="javascript:void(0);" class="btn btn-danger"><i
                                         class="ri-send-plane-fill align-bottom me-1"></i> Send Invoice</a>--}}
                             </div>

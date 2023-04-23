@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\Announcement;
+use App\Models\Announcement_member;
 use App\Models\Branche;
 use App\Models\ReportActivity;
 use App\Models\User;
@@ -161,6 +162,27 @@ class memberController extends Controller
             }
 
             Alert::error('Falha!','Falha ao bloquear o usuario.');
+
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+    public function updateStatu($id, $status_code)
+    {
+        try {
+            $update_user = Announcement_member::where('id', $id)->update([
+                'status' => $status_code
+            ]);
+
+            if ($update_user) {
+                
+                Alert::info('Actualizado!','O seu comunicado foi enviado ao administrador!');
+
+                return redirect()->back();
+            }
+
+            Alert::error('Falha!','Falha ao enviar o comunicado.');
 
             return redirect()->back();
         } catch (\Throwable $th) {

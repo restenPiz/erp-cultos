@@ -104,6 +104,9 @@ Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity']
 //Inicio das rotas da parte de pastor
 Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {
 
+    //Inicio da rota que retorna os comunicados enviados ao admin
+    Route::get('/updateStatu/{id}/{status}', [memberController::class, 'updateStatu'])->middleware(['auth'])->name('updateStatu');
+
     //Inicio da rota que retorna todos os pedidos de oracao
     Route::get('/allRequest', [prayerController::class, 'allRequest'])->middleware(['auth'])->name('allRequest');
 
