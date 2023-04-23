@@ -235,7 +235,7 @@ class memberAnnouncementController extends Controller
 
                 //Retornando os dados para se usar nas cards
             $count_branches=Branche::count();
-            
+
             $count_activities=Activity::count();
 
             $count_cults=DB::table('cults')
@@ -255,7 +255,7 @@ class memberAnnouncementController extends Controller
             
             $activities=ReportActivity::all();
 
-            return view('Admin.addCult',compact('users','announcementss','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));   
+            return view('Admin.showReportAdmin',compact('users','announcementss','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));   
         
 
         }else{

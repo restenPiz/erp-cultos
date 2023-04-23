@@ -1,4 +1,4 @@
-@extends('Layout.Another')
+@extends('Layout.Index')
 @section('content')
     @role('admin')
         {{-- Inicio do conteudo da parte de comunicado --}}
@@ -58,9 +58,6 @@
                                         <select class="form-control bg-light border-0" data-choices data-choices-search-false
                                             id="choices-payment-status" name="Id_user" required>
                                             <option value="{{$announcementss->Id_user}}">{{$announcementss->users->name}}</option>
-                                            @foreach ($users as $user)
-                                                <option value="{{$user->id}}">{{$user->name}}</option>
-                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
