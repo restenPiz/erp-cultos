@@ -515,6 +515,22 @@
                                     </ul>
                                 </div>
                             </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarPags" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarPages">
+                                    <i class="ri-pages-line"></i> <span data-key="t-pages">Comunicados Recebidos </span>
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarPags">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="{{route('allReportAdmin')}}" class="nav-link" data-key="t-starter">
+                                                Detalhes
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
 
                             {{-- Inicio dos links contendo os caminhos dos usuarios --}}
                             <li class="menu-title"><span data-key="t-menu">Usuarios</span></li>
@@ -601,6 +617,7 @@
                                     </ul>
                                 </div>
                             </li>
+
                         @endrole
 
                         @role('shepherd')

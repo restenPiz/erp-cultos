@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Announcement;
+use App\Models\Branche;
+use App\Models\ReportActivity;
 use Request;
 use App\Models\User;
 use App\Models\Announcement_member;
@@ -173,12 +177,50 @@ class memberAnnouncementController extends Controller
             
             $announcementss=Announcement_member::findOrFail($id);
 
+
             return view('Shepherd.showReport',compact('users','announcementss'));
 
         }else{
             
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
+            return redirect()->route('login');
+        }
+    }
+    public function allReportAdmin()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            $announcementss=DB::table('announcement_members')
+                ->where('status',0)
+                ->get();
+
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+
+            return view('Admin.allReportAdmin',compact('announcementss','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));   
+            
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+            
             return redirect()->route('login');
         }
     }
