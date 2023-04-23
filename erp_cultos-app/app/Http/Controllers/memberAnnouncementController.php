@@ -229,8 +229,7 @@ class memberAnnouncementController extends Controller
         if(Auth::user()->hasRole('admin'))
         { 
             $users=DB::table('users')
-                ->where('name',Auth::user()->name)
-                ->get();
+            ->get();
             
             $announcementss=Announcement_member::findOrFail($id);
 
