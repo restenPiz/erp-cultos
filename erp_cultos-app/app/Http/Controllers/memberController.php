@@ -146,4 +146,25 @@ class memberController extends Controller
             return redirect()->route('login');
         }
     }
+    public function updateStatus($id, $status_code)
+    {
+        try {
+            $update_user = User::where('id', $id)->update([
+                'status' => $status_code
+            ]);
+
+            if ($update_user) {
+                
+                Alert::info('Bloqueado!','O usuario foi bloqueado com sucesso!');
+
+                return redirect()->back();
+            }
+
+            Alert::error('Falha!','Falha ao bloquear o usuario.');
+            
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 }
