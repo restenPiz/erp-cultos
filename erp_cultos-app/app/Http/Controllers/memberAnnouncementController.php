@@ -224,4 +224,23 @@ class memberAnnouncementController extends Controller
             return redirect()->route('login');
         }
     }
+    public function showReportAdmin($id)
+    {
+        if(Auth::user()->hasRole('admin'))
+        { 
+            $users=DB::table('users')
+                ->where('name',Auth::user()->name)
+                ->get();
+            
+            $announcementss=Announcement_member::findOrFail($id);
+
+            return view('Admin.showReportAdmin',compact('users','announcementss'));
+
+        }else{
+            
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
