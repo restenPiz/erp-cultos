@@ -688,7 +688,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarAuth">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="#sidebarSignIn" class="nav-link"> Mais Detalhes
+                                            <a href="{{route('allRequest')}}" class="nav-link"> Mais Detalhes
                                             </a>
                                         </li>
 

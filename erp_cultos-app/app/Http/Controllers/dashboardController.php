@@ -47,7 +47,11 @@ class dashboardController extends Controller
         }
         if (Auth::user()->hasRole('shepherd')) 
         {
-            return view('Shepherd.Index');
+            $users=DB::table('users')
+                ->where('userType','member')
+                ->get();
+
+            return view('Shepherd.Index',compact('users'));
         }
         if (Auth::user()->hasRole('worship_leader')) 
         {

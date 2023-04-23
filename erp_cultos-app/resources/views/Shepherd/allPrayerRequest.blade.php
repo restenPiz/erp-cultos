@@ -1,7 +1,7 @@
-@extends('Layout.Index')
+@extends('Layout.Principal')
 
 @section('content')
-    @role('member')
+    @role('shepherd')
         {{-- Inicio da view que possui todo o codigo fonte --}}
 
         <!-- start page title -->
@@ -26,17 +26,17 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">Todas Actividades</h4>
+                        <h4 class="card-title mb-0">Todas Pedidos de Oracao</h4>
                     </div><!-- end card header -->
 
                     <div class="card-body">
                         <div id="customerList">
                             <div class="row g-4 mb-3">
                                 <div class="col-sm-auto">
-                                    <div>
+                                    {{--<div>
                                         <a href="{{ route('addPrayer') }}" class="btn btn-success add-btn"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</a>
-                                    </div>
+                                    </div>--}}
                                 </div>
                                 <div class="col-sm">
                                     <div class="d-flex justify-content-sm-end">
@@ -77,11 +77,6 @@
                                                 <td class="dat">{{ $prayer->users->name }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
-                                                        <div class="edit">
-                                                            <button class="btn btn-sm btn-success edit-item-btn"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#showModal{{ $prayer->id }}">Editar</button>
-                                                        </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
@@ -90,87 +85,6 @@
                                                     </div>
                                                 </td>
                                             </tr>
-
-                                            {{-- Inicio do modal para editar o pastor --}}
-                                            <div class="modal fade" id="showModal{{ $prayer->id }}" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header bg-light p-3">
-                                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close" id="close-modal"></button>
-                                                        </div>
-                                                        <form class="tablelist-form" autocomplete="off"
-                                                            action="{{ route('updatePrayer', ['id' => $prayer->id]) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            <div class="modal-body">
-                                                                <div class="mb-3" id="modal-id">
-                                                                    <label for="customername-field"
-                                                                        class="form-label">Titulo</label>
-                                                                    <input type="text" id="id-field" name="Title"
-                                                                        class="form-control" value="{{ $prayer->Title }}"
-                                                                        required />
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="customername-field"
-                                                                        class="form-label">Dia</label>
-                                                                    <input type="date" id="customername-field"
-                                                                        class="form-control" value="{{ $prayer->Date }}"
-                                                                        name="Date" required />
-                                                                    <div class="invalid-feedback">Por favor escreva bem o seu
-                                                                        nome
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="email-field"
-                                                                        class="form-label">Horario</label>
-                                                                    <input type="time" id="email-field"
-                                                                        class="form-control" value="{{ $prayer->Hour }}"
-                                                                        name="Hour" required />
-                                                                    <div class="invalid-feedback">Digite o seu email de forma
-                                                                        correcta.</div>
-                                                                </div>
-
-                                                                <div>
-                                                                    <label for="status-field" class="form-label">Nome do
-                                                                        Responsavel</label>
-                                                                    <select class="form-control" name="Id_user"
-                                                                        id="status-field" required>
-                                                                        <option value="{{ $prayer->Id_user }}">
-                                                                            {{ $prayer->users->name }}</option>
-                                                                        @foreach ($users as $user)
-                                                                            <option value="{{ $user->id }}">
-                                                                                {{ $user->name }}</option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                </div><br>
-                                                                <div class="mb-3" id="modal-id">
-                                                                    <label for="customername-field"
-                                                                        class="form-label">Descricao</label>
-                                                                    <input type="text" id="id-field" name="Description"
-                                                                        class="form-control" value="{{ $prayer->Description }}"
-                                                                        required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <div class="hstack gap-2 justify-content-end">
-                                                                    <button type="button" class="btn btn-light"
-                                                                        data-bs-dismiss="modal">Fechar</button>
-                                                                    <button type="submit" name="submit"
-                                                                        class="btn btn-success" id="add-btn">Actualizar
-                                                                        Actividade</button>
-                                                                    <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {{-- Fim do modal para editar pastor --}}
 
                                             <!-- Modal -->
                                             <div class="modal fade zoomIn" id="deleteRecordModal{{ $prayer->id }}"

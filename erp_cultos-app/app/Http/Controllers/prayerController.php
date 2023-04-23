@@ -122,4 +122,24 @@ class prayerController extends Controller
             return redirect()->back();
         }
     }
+
+    public function allRequest()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $prayers=Prayer_request::all();
+
+            $users=DB::table('users')
+            ->where('name',Auth::user()->name)
+            ->get();
+
+            return view('Shepherd.allPrayerRequest',compact('users','prayers'));
+        }   
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->back();
+        }
+    }
 }

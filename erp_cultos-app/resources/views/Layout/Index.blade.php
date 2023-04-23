@@ -699,7 +699,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarAuth">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="#sidebarSignIn" class="nav-link"> Mais Detalhes
+                                            <a href="{{route('allRequest')}}" class="nav-link"> Mais Detalhes
                                             </a>
                                         </li>
 
@@ -725,6 +725,22 @@
                                             <a href="{{ route('allReportActivities') }}" class="nav-link"
                                                 data-key="t-nestable-list">Detalhes de Relatorio de
                                                 Actividades</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarPags" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarPages">
+                                    <i class="ri-pages-line"></i> <span data-key="t-pages">Comunicados Recebidos </span>
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarPags">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="pages-starter.html" class="nav-link" data-key="t-starter">
+                                                Detalhes
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
