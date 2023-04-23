@@ -80,11 +80,11 @@
                                                         <div class="remove">
 
                                                             {{--Inicio dos butoes para aprovar ou recusar o pedido de oracao--}}
-
+                                                            @if($prayer->status==1)
                                                             <a href="" class="btn btn-sm btn-primary remove-item-btn">Aprovar</a>
-                                                                
+                                                            @elseif($prayer->status==0)
                                                             <a href="" class="btn btn-sm btn-secondary remove-item-btn">Reprovar</a>
-
+                                                            @endif
                                                             {{--Fim dos butoes para aprovar ou recusar os pedidos de oracao--}}
 
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
