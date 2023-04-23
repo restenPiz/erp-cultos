@@ -1,4 +1,4 @@
-@extends('Layout.Index')
+@extends('Layout.Another')
 @section('content')
     @role('admin')
         {{-- Inicio do conteudo da parte de comunicado --}}

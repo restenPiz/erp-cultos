@@ -233,7 +233,30 @@ class memberAnnouncementController extends Controller
             
             $announcementss=Announcement_member::findOrFail($id);
 
-            return view('Admin.showReportAdmin',compact('users','announcementss'));
+                //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            
+            $count_activities=Activity::count();
+
+            $count_cults=DB::table('cults')
+            ->count();
+
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+
+            return view('Admin.addCult',compact('users','announcementss','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));   
+        
 
         }else{
             
