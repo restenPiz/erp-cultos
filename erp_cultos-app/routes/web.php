@@ -34,6 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
 
     //Inicio da rota contendo os comunicados direcionados ao administrador
     Route::get('/allReportAdmin', [memberAnnouncementController::class, 'allReportAdmin'])->middleware(['auth'])->name('allReportAdmin');
+    Route::get('/showReportAdmin/{id}', [memberAnnouncementController::class, 'showReportAdmin'])->middleware(['auth'])->name('showReportAdmin');
 
     //Inicio das rotas para bloqueio de membros
     Route::get('/updateStatus/{id}/{status}', [memberController::class, 'updateStatus'])->middleware(['auth'])->name('updateStatus');
