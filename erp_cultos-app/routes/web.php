@@ -31,6 +31,9 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['au
 
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+
+    //Inicio das rotas para bloqueio de membros
+    Route::get('/updateStatus/{id}/{status}', [memberController::class, 'updateStatus'])->middleware(['auth'])->name('updateStatus');
     
     //Inicio da rota de todos os membros
     Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');

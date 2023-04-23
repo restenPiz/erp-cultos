@@ -82,9 +82,9 @@
                                                     <div class="d-flex gap-2">
                                                         <div class="remove">
                                                             @if($user->status==1)
-                                                            <a href="" class="btn btn-sm btn-primary remove-item-btn" >Bloquear</a>
+                                                            <a href="{{ route('updateStatus', ['id' => $user->id, 'status' => 0]) }}" class="btn btn-sm btn-danger remove-item-btn" >Bloquear</a>
                                                             @else
-                                                            <a href="" class="btn btn-sm btn-success remove-item-btn" >Desbloquear</a>
+                                                            <a href="{{ route('updateStatus', ['id' => $user->id, 'status' => 1]) }}" class="btn btn-sm btn-primary remove-item-btn" >Desbloquear</a>
                                                             @endif
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
