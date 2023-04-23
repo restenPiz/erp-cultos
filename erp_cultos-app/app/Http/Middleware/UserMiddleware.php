@@ -32,6 +32,6 @@ class UserMiddleware
             Alert::error('Bloqueado!','Sua conta foi bloqueada, por favor contacte o administrador');
             return redirect()->route('login');       
         }
-        //return $next($request);
+        return $next($request);
     }
 }

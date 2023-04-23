@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
 
             //Inicio da coluna de status para ver se o usuario foi bloqueado ou nao
-            $table->tinyInteger('status')->default('0');
+            $table->tinyInteger('status')->default(1);
 
             //Inicio das colunas que vao complementar aos membros
             $table->string('number_bi')->nullable();
