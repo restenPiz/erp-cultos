@@ -53,7 +53,7 @@
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-lg-6 col-sm-6">
-                                    <label for="invoicenoInput">Comunicador</label>
+                                    <label for="invoicenoInput">Membro</label>
                                     <div class="input-light">
                                         <select class="form-control bg-light border-0" data-choices data-choices-search-false
                                             id="choices-payment-status" name="Id_user" required>
