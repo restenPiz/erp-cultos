@@ -20,6 +20,9 @@ class CreatePrayerRequestsTable extends Migration
             $table->string('Date');
             $table->string('Hour');
 
+            //Inicio da coluna de status
+            $table->tinyInteger('status')->default(1);
+
             //Inicio da coluna contendo a chave estrangeira
             $table->integer('Id_user')->unsigned();
             $table->foreign('Id_user')->references('id')->on('users');
