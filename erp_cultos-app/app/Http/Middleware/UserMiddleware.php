@@ -19,18 +19,17 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->status)
-        {
-            $banned=Auth::user()->status=="1";
+        if(auth()->check() && (auth()->user()->status == 0)){
+
             Auth::logout();
 
-            if($banned==1)
-            {
-                Alert::error('Bloqueado!','Sua conta foi bloqueada, por favor contacte o administrador');
-            }
+            $request->session()->invalidate();
 
-            Alert::error('Bloqueado!','Sua conta foi bloqueada, por favor contacte o administrador');
-            return redirect()->route('login');       
+            $request->session()->regenerateToken();
+
+            Alert::error('Bloqueado!','Sua conta foi suspensa. Entre em contacto com o administrador!');
+
+            return redirect()->route('login')->with('Error', 'Sua conta foi suspensa. Entre em contacto com o administrador!');
         }
         return $next($request);
     }
