@@ -189,4 +189,25 @@ class memberController extends Controller
             throw $th;
         }
     }
+    public function updateStatusRequest($id, $status_code)
+    {
+        try {
+            $update_user = Announcement_member::where('id', $id)->update([
+                'status' => $status_code
+            ]);
+
+            if ($update_user) {
+                
+                Alert::info('Actualizado!','O pedido de oracao foi aprovado com sucesso!');
+
+                return redirect()->back();
+            }
+
+            Alert::error('Falha!','Falha ao aprovar o pedido de oracao');
+
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 }

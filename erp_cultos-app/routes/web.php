@@ -36,6 +36,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/allReportAdmin', [memberAnnouncementController::class, 'allReportAdmin'])->middleware(['auth'])->name('allReportAdmin');
     Route::get('/showReportAdmin/{id}', [memberAnnouncementController::class, 'showReportAdmin'])->middleware(['auth'])->name('showReportAdmin');
 
+    //Inicio da rota responsavel por alterar o estado do pedido de oracao
+    Route::get('/updateStatusRequest/{id}/{status}', [memberController::class, 'updateStatusRequest'])->middleware(['auth'])->name('updateStatusRequest');
+    
+
     //Inicio das rotas para bloqueio de membros
     Route::get('/updateStatus/{id}/{status}', [memberController::class, 'updateStatus'])->middleware(['auth'])->name('updateStatus');
     
