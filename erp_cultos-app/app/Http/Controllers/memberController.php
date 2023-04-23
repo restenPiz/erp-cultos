@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Models\Announcement;
 use App\Models\Announcement_member;
 use App\Models\Branche;
+use App\Models\Prayer_request;
 use App\Models\ReportActivity;
 use App\Models\User;
 use Request;
@@ -192,7 +193,7 @@ class memberController extends Controller
     public function updateStatusRequest($id, $status_code)
     {
         try {
-            $update_user = Announcement_member::where('id', $id)->update([
+            $update_user = Prayer_request::where('id', $id)->update([
                 'status' => $status_code
             ]);
 
