@@ -106,4 +106,21 @@ class memberController extends Controller
         }
 
     }
+    public function allMember()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            $members=DB::table('users')
+                ->where('userType','member')
+                ->get();
+
+            return view('Admin.allMember',compact('members'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+            
+            return redirect()->route('login');
+        }
+    }
 }
