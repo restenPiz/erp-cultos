@@ -15,6 +15,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
 
+            //Inicio da coluna de status para ver se o usuario foi bloqueado ou nao
+            $table->tinyInteger('isBan')->default('0');
+
             //Inicio das colunas que vao complementar aos membros
             $table->string('number_bi')->nullable();
             $table->string('profission')->nullable();
