@@ -78,6 +78,10 @@
                                                                 href="{{route('showReport',['id'=>$announcement->id])}}"><i
                                                                     class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
                                                         </li>
+                                                        <li><a class="dropdown-item"
+                                                            href="{{ route('updateStatu', ['id' => $announcement->id, 'status' => 0]) }}"><i
+                                                                class="ri-eye-fill me-2 align-middle text-muted"></i>Enviar ao Administrador</a>
+                                                        </li>
                                                         <li class="dropdown-divider"></li>
                                                         <li><a class="dropdown-item"
                                                                 href="javascript:void(0);"
