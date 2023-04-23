@@ -594,11 +594,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarAuth">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="#sidebarSignIn" class="nav-link"> Adicionar membro
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarSignUp" class="nav-link"> Todos membros
+                                            <a href="{{route('allMember')}}" class="nav-link"> Todos membros
                                             </a>
                                         </li>
 
