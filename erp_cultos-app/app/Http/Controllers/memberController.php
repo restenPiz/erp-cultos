@@ -60,7 +60,7 @@ class memberController extends Controller
 
         Alert::success('Adicionado!','O membro foi adicionaod com sucesso!');
 
-        return view('Member.Index');
+        return redirect()->route('Login_member');
     }
     public function dashboardMember()
     {
@@ -106,7 +106,7 @@ class memberController extends Controller
         }
         else
         {
-            return redirect()->back();
+            return redirect()->route('login');
         }
 
     }

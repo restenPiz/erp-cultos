@@ -34,10 +34,10 @@
                         <div id="customerList">
                             <div class="row g-4 mb-3">
                                 <div class="col-sm-auto">
-                                    <div>
+                                    {{--<div>
                                         <a href="{{ route('addShepherd') }}" class="btn btn-success add-btn"><i
                                                 class="ri-add-line align-bottom me-1"></i> Adicionar</a>
-                                    </div>
+                                    </div>--}}
                                 </div>
                                 <div class="col-sm">
                                     <div class="d-flex justify-content-sm-end">
@@ -85,7 +85,7 @@
                                                             <a href="" class="btn btn-sm btn-primary remove-item-btn" >Bloquear</a>
                                                             @else
                                                             <a href="" class="btn btn-sm btn-success remove-item-btn" >Desbloquear</a>
-                                                            @else
+                                                            @endif
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#deleteRecordModal{{ $user->id }}">Eliminar</button>

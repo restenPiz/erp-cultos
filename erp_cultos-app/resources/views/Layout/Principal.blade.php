@@ -415,7 +415,7 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item">
+                            {{---<li class="nav-item">
                                 <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarPages">
                                     <i class="ri-pages-line"></i> <span data-key="t-pages">Mensagem</span>
@@ -430,7 +430,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li>--}}
 
                             <li class="nav-item">
                                 <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse"
