@@ -107,6 +107,9 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
     //Inicio da rota que retorna todos os pedidos de oracao
     Route::get('/allRequest', [prayerController::class, 'allRequest'])->middleware(['auth'])->name('allRequest');
 
+    //Inicio da rota contendo os comunicados do usuario
+    Route::get('/allReport', [memberAnnouncementController::class, 'allReport'])->middleware(['auth'])->name('allReport');
+
     //Inicio das rotas para os comunicados    
     Route::post('/storeAnnouncement', [announcementController::class, 'storeAnnouncement'])->middleware(['auth'])->name('storeAnnouncement');
     Route::get('/addAnnouncement', [announcementController::class, 'addAnnouncement'])->middleware(['auth'])->name('addAnnouncement');
@@ -169,10 +172,10 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
     //Inicio das rotas para os comunicados    
     Route::post('/storeAnnouncementMember', [memberAnnouncementController::class, 'storeAnnouncementMember'])->middleware(['auth'])->name('storeAnnouncementMember');
     Route::get('/addAnnouncementMember', [memberAnnouncementController::class, 'addAnnouncementMember'])->middleware(['auth'])->name('addAnnouncementMember');
-    Route::get('/allAnnouncementMember', [memberAnnouncementController::class, 'allAnnouncementMember'])->middleware(['auth'])->name('allAnnouncementMember');
     Route::post('/updateAnnouncementMember/{id}', [memberAnnouncementController::class, 'updateAnnouncementMember'])->middleware(['auth'])->name('updateAnnouncementMember');
     Route::get('/showAnnouncementMember/{id}', [memberAnnouncementController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementMember');
     Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
+    Route::get('/allAnnouncementMember', [memberAnnouncementController::class, 'allAnnouncementMember'])->middleware(['auth'])->name('allAnnouncementMember');
 
     //Inicio da parte responsavel por fazer a insercao de pedidos de oracao 
     Route::post('/storePrayer', [prayerController::class, 'storePrayer'])->middleware(['auth'])->name('storePrayer');

@@ -34,7 +34,7 @@ class memberAnnouncementController extends Controller
 
     public function allAnnouncementMember()
     {
-        if(Auth::user()->hasRole('member'))
+        if(Auth::user()->hasRole('member') || Auth::user()->hasRole('shepherd'))
         {
             $announcements=Announcement_member::all();
 
@@ -134,6 +134,20 @@ class memberAnnouncementController extends Controller
 
         }else{
 
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function allReport()
+    {
+        if( Auth::user()->hasRole('shepherd'))
+        {
+            $announcements=Announcement_member::all();
+
+            return view('Shepherd.allReport',compact('announcements'));
+        
+        }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');

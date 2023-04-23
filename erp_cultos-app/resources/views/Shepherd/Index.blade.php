@@ -211,21 +211,6 @@
                         </div>
                         <!-- ene col -->
                         <div class="col-xl-3 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-4">Skills</h5>
-                                    <div class="d-flex flex-wrap gap-2 fs-16">
-                                        <div class="badge fw-medium badge-soft-secondary">UI/UX</div>
-                                        <div class="badge fw-medium badge-soft-secondary">Figma</div>
-                                        <div class="badge fw-medium badge-soft-secondary">HTML</div>
-                                        <div class="badge fw-medium badge-soft-secondary">CSS</div>
-                                        <div class="badge fw-medium badge-soft-secondary">Javascript</div>
-                                        <div class="badge fw-medium badge-soft-secondary">C#</div>
-                                        <div class="badge fw-medium badge-soft-secondary">Nodejs</div>
-                                    </div>
-                                </div>
-                                <!-- end card body -->
-                            </div>
                             <!-- end card -->
 
                             <div class="card">
