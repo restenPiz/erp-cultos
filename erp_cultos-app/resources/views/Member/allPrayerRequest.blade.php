@@ -64,9 +64,11 @@
                                             <th class="sort" data-sort="email">Horario</th>
                                             <th class="sort" data-sort="phone">Dia</th>
                                             <th class="sort" data-sort="status">Nome do Usuario</th>
+                                            <th class="sort" data-sort="status">Situacao</th>
                                             <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
+                                    
                                     <tbody class="list form-check-all">
                                         @foreach ($prayers as $prayer)
                                             <tr>
@@ -75,6 +77,13 @@
                                                 <td class="email">{{ $prayer->Hour }}</td>
                                                 <td class="phone">{{ $prayer->Date }}</td>
                                                 <td class="dat">{{ $prayer->users->name }}</td>
+
+                                                @if($prayer->status==0)
+                                                <td><span class="badge bg-success">Aprovado</span></td>
+                                                @else
+                                                <td><span class="badge bg-danger">Reprovado</span></td>
+                                                @endif
+
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">

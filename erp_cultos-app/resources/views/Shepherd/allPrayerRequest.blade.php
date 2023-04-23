@@ -64,6 +64,7 @@
                                             <th class="sort" data-sort="email">Horario</th>
                                             <th class="sort" data-sort="phone">Dia</th>
                                             <th class="sort" data-sort="status">Nome do Usuario</th>
+                                            <th class="sort" data-sort="status">Descricao</th>
                                             <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
