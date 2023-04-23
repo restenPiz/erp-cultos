@@ -1,7 +1,7 @@
-@role('member')
 @extends('Layout.Index')
 
 @section('content')
+@role('shepherd')
     
     {{--Inicio do conteudo da parte de todos comunicados--}}
 
@@ -34,10 +34,7 @@
                     <div id="customerList">
                         <div class="row g-4 mb-3">
                             <div class="col-sm-auto">
-                                <div>
-                                    <a href="{{ route('addAnnouncementMember') }}" class="btn btn-success add-btn"><i
-                                            class="ri-add-line align-bottom me-1"></i> Adicionar</a>
-                                </div>
+
                             </div>
                             <div class="col-sm">
                                 <div class="d-flex justify-content-sm-end">
@@ -78,7 +75,7 @@
                                                     <ul class="dropdown-menu dropdown-menu-end"
                                                         aria-labelledby="dropdownMenuLink15" id="dropdownMenuLink15">
                                                         <li><a class="dropdown-item"
-                                                                href="{{route('showAnnouncementMember',['id'=>$announcement->id])}}"><i
+                                                                href="{{route('showReport',['id'=>$announcement->id])}}"><i
                                                                     class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
                                                         </li>
                                                         <li class="dropdown-divider"></li>
@@ -171,6 +168,6 @@
     <!-- end row -->
     {{--Fim do conteudo da minha parte de todos comunicados--}}
 
+    @endrole
 @endsection
-@endrole
 

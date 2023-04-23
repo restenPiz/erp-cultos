@@ -109,6 +109,7 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
 
     //Inicio da rota contendo os comunicados do usuario
     Route::get('/allReport', [memberAnnouncementController::class, 'allReport'])->middleware(['auth'])->name('allReport');
+    Route::get('/showReport/{id}', [memberAnnouncementController::class, 'showReport'])->middleware(['auth'])->name('showReport');
 
     //Inicio das rotas para os comunicados    
     Route::post('/storeAnnouncement', [announcementController::class, 'storeAnnouncement'])->middleware(['auth'])->name('storeAnnouncement');

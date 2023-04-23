@@ -132,7 +132,17 @@ class memberAnnouncementController extends Controller
 
             return redirect()->back();
 
-        }else{
+        }elseif(Auth::user()->hasRole('shepherd'))
+        {
+            $announcements=Announcement_member::findOrFail($id);
+
+            $announcements->delete();
+
+            Alert::success('Eliminado!','O comunicado foi eliminado com sucesso!');
+
+            return redirect()->back();            
+        }
+        else{
 
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
@@ -148,6 +158,25 @@ class memberAnnouncementController extends Controller
             return view('Shepherd.allReport',compact('announcements'));
         
         }else{
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function showReport($id)
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        { 
+            $users=DB::table('users')
+                ->where('name',Auth::user()->name)
+                ->get();
+            
+            $announcementss=Announcement_member::findOrFail($id);
+
+            return view('Shepherd.showReport',compact('users','announcementss'));
+
+        }else{
+            
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
 
             return redirect()->route('login');
