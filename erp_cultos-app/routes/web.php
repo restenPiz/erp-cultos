@@ -175,7 +175,6 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
     Route::get('/addAnnouncementMember', [memberAnnouncementController::class, 'addAnnouncementMember'])->middleware(['auth'])->name('addAnnouncementMember');
     Route::post('/updateAnnouncementMember/{id}', [memberAnnouncementController::class, 'updateAnnouncementMember'])->middleware(['auth'])->name('updateAnnouncementMember');
     Route::get('/showAnnouncementMember/{id}', [memberAnnouncementController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementMember');
-    Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
     Route::get('/allAnnouncementMember', [memberAnnouncementController::class, 'allAnnouncementMember'])->middleware(['auth'])->name('allAnnouncementMember');
 
     //Inicio da parte responsavel por fazer a insercao de pedidos de oracao 
@@ -183,8 +182,11 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
     Route::get('/addPrayer', [prayerController::class, 'addPrayer'])->middleware(['auth'])->name('addPrayer');
     Route::get('/allPrayer', [prayerController::class, 'allPrayer'])->middleware(['auth'])->name('allPrayer');
     Route::post('/updatePrayer/{id}', [prayerController::class, 'updatePrayer'])->middleware(['auth'])->name('updatePrayer');
-    Route::get('/deletePrayer/{id}', [prayerController::class, 'deletePrayer'])->middleware(['auth'])->name('deletePrayer');  
 });
+
+Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
+Route::get('/deletePrayer/{id}', [prayerController::class, 'deletePrayer'])->middleware(['auth'])->name('deletePrayer');  
+    
 
   
 require __DIR__.'/auth.php';
