@@ -64,7 +64,6 @@ class shepherdController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'surname' => $request->surname,
-                'File' => $request->File,
                 'function' => $request->function,
                 'theological_level' => $request->theological_level,
                 'contact' => $request->contact,
@@ -76,7 +75,7 @@ class shepherdController extends Controller
 
             Alert::success('Adicionado', 'O pastor foi adicionado com sucesso!');
 
-            return redirect()->route('addShepherd');
+            return redirect()->back();
         }
         else
         {
@@ -117,7 +116,6 @@ class shepherdController extends Controller
             $user->name=$request->name;
             $user->email=$request->email;
             $user->surname=$request->surname;
-            $user->File=$request->File;
             $user->contact=$request->contact;
             $user->function=$request->function;
             $user->theological_level=$request->theological_level;
@@ -126,7 +124,7 @@ class shepherdController extends Controller
 
             Alert::success('Actualizado', 'O pastor foi actualizado com sucesso!');
 
-            return redirect()->route('allShepherd');
+            return redirect()->back();
         }
         else
         {
@@ -143,7 +141,7 @@ class shepherdController extends Controller
 
             Alert::success('Eliminado', 'O pastor foi eliminado com sucesso!');
             
-            return redirect()->route('allShepherd');
+            return redirect()->back();
         }
         else
         {

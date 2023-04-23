@@ -49,7 +49,6 @@ class worship_leaderController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'surname' => $request->surname,
-                'File' => $request->File,
                 'function' => $request->function,
                 'theological_level' => $request->theological_level,
                 'contact' => $request->contact,
@@ -61,7 +60,7 @@ class worship_leaderController extends Controller
 
             Alert::success('Adicionado', 'O lider de louvor foi adicionado com sucesso!');
 
-            return redirect()->route('addWorship_leader');
+            return redirect()->back();
         }
         else
         {
@@ -102,7 +101,6 @@ class worship_leaderController extends Controller
             $user->name=$request->name;
             $user->email=$request->email;
             $user->surname=$request->surname;
-            $user->File=$request->File;
             $user->contact=$request->contact;
             $user->function=$request->function;
             $user->theological_level=$request->theological_level;
@@ -111,7 +109,7 @@ class worship_leaderController extends Controller
 
             Alert::success('Actualizado', 'O lider de louvor foi actualizado com sucesso!');
 
-            return redirect()->route('allWorship_leader');
+            return redirect()->back();
         }
         else
         {
@@ -128,7 +126,7 @@ class worship_leaderController extends Controller
 
             Alert::success('Eliminado', 'O lider de louvor foi eliminado com sucesso!');
             
-            return redirect()->route('allWorship_leader');
+            return redirect()->back();
         }
         else
         {
