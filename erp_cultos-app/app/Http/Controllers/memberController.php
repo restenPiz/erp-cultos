@@ -155,13 +155,13 @@ class memberController extends Controller
 
             if ($update_user) {
                 
-                Alert::info('Bloqueado!','O usuario foi bloqueado com sucesso!');
+                Alert::info('Actualizado!','A situacao do usuario foi actualizada com sucesso!');
 
                 return redirect()->back();
             }
 
             Alert::error('Falha!','Falha ao bloquear o usuario.');
-            
+
             return redirect()->back();
         } catch (\Throwable $th) {
             throw $th;

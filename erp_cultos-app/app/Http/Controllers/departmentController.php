@@ -73,7 +73,9 @@ class departmentController extends Controller
 
             $depart=Department::all();
 
-            $users=User::all();
+            $users=DB::table('users')
+                ->where('userType','member')
+                ->get();
 
             $announcements=Announcement::all();
             
