@@ -78,6 +78,15 @@
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="remove">
+
+                                                            {{--Inicio dos butoes para aprovar ou recusar o pedido de oracao--}}
+
+                                                            <a href="" class="btn btn-sm btn-primary remove-item-btn">Aprovar</a>
+                                                                
+                                                            <a href="" class="btn btn-sm btn-secondary remove-item-btn">Reprovar</a>
+
+                                                            {{--Fim dos butoes para aprovar ou recusar os pedidos de oracao--}}
+
                                                             <button class="btn btn-sm btn-danger remove-item-btn"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#deleteRecordModal{{ $prayer->id }}">Eliminar</button>
