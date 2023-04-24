@@ -897,8 +897,8 @@
             $.ajax({
 
                 type:'get',
-                URL:'{{URL::to('searchActivities')}}',
-                data:{'searchActivities':$value},
+                URL:'{{URL::to('searchActivity')}}',
+                data:{'searchActivity':$value},
 
                 success:function(data)
                 {

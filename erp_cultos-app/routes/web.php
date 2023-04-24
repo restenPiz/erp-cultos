@@ -32,6 +32,9 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['au
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
 
+    //Inicio da rota responsavel por fazer as pesquisas da parte de actividade
+    Route::get('/searchActivity', [activityController::class, 'searchActivity'])->middleware(['auth'])->name('searchActivity');
+
     //Inicio da rota contendo os comunicados direcionados ao administrador
     Route::get('/allReportAdmin', [memberAnnouncementController::class, 'allReportAdmin'])->middleware(['auth'])->name('allReportAdmin');
     Route::get('/showReportAdmin/{id}', [memberAnnouncementController::class, 'showReportAdmin'])->middleware(['auth'])->name('showReportAdmin');
