@@ -821,7 +821,7 @@
                 success:function(data)
                 {
                     console.log(data);
-                    $('#Result').html(data);
+                    $('.searchdata').html(data);
                 }
 
             });
