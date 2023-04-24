@@ -811,7 +811,7 @@
                     success: function(resultados) {
                         var html = '';
                         $.each(resultados, function(key, resultado) {
-                            html += '<p>' + resultado.campo + '</p>';
+                            html += '<p>' + resultado.Title + '</p>';
                         });
                         $('#Result').html(html);
                     },
