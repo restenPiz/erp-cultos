@@ -105,7 +105,7 @@ Route::get('/allActivity', [activityController::class, 'allActivity'])->middlewa
 Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
 Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
 //Inicio da rota responsavel por fazer as pesquisas da parte de actividade
-Route::get('/search', [activityController::class, 'searchActivity'])->middleware(['auth'])->name('search');
+Route::post('/search', [activityController::class, 'searchActivity'])->middleware(['auth'])->name('search');
 
 //Inicio das rotas da parte de pastor
 Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {
