@@ -797,34 +797,19 @@
 
     <script type="text/javascript">
 
-        $(document).ready(function(){
-
-            fetch_customer_data();
-
-            function fetch_customer_data(query = ''){
-
+        $(document).ready(function() {
+            $('#form-pesquisa').submit(function(e) {
+                e.preventDefault();
+                var termo = $('#search').val();
                 $.ajax({
-                    url:"{{route('search')}}",
-                    method:'GET',
-                    data:{query:query},
-                    dataType:'json',
-
-                    success:function(data)
-                    {
-
+                    type: 'GET',
+                    url: '{{ route("pesquisar") }}',
+                    data: { termo: termo },
+                    success: function(resultados) {
+                        $('#Result').html(resultados);
                     }
-                })
-
-            }
-
-            $('document').on('keyup','#search',function()
-            {
-                var query=$(this).val();
-                
-                fetch_customer_data($query);
-                
+                });
             });
-
         });
 
     </script>
