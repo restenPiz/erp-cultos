@@ -24,7 +24,9 @@
     <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
-
+    
+    {{--Inicio do link responsavel por importar a bibliotecao do jquery--}}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -770,8 +772,7 @@
     {{-- Fim do link do sweetAlerta --}}
 
     {{--Inicio do link responsavel por importar a bibliotecao do jquery--}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/jquery.min.js"></script>
     <!-- JAVASCRIPT -->
     <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/libs/simplebar/simplebar.min.js"></script>
@@ -796,37 +797,35 @@
 
     <script type="text/javascript">
 
-        $('#search').on('keyup',function()
-        {
-            
-            $value=$(this).val();
+        $(document).ready(function(){
 
-            if($value)
-            {
-                $('.list').hide();
-                $('.searchdata').show();
+            fetch_customer_data();
+
+            function fetch_customer_data(query = ''){
+
+                $.ajax({
+                    url:"{{route('search')}}",
+                    method:'GET',
+                    data:{query:query},
+                    dataType:'json',
+
+                    success:function(data)
+                    {
+
+                    }
+                })
+
             }
-            else
+
+            $('document').on('keyup','#search',function()
             {
-                $('.list').show();
-                $('.searchdata').hide();
-            }
-
-            $.ajax({
-
-                type:'get',
-                URL:'{{URL::to('search')}}',
-                data:{'search':$value},
-
-                success:function(data)
-                {
-                    console.log(data);
-                    $('.searchdata').html(data);
-                }
-
+                var query=$(this).val();
+                
+                fetch_customer_data($query);
+                
             });
 
-        })
+        });
 
     </script>
 
