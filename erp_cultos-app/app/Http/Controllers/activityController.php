@@ -186,7 +186,9 @@ class activityController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $activities=Activity::where('Title','LIKE','%'.Request::input('search').'%')->get();
+            $activities=DB::table('activities')
+                ->where('Title','LIKE','%'.Request::input('search').'%')
+                ->get();
 
             foreach($activities as $activities)
             {
