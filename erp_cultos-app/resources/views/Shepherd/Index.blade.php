@@ -19,32 +19,12 @@
                                     </div>
                                     <div class="col-md">
                                         <div>
-                                            <h4 class="fw-bold">Velzon - Admin & Dashboard</h4>
+                                            <h4 class="fw-bold">ERP - Cultos</h4>
                                             <div class="hstack gap-3 flex-wrap">
-                                                <div><i class="ri-building-line align-bottom me-1"></i> Themesbrand</div>
-                                                <div class="vr"></div>
-                                                <div>Create Date : <span class="fw-medium">15 Sep, 2021</span></div>
-                                                <div class="vr"></div>
-                                                <div>Due Date : <span class="fw-medium">29 Dec, 2021</span></div>
-                                                <div class="vr"></div>
-                                                <div class="badge rounded-pill bg-info fs-12">New</div>
-                                                <div class="badge rounded-pill bg-danger fs-12">High</div>
+                                                <div><i class="ri-building-line align-bottom me-1"></i> MICEC</div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-auto">
-                                <div class="hstack gap-1 flex-wrap">
-                                    <button type="button" class="btn py-0 fs-16 favourite-btn active">
-                                        <i class="ri-star-fill"></i>
-                                    </button>
-                                    <button type="button" class="btn py-0 fs-16 text-body">
-                                        <i class="ri-share-line"></i>
-                                    </button>
-                                    <button type="button" class="btn py-0 fs-16 text-body">
-                                        <i class="ri-flag-line"></i>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -52,22 +32,7 @@
                         <ul class="nav nav-tabs-custom border-bottom-0" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#project-overview" role="tab">
-                                    Overview
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#project-documents" role="tab">
-                                    Documents
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#project-activities" role="tab">
-                                    Activities
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#project-team" role="tab">
-                                    Team
+                                    Inicio
                                 </a>
                             </li>
                         </ul>
@@ -89,120 +54,53 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-muted">
-                                        <h6 class="mb-3 fw-semibold text-uppercase">Summary</h6>
-                                        <p>It will be as simple as occidental in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.</p>
-
+                                        <h6 class="mb-3 fw-semibold text-uppercase">Sobre nos
+                                        </h6>
+                                        <p>
+                                            Somos cooperadores de Deus, isto e, socios de Deus(1 Cr.3:9);(Col.4:11).</p>
                                         <ul class="ps-4 vstack gap-2">
-                                            <li>Product Design, Figma (Software), Prototype</li>
-                                            <li>Four Dashboards : Ecommerce, Analytics, Project,etc.</li>
-                                            <li>Create calendar, chat and email app pages.</li>
-                                            <li>Add authentication pages.</li>
-                                            <li>Content listing.</li>
+                                            <li>A nossa visao: </li>
+                                            <p>
+                                                Proclamar o evangelio eterno do reino de Deus, em todas as nacoes, lingua, tribos e povos; edificando igrejas fortes, onde cada membro e um 
+                                                ministro do evangelio e cada ministro uma igreja forte(Apocalipse 14:6-7);(Rm.8:37, Tm.2:2)</p>
+                                            <li>A nossa missao:</li>
+                                            <p>1.Evangelizar aos nao alcancados ou perdidos(Rm.15:20)<br>
+                                                2.Ensinar a guardar e obdecer todas as coisas que jesus ordenou(Mt.28:19-20)<br>
+                                                3.Treinar e capacitar lideres para obra(2 Tm.2:2)<br>
+                                                4.Fazer discipulos de cristo em todas as nacoes</p>
+                                            <li>O nosso proposito: MT.22:37-40; MT.28:19-20</li>
+                                            <p>
+                                                1.Adorar a Deus<br>
+                                                2.Ministrar a graca de Deus uns aos outros<br>
+                                                3.Evangelizar<br>
+                                                4.Baptizar os convertidos<br>
+                                                5.Fazer discipulos de cristo,isto e, ensinar a guardar todas as coisas;</p>
+                                            <li>
+                                                a nossa estrategia:</li>
+                                                <p>
+                                                    1.Fazer tudo e para todos(Usar todos os meios e metodos para alcancar os perdidos) 1 Cor.9:22<br>
+                                                    2.Visao Celular(Comecar a partir de uma celula ou grupo familiar usando casas e outros lugrares) Atos 20:20<br>
+                                                    3.Capacitar e treinar lideres para tambem ensinar os outros 2 Tm.2:2
+                                                </p>
+                                            <li>
+                                                Caracteristica:</li>
+                                                <p>
+                                                    1.Somos uma igreja forte e com bom fundamento. 1 TM.6:12, 1 Cor.3:10-12<br>
+                                                    2.Somos uma igreja de boa lideranca. 1 TM.3:1-13, TITO.1:5-6<br>
+                                                    3.Somos uma igreja de boa doutrina. Prov.4:2, 1 TM.4:6<br>
+                                                    4.Somos uma igreja de vida pura. TITOS.3:14, 2 CRONICA.32:32, MT.5:16, MT.6:1, EF.2:10, 5:10</p>
                                         </ul>
-
-                                        <div>
-                                            <button type="button" class="btn btn-link link-success p-0">Read more</button>
-                                        </div>
 
                                         <div class="pt-3 border-top border-top-dashed mt-4">
                                             <div class="row">
 
                                                 <div class="col-lg-3 col-sm-6">
                                                     <div>
-                                                        <p class="mb-2 text-uppercase fw-medium">Create Date :</p>
-                                                        <h5 class="fs-15 mb-0">15 Sep, 2021</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-sm-6">
-                                                    <div>
-                                                        <p class="mb-2 text-uppercase fw-medium">Due Date :</p>
-                                                        <h5 class="fs-15 mb-0">29 Dec, 2021</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-sm-6">
-                                                    <div>
-                                                        <p class="mb-2 text-uppercase fw-medium">Priority :</p>
-                                                        <div class="badge bg-danger fs-12">High</div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-sm-6">
-                                                    <div>
-                                                        <p class="mb-2 text-uppercase fw-medium">Status :</p>
-                                                        <div class="badge bg-warning fs-12">Inprogess</div>
+                                                        <p class="mb-2 text-uppercase fw-medium">Elaborado Por :</p>
+                                                        <h5 class="fs-15 mb-0">Apostolo Luis Chimbia e Sua esposa.</h5>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="pt-3 border-top border-top-dashed mt-4">
-                                            <h6 class="mb-3 fw-semibold text-uppercase">Resources</h6>
-                                            <div class="row g-3">
-                                                <div class="col-xxl-4 col-lg-6">
-                                                    <div class="border rounded border-dashed p-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 me-3">
-                                                                <div class="avatar-sm">
-                                                                    <div class="avatar-title bg-light text-secondary rounded fs-24">
-                                                                        <i class="ri-folder-zip-line"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="fs-13 mb-1"><a href="#" class="text-body text-truncate d-block">App pages.zip</a></h5>
-                                                                <div>2.2MB</div>
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <div class="d-flex gap-1">
-                                                                    <button type="button" class="btn btn-icon text-muted btn-sm fs-18"><i class="ri-download-2-line"></i></button>
-                                                                    <div class="dropdown">
-                                                                        <button class="btn btn-icon text-muted btn-sm fs-18 dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                            <i class="ri-more-fill"></i>
-                                                                        </button>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li><a class="dropdown-item" href="#"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Rename</a></li>
-                                                                            <li><a class="dropdown-item" href="#"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- end col -->
-                                                <div class="col-xxl-4 col-lg-6">
-                                                    <div class="border rounded border-dashed p-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 me-3">
-                                                                <div class="avatar-sm">
-                                                                    <div class="avatar-title bg-light text-secondary rounded fs-24">
-                                                                        <i class="ri-file-ppt-2-line"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="fs-13 mb-1"><a href="#" class="text-body text-truncate d-block">Velzon admin.ppt</a></h5>
-                                                                <div>2.4MB</div>
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <div class="d-flex gap-1">
-                                                                    <button type="button" class="btn btn-icon text-muted btn-sm fs-18"><i class="ri-download-2-line"></i></button>
-                                                                    <div class="dropdown">
-                                                                        <button class="btn btn-icon text-muted btn-sm fs-18 dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                            <i class="ri-more-fill"></i>
-                                                                        </button>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li><a class="dropdown-item" href="#"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Rename</a></li>
-                                                                            <li><a class="dropdown-item" href="#"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- end col -->
-                                            </div>
-                                            <!-- end row -->
                                         </div>
                                     </div>
                                 </div>
