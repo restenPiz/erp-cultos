@@ -226,7 +226,6 @@
                                             {{-- Fim dos dois modais --}}
                                         @endforeach
                                     </tbody>
-                                    @if(count($pesquisas)>0)
                                     <tbody id="Result" class="searchdata">
                                         @foreach ($pesquisas as $pesquisa)
                                         <tr>
@@ -234,8 +233,6 @@
                                             <td class="customer_name">{{ $pesquisa->Title }}</td>
                                             <td class="email">{{ $pesquisa->Hour }}</td>
                                             <td class="phone">{{ $pesquisa->Day }}</td>
-                                            <td class="date">{{ $pesquisa->department->Name }}</td>
-                                            <td class="dat">{{ $pesquisa->name($pesquisa->Id_user) }}</td>
                                             <td class="actio">
                                                 <div class="d-flex gap-2">
                                                     <div class="edit">
@@ -253,7 +250,6 @@
                                         </tr>
                                         @endforeach
                                     </tbody>
-                                    @endif
                                 </table>
                                 @else
                                 <div class="noresult">
