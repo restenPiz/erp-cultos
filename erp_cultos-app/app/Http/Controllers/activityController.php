@@ -188,11 +188,11 @@ class activityController extends Controller
         {
             $variavel=Request::input('search');
 
-            $activities=DB::table('activities')
+            $pesquisas=DB::table('activities')
                 ->where('Title','like','%'.$variavel.'%')
                 ->get();
 
-            return redirect()->route('allActivity',compact('activities'));
+            return redirect()->route('allActivity',compact('pesquisas'));
         }
         else
         {
