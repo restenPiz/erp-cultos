@@ -894,6 +894,17 @@
             
             $value=$(this).val();
 
+            if($value)
+            {
+                $('.list').hide();
+                $('.Result').show();
+            }
+            else
+            {
+                $('.list').show();
+                $('.Result').hide();
+            }
+
             $.ajax({
 
                 type:'get',
