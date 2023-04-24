@@ -182,4 +182,17 @@ class activityController extends Controller
             return redirect()->route('login');
         }
     }
+    public function searchActivity()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+            
+            return redirect()->route('login');
+        }
+    }
 }
