@@ -188,10 +188,42 @@ class activityController extends Controller
         {
             $variavel=Request::input('search');
 
-            $activities=DB::table('activities')
-                ->where('Title','LIKE','%'.$variavel.'%')
+            $pesquisas=DB::table('activities')
+                ->where('Title','like','%'.$variavel.'%')
+                ->get();
+            
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $users = DB::table('users')
+                ->where('userType', '<>', 'admin')
+                ->get();
+            
+            $users = DB::table('users')
+                ->where('userType', '=', 'pastor')
                 ->get();
 
+            $departments=DB::table('departments')
+                ->get();        
+
+            $activitie=Activity::all();
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+
+            return view('Admin.allActivity', compact('pesquisas','activitie','users','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
         }
         else
         {

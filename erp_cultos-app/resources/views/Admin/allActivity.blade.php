@@ -226,7 +226,34 @@
                                             {{-- Fim dos dois modais --}}
                                         @endforeach
                                     </tbody>
-                                    <tbody id="Result" class="searchdata"></tbody>
+                                    @if(count($pesquisas)>0)
+                                    <tbody id="Result" class="searchdata">
+                                        @foreach ($pesquisas as $pesquisa)
+                                        <tr>
+                                            <td class="customer_nam">{{ $pesquisa->id }}</td>
+                                            <td class="customer_name">{{ $pesquisa->Title }}</td>
+                                            <td class="email">{{ $pesquisa->Hour }}</td>
+                                            <td class="phone">{{ $pesquisa->Day }}</td>
+                                            <td class="date">{{ $pesquisa->department->Name }}</td>
+                                            <td class="dat">{{ $pesquisa->name($pesquisa->Id_user) }}</td>
+                                            <td class="actio">
+                                                <div class="d-flex gap-2">
+                                                    <div class="edit">
+                                                        <button class="btn btn-sm btn-success edit-item-btn"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#showModal{{ $pesquisa->id }}">Editar</button>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <button class="btn btn-sm btn-danger remove-item-btn"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#deleteRecordModal{{ $pesquisa->id }}">Eliminar</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                    @endif
                                 </table>
                                 @else
                                 <div class="noresult">
