@@ -190,7 +190,11 @@ class activityController extends Controller
                 ->orWhere('Day','LIKE','%'.Request::input('search').'%')
                 ->get();
 
-            return redirect()->back()->with('activities');
+            foreach($activities as $activity)
+            {
+                $output.='<tr><td>'.$activity->Title.'</td></tr>';
+            }
+
         }
         else
         {
