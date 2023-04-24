@@ -886,6 +886,18 @@
     <!-- gridjs init -->
     <script src="../assets/js/pages/gridjs.init.js"></script>
 
+    {{--Inicio do script para informar caso exista um dado digitado no input de pesquisa--}}
+
+    <script type="text/javascript">
+
+        $('#search').on('keyup',function(
+            alert('Ola Mundo');
+        ))
+
+    </script>
+
+    {{--Fim do script--}}
+
 
 </body>
 
