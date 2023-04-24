@@ -890,9 +890,25 @@
 
     <script type="text/javascript">
 
-        $('#search').on('keyup',function(
-            alert('Ola Mundo');
-        ))
+        $('#search').on('keyup',function(){
+            
+            $value=$(this).val();
+
+            $.ajax({
+
+                type:'get',
+                URL:'{{URL::to('searchActivities')}}',
+                data:{'searchActivities':$value},
+
+                success:function(data)
+                {
+                    console.log(data);
+                    $('#content').html(data);
+                }
+
+            });
+
+        })
 
     </script>
 
