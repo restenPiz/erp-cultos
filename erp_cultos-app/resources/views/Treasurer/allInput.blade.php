@@ -22,6 +22,7 @@
         </div>
         <!-- end page title -->
 
+        
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -31,9 +32,13 @@
                                 <h5 class="card-title mb-0">Todas Entradas</h5>
                             </div>
                             <div class="col-sm-auto">
-                                <div class="d-flex gap-1 flex-wrap">
-                                    <a href="{{route('addInput')}}"  class="btn btn-success add-btn" ><i class="ri-add-line align-bottom me-1"></i> Adicionar Entradas</a>
-                            </div>
+                                <div>
+                                    <a href="{{ route('addInput') }}" class="btn btn-success add-btn"><i
+                                            class="ri-add-line align-bottom me-1"></i> Adicionar</a>
+                                
+                                    <a href="{{ route('dowloandPDF') }}" class="btn btn-primary add-btn"><i
+                                            class="ri-add-line align-bottom me-1"></i> Baixar Relatorio</a>
+                                </div></div>
                         </div>
                     </div>
 
@@ -78,7 +83,10 @@
                                     </div>
                                     <!--end row-->
                                 </form>
-                            </div>                            <div class="table-responsive table-card mt-3 mb-1">
+                            </div>
+
+
+                            <div class="table-responsive table-card mt-3 mb-1">
                                 @if(count($inputs)>0)
                                 <table class="table align-middle table-nowrap" id="customerTable">
                                     <thead class="table-light">
