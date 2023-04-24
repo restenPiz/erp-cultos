@@ -474,6 +474,16 @@
     <!-- Dashboard init -->
     <script src="../assets/js/pages/dashboard-analytics.init.js"></script>
 
+
+    
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- gridjs js -->
+    <script src="../assets/libs/gridjs/gridjs.umd.js"></script>
+    <!-- gridjs init -->
+    <script src="../assets/js/pages/gridjs.init.js"></script>
+
     <!-- App js -->
     <script src="../assets/js/app.js"></script>
 </body>
