@@ -903,7 +903,7 @@
                 success:function(data)
                 {
                     console.log(data);
-                    $('#content').html(data);
+                    $('#Result').html(data);
                 }
 
             });

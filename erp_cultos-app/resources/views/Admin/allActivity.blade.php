@@ -226,7 +226,7 @@
                                             {{-- Fim dos dois modais --}}
                                         @endforeach
                                     </tbody>
-                                    <tbody id="content"></tbody>
+                                    <tbody id="#Result"></tbody>
                                 </table>
                                 @else
                                 <div class="noresult">
