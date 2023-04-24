@@ -25,8 +25,6 @@
     <!-- custom Css-->
     <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
-    {{--Inicio do link que vai importar o jquery para dentro do meu sistema--}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -774,6 +772,7 @@
 
     {{--Inicio do link responsavel por importar a bibliotecao do jquery--}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- JAVASCRIPT -->
     <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/libs/simplebar/simplebar.min.js"></script>
