@@ -186,17 +186,15 @@ class activityController extends Controller
             return redirect()->route('login');
         }
     }
-    public function searchActivity()
+    public function searchActivity( Request $request)
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $variavel=Request::get('search');
+            $variavel=$request->get('search');
             
-            $resultados=DB::table('activities')
-                ->where('Title','like','%'.$variavel.'%')
-                ->get();
+            $resultados=DB::table('activities')->where('Title', 'like', '%'.$variavel.'%')->get();
 
-                return response()->json($resultados);
+            return response()->json($resultados);
         }
         else
         {
