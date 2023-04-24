@@ -186,12 +186,16 @@ class activityController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            $activities=Activity::where('Title','LIKE','%'.Request::input('search').'%')
+                ->orWhere('Day','LIKE','%'.Request::input('search').'%')
+                ->get();
 
+            return redirect()->back()->with('activities');
         }
         else
         {
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
-            
+
             return redirect()->route('login');
         }
     }
