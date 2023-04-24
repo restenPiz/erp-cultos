@@ -195,6 +195,7 @@ class activityController extends Controller
                 $output.='<tr><td>'.$activity->Title.'</td></tr>';
             }
 
+            return response($output);
         }
         else
         {
