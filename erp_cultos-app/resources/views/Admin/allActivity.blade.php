@@ -40,7 +40,7 @@
                     <div class="card-body">
                         <div id="customerList">
                             <div class="card-body border border-dashed border-end-0 border-start-0">
-                                <form>
+                                <form action="{{route('search')}}" method="post">
                                     @csrf
                                     <div class="row g-3">
                                         <!--end col-->
@@ -52,7 +52,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idStatus">
+                                                <select class="form-control" data-choices data-choices-search-false name="Department" id="idStatus">
                                                     <option>Seleccione o Departamento</option>
                                                     <option></option>
                                                     @foreach ($departments as $department)
@@ -64,7 +64,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idPayment">
+                                                <select class="form-control" data-choices data-choices-search-false name="Day" id="idPayment">
                                                     <option>Seleccione a Data</option>
                                                     <option></option>
                                                     @foreach ($activitie as $act)
@@ -76,7 +76,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-1 col-sm-4">
                                             <div>
-                                                <button type="button" class="btn btn-primary w-100" onclick="SearchData();"> <i class="ri-equalizer-fill me-1 align-bottom"></i>
+                                                <button type="button" name="submit" class="btn btn-primary w-100" onclick="SearchData();"> <i class="ri-equalizer-fill me-1 align-bottom"></i>
                                                     Filtrar
                                                 </button>
                                             </div>
