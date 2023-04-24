@@ -186,13 +186,11 @@ class activityController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $activities=Activity::where('Title','LIKE','%'.Request::input('search').'%')
-                ->orWhere('Day','LIKE','%'.Request::input('search').'%')
-                ->get();
+            $activities=Activity::where('Title','LIKE','%'.Request::input('search').'%')->get();
 
-            foreach($activities as $activity)
+            foreach($activities as $activities)
             {
-                $output.='<tr><td>'.$activity->Title.'</td></tr>';
+                $output.='<tr><td>'.$activities->Title.'</td></tr>';
             }
 
             return response($output);
