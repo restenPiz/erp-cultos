@@ -863,6 +863,9 @@
     @include('sweetalert::alert')
     {{-- Fim do link do sweetAlerta --}}
 
+    {{--Inicio do link responsavel por importar a bibliotecao do jquery--}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     <!-- JAVASCRIPT -->
     <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/libs/simplebar/simplebar.min.js"></script>
