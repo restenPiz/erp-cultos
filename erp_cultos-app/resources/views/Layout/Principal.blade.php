@@ -749,7 +749,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-end d-none d-sm-block">
-                            Desenhado e Desenvolvido por Mauro Peniel
+                            Desenhado e Desenvolvido por Abrao Chimnbia
                         </div>
                     </div>
                 </div>

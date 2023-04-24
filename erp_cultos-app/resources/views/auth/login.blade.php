@@ -126,7 +126,7 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> ERP-Cultos. Criado com <i class="mdi mdi-heart text-danger"></i> por Mauro Peniel
+                                <script>document.write(new Date().getFullYear())</script> ERP-Cultos. Criado com <i class="mdi mdi-heart text-danger"></i> por Abrao Chimbia
                             </p>
                         </div>
                     </div>
