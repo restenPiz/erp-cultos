@@ -190,13 +190,13 @@ class activityController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $variavel=Request::input('search');
-
+            $variavel=Request::get('search');
+            
             $pesquisas=DB::table('activities')
                 ->where('Title','like','%'.$variavel.'%')
                 ->get();
 
-            return redirect()->route('allActivity',compact('pesquisas'));
+                return response()->json($pesquisas);
         }
         else
         {
