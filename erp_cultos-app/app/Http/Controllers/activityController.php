@@ -192,11 +192,11 @@ class activityController extends Controller
         {
             $variavel=Request::get('search');
             
-            $pesquisas=DB::table('activities')
+            $resultados=DB::table('activities')
                 ->where('Title','like','%'.$variavel.'%')
                 ->get();
 
-                return response()->json($pesquisas);
+                return response()->json($resultados);
         }
         else
         {

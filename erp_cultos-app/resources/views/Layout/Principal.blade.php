@@ -27,7 +27,7 @@
 
     {{--Inicio do link que vai importar o jquery para dentro do meu sistema--}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -797,6 +797,30 @@
     {{--Inicio do script para informar caso exista um dado digitado no input de pesquisa--}}
 
     <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#search').on('input', function() {
+                var query = $(this).val();
+                $.ajax({
+                    url: '{{ route("search") }}',
+                    method: 'GET',
+                    data: {
+                        q: query
+                    },
+                    dataType: 'json',
+                    success: function(resultados) {
+                        var html = '';
+                        $.each(resultados, function(key, resultado) {
+                            html += '<p>' + resultado.campo + '</p>';
+                        });
+                        $('#Result').html(html);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            });
+        });
 
     </script>
 
