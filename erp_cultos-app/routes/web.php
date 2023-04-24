@@ -177,7 +177,7 @@ Route::get('/autoMember', [dashboardController::class, 'autoMember'])->name('aut
 Route::get('/loginMembers', [dashboardController::class, 'loginMembers'])->name('loginMembers');
 Route::post('/loginMember', [memberController::class, 'loginMember'])->name('loginMember');
 Route::get('/logoutMember', [memberController::class, 'logout'])->name('logoutMember');
-Route::post('/Login_member', [memberController::class, 'Login_member'])->name('Login_member');
+Route::get('/Login_member', [memberController::class, 'Login_member'])->name('Login_member');
 
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {

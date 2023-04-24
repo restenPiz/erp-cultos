@@ -307,6 +307,11 @@
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+
+
+    {{-- Inicio do link de sweetAlerta --}}
+    @include('sweetalert::alert')
+    {{-- Fim do link do sweetAlerta --}}
 </body>
 
 
