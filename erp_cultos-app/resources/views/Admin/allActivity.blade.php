@@ -41,6 +41,7 @@
                         <div id="customerList">
                             <div class="card-body border border-dashed border-end-0 border-start-0">
                                 <form>
+                                    @csrf
                                     <div class="row g-3">
                                         <!--end col-->
                                         {{--<div class="col-xxl-2 col-sm-6">
@@ -49,30 +50,26 @@
                                             </div>
                                         </div>--}}
                                         <!--end col-->
-                                        <div class="col-xxl-2 col-sm-4">
+                                        <div class="col-xxl-4 col-sm-6">
                                             <div>
                                                 <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idStatus">
-                                                    <option value="">Status</option>
-                                                    <option value="all" selected>All</option>
-                                                    <option value="Pending">Pending</option>
-                                                    <option value="Inprogress">Inprogress</option>
-                                                    <option value="Cancelled">Cancelled</option>
-                                                    <option value="Pickups">Pickups</option>
-                                                    <option value="Returns">Returns</option>
-                                                    <option value="Delivered">Delivered</option>
+                                                    <option>Seleccione o Departamento</option>
+                                                    <option></option>
+                                                    @foreach ($departments as $department)
+                                                    <option value="{{$department->id}}">{{$department->Name}}</option>    
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-2 col-sm-4">
+                                        <div class="col-xxl-4 col-sm-6">
                                             <div>
                                                 <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idPayment">
-                                                    <option value="">Select Payment</option>
-                                                    <option value="all" selected>All</option>
-                                                    <option value="Mastercard">Mastercard</option>
-                                                    <option value="Paypal">Paypal</option>
-                                                    <option value="Visa">Visa</option>
-                                                    <option value="COD">COD</option>
+                                                    <option>Seleccione a Data</option>
+                                                    <option></option>
+                                                    @foreach ($activitie as $act)
+                                                    <option value="{{$act->Day}}">{{$act->Day}}</option>    
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
