@@ -804,12 +804,12 @@
             if($value)
             {
                 $('.list').hide();
-                $('.Result').show();
+                $('.searchdata').show();
             }
             else
             {
                 $('.list').show();
-                $('.Result').hide();
+                $('.searchdata').hide();
             }
 
             $.ajax({

@@ -68,7 +68,7 @@
                                             <th class="sort" data-sort="actio"></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="list form-check-all">
+                                    <tbody class="list">
                                         @foreach ($activitie as $activity)
                                             <tr>
                                                 <td class="customer_nam">{{ $activity->id }}</td>
@@ -226,7 +226,7 @@
                                             {{-- Fim dos dois modais --}}
                                         @endforeach
                                     </tbody>
-                                    <tbody id="Result" class="searchdat"></tbody>
+                                    <tbody id="Result" class="searchdata"></tbody>
                                 </table>
                                 @else
                                 <div class="noresult">
