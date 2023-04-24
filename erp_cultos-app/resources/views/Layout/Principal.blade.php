@@ -796,7 +796,8 @@
 
     <script type="text/javascript">
 
-        $('#search').on('keyup',function(){
+        $('#search').on('keyup',function()
+        {
             
             $value=$(this).val();
 
