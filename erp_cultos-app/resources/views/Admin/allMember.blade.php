@@ -53,6 +53,10 @@
                                                     <option>...</option>
 
                                                     {{--Inicio da parte contendo os niveis teologicos--}}
+                                                    
+                                                    @foreach ($users as $user)
+                                                        <option value="{{$user->theological_level}}">{{$user->theological_level}}</option>    
+                                                    @endforeach
 
                                                     {{--Fim da parte contendo os niveis teologicos--}}
 
@@ -66,6 +70,10 @@
                                                     <option>...</option>
 
                                                     {{--Inicio da parte contendo o papel de cada um--}}
+
+                                                    @foreach ($users as $user)
+                                                        <option value="{{$user->function}}">{{$user->function}}</option>    
+                                                    @endforeach
 
                                                     {{--Fim da parte contendo o papel de cada um--}}
 
