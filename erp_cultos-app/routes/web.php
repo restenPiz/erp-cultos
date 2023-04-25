@@ -196,6 +196,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function (
     Route::post('/updatePrayer/{id}', [prayerController::class, 'updatePrayer'])->middleware(['auth'])->name('updatePrayer');
 });
 
+//Inicio das rotas para eliminar o comunicado
 Route::get('/deleteAnnouncementMember/{id}', [memberAnnouncementController::class, 'deleteAnnouncementMember'])->middleware(['auth'])->name('deleteAnnouncementMember');
 Route::get('/deletePrayer/{id}', [prayerController::class, 'deletePrayer'])->middleware(['auth'])->name('deletePrayer');  
     
