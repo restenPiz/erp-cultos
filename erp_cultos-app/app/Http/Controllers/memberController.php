@@ -215,7 +215,7 @@ class memberController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $users=User::find(Request::input('theological_level'));
+            $users=User::where('theological_level','='.Request::input('theological_level'))->get();
 
             return back()->with($users);
         }
