@@ -215,6 +215,7 @@ class memberController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            //Declarando variavel que carrega os dados de input
             $thological=Request::input('theological_level');
             $surname=Request::input('surname');
 
