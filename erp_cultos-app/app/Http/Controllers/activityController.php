@@ -171,8 +171,8 @@ class activityController extends Controller
     }
     public function deleteActivity($id)
     {
-        if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
-
+        if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) 
+        {
             $activity = Activity::findOrFail($id);
             
             $activity->delete();
@@ -180,7 +180,9 @@ class activityController extends Controller
             Alert::success('Eliminado','A actividade foi eliminada com sucesso!');
 
             return redirect()->back();
-        }else{
+        }
+        else
+        {
             Alert::error('Nao autenticado!','O usuario nao esta autenticado no sistema!');
             
             return redirect()->route('login');
