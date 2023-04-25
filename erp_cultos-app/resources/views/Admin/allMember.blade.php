@@ -51,6 +51,11 @@
                                             <div>
                                                 <select class="form-control" data-choices data-choices-search-false name="Department" id="idStatus">
                                                     <option>...</option>
+
+                                                    {{--Inicio da parte contendo os niveis teologicos--}}
+
+                                                    {{--Fim da parte contendo os niveis teologicos--}}
+
                                                 </select>
                                             </div>
                                         </div>
@@ -59,7 +64,11 @@
                                             <div>
                                                 <select class="form-control" data-choices data-choices-search-false name="Day" id="idPayment">
                                                     <option>...</option>
-                                                    <option></option>
+
+                                                    {{--Inicio da parte contendo o papel de cada um--}}
+
+                                                    {{--Fim da parte contendo o papel de cada um--}}
+
                                                 </select>
                                             </div>
                                         </div>
