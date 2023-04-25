@@ -49,7 +49,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Department" id="idStatus">
+                                                <select class="form-control" data-choices data-choices-search-false name="theological_level" id="idStatus">
                                                     <option>...</option>
 
                                                     {{--Inicio da parte contendo os niveis teologicos--}}
@@ -66,7 +66,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Day" id="idPayment">
+                                                <select class="form-control" data-choices data-choices-search-false name="function" id="idPayment">
                                                     <option>...</option>
 
                                                     {{--Inicio da parte contendo o papel de cada um--}}
