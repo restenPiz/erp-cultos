@@ -217,6 +217,8 @@ class memberController extends Controller
         {
             $thological=Request::input('theological_level');
 
+            //Query build para retornar os usuarios filtrados
+            
             $users=DB::table('users')
                 ->where('theological_level',$thological)
                 ->where('userType','member')
