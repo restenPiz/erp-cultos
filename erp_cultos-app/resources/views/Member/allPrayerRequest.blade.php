@@ -142,7 +142,7 @@
                                                                     <select class="form-control" name="Id_user"
                                                                         id="status-field" required>
                                                                         <option value="{{ $prayer->Id_user }}">
-                                                                            {{ $prayer->users->name }}</option>
+                                                                            {{ $prayer->name($prayer->Id_user) }}</option>
                                                                         @foreach ($users as $user)
                                                                             <option value="{{ $user->id }}">
                                                                                 {{ $user->name }}</option>
