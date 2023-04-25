@@ -50,7 +50,9 @@
                                                     <option>...</option>
 
                                                     {{--Inicio da parte de ano de criacao--}}
-
+                                                    @foreach ( as )
+                                                        <option></option>
+                                                    @endforeach
                                                     {{--Fim da parte de ano de criacao--}}
 
                                                 </select>
@@ -63,7 +65,9 @@
                                                     <option>...</option>
 
                                                     {{--Inicio do foreach que vai retornar os dados do numero de usuarios--}}
-
+                                                    @foreach ( as )
+                                                        <option></option>
+                                                    @endforeach
                                                     {{--Fim da foreach--}}
 
                                                 </select>
