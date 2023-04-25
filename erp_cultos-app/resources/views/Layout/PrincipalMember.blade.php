@@ -40,19 +40,19 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="../Ficheiros/a1.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="../Ficheiros/a1.png" alt="" height="17">
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="../Ficheiros/a1.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-light.png" alt="" height="17">
+                                    <img src="../Ficheiros/a1.png" alt="" height="17">
                                 </span>
                             </a>
                         </div>
@@ -82,7 +82,7 @@
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ..."
+                                            <input type="text" class="form-control" placeholder="Pesquisar ..."
                                                 aria-label="Recipient's username">
                                             <button class="btn btn-primary" type="submit"><i
                                                     class="mdi mdi-magnify"></i></button>

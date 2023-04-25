@@ -18,7 +18,7 @@ class CreatePrayerRequestsTable extends Migration
             $table->string('Title');
             $table->string('Description',1000);
             $table->date('Date');
-            $table->timestamp('Hour');
+            $table->time('Hour');
 
             //Inicio da coluna de status
             $table->tinyInteger('status')->default(1);
