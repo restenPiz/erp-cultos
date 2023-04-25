@@ -216,12 +216,14 @@ class memberController extends Controller
         if(Auth::user()->hasRole('admin'))
         {
             $thological=Request::input('theological_level');
+            $surname=Request::input('surname');
 
             //Query build para retornar os usuarios filtrados
             
             $users=DB::table('users')
                 ->where('theological_level',$thological)
                 ->where('userType','member')
+                ->where('surname',$surname)
                 ->get();
 
             //Retornando os dados para se usar nas cards

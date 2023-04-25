@@ -49,7 +49,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="theological_level" id="idStatus">
+                                                <select class="form-control" data-choices data-choices-search-false name="theological_level" id="idStatus" required>
                                                     <option>...</option>
 
                                                     {{--Inicio da parte contendo os niveis teologicos--}}
@@ -66,13 +66,13 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="function" id="idPayment">
+                                                <select class="form-control" data-choices data-choices-search-false name="surname" id="idPayment" required>
                                                     <option>...</option>
 
                                                     {{--Inicio da parte contendo o papel de cada um--}}
 
                                                     @foreach ($users as $user)
-                                                        <option value="{{$user->function}}">{{$user->function}}</option>    
+                                                        <option value="{{$user->surname}}">{{$user->surname}}</option>    
                                                     @endforeach
 
                                                     {{--Fim da parte contendo o papel de cada um--}}
