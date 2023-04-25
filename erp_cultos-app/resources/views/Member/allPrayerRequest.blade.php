@@ -68,7 +68,7 @@
                                                 <td class="customer_name">{{ $prayer->Title }}</td>
                                                 <td class="email">{{ $prayer->Hour }}</td>
                                                 <td class="phone">{{ $prayer->Date }}</td>
-                                                <td class="dat">{{ $prayer->users->name }}</td>
+                                                <td class="dat">{{ $prayer->name($prayer->Id_user) }}</td>
 
                                                 @if($prayer->status==0)
                                                 <td><span class="badge bg-success">Aprovado</span></td>
