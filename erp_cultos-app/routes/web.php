@@ -32,6 +32,9 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['au
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
 
+    //Inicio das rotas de pesquisa da parte de administrador
+    Route::post('searchActivity', [activityController::class, 'searchActivity'])->middleware(['auth'])->name('searchActivity');
+
     //Inicio da rota contendo os comunicados direcionados ao administrador
     Route::get('/allReportAdmin', [memberAnnouncementController::class, 'allReportAdmin'])->middleware(['auth'])->name('allReportAdmin');
     Route::get('/showReportAdmin/{id}', [memberAnnouncementController::class, 'showReportAdmin'])->middleware(['auth'])->name('showReportAdmin');
@@ -106,8 +109,6 @@ Route::post('/storeActivity', [activityController::class, 'storeActivity'])->mid
 Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
 Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
 Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
-//Inicio da rota responsavel por fazer as pesquisas da parte de actividade
-Route::post('/search', [activityController::class, 'searchActivity'])->middleware(['auth'])->name('search');
 
 //Inicio das rotas da parte de pastor
 Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {

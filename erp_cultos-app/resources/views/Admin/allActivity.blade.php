@@ -40,16 +40,9 @@
                     <div class="card-body">
                         <div id="customerList">
                             <div class="card-body border border-dashed border-end-0 border-start-0">
-                                <form action="{{route('search')}}" method="post">
+                                <form action="{{route('searchActivity')}}" method="post">
                                     @csrf
-                                    <div class="row g-3">
-                                        <!--end col-->
-                                        {{--<div class="col-xxl-2 col-sm-6">
-                                            <div>
-                                                <input type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" id="demo-datepicker" placeholder="Select date">
-                                            </div>
-                                        </div>--}}
-                                        <!--end col-->
+                                    <div class="row g-3">=
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
                                                 <select class="form-control" data-choices data-choices-search-false name="Department" id="idStatus">
@@ -76,7 +69,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-1 col-sm-4">
                                             <div>
-                                                <button type="button" name="submit" class="btn btn-primary w-100" onclick="SearchData();"> <i class="ri-equalizer-fill me-1 align-bottom"></i>
+                                                <button type="submit" name="submit" class="btn btn-primary w-100"> <i class="ri-equalizer-fill me-1 align-bottom"></i>
                                                     Filtrar
                                                 </button>
                                             </div>
