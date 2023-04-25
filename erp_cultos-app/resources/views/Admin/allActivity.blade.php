@@ -57,7 +57,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Day" id="idPayment">
+                                                <select class="form-control" data-choices data-choices-search-false name="Group" id="idPayment">
                                                     <option>Seleccione a Data</option>
                                                     <option></option>
                                                     @foreach ($activitie as $act)

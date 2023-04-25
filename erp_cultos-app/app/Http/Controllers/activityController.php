@@ -220,11 +220,11 @@ class activityController extends Controller
                 ->get();        
 
             $depart=Request::input('Department');
-            $day=Request::input('Day');
+            $day=Request::input('Group');
 
             $activitie=DB::table('activities')
                 ->where('Department',$depart)
-                ->where('Day',$day)
+                ->where('Group',$day)
                 ->get();
             
             $announcements=Announcement::all();
