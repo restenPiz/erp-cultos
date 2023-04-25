@@ -32,7 +32,10 @@ class prayerController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
-            $prayers=Prayer_request::where('Id_user','=',Auth::user()->name);
+            $prayers=DB::table('prayer_requests')
+                ->where('Username',Auth::user()->name)
+                ->get();
+
 
             $users=DB::table('users')
             ->where('name',Auth::user()->name)
@@ -57,11 +60,8 @@ class prayerController extends Controller
             $table->Title=Request::input('Title');
             $table->Date=Request::input('Date');
             $table->Hour=Request::input('Hour');
-            $table->Id_user=Request::input('Id_user');
+            $table->Username=Request::input('Username');
 
-            $users=User::find(Request::input('Id_user'));
-
-            $users->save();
             $table->save();
 
             Alert::success('Adicionado!','O seu pedido de oracao foi adicionado com sucesso!');
@@ -85,11 +85,8 @@ class prayerController extends Controller
             $table->Title=Request::input('Title');
             $table->Date=Request::input('Date');
             $table->Hour=Request::input('Hour');
-            $table->Id_user=Request::input('Id_user');
+            $table->Username=Request::input('Username');
 
-            $users=User::find(Request::input('Id_user'));
-
-            $users->save();
             $table->save();
 
             Alert::success('Actualizado!','O seu pedido de oracao foi actualizado com sucesso!');

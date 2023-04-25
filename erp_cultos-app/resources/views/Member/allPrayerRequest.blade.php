@@ -68,7 +68,7 @@
                                                 <td class="customer_name">{{ $prayer->Title }}</td>
                                                 <td class="email">{{ $prayer->Hour }}</td>
                                                 <td class="phone">{{ $prayer->Date }}</td>
-                                                <td class="dat">{{ $prayer->name($prayer->Id_user) }}</td>
+                                                <td class="dat">{{ $prayer->Username }}</td>
 
                                                 @if($prayer->status==0)
                                                 <td><span class="badge bg-success">Aprovado</span></td>
@@ -139,12 +139,12 @@
                                                                 <div>
                                                                     <label for="status-field" class="form-label">Nome do
                                                                         Responsavel</label>
-                                                                    <select class="form-control" name="Id_user"
+                                                                    <select class="form-control" name="Username"
                                                                         id="status-field" required>
-                                                                        <option value="{{ $prayer->Id_user }}">
-                                                                            {{ $prayer->name($prayer->Id_user) }}</option>
+                                                                        <option value="{{ $prayer->Username }}">
+                                                                            {{ $prayer->Username }}</option>
                                                                         @foreach ($users as $user)
-                                                                            <option value="{{ $user->id }}">
+                                                                            <option value="{{ $user->name }}">
                                                                                 {{ $user->name }}</option>
                                                                         @endforeach
                                                                     </select>

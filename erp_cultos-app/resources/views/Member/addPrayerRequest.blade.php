@@ -39,10 +39,10 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Usuario</label>
-                                            <select class="form-control" name="Id_user">
+                                            <select class="form-control" name="Username">
                                                 <option>...</option>
                                                 @foreach ($users as $user)
-                                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                                    <option value="{{ $user->name }}">{{ $user->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
