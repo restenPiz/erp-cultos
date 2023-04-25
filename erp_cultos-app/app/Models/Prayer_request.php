@@ -12,17 +12,7 @@ class Prayer_request extends Model
     protected $table='prayer_requests';
 
     protected $fillable=[
-        'Id_user','Description','Date','Hour','Title'
+        'Username','Description','Date','Hour','Title'
     ];
 
-    //Inicio da parte de chaves estrangeiras
-    public function users()
-    {
-        return $this->hasMany(User::class);
-    }
-    
-    public function name($id)
-    {
-        return User::find($id)->name;
-    }
 }

@@ -85,8 +85,6 @@
                                 <i class='bx bx-moon fs-22'></i>
                             </button>
                         </div>
-
-                        @role('admin')
                             {{-- Inicio da parte que vai mostrar as notificacoes --}}
 
                             <div class="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
@@ -95,7 +93,7 @@
                                     data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                     <i class='bx bx-bell fs-22'></i>
                                     <span
-                                        class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ $total }}<span
+                                        class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">0{{--{{ $total }}--}}<span
                                             class="visually-hidden">unread messages</span></span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
@@ -135,7 +133,7 @@
                                     </div>
 
                                     <div class="tab-content position-relative" id="notificationItemsTabContent">
-                                        <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
+                                       {{-- <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
                                             role="tabpanel">
                                             <div data-simplebar style="max-height: 300px;" class="pe-2">
                                                 @foreach ($announcements as $announcement)
@@ -173,9 +171,9 @@
 
                                             </div>
 
-                                        </div>
+                                        </div>--}}
 
-                                        <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
+                                       {{-- <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
                                             aria-labelledby="messages-tab">
                                             <div data-simplebar style="max-height: 300px;" class="pe-2">
 
@@ -206,7 +204,7 @@
                                                     </div>
                                                 @endforeach
                                             </div>
-                                        </div>
+                                        </div>--}}
                                         <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
                                             aria-labelledby="alerts-tab"></div>
 
@@ -223,7 +221,6 @@
                             </div>
 
                             {{-- Fim do modal da parte de notificacoes --}}
-                        @endrole
 
                         <div class="dropdown ms-sm-3 header-item topbar-user">
                             <button type="button" class="btn" id="page-header-user-dropdown"
