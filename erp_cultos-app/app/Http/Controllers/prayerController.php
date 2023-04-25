@@ -32,7 +32,9 @@ class prayerController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
-            $prayers=Prayer_request::all();
+            $prayers=DB::table('prayer_requests')
+                ->where('Id_user',Auth::user()->id)
+                ->get();
 
             $users=DB::table('users')
             ->where('name',Auth::user()->name)
