@@ -211,4 +211,19 @@ class memberController extends Controller
             throw $th;
         }
     }
+    public function searchMember()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            $users=User::find(Request::input('theological_level'));
+
+            return back()->with($users);
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }

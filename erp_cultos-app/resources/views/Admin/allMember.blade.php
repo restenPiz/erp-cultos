@@ -83,7 +83,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-1 col-sm-4">
                                             <div>
-                                                <button type="button" name="submit" class="btn btn-primary w-100" onclick="SearchData();"> <i class="ri-equalizer-fill me-1 align-bottom"></i>
+                                                <button type="button" name="submit" class="btn btn-primary w-100"> <i class="ri-equalizer-fill me-1 align-bottom"></i>
                                                     Filtrar
                                                 </button>
                                             </div>
