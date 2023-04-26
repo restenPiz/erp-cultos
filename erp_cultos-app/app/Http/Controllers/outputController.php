@@ -37,6 +37,15 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            Request::validate([
+                'Value' => 'required',
+                'Description' => 'required',
+                'Hour' => 'required',
+                'Id_user' => 'required',
+                'Day' => 'required',
+                'Id_input' => 'required',
+            ]);
+
             $table=new Output();
             
             $table->Value=Request::input('Value');
@@ -91,6 +100,15 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            Request::validate([
+                'Value' => 'required',
+                'Description' => 'required',
+                'Hour' => 'required',
+                'Id_user' => 'required',
+                'Day' => 'required',
+                'Id_input' => 'required',
+            ]);
+            
             $table=Output::find($id);
             
             $table->Value=Request::input('Value');
