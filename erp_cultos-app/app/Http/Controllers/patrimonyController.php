@@ -54,6 +54,13 @@ class patrimonyController extends Controller
     public function storePatrimony()
     {
         if(Auth::user()->hasRole('admin')){
+
+            Request::validate([
+                'Name' => 'required',
+                'Quantity' => 'required',
+                'Status' => 'required',
+            ]);
+            
             $table=new Patrimony();
 
             $table->Name=Request::input('Name');
@@ -109,6 +116,12 @@ class patrimonyController extends Controller
     public function updatePatrimony($id)
     {
         if(Auth::user()->hasRole('admin')){
+            
+            Request::validate([
+                'Name' => 'required',
+                'Quantity' => 'required',
+                'Status' => 'required',
+            ]);
 
             $patrimony=Patrimony::findOrFail($id);
             $patrimony->Name=Request::input('Name');

@@ -55,6 +55,14 @@ class prayerController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
+            Request::validate([
+                'Description' => 'required',
+                'Title' => 'required',
+                'Date' => 'required',
+                'Hour' => 'required',
+                'Username' => 'required',
+            ]);
+
             $table=new Prayer_request();
 
             $table->Description=Request::input('Description');
@@ -80,6 +88,14 @@ class prayerController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
+            Request::validate([
+                'Description' => 'required',
+                'Title' => 'required',
+                'Date' => 'required',
+                'Hour' => 'required',
+                'Username' => 'required',
+            ]);
+            
             $table=Prayer_request::find($id);
 
             $table->Description=Request::input('Description');
