@@ -99,11 +99,7 @@
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Entrar</button>
                                         </div>
-
-                                        
                                         <br>Ainda nao tens uma conta? <a href="{{route('autoMember')}}">Registre-se</a>
-
-
                                     </form>
                                 </div>
                             </div>
