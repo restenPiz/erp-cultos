@@ -46,6 +46,17 @@ class worship_leaderController extends Controller
     {
         if (Auth::user()->hasRole('admin')) {
 
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'surname' => 'required',
+                'function' => 'required',
+                'theological_level' => 'required',
+                'contact' => 'required',
+                'userType' => 'required',
+                'password' => 'required',
+            ]);
+
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,

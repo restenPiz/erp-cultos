@@ -60,6 +60,16 @@ class shepherdController extends Controller
 
             $total=$count_report+$count_announcement;
             
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'surname' => 'required',
+                'function' => 'required',
+                'theological_level' => 'required',
+                'contact' => 'required',
+                'userType' => 'required',
+                'password' => 'required',
+            ]);
 
             $user = User::create([
                 'name' => $request->name,

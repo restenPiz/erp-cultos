@@ -51,6 +51,14 @@ class reportActivitiesController extends Controller
     public function storeReportActivities()
     {
         if (Auth::user()->hasRole('shepherd')) {
+
+            Request::validate([
+                'Title' => 'required',
+                'Id_user' => 'required',
+                'Date' => 'required',
+                'Hour' => 'required',
+            ]);
+
             $table = new ReportActivity();
 
             $table->Title = Request::input('Title');
@@ -76,6 +84,14 @@ class reportActivitiesController extends Controller
     public function updateReportActivities($id)
     {
         if (Auth::user()->hasRole('shepherd')) {
+
+            Request::validate([
+                'Title' => 'required',
+                'Id_user' => 'required',
+                'Date' => 'required',
+                'Hour' => 'required',
+            ]);
+            
             $table = ReportActivity::findOrFail($id);
 
             $table->Title = Request::input('Title');
