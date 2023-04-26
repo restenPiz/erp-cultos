@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\validate;
 
 class activityController extends Controller
 {
@@ -66,6 +67,15 @@ class activityController extends Controller
     public function storeActivity()
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
+
+            //Inicio do metodo para validar os campos
+            Request::validate([
+                'Hour' => 'required',
+                'Title' => 'required',
+                'Day' => 'required',
+                'Group' => 'required',
+                'Id_user' => 'required',
+            ]);
 
             $table = new Activity();
 
@@ -142,6 +152,15 @@ class activityController extends Controller
     public function updateActivity($id)
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
+
+            //Inicio do metodo para validar os campos de input
+            Request::validate([
+                'Hour' => 'required',
+                'Title' => 'required',
+                'Day' => 'required',
+                'Group' => 'required',
+                'Id_user' => 'required',
+            ]);
 
             $activities = Activity::findOrFail($id);
 

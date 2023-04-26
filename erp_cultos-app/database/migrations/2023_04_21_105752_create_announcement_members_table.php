@@ -17,7 +17,7 @@ class CreateAnnouncementMembersTable extends Migration
             $table->id();
             $table->string('Type');
             $table->string('Description',10000);
-            $table->string('Hour');
+            $table->time('Hour');
             $table->tinyInteger('status')->default(1);
 
             //Inicio da coluna contendo a chave estrangeiraa
