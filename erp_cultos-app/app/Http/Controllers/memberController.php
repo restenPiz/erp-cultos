@@ -25,6 +25,27 @@ class memberController extends Controller
 {
     public function loginMember()
     {
+        Request::validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'number_bi' => 'required',
+            'profission' => 'required',
+            'baptism' => 'required',
+            'time_of_church' => 'required',
+            'affiliation' => 'required',
+            'gender' => 'required',
+            'household' => 'required',
+            'date_of_birth' => 'required',
+            'marital_status' => 'required',
+            'surname' => 'required',
+            'function' => 'required',
+            'theological_level' => 'required',
+            'contact' => 'required',
+            'userType' => 'required',
+            'File' => 'required',
+        ]);
+
         $table=new User();
 
         $table->name=Request::input('name');
