@@ -221,7 +221,7 @@
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user"
-                                        src="{{Auth::user()->File}}" alt="Header Avatar">
+                                        src="../Ficheiros/homem.jpg" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
                                         <span
                                             class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
@@ -790,39 +790,6 @@
     <script src="../assets/libs/gridjs/gridjs.umd.js"></script>
     <!-- gridjs init -->
     <script src="../assets/js/pages/gridjs.init.js"></script>
-
-    {{--Inicio do script para informar caso exista um dado digitado no input de pesquisa--}}
-
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-            $('#search').on('input', function() {
-                var query = $(this).val();
-                $.ajax({
-                    url: '{{ route("search") }}',
-                    method: 'GET',
-                    data: {
-                        q: query
-                    },
-                    dataType: 'json',
-                    success: function(resultados) {
-                        var html = '';
-                        $.each(resultados, function(key, resultado) {
-                            html += '<p>' + resultado.Title + '</p>';
-                        });
-                        $('#Result').html(html);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.log(textStatus, errorThrown);
-                    }
-                });
-            });
-        });
-
-    </script>
-
-    {{--Fim do script--}}
-
 
 </body>
 

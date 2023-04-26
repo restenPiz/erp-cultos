@@ -15,7 +15,7 @@ class CreateCultsTable extends Migration
     {
         Schema::create('cults', function (Blueprint $table) {
             $table->id();
-            $table->string('Day_of_cult');
+            $table->date('Day_of_cult');
             $table->string('Hour');
             $table->string('Duration');
             $table->string('Leader');
