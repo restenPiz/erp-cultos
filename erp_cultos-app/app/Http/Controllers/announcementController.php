@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\validate;
 class announcementController extends Controller
 {
     public function addAnnouncement()
@@ -50,6 +51,14 @@ class announcementController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            //Inicio do metodo para validar os campos
+            Request::validate([
+                'Type' => 'required',
+                'Description' => 'required',
+                'Hour' => 'required',
+                'Id_user' => 'required',
+            ]);
+
             $table=new Announcement();
 
             $table->Type=Request::input('Type');
@@ -77,6 +86,14 @@ class announcementController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            //Inicio do metodo para validar os campos
+            Request::validate([
+                'Type' => 'required',
+                'Description' => 'required',
+                'Hour' => 'required',
+                'Id_user' => 'required',
+            ]);
+
             $announcements=Announcement::findOrFail($id);
 
             $announcements->Type=Request::input('Type');
