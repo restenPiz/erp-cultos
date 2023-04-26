@@ -284,7 +284,7 @@
                 <!--end col-->
                 <div class="col">
                     <div class="hstack gap-2 justify-content-end">
-                        <a href="{{route('loginMembers')}}" class="btn btn-success">Login</a>
+                        <a href="{{route('login')}}" class="btn btn-success">Login</a>
                         <button type="submit" name="submit" class="btn btn-primary">Cadastrar-me</a>
                     </div>
                 </div>
