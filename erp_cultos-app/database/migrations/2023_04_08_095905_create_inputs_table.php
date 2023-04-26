@@ -18,7 +18,7 @@ class CreateInputsTable extends Migration
             $table->float('Offert_value');
             $table->string('Input_type');
             $table->string('Description',1000);
-            $table->string('Day');
+            $table->date('Day');
             $table->float('Offert_value_confirmation');
 
             //Inicio da coluna contendo a chave estrangeiraa
