@@ -17,7 +17,7 @@ class CreateAnnouncementsTable extends Migration
             $table->id();
             $table->string('Type');
             $table->string('Description',10000);
-            $table->string('Hour');
+            $table->time('Hour');
 
             //Inicio da coluna contendo a chave estrangeiraa
             $table->integer('Id_user')->unsigned();
