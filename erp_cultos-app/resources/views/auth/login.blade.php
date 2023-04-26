@@ -100,9 +100,9 @@
                                             <button class="btn btn-success w-100" type="submit">Entrar</button>
                                         </div>
 
-                                        {{--<div class="mb-3">
-                                            <a class="form-control" href="{{route('register')}}">Registre-se</a>
-                                        </div>--}}
+                                        
+                                        <br>Ainda nao tens uma conta? <a href="{{route('autoMember')}}">Registre-se</a>
+
 
                                     </form>
                                 </div>
