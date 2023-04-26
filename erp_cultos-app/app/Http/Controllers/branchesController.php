@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\validate;
 
 class branchesController extends Controller
 {
@@ -57,6 +58,14 @@ class branchesController extends Controller
     {
         if (Auth::user()->hasRole('admin')) 
         {
+            Request::validate([
+                'Name' => 'required',
+                'Creation_year' => 'required',
+                'Address' => 'required',
+                'Number_of_members' => 'required',
+                'Id_user' => 'required',
+            ]);
+
             $table = new Branche();
 
             $table->Name = Request::input('Name');
@@ -123,6 +132,14 @@ class branchesController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            Request::validate([
+                'Name' => 'required',
+                'Creation_year' => 'required',
+                'Address' => 'required',
+                'Number_of_members' => 'required',
+                'Id_user' => 'required',
+            ]);
+
             $table=Branche::findOrFail($id);
 
             $table->Name=Request::input('Name');
