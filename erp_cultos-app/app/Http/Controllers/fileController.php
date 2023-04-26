@@ -30,6 +30,14 @@ class fileController extends Controller
     public function storeFile()
     {
         if (Auth::user()->hasRole('worship_leader')) {
+
+            Request::validate([
+                'Name_file' => 'required',
+                'Type_file' => 'required',
+                'Description' => 'required',
+                'File' => 'required',
+            ]);
+
             $table = new Files();
 
             $table->Name_file = Request::input('Name_file');
@@ -75,6 +83,14 @@ class fileController extends Controller
     public function updateFile($id)
     {
         if (Auth::user()->hasRole('worship_leader')) {
+
+            Request::validate([
+                'Name_file' => 'required',
+                'Type_file' => 'required',
+                'Description' => 'required',
+                'File' => 'required',
+            ]);
+            
             $file = Files::findOrFail($id);
 
             $file->Name_file = Request::input('Name_file');

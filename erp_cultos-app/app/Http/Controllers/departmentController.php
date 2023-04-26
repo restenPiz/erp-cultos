@@ -163,6 +163,7 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            //Inicio do loop que e responsavel por colocar os usuarios dentro do departamento
             for ($i = 0; $i < sizeof(Request::input('Id_user')); $i++) {
 
                 $department = new member_department();
