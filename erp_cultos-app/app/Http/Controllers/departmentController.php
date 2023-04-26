@@ -95,6 +95,10 @@ class departmentController extends Controller
     {
         if(Auth::user()->hasRole('admin')){
 
+            Request::validate([
+                'Name' => 'required',
+            ]);
+
             $table=new Department();
 
             $table->Name=Request::input('Name');
@@ -115,6 +119,9 @@ class departmentController extends Controller
     public function updateDepartment($id)
     {
         if(Auth::user()->hasRole('admin')){
+            Request::validate([
+                'Name' => 'required',
+            ]);
 
             $table=Department::find($id);
 

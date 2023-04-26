@@ -133,6 +133,21 @@ class cultController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            //Inicio do metodo de validacao de campos de input
+            Request::validate([
+                'Day_of_cult' => 'required',
+                'Name_cult' => 'required',
+                'Hour' => 'required',
+                'Duration' => 'required',
+                'Leader' => 'required',
+                'Preacher' => 'required',
+                'Title' => 'required',
+                'Book' => 'required',
+                'Chapter' => 'required',
+                'Verse' => 'required',
+                'Description' => 'required',
+            ]);
+
             $cult=Cult::findOrFail($id);
 
             $cult->Day_of_cult=Request::input('Day_of_cult');
