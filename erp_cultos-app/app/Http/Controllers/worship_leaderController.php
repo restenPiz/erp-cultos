@@ -15,6 +15,7 @@ use App\Models\Activity;
 use App\Models\Announcement;
 use App\Models\Cult;
 use App\Models\ReportActivity;
+use App\Http\Requests\validate;
 
 class worship_leaderController extends Controller
 {

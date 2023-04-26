@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\validate;
 class memberController extends Controller
 {
     public function loginMember()

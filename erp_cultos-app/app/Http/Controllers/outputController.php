@@ -13,6 +13,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
+use App\Http\Requests\validate;
 
 class outputController extends Controller
 {

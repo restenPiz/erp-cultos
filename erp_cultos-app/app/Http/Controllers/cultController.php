@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\validate;
 
 class cultController extends Controller
 {
@@ -53,7 +54,20 @@ class cultController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            
+            Request::validate([
+                'Day_of_cult' => 'required',
+                'Name_cult' => 'required',
+                'Hour' => 'required',
+                'Duration' => 'required',
+                'Leader' => 'required',
+                'Preacher' => 'required',
+                'Title' => 'required',
+                'Book' => 'required',
+                'Chapter' => 'required',
+                'Verse' => 'required',
+                'Description' => 'required',
+            ]);
+
             $table=new Cult();
 
             $table->Day_of_cult=Request::input('Day_of_cult');

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use Alert;
+use App\Http\Requests\validate;
 
 class memberAnnouncementController extends Controller
 {

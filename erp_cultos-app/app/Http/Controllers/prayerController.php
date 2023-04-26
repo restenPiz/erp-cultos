@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Request;
 use Illuminate\Support\Facades\Auth;
 use Alert;
+use App\Http\Requests\validate;
 
 class prayerController extends Controller
 {
