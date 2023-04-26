@@ -57,6 +57,15 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            Request::validate([
+                'Offert_value' => 'required',
+                'Offert_value_confirmation' => 'required',
+                'Input_type' => 'required',
+                'Description' => 'required',
+                'Id_user' => 'required',
+                'Day' => 'required',
+            ]);
+
             $input=new Input();
 
             $input->Offert_value=Request::input('Offert_value');
@@ -86,6 +95,15 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            Request::validate([
+                'Offert_value' => 'required',
+                'Offert_value_confirmation' => 'required',
+                'Input_type' => 'required',
+                'Description' => 'required',
+                'Id_user' => 'required',
+                'Day' => 'required',
+            ]);
+            
             $input=Input::findOrFail($id);
 
             $input->Offert_value=Request::input('Offert_value');
