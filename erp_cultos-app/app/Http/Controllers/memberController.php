@@ -62,7 +62,7 @@ class memberController extends Controller
 
         Alert::success('Adicionado!','O membro foi adicionaod com sucesso!');
 
-        return redirect()->route('Login_member');
+        return redirect()->back();
     }
     public function dashboardMember()
     {
@@ -76,41 +76,6 @@ class memberController extends Controller
 
             return redirect()->route('login');
         }
-    }
-    public function logout(Request $request)
-    {
-        Alert::success('Logout concluido');
-
-        Auth::guard('web')->logout();
-
-        Request::session()->invalidate();
-
-        Request::session()->regenerateToken();
-
-        return view('Member.login');
-    }
-    public function Login_member(LoginRequest $request)
-    {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        Alert::success('Bem Vindo!');
-
-        if(Auth::user()->hasRole('member'))
-        {
-            $files = DB::table('files')->where('Type_file', 'Documento')->get();
-            $images = DB::table('files')->where('Type_file', 'Imagem')->get();
-            $videos = DB::table('files')->where('Type_file', 'Video')->get();
-            $audios = DB::table('files')->where('Type_file', 'Audio')->get();
-
-            return view('Member.Index', compact('files', 'images', 'videos','audios'));
-        }
-        else
-        {
-            return redirect()->route('login');
-        }
-
     }
     public function allMember()
     {
