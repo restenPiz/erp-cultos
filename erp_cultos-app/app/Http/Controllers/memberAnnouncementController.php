@@ -56,6 +56,14 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
+
+            Request::validate([
+                'Type' => 'required',
+                'Description' => 'required',
+                'Hour' => 'required',
+                'Id_user' => 'required',
+            ]);
+
             $table=new Announcement_member();
 
             $table->Type=Request::input('Type');
@@ -83,6 +91,13 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
+            Request::validate([
+                'Type' => 'required',
+                'Description' => 'required',
+                'Hour' => 'required',
+                'Id_user' => 'required',
+            ]);
+            
             $announcements=Announcement_member::findOrFail($id);
 
             $announcements->Type=Request::input('Type');
