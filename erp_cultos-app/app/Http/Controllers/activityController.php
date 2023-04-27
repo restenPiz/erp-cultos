@@ -211,13 +211,11 @@ class activityController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $department=Request::input('Department');
-            $date=Request::input('Day');
+            $department=Request::input('Group');
 
             //Retornando os dados de pesquisa
-            $pesquisas=DB::table('activities')
-                ->where('Department',$department)
-                ->where('Hour',$date)
+            $activitie=DB::table('activities')
+                ->where('Group',$department)
                 ->get();
 
             //Retornando os dados para se usar nas cards
@@ -248,17 +246,12 @@ class activityController extends Controller
 
             $depart=Request::input('Department');
             $day=Request::input('Group');
-
-            $activitie=DB::table('activities')
-                ->where('Department',$depart)
-                ->where('Group',$day)
-                ->get();
             
             $announcements=Announcement::all();
             
             $activities=ReportActivity::all();
 
-            return view('Admin.allActivity', compact('pesquisas','activitie','users','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));           
+            return view('Admin.allActivity', compact('activitie','users','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));           
         }
         else
         {

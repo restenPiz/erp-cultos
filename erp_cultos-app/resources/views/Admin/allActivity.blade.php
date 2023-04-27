@@ -42,10 +42,10 @@
                             <div class="card-body border border-dashed border-end-0 border-start-0">
                                 <form action="{{route('searchActivity')}}" method="post">
                                     @csrf
-                                    <div class="row g-3">=
+                                    <div class="row g-3">
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Department" id="idStatus">
+                                                <select class="form-control" data-choices data-choices-search-false name="Group" id="idStatus">
                                                     <option>Seleccione o Departamento</option>
                                                     <option></option>
                                                     @foreach ($departments as $department)
@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-4 col-sm-6">
+                                        {{--<div class="col-xxl-4 col-sm-6">
                                             <div>
                                                 <select class="form-control" data-choices data-choices-search-false name="Day" id="idPayment">
                                                     <option>Seleccione a Data</option>
@@ -65,7 +65,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div>--}}
                                         <!--end col-->
                                         <div class="col-xxl-1 col-sm-4">
                                             <div>
