@@ -26,7 +26,7 @@
                                 <img src="../assets/images/users/avatar-1.jpg"
                                     class="rounded-circle avatar-xl img-thumbnail user-profile-image" alt="user-profile-image">
                                 <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                    <input id="profile-img-file-input" type="file" class="profile-img-file-input">
+                                    <input id="profile-img-file-input" type="file" class="profile-img-file-input" required>
                                     <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
                                         <span class="avatar-title rounded-circle bg-light text-body">
                                             <i class="ri-camera-fill"></i>
@@ -63,7 +63,7 @@
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Nome do Ficheiro</label>
                                                 <input type="text" class="form-control" id="firstnameInput" name="Name_file"
-                                                    placeholder="Nome do Ficheiro">
+                                                    placeholder="Nome do Ficheiro" required>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -71,7 +71,7 @@
                                             <div class="mb-3">
                                                 <label for="lastnameInput" class="form-label">Tipo de Ficheiro</label>
 
-                                                <select class="form-control" name="Type_file">
+                                                <select class="form-control" name="Type_file" required>
                                                     <option>...</option>
                                                     <option value="Imagem">Imagem</option>
                                                     <option value="Video">Video</option>
@@ -85,7 +85,7 @@
                                             <div class="mb-3">
                                                 <label for="phonenumberInput" class="form-label">Descricao</label>
                                                 <input type="text" class="form-control" name="Description"
-                                                    placeholder="Digite a descricao">
+                                                    placeholder="Digite a descricao" required>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -94,7 +94,7 @@
                                                 <div class="dropzone">
                                                     <div class="fallback">
                                                         <input name="File" type="file" multiple="multiple"
-                                                            class="form-control">
+                                                            class="form-control" required>
                                                     </div>
                                                     <div class="dz-message needsclick" style="text-align: center">
                                                         <div class="mb-3">
