@@ -92,8 +92,8 @@
                                     
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
+                                            <label class="form-label">Genero</label>
                                             <select class="form-control" name="gender">
-                                                <label for="labelInput" class="form-label">Genero</label>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                             </select>
