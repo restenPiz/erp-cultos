@@ -226,8 +226,16 @@
                             <button type="button" class="btn" id="page-header-user-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
+                                    @if(Auth::user()->gender=='Masculino')
                                     <img class="rounded-circle header-profile-user"
-                                        src="/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                        src="../Ficheiros/homem.jpg" alt="Header Avatar">
+                                    @elseif(Auth::user()->gender=='Femenino')
+                                    <img class="rounded-circle header-profile-user"
+                                        src="../Ficheiros/mulher.jpg" alt="Header Avatar">
+                                    @else
+                                    <img class="rounded-circle header-profile-user"
+                                    src="../Ficheiros/dif.jpg" alt="Header Avatar">
+                                    @endif
                                     <span class="text-start ms-xl-2">
                                         <span
                                             class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
