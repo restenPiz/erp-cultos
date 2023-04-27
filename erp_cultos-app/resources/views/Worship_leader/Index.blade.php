@@ -155,7 +155,7 @@
                                                     1.Evangelizar aos nao alcancados ou perdidos(Rm.15:20)<br>
                                                     2.Ensinar a guardar e obdecer todas as coisas que jesus ordenou(Mt.28:19-20)<br>
                                                     3.Treinar e capacitar lideres para obra(2 Tm.2:2)<br>
-                                                    4.Fazer discipulos de cristo em todas as nacoes<br>
+                                                    4.Fazer discipulos de cristo em todas as nacoes<br><br>
                                                 
                                                 <li>O nosso proposito: MT.22:37-40; MT.28:19-20</li><br>
                                                     
