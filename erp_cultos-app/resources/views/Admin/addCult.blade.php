@@ -19,14 +19,14 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Dia de Culto</label>
-                                            <input type="date" class="form-control" id="basiInput" name="Day_of_cult">
+                                            <input type="date" class="form-control" id="basiInput" name="Day_of_cult" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" id="labelInput" name="Hour">
+                                            <input type="time" class="form-control" id="labelInput" name="Hour" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -34,7 +34,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Duracao</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Duracao do Culto" name="Duration">
+                                                placeholder="Duracao do Culto" name="Duration" required>
                                         </div>
                                     </div>
                                 </div>
@@ -60,21 +60,21 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Dirigente</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o nome do Dirigente do culto" name="Leader">
+                                                placeholder="Digite o nome do Dirigente do culto" name="Leader" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Nome do Culto</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o nome do culto" name="Name_cult">
+                                                placeholder="Digite o nome do culto" name="Name_cult" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Pregador</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o nome do Pregador" name="Preacher">
+                                                placeholder="Digite o nome do Pregador" name="Preacher" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -82,21 +82,21 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Tema do Culto</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Digite o Tema do Culto" name="Title">
+                                                placeholder="Digite o Tema do Culto" name="Title" required>
                                         </div>
                                     </div>
                                     <!--end col--><div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Livro</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o nome do Livro" name="Book">
+                                                placeholder="Digite o nome do Livro" name="Book" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Capitulo</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o capitulo" name="Chapter">
+                                                placeholder="Digite o capitulo" name="Chapter" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -104,7 +104,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Versiculo</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Digite o Versiculo" name="Verse">
+                                                placeholder="Digite o Versiculo" name="Verse" required>
                                         </div>
                                     </div>
                                 </div>
