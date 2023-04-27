@@ -212,12 +212,14 @@ class activityController extends Controller
         if(Auth::user()->hasRole('admin'))
         {
             $department=Request::input('Department');
-            $date=Request::input('Date');
+            $date=Request::input('Day');
 
+            //Retornando os dados de pesquisa
             $pesquisas=DB::table('activities')
                 ->where('Department',$department)
                 ->where('Hour',$date)
                 ->get();
+
             //Retornando os dados para se usar nas cards
             $count_branches=Branche::count();
             $count_activities=Activity::count();
