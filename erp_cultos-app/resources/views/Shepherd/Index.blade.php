@@ -4,8 +4,8 @@
      
      <div class="row">
         <div class="col-lg-12">
-            <div class="card mt-n4 mx-n4">
-                <div class="bg-soft-warning">
+            <div class="card {{--mt-n4 mx-n4--}}">
+                <div class="{{---bg-soft-warning--}}bg-primary">
                     <div class="card-body pb-0 px-4">
                         <div class="row mb-3">
                             <div class="col-md">
@@ -19,9 +19,9 @@
                                     </div>
                                     <div class="col-md">
                                         <div>
-                                            <h4 class="fw-bold">ERP - Cultos</h4>
+                                            <h4 class="fw-bold" style="color:white">ERP - Cultos</h4>
                                             <div class="hstack gap-3 flex-wrap">
-                                                <div><i class="ri-building-line align-bottom me-1"></i> MICEC</div>
+                                                <div style="color:white"><i class="ri-building-line align-bottom me-1" style="color:white"></i> MICEC</div>
                                             </div>
                                         </div>
                                     </div>
