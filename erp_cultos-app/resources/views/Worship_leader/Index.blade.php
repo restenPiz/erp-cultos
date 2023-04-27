@@ -28,16 +28,16 @@
             <div class="row g-4">
                 <div class="col-auto">
                     <div class="avatar-lg">
-                            @if(Auth::user()->gender=='Masculino')
-                            <img class="img-thumbnail rounded-circle" alt="user-img"
-                                src="../Ficheiros/homem.jpg">
-                            @elseif(Auth::user()->gender=='Femenino')
-                            <img class="img-thumbnail rounded-circle" alt="user-img"
-                                src="../Ficheiros/mulher.jpg">
-                            @else
-                            <img class="img-thumbnail rounded-circle" alt="user-img"
-                            src="../Ficheiros/dif.jpg">
-                            @endif
+                        @if(Auth::user()->gender=='Masculino')
+                        <img class="img-thumbnail rounded-circle" alt="user-img"
+                            src="../Ficheiros/homem.jpg">
+                        @elseif(Auth::user()->gender=='Femenino')
+                        <img class="img-thumbnail rounded-circle" alt="user-img"
+                            src="../Ficheiros/mulher.jpg">
+                        @else
+                        <img class="img-thumbnail rounded-circle" alt="user-img"
+                        src="../Ficheiros/dif.jpg">
+                        @endif
                     </div>
                 </div>
                 <!--end col-->
