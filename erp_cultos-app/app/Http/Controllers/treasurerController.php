@@ -63,6 +63,7 @@ class treasurerController extends Controller
                 'contact' => 'required',
                 'userType' => 'required',
                 'password' => 'required',
+                'gender' => 'required',
             ]);
      
             $user = User::create([
@@ -73,6 +74,7 @@ class treasurerController extends Controller
                 'theological_level' => $request->theological_level,
                 'contact' => $request->contact,
                 'userType' => $request->userType,
+                'gender' => $request->gender,
                 'password' => Hash::make($request->password),
             ]);
 
@@ -99,6 +101,7 @@ class treasurerController extends Controller
             $user->surname=$request->surname;
             $user->contact=$request->contact;
             $user->function=$request->function;
+            $user->gender=$request->gender;
             $user->theological_level=$request->theological_level;
 
             $user->save();

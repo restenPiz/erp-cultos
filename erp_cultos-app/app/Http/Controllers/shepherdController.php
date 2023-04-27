@@ -69,6 +69,7 @@ class shepherdController extends Controller
                 'contact' => 'required',
                 'userType' => 'required',
                 'password' => 'required',
+                'gender' => 'required',
             ]);
 
             $user = User::create([
