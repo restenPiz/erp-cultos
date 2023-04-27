@@ -19,27 +19,27 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Titulo</label>
                                             <input type="text" class="form-control" id="basiInput" name="Title"
-                                                placeholder="Digite o titulo do pedido">
+                                                placeholder="Digite o titulo do pedido" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" id="labelInput" name="Hour">
+                                            <input type="time" class="form-control" id="labelInput" name="Hour" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Dia</label>
-                                            <input type="date" class="form-control" id="labelInput" name="Date">
+                                            <input type="date" class="form-control" id="labelInput" name="Date" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Usuario</label>
-                                            <select class="form-control" name="Username">
+                                            <select class="form-control" name="Username" required>
                                                 <option>...</option>
                                                 @foreach ($users as $user)
                                                     <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -50,7 +50,7 @@
                                     <div class="col-xxl-12 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Motivo</label>
-                                            <textarea cols="7"  rows="5" class="form-control" name="Description"></textarea>
+                                            <textarea cols="7"  rows="5" class="form-control" name="Description" required></textarea>
                                         </div>
                                     </div>
                                 </div>
