@@ -20,7 +20,7 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Nome</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu nome" name="name">
+                                                placeholder="Digite o seu nome" name="name" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -28,7 +28,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Email</label>
                                             <input type="email" class="form-control" id="labelInput"
-                                                placeholder="Digite o seu email" name="email">
+                                                placeholder="Digite o seu email" name="email" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -36,7 +36,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Senha</label>
                                             <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password">
+                                                placeholder="Digite a sua senha" name="password" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -44,7 +44,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Senha de Confirmacao</label>
                                             <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password_confirmation">
+                                                placeholder="Digite a sua senha" name="password_confirmation" required>
                                         </div>
                                     </div>
                                 </div>
@@ -69,14 +69,14 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Apelido</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu nome" name="surname">
+                                                placeholder="Digite o seu nome" name="surname" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Contacto</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu contacto" name="contact">
+                                                placeholder="Digite o seu contacto" name="contact" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -84,13 +84,13 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Funcao</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Escreva a sua funcao" name="function">
+                                                placeholder="Escreva a sua funcao" name="function" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="exampleDataList" class="form-label">Nivel Teologico</label>
-                                        <select class="form-control" name="theological_level">
+                                        <select class="form-control" name="theological_level" required>
                                             <option>...</option>
                                             <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
                                             <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
