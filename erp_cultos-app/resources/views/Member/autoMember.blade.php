@@ -57,7 +57,7 @@
                                         alt="user-profile-image">
                                     <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
                                         <input id="profile-img-file-input" type="file" class="profile-img-file-input"
-                                            name="File">
+                                            name="File" required>
                                         <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
                                             <span class="avatar-title rounded-circle bg-light text-body">
                                                 <i class="ri-camera-fill"></i>
@@ -102,7 +102,7 @@
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Primeiro Nome</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="Digite o seu nome" name="name">
+                                                    placeholder="Digite o seu nome" name="name" required>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -110,7 +110,7 @@
                                             <div class="mb-3">
                                                 <label for="lastnameInput" class="form-label">Email</label>
                                                 <input type="email" class="form-control" id="lastnameInput"
-                                                    placeholder="Digite o seu email" name="email">
+                                                    placeholder="Digite o seu email" name="email" required>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -118,7 +118,7 @@
                                             <div class="mb-3">
                                                 <label for="phonenumberInput" class="form-label">Password</label>
                                                 <input type="password" class="form-control" id="phonenumberInput"
-                                                    placeholder="Digite a sua senha" name="password">
+                                                    placeholder="Digite a sua senha" name="password" required>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -127,7 +127,7 @@
                                                 <label for="phonenumberInput" class="form-label">Password de
                                                     Confirmacao</label>
                                                 <input type="password" class="form-control" id="phonenumberInput"
-                                                    placeholder="Digite a sua senha" name="password_confirmation">
+                                                    placeholder="Digite a sua senha" name="password_confirmation" required>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -147,34 +147,34 @@
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Apelido</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="Digite o seu apelido" name="surname">
+                                                    placeholder="Digite o seu apelido" name="surname" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Numero de BI</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="EX: 0983939937982982BF" name="number_bi">
+                                                    placeholder="EX: 0983939937982982BF" name="number_bi" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Profissao</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="Digite a sua profissao" name="profission">
+                                                    placeholder="Digite a sua profissao" name="profission" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Filiacao</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="EX: filho de Peniel e Assuncao" name="affiliation">
+                                                    placeholder="EX: filho de Peniel e Assuncao" name="affiliation" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Genero</label>
-                                                <select class="form-control" name="gender">
+                                                <select class="form-control" name="gender" required>
                                                     <option>...</option>
                                                     <option value="Masculino">Masculino</option>
                                                     <option value="Femenino">Femenino</option>
@@ -185,7 +185,7 @@
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Morada</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="Escreva a sua morada" name="household">
+                                                    placeholder="Escreva a sua morada" name="household" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -193,21 +193,21 @@
                                                 <label for="firstnameInput" class="form-label">Data de
                                                     Nascimento</label>
                                                 <input type="date" class="form-control" id="firstnameInput"
-                                                    placeholder="EX: filho de Peniel e Assuncao" name="date_of_birth">
+                                                    placeholder="EX: filho de Peniel e Assuncao" name="date_of_birth" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Estado Civil</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="Digite o seu estado civil" name="marital_status">
+                                                    placeholder="Digite o seu estado civil" name="marital_status" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="firstnameInput" class="form-label">Contacto</label>
                                                 <input type="text" class="form-control" id="firstnameInput"
-                                                    placeholder="EX: 868749382" name="contact">
+                                                    placeholder="EX: 868749382" name="contact" required>
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -230,7 +230,7 @@
                                                     <div class="mb-3">
                                                         <label for="firstnameInput"
                                                             class="form-label">Baptismo</label>
-                                                        <select class="form-control" name="baptism">
+                                                        <select class="form-control" name="baptism" required>
                                                             <option>...</option>
                                                             <option value="Baptizado">Baptizado</option>
                                                             <option value="Nao Baptizado">Nao Baptizado</option>
@@ -243,14 +243,14 @@
                                                             Igreja</label>
                                                         <input type="text" class="form-control"
                                                             id="firstnameInput" placeholder="EX: 5 anos"
-                                                            name="time_of_church">
+                                                            name="time_of_church" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
                                                         <label for="firstnameInput" class="form-label">Nivel
                                                             Teologico</label>
-                                                        <select class="form-control" name="theological_level">
+                                                        <select class="form-control" name="theological_level" required>
                                                             <option>...</option>
                                                             <option value="Curso Basico em Teologia">Curso Basico em
                                                                 Teologia</option>
