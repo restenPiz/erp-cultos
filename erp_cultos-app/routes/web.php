@@ -44,9 +44,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     
     //Inicio da rota de todos os membros
     Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
+    
     //Inicio da rota responsavel por fazer todas pesquisas na parte de administrador
     Route::post('searchMember', [memberController::class, 'searchMember'])->middleware(['auth'])->name('searchMember');
-    Route::post('searchActivity', [activityController::class, 'activityMember'])->middleware(['auth'])->name('activityMember');
+    Route::post('searchActivity', [activityController::class, 'searchActivity'])->middleware(['auth'])->name('searchActivity');
 
     //Inicio da rota para poder ter acesso ao comunicado
     Route::get('/showAnnouncements/{id}', [dashboardController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncements');
