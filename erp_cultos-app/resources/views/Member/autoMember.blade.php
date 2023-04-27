@@ -131,13 +131,6 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        {{-- -<div class="col-lg-12">
-                                            <div class="hstack gap-2 justify-content-end">
-                                                <a href="#changePassword" data-bs-toggle="tab" role="tab" class="btn btn-success add-btn"><i
-                                                    class="ri-add-line align-bottom me-1"></i> Seguinte</a>
-                                            </div>
-                                        </div> --}}
-                                        <!--end col-->
                                     </div>
                                 </div>
                                 <!--end tab-pane-->
