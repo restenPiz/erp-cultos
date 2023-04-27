@@ -34,6 +34,6 @@ class AuthenticatedSessionController extends Controller
         
         Alert::info('Logout concluido');
 
-        return view('auth.login');
+        return redirect('/');
     }
 }

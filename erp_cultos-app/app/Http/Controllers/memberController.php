@@ -84,7 +84,7 @@ class memberController extends Controller
 
         Alert::success('Adicionado!','O membro foi adicionado com sucesso!');
 
-        return redirect()->route('dashboard');
+        return redirect()->back();
     }
     public function dashboardMember()
     {
