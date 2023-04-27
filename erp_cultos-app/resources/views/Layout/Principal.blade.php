@@ -226,6 +226,9 @@
                                     @elseif(Auth::user()->gender=='Femenino')
                                     <img class="rounded-circle header-profile-user"
                                         src="../Ficheiros/mulher.jpg" alt="Header Avatar">
+                                    @else
+                                    <img class="rounded-circle header-profile-user"
+                                    src="../Ficheiros/dif.jpg" alt="Header Avatar">
                                     @endif
                                     <span class="text-start ms-xl-2">
                                         <span
