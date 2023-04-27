@@ -70,7 +70,7 @@
                                     <div>
                                         <label for="date-field">Horario</label>
                                         <input type="time" class="form-control bg-light border-0" id="date-field"
-                                            data-provider="flatpickr" data-time="true" name="Hour">
+                                            data-provider="flatpickr" data-time="true" name="Hour" required>
                                     </div>
                                 </div>
                                 <!--end col-->

@@ -19,14 +19,14 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Valor</label>
                                             <input type="text" class="form-control" id="basiInput" name="Value"
-                                                placeholder="Valor">
+                                                placeholder="Valor" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Nome de Usuario</label>
-                                            <select class="form-control" name="Id_user">
+                                            <select class="form-control" name="Id_user" required>
                                                 <option>...</option>
                                                 @foreach ($users as $user)
                                                     <option value="{{$user->id}}">{{$user->name}}</option>
@@ -38,23 +38,23 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                              <label for="basiInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" id="basiInput" name="Hour">
+                                            <input type="time" class="form-control" id="basiInput" name="Hour" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Data de Saida</label>
-                                            <input type="date" class="form-control" id="basiInput" name="Day">
+                                            <input type="date" class="form-control" id="basiInput" name="Day" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Descricao</label>
-                                            <input type="text" class="form-control" id="labelInput" name="Description" placeholder="Digite as razoes para efectuar essa saida!">
+                                            <input type="text" class="form-control" id="labelInput" name="Description" placeholder="Digite as razoes para efectuar essa saida!" required>
                                         </div>
                                     </div>
                                     @foreach ($inputs as $input)
-                                    <input type="hidden" value="{{$input->id}}" name="Id_input">
+                                    <input type="hidden" value="{{$input->id}}" name="Id_input" required>
                                     @endforeach
                                 </div>
                                 <!--end row-->

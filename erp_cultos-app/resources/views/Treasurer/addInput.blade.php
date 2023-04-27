@@ -19,21 +19,21 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Valor</label>
                                             <input type="text" class="form-control" id="basiInput" name="Offert_value"
-                                                placeholder="Valor de ofertorio">
+                                                placeholder="Valor de ofertorio" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Valor de Confirmacao</label>
                                             <input type="text" class="form-control" id="basiInput" name="Offert_value_confirmation"
-                                                placeholder="Digite novamente o valor para confirmar">
+                                                placeholder="Digite novamente o valor para confirmar" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Metodo de Pagamento</label>
-                                            <select class="form-control" name="Input_type">
+                                            <select class="form-control" name="Input_type" required>
                                                 <option>...</option>
                                                 <option value="Cash">Cash</option>
                                                 <option value="M-pesa">M-pesa</option>
@@ -47,7 +47,7 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Nome do Usuario</label>
-                                            <select class="form-control" name="Id_user">
+                                            <select class="form-control" name="Id_user" required>
                                                 <option>...</option>
                                                 @foreach ($users as $user)
                                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -58,14 +58,14 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Dia</label>
-                                            <input type="date" class="form-control" id="labelInput" name="Day">
+                                            <input type="date" class="form-control" id="labelInput" name="Day" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Tipo de Entrada</label>
 
-                                            <select class="form-control" name="Description">
+                                            <select class="form-control" name="Description" required>
                                                 <option>...</option>
                                                 <option value="Ofertorio">Ofertorio</option>
                                                 <option value="Dizimo">Dizimo</option>
