@@ -82,7 +82,7 @@ class memberController extends Controller
 
         Auth::login($table);
 
-        Alert::success('Adicionado!','O membro foi adicionaod com sucesso!');
+        Alert::success('Adicionado!','O membro foi adicionado com sucesso!');
 
         return redirect()->route('dashboard');
     }
