@@ -19,27 +19,27 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Titulo</label>
                                             <input type="text" class="form-control" id="basiInput" name="Title"
-                                                placeholder="Digite o titulo da actividade">
+                                                placeholder="Digite o titulo da actividade" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Horario</label>
-                                            <input type="time" class="form-control" id="labelInput" name="Hour">
+                                            <input type="time" class="form-control" id="labelInput" name="Hour" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Dia</label>
-                                            <input type="date" class="form-control" id="labelInput" name="Day">
+                                            <input type="date" class="form-control" id="labelInput" name="Day" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Departamento</label>
-                                            <select class="form-control" name="Group">
+                                            <select class="form-control" name="Group" required>
                                                 <option>...</option>
                                                 @foreach ($departments as $department)
                                                     <option value="{{$department->id}}">{{$department->Name}}</option>
@@ -50,7 +50,7 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Responsavel</label>
-                                            <select class="form-control" name="Id_user">
+                                            <select class="form-control" name="Id_user" required>
                                                 <option>...</option>
                                                 @foreach ($users as $user)
                                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
