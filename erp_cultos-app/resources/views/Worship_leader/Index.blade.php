@@ -28,8 +28,16 @@
             <div class="row g-4">
                 <div class="col-auto">
                     <div class="avatar-lg">
-                        <img src="../assets/images/users/avatar-1.jpg" alt="user-img"
-                            class="img-thumbnail rounded-circle" />
+                        @if(Auth::user()->gender=='Masculino')
+                        <img class="rounded-circle header-profile-user"
+                            src="../Ficheiros/homem.jpg" alt="Header Avatar">
+                        @elseif(Auth::user()->gender=='Femenino')
+                        <img class="rounded-circle header-profile-user"
+                            src="../Ficheiros/mulher.jpg" alt="Header Avatar">
+                        @else
+                        <img class="rounded-circle header-profile-user"
+                        src="../Ficheiros/dif.jpg" alt="Header Avatar">
+                        @endif
                     </div>
                 </div>
                 <!--end col-->
