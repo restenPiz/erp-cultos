@@ -19,21 +19,21 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Nome do Objecto</label>
-                                            <input type="text" class="form-control" id="basiInput" name="Name" placeholder="Nome do Objecto">
+                                            <input type="text" class="form-control" id="basiInput" name="Name" placeholder="Nome do Objecto" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Quantidade</label>
-                                            <input type="text" class="form-control" id="basiInput" name="Quantity" placeholder="Quantidade">
+                                            <input type="text" class="form-control" id="basiInput" name="Quantity" placeholder="Quantidade" required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Situacao</label>
-                                            <select class="form-control" name="Status">
+                                            <select class="form-control" name="Status" required>
                                                 <option>...</option>
                                                 <option value="Danificado">Danificado</option>
                                                 <option value="Em Boas Condicoes">Em Boas Condicoes</option>

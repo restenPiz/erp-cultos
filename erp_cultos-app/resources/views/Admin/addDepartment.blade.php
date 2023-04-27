@@ -21,7 +21,7 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Nome do Departamento</label>
                                             <input type="text" class="form-control" id="basiInput" name="Name"
-                                                placeholder="Nome do Departamento">
+                                                placeholder="Nome do Departamento" required>
                                         </div>
                                     </div>
                                 </div>
