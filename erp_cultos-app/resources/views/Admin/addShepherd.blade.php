@@ -89,6 +89,15 @@
                                         </div>
                                     </div>
                                     <!--end col-->
+                                    
+                                    <div class="col-xxl-6 col-md-6">
+                                        <div>
+                                            <select class="form-control" name="gender">
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Femenino">Femenino</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="exampleDataList" class="form-label">Nivel Teologico</label>
                                         <select class="form-control" name="theological_level" required>
