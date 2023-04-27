@@ -23,7 +23,7 @@
     <div class="container-fluid">
         <div class="profile-foreground position-relative mx-n4 mt-n4">
             <div class="profile-wid-bg">
-                <img src="assets/images/profile-bg.jpg" alt="" class="profile-wid-img" />
+                <img src="" alt="" class="profile-wid-img" />
             </div>
         </div>
         <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
