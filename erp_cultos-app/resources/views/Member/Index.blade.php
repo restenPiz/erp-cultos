@@ -30,7 +30,7 @@
             <div class="row g-4">
                 <div class="col-auto">
                     <div class="avatar-lg">
-                        <img src="{{Auth::user()->File}}" alt="user-img"
+                        <img src="../{{Auth::user()->File}}" alt="user-img"
                             class="img-thumbnail rounded-circle" />
                     </div>
                 </div>
