@@ -308,8 +308,8 @@
                         </div>
                         <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
                             <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn w-sm btn-danger" id="delete-notification">Yes, Delete
-                                It!</button>
+                            <button type="button" class="btn w-sm btn-danger" id="delete-notification">Sim, Elimine
+                                Isto!</button>
                         </div>
                     </div>
 
