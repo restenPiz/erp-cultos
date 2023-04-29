@@ -126,6 +126,7 @@ class memberController extends Controller
             ->where('userType','member')
             ->get();
 
+            //Retorna a view de todos membros
             return view('Admin.allMember',compact('users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));            
         }
         else
