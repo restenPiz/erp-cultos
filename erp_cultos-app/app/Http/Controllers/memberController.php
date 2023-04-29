@@ -101,7 +101,7 @@ class memberController extends Controller
     }
     public function allMember()
     {
-        if(Auth::user()->hasRole('admin'))
+        if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd'))
         {
             //Retornando os dados para se usar nas cards
             $count_branches=Branche::count();
