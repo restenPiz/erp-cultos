@@ -29,6 +29,10 @@ Route::get('/', function () {
 Route::get('/dashShepherd', [dashboardController::class, 'indexShepherd'])->middleware(['auth'])->name('dashShepherd');
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
+//Inicio da rota de todos os membros
+Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
+    
+
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
 
@@ -41,9 +45,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
 
     //Inicio das rotas para bloqueio de membros
     Route::get('/updateStatus/{id}/{status}', [memberController::class, 'updateStatus'])->middleware(['auth'])->name('updateStatus');
-    
-    //Inicio da rota de todos os membros
-    Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
     
     //Inicio da rota responsavel por fazer todas pesquisas na parte de administrador
     Route::post('searchMember', [memberController::class, 'searchMember'])->middleware(['auth'])->name('searchMember');
