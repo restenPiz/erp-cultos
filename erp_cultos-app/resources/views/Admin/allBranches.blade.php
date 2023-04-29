@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <div id="customerList">
                             <div class="card-body border border-dashed border-end-0 border-start-0">
-                                <form action="{{route('search')}}" method="post">
+                                <form action="" method="post">
                                     @csrf
                                     <div class="row g-3">
                                         <div class="col-xxl-4 col-sm-6">
@@ -49,12 +49,7 @@
                                                 <select class="form-control" data-choices data-choices-search-false name="Creation_year" id="idStatus">
                                                     <option>...</option>
 
-                                                    {{--Inicio da parte de ano de criacao--}}
-                                                    @foreach ( as )
-                                                        <option></option>
-                                                    @endforeach
-                                                    {{--Fim da parte de ano de criacao--}}
-
+                                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -64,11 +59,6 @@
                                                 <select class="form-control" data-choices data-choices-search-false name="Number_of_members" id="idPayment">
                                                     <option>...</option>
 
-                                                    {{--Inicio do foreach que vai retornar os dados do numero de usuarios--}}
-                                                    @foreach ( as )
-                                                        <option></option>
-                                                    @endforeach
-                                                    {{--Fim da foreach--}}
 
                                                 </select>
                                             </div>
