@@ -108,7 +108,9 @@
                                             <th class="sort" data-sort="date">Papel</th>
                                             <th class="sort" data-sort="status">Nivel teologico</th>
                                             <th class="sort" data-sort="action">Contacto</th>
+                                            @role('admin')
                                             <th class="sort" data-sort="actio"></th>
+                                            @endrole
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
@@ -120,6 +122,7 @@
                                                 <td class="date">{{ $user->function }}</td>
                                                 <td class="date">{{ $user->theological_level }}</td>
                                                 <td class="status">{{ $user->contact }}</td>
+                                                @role('admin')
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="remove">
@@ -134,6 +137,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
+                                                @endrole
                                             </tr>
                                             <!-- Modal -->
                                             <div class="modal fade zoomIn" id="deleteRecordModal{{ $user->id }}"
