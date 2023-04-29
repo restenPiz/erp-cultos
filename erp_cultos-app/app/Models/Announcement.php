@@ -23,4 +23,8 @@ class Announcement extends Model
     {
         return $this->belongsTo(User::class,'Id_user');
     }
+    public function name($id)
+    {
+        return User::find($id)->name;
+    }
 }
