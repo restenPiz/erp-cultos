@@ -2,7 +2,6 @@
 @extends('Layout.Principal')
 @section('content')
 
-    @role('admin')
         {{-- Inicio da view que possui todo o codigo fonte --}}
 
         <!-- start page title -->
@@ -214,5 +213,4 @@
         <!-- end row -->
 
         {{-- Fim da view que possui o codigo fonte --}}
-    @endrole
 @endsection
