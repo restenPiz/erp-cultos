@@ -579,6 +579,21 @@
                             </li>
 
                             <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                    <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Culto</span>
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarForms">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="{{ route('allCult') }}" class="nav-link"
+                                                data-key="t-form-select">Detalhes do culto</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
                                 <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarPages">
                                     <i class="ri-pages-line"></i> <span data-key="t-pages">Comunicado</span>
@@ -672,6 +687,20 @@
                                     <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Index</span>
                                 </a>
                             </li> <!-- end Dashboard Menu -->
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                    <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Culto</span>
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarForms">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="{{ route('allCult') }}" class="nav-link"
+                                                data-key="t-form-select">Detalhes do culto</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
 
                             {{-- Fim do menu da parte de pastor --}}
                         @endrole
@@ -699,6 +728,21 @@
                                             <a href="{{ route('allInput') }}" class="nav-link" data-key="t-chat">
                                                 Detalhes
                                                 das Entradas </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                    <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Culto</span>
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarForms">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="{{ route('allCult') }}" class="nav-link"
+                                                data-key="t-form-select">Detalhes do culto</a>
                                         </li>
                                     </ul>
                                 </div>
