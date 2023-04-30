@@ -97,7 +97,7 @@ class cultController extends Controller
     }
     public function allCult()
     {
-        if(Auth::user()->hasRole('admin'))
+        if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd') || Auth::user()->hasRole('member') || Auth::user()->hasRole('worship_leader') || Auth::user()->hasRole('treasurer'))
         {
             //Retornando os dados para se usar nas cards
             $count_branches=Branche::count();
