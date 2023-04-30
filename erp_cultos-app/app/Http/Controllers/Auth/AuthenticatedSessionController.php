@@ -20,7 +20,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        Alert::success('Bem Vindo!');
+        Alert::success('Bem Vindo ao Sistema!');
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
