@@ -166,7 +166,7 @@ class memberController extends Controller
 
             if ($update_user) {
                 
-                Alert::info('Actualizado!','O seu comunicado foi enviado ao administrador!');
+                Alert::info('Actualizado!','O seu comunicado foi enviado ao administrador com sucesso!');
 
                 return redirect()->back();
             }
