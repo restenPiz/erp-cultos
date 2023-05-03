@@ -687,7 +687,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarForms">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="{{ route('allCult') }}" class="nav-link"
+                                            <a href="{{ route('allCultWorship_leader') }}" class="nav-link"
                                                 data-key="t-form-select">Detalhes do culto</a>
                                         </li>
                                     </ul>
@@ -733,7 +733,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarForms">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="{{ route('allCult') }}" class="nav-link"
+                                            <a href="{{ route('allCultTreasurer') }}" class="nav-link"
                                                 data-key="t-form-select">Detalhes do culto</a>
                                         </li>
                                     </ul>
