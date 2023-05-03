@@ -133,10 +133,10 @@
                                     </div>
 
                                     <div class="tab-content position-relative" id="notificationItemsTabContent">
-                                       {{-- <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
+                                       <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
                                             role="tabpanel">
                                             <div data-simplebar style="max-height: 300px;" class="pe-2">
-                                                @foreach ($announcements as $announcement)
+                                                @foreach ($activities as $announcement)
                                                     <div
                                                         class="text-reset notification-item d-block dropdown-item position-relative">
                                                         <div class="d-flex">
@@ -171,7 +171,7 @@
 
                                             </div>
 
-                                        </div>--}}
+                                        </div>
 
                                        {{-- <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
                                             aria-labelledby="messages-tab">
