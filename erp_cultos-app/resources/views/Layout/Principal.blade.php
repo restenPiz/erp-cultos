@@ -573,7 +573,7 @@
                                 <div class="collapse menu-dropdown" id="sidebarForms">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="{{ route('allCult') }}" class="nav-link"
+                                            <a href="{{ route('allCultShepherd') }}" class="nav-link"
                                                 data-key="t-form-select">Detalhes do culto</a>
                                         </li>
                                     </ul>
