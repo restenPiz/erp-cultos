@@ -34,6 +34,7 @@ Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['a
     
 //Inicio da rota que vai retornar todos os cultos
 Route::get('/allCult', [cultController::class, 'allCult'])->middleware(['auth'])->name('allCult');
+Route::get('/allCultMember', [cultController::class, 'allCultMember'])->middleware(['auth'])->name('allCultMember');
 
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
