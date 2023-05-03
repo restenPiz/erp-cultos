@@ -152,6 +152,9 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
 //Inicio das rotas da parte do lider de louvor
 Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leader']], function () {
 
+    //Inicio da parte de cultos do sistema
+    Route::get('/allCultWorship_leader', [cultController::class, 'allCultWorship_leader'])->middleware(['auth'])->name('allCultWorship_leader');
+
     //Inicio das rotas para gerir os ficheiros File
     Route::post('/storeFile', [fileController::class, 'storeFile'])->middleware(['auth'])->name('storeFile');
     Route::get('/addFile', [fileController::class, 'addFile'])->middleware(['auth'])->name('addFile');
