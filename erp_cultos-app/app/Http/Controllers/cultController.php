@@ -194,6 +194,21 @@ class cultController extends Controller
             return redirect()->route('login');
         }
     }
+    public function allCultTreasurer()
+    {
+        if(Auth::user()->hasRole('treasurer'))
+        {
+            $cults=Cult::all();
+
+            return view('Treasurer.allCultTreasurer',compact('cults'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema');
+
+            return redirect()->route('login');
+        }
+    }
     public function updateCult($id)
     {
         if(Auth::user()->hasRole('admin'))

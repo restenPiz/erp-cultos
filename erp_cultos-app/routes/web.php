@@ -168,6 +168,9 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
 //Inicio das rotas da parte de tesoureiro treasurer
 Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {
     
+    //Inicio da rota da parte de cultos
+    Route::get('/allCultTreasurer', [cultController::class, 'allCultTreasurer'])->middleware(['auth'])->name('allCultTreasurer');
+
     //Inicio da parte de insercao de entradas
     Route::post('/storeInput', [inputController::class, 'storeInput'])->middleware(['auth'])->name('storeInput');
     Route::get('/addInput', [inputController::class, 'addInput'])->middleware(['auth'])->name('addInput');
