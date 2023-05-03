@@ -33,10 +33,10 @@
                                             <span 
                                                 class="overflow-hidden border border-dashed d-flex align-items-center justify-content-center rounded"
                                                 style="height: 60px; width: 256px;">
-                                                <img  src="../Ficheiros/a1.png"
+                                                <img  src="/Ficheiros/a1.png"
                                                     class="card-logo card-logo-dark user-profile-image img-fluid"
                                                     alt="logo dark">
-                                                <img src="../Ficheiros/a1.png"
+                                                <img src="/Ficheiros/a1.png"
                                                     class="card-logo card-logo-light user-profile-image img-fluid"
                                                     alt="logo light">
                                             </span>

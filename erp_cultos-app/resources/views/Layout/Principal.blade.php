@@ -94,7 +94,7 @@
                                     data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                     <i class='bx bx-bell fs-22'></i>
                                     <span
-                                        class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">0{{--{{ $total }}--}}<span
+                                        class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ $total }}<span
                                             class="visually-hidden"></span></span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
@@ -131,7 +131,7 @@
                                     </div>
 
                                     <div class="tab-content position-relative" id="notificationItemsTabContent">
-                                       {{-- <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
+                                        <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
                                             role="tabpanel">
                                             <div data-simplebar style="max-height: 300px;" class="pe-2">
                                                 @foreach ($announcements as $announcement)
@@ -165,9 +165,9 @@
 
                                             </div>
 
-                                        </div>--}}
+                                        </div>
 
-                                        {{--<div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
+                                        <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
                                             aria-labelledby="messages-tab">
                                             <div data-simplebar style="max-height: 300px;" class="pe-2">
 
@@ -198,7 +198,7 @@
                                                     </div>
                                                 @endforeach
                                             </div>
-                                        </div>--}}
+                                        </div>
                                         <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
                                             aria-labelledby="alerts-tab"></div>
 

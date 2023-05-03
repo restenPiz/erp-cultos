@@ -228,13 +228,13 @@
                                 <span class="d-flex align-items-center">
                                     @if(Auth::user()->gender=='Masculino')
                                     <img class="rounded-circle header-profile-user"
-                                        src="../Ficheiros/homem.jpg" alt="Header Avatar">
+                                        src="/Ficheiros/homem.jpg" alt="Header Avatar">
                                     @elseif(Auth::user()->gender=='Femenino')
                                     <img class="rounded-circle header-profile-user"
-                                        src="../Ficheiros/mulher.jpg" alt="Header Avatar">
+                                        src="/Ficheiros/mulher.jpg" alt="Header Avatar">
                                     @else
                                     <img class="rounded-circle header-profile-user"
-                                    src="../Ficheiros/dif.jpg" alt="Header Avatar">
+                                    src="/Ficheiros/dif.jpg" alt="Header Avatar">
                                     @endif
                                     <span class="text-start ms-xl-2">
                                         <span
@@ -281,19 +281,19 @@
                 <!-- Dark Logo-->
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="../Ficheiros/a1.png" alt="" height="22">
+                        <img src="/Ficheiros/a1.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="../Ficheiros/a1.png" alt="" height="17">
+                        <img src="/Ficheiros/a1.png" alt="" height="17">
                     </span>
                 </a>
                 <!-- Light Logo-->
                 <br><a href="{{ route('dashboard') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="../Ficheiros/a1.png" alt="" height="30">
+                        <img src="/Ficheiros/a1.png" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="../Ficheiros/a1.png" alt="" height="30">
+                        <img src="/Ficheiros/a1.png" alt="" height="30">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
