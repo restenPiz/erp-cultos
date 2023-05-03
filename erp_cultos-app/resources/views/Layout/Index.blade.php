@@ -93,7 +93,7 @@
                                     data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                     <i class='bx bx-bell fs-22'></i>
                                     <span
-                                        class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">0{{--{{ $total }}--}}<span
+                                        class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ $total }}<span
                                             class="visually-hidden">unread messages</span></span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
@@ -115,17 +115,20 @@
                                         <div class="px-2 pt-2">
                                             <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom"
                                                 data-dropdown-tabs="true" id="notificationItemsTab" role="tablist">
-                                                <li class="nav-item waves-effect waves-light">
-                                                    <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
-                                                        role="tab" aria-selected="true">
-                                                        Comunicados
-                                                    </a>
-                                                </li>
                                                 @role('shepherd')
                                                 <li class="nav-item waves-effect waves-light">
                                                     <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
                                                         role="tab" aria-selected="false">
                                                         Actividades
+                                                    </a>
+                                                </li>
+                                                @endrole
+                                                
+                                                @role('admin')
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
+                                                        role="tab" aria-selected="true">
+                                                        Comunicados
                                                     </a>
                                                 </li>
                                                 @endrole
@@ -149,15 +152,14 @@
                                                                 <a href="{{ route('showAnnouncements', ['id' => $announcement->id]) }}"
                                                                     class="stretched-link">
                                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                                                                        {{ $announcement->Type }}</h6>
+                                                                        {{ $announcement->name($announcement->Id_user) }}</h6>
                                                                 </a>
                                                                 <div class="fs-13 text-muted">
-                                                                    <p class="mb-1">{{ $announcement->Description }}
+                                                                    <p class="mb-1">{{ $announcement->Title }}
                                                                     </p>
                                                                 </div>
                                                                 <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                                    <span><i class="mdi mdi-clock-outline"></i> 4 hrs
-                                                                        ago</span>
+                                                                    <span><i class="mdi mdi-clock-outline"></i> {{$announcement->created_at}}</span>
                                                                 </p>
                                                             </div>
                                                             <div class="px-2 fs-15">
@@ -172,38 +174,6 @@
                                                     </div>
                                                 @endforeach
                                                 @endrole
-                                                @foreach ($announcements as $announcement)
-                                                    <div
-                                                        class="text-reset notification-item d-block dropdown-item position-relative">
-                                                        <div class="d-flex">
-                                                            <img src="assets/images/users/avatar-8.jpg"
-                                                                class="me-3 rounded-circle avatar-xs" alt="user-pic">
-                                                            <div class="flex-1">
-                                                                <a href="{{ route('showAnnouncements', ['id' => $announcement->id]) }}"
-                                                                    class="stretched-link">
-                                                                    <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                                                                        {{ $announcement->Type }}</h6>
-                                                                </a>
-                                                                <div class="fs-13 text-muted">
-                                                                    <p class="mb-1">{{ $announcement->Description }}
-                                                                    </p>
-                                                                </div>
-                                                                <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                                    <span><i class="mdi mdi-clock-outline"></i> 4 hrs
-                                                                        ago</span>
-                                                                </p>
-                                                            </div>
-                                                            <div class="px-2 fs-15">
-                                                                <div class="form-check notification-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="all-notification-check04">
-                                                                    <label class="form-check-label"
-                                                                        for="all-notification-check04"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
                                             </div>
 
                                         </div>
