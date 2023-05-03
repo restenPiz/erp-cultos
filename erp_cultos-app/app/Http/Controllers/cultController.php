@@ -179,6 +179,21 @@ class cultController extends Controller
             return redirect()->back();
         }
     }
+    public function allCultWorship_leader()
+    {
+        if(Auth::user()->hasRole('worship_leader'))
+        {
+            $cults=Cult::all();
+
+            return view('Worship_leader.allCultWorship_leader',compact('cults'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
     public function updateCult($id)
     {
         if(Auth::user()->hasRole('admin'))
