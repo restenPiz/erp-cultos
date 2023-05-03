@@ -260,5 +260,8 @@
                         </div>
                         {{-- Fim do modal da parte de eliminar o culto --}}
                     @endforeach
-                @endrole
-            @endsection
+                @endif
+            </div>
+        </div>
+    @endrole
+@endsection
