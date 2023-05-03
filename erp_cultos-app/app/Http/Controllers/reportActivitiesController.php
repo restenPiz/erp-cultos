@@ -55,7 +55,7 @@ class reportActivitiesController extends Controller
             Request::validate([
                 'Title' => 'required',
                 'Id_user' => 'required',
-                'Date' => 'required',
+                'Day' => 'required',
                 'Hour' => 'required',
             ]);
 

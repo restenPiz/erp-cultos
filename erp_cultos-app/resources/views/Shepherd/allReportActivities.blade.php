@@ -40,7 +40,7 @@
                     <div class="card-body">
                         <div id="customerList">
                             <div class="card-body border border-dashed border-end-0 border-start-0">
-                                <form action="{{route('search')}}" method="post">
+                                <form method="post">
                                     @csrf
                                     <div class="row g-3">
                                         <!--end col-->
@@ -340,7 +340,7 @@
                     <div class="card-body">
                         <div id="customerList">
                             <div class="card-body border border-dashed border-end-0 border-start-0">
-                                <form action="{{route('search')}}" method="post">
+                                <form method="post">
                                     @csrf
                                     <div class="row g-3">
                                         <!--end col-->
@@ -378,7 +378,9 @@
                                     </div>
                                     <!--end row-->
                                 </form>
-                            </div>                            <div class="table-responsive table-card mt-3 mb-1">
+                            </div>                            
+                            <div class="table-responsive table-card mt-3 mb-1">
+                                @if(count($activities)>0)
                                 <table class="table align-middle table-nowrap" id="customerTable">
                                     <thead class="table-light">
                                         <tr>
@@ -526,16 +528,18 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <div class="noresult" style="display: none">
+                                @else
+                                <div class="noresult">
                                     <div class="text-center">
                                         <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
                                             colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
                                         </lord-icon>
-                                        <h5 class="mt-2">Sorry! No Result Found</h5>
-                                        <p class="text-muted mb-0">We've searched more than 150+ Orders We did not find any
-                                            orders for you search.</p>
+                                        <h5 class="mt-2">Desculpe! Nenhum resultado encontrado</h5>
+                                        {{---<p class="text-muted mb-0">We've searched more than 150+ Orders We did not find any
+                                            orders for you search.</p>---}}
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <div class="d-flex justify-content-end">
