@@ -164,6 +164,21 @@ class cultController extends Controller
             return redirect()->route('login');
         }
     }
+    public function allCultShepherd()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $cults=Cult::all();
+
+            return view('Shepherd.allCultShepherd',compact('cults'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->back();
+        }
+    }
     public function updateCult($id)
     {
         if(Auth::user()->hasRole('admin'))
