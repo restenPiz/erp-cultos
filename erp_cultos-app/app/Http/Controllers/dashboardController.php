@@ -97,12 +97,23 @@ class dashboardController extends Controller
         }
         if(Auth::user()->hasRole('member'))
         {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
             $files = DB::table('files')->where('Type_file', 'Documento')->get();
             $images = DB::table('files')->where('Type_file', 'Imagem')->get();
             $videos = DB::table('files')->where('Type_file', 'Video')->get();
             $audios = DB::table('files')->where('Type_file', 'Audio')->get();
 
-            return view('Member.Index', compact('files', 'images', 'videos','audios'));
+            return view('Member.Index', compact('files', 'images', 'videos','audios','announcements','activities','total'));
         }
         else
         {

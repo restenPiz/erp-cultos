@@ -108,6 +108,144 @@
 
                         {{--Inicio da parte contendo as notficacoes dos membros--}}
 
+                        <div class="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                                <i class='bx bx-bell fs-22'></i>
+                                <span
+                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ $total }}<span
+                                        class="visually-hidden">unread messages</span></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-notifications-dropdown">
+
+                                <div class="dropdown-head bg-primary bg-pattern rounded-top">
+                                    <div class="p-3">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h6 class="m-0 fs-16 fw-semibold text-white"> Relatorio de Actividades
+                                                </h6>
+                                            </div>
+                                            {{-- -<div class="col-auto dropdown-tabs">
+                                                <span class="badge badge-soft-light fs-13"> 4 New</span>
+                                            </div> --}}
+                                        </div>
+                                    </div>
+
+                                    <div class="px-2 pt-2">
+                                        <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
+                                            id="notificationItemsTab" role="tablist">
+                                            @role('member')
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
+                                                        role="tab" aria-selected="false">
+                                                        Actividades
+                                                    </a>
+                                                </li>
+                                            @endrole
+
+                                            @role('member')
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
+                                                        role="tab" aria-selected="true">
+                                                        Comunicados
+                                                    </a>
+                                                </li>
+                                            @endrole
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-content position-relative" id="notificationItemsTabContent">
+                                    <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
+                                        role="tabpanel">
+                                        <div data-simplebar style="max-height: 300px;" class="pe-2">
+                                            
+                                            @role('member')
+                                            @foreach ($announcements as $announcement)
+                                                <div
+                                                    class="text-reset notification-item d-block dropdown-item position-relative">
+                                                    <div class="d-flex">
+                                                        <img src="../Ficheiros/homem.jpg"
+                                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                        <div class="flex-1">
+                                                            <a href="{{ route('showAnnouncements', ['id' => $announcement->id]) }}"
+                                                                class="stretched-link">
+                                                                <h6 class="mt-0 mb-1 fs-13 fw-semibold">
+                                                                    {{ $announcement->Type }}</h6>
+                                                            </a>
+                                                            <div class="fs-13 text-muted">
+                                                                <p class="mb-1">{{ $announcement->Description }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-2 fs-15">
+                                                            <div class="form-check notification-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="all-notification-check04">
+                                                                <label class="form-check-label"
+                                                                    for="all-notification-check04"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endrole
+                                        </div>
+
+                                    </div>
+
+                                    <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
+                                        aria-labelledby="messages-tab">
+                                        <div data-simplebar style="max-height: 300px;" class="pe-2">
+
+                                            @role('member')
+                                            @foreach ($activities as $activity)
+                                                <div class="text-reset notification-item d-block dropdown-item">
+                                                    <div class="d-flex">
+                                                        <img src="assets/images/users/avatar-3.jpg"
+                                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                        <div class="flex-1">
+                                                            <a href="{{ route('dashboard') }}" class="stretched-link">
+                                                                <h6 class="mt-0 mb-1 fs-13 fw-semibold">
+                                                                    {{ $activity->name($activity->Id_user) }}</h6>
+                                                            </a>
+                                                            <div class="fs-13 text-muted">
+                                                                <p class="mb-1">{{ $activity->Title }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-2 fs-15">
+                                                            <div class="form-check notification-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="messages-notification-check01">
+                                                                <label class="form-check-label"
+                                                                    for="messages-notification-check01"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            @endrole
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
+                                        aria-labelledby="alerts-tab"></div>
+
+                                    <div class="notification-actions" id="notification-actions">
+                                        <div class="d-flex text-muted justify-content-center">
+                                            Select <div id="select-content" class="text-body fw-semibold px-1">0</div>
+                                            Result <button type="button" class="btn btn-link link-danger p-0 ms-3"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#removeNotificationModal">Remove</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         {{--Fim da parte contendo as notificacoes dos membros--}}
 
 

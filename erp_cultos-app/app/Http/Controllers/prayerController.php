@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Announcement;
 use App\Models\Prayer_request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -17,11 +18,22 @@ class prayerController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+            
             $users=DB::table('users')
                 ->where('name',Auth::user()->name)
                 ->get();
 
-            return view ('Member.addPrayerRequest',compact('users'));
+            return view ('Member.addPrayerRequest',compact('users','announcements','activities','total'));
         }
         else
         {
@@ -34,6 +46,17 @@ class prayerController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
             $prayers=DB::table('prayer_requests')
                 ->where('Username',Auth::user()->name)
                 ->get();
@@ -43,7 +66,7 @@ class prayerController extends Controller
             ->where('name',Auth::user()->name)
             ->get();
 
-            return view('Member.allPrayerRequest',compact('users','prayers'));
+            return view('Member.allPrayerRequest',compact('users','prayers','announcements','activities','total'));
         }
         else
         {
