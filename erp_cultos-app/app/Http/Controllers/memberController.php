@@ -149,7 +149,12 @@ class memberController extends Controller
             ->where('userType','member')
             ->get();
 
-            return view('Shepherd.allMember');
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.allMember',compact('users','activities','total'));
         }
         else
         {
