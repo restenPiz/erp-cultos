@@ -144,29 +144,37 @@ class activityController extends Controller
 
             return view('Admin.allActivity', compact('pesquisas','activitie','users','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
+        }else {
+            Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');
+            return redirect()->route('login');
         }
-        elseif(Auth::user()->hasRole('shepherd'))
+    }
+    public function addActivityShepherd()
+    {
+        if(Auth::user()->hasRole('shepherd'))
         {
-            
             $users = DB::table('users')
-                ->where('userType', '<>', 'admin')
-                ->get();
-            
+            ->where('userType', '<>', 'admin')
+            ->get();
+
             $users = DB::table('users')
                 ->where('userType', '=', 'pastor')
                 ->get();
 
             $departments=DB::table('departments')
-                ->get();    
-            $activitie=Activity::all();
+                ->get();
+
             $activities=Activity::all();
 
             $total=DB::table('activities')
-                ->count();
+            ->count();
 
-            return view('Admin.allActivity',compact('activitie','activities','total','users','departments'));
-        }else {
-            Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');
+            return view('Shepherd.addActivity',compact('users','total','departments','activities'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
             return redirect()->route('login');
         }
     }
