@@ -175,7 +175,12 @@ class memberAnnouncementController extends Controller
         {
             $announcements=Announcement_member::all();
 
-            return view('Shepherd.allReport',compact('announcements'));
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.allReport',compact('announcements','activities','total'));
         
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
