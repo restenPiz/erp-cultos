@@ -44,14 +44,15 @@ class reportActivitiesController extends Controller
 
             $users = User::where('name', Auth::user()->name)->first();
 
-            $activities=ReportActivity::all();
+            $activitie=ReportActivity::all();
 
-            $activitie=Activity::all();
+            $activities=Activity::all();
 
             $total=DB::table('activities')
                 ->count();
 
             return view('Shepherd.allReportActivities', compact('activitie','activities', 'users','total'));
+
         } else {
 
             Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
