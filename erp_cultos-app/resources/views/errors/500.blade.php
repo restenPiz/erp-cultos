@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>500 Error | Velzon - Admin & Dashboard Template</title>
+    <title>Erp - Cultos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -38,9 +38,9 @@
                             <h1 class="title text-muted">500</h1>
                         </div>
                         <div>
-                            <h4>Internal Server Error!</h4>
-                            <p class="text-muted w-75 mx-auto">Server Error 500. We're not exactly sure what happened, but our servers say something is wrong.</p>
-                            <a href="index.html" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>
+                            <h4>Erro interno no servidor!</h4>
+                            <p class="text-muted w-75 mx-auto">Erro de servidor 500. Não temos certeza do que aconteceu, mas nossos servidores dizem que algo está errado.</p>
+                            <a href="{{route('dashboard')}}" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Voltar</a>
                         </div>
                     </div><!-- end col-->
                 </div>
@@ -53,7 +53,4 @@
     <!-- end auth-page-wrapper -->
 
 </body>
-
-
-<!-- Mirrored from themesbrand.com/velzon/html/default/auth-500.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Mar 2023 09:54:57 GMT -->
 </html>

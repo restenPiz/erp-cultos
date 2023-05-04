@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>404 Error Cover | Velzon - Admin & Dashboard Template</title>
+    <title>Erp - Cultos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -52,7 +52,4 @@
     <!-- end auth-page-wrapper -->
 
 </body>
-
-
-<!-- Mirrored from themesbrand.com/velzon/html/default/auth-404-cover.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Mar 2023 09:54:57 GMT -->
 </html>
