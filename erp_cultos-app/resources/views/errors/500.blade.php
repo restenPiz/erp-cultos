@@ -1,8 +1,5 @@
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
-
-
-<!-- Mirrored from themesbrand.com/velzon/html/default/auth-500.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Mar 2023 09:54:57 GMT -->
 <head>
 
     <meta charset="utf-8" />
