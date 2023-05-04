@@ -70,6 +70,17 @@ class dashboardController extends Controller
         }
         if (Auth::user()->hasRole('treasurer')) 
         {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
             return view('Treasurer.Index');
         }
         if(Auth::user()->hasRole('member'))
