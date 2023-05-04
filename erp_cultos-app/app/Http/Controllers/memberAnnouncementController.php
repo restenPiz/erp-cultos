@@ -23,11 +23,21 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
             $users=DB::table('users')
             ->where('name',Auth::user()->name)
             ->get();
 
-            return view('Member.addAnnouncement',compact('users'));
+            return view('Member.addAnnouncement',compact('users','total','announcements','activities'));
 
         }else{
 
@@ -42,8 +52,18 @@ class memberAnnouncementController extends Controller
         if(Auth::user()->hasRole('member') || Auth::user()->hasRole('shepherd'))
         {
             $announcements=Announcement_member::all();
+            $announcements=Announcement::all();
 
-            return view('Member.allAnnouncement',compact('announcements'));
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            return view('Member.allAnnouncement',compact('announcements','activities','announcements','total'));
         
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
@@ -125,13 +145,24 @@ class memberAnnouncementController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         { 
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
             $users=DB::table('users')
                 ->where('name',Auth::user()->name)
                 ->get();
             
             $announcementss=Announcement_member::findOrFail($id);
 
-            return view('Member.showAnnouncementMember',compact('users','announcementss'));
+            return view('Member.showAnnouncementMember',compact('users','announcementss','total','announcements','activities'));
 
         }else{
             
