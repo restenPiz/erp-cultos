@@ -810,7 +810,7 @@
                         @role('worship_leader')
                             <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                             <li class="nav-item">
-                                <a class="nav-link menu-link" href="{{ route('allFile') }}" role="button">
+                                <a class="nav-link menu-link" href="{{ route('dashboard') }}" role="button">
                                     <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Index</span>
                                 </a>
                             </li> <!-- end Dashboard Menu -->

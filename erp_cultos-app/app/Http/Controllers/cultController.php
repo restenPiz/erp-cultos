@@ -201,7 +201,7 @@ class cultController extends Controller
 
             $total=$count_activities+$count_announcements;
 
-            return view('Worship_leader.allCultWorship_leader',compact('cults','announcemnts','activities','total'));
+            return view('Worship_leader.allCultWorship_leader',compact('cults','announcements','activities','total'));
         }
         else
         {

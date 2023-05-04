@@ -78,7 +78,7 @@ class dashboardController extends Controller
             $videos = DB::table('files')->where('Type_file', 'Video')->get();
             $audios = DB::table('files')->where('Type_file', 'Audio')->get();
 
-            return view('Worship_leader.Index', compact('files', 'images', 'videos','audios','announcemnts','activities','total'));
+            return view('Worship_leader.Index', compact('files', 'images', 'videos','audios','announcements','activities','total'));
         }
         if (Auth::user()->hasRole('treasurer')) 
         {
