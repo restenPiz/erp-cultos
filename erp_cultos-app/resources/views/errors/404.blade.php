@@ -36,9 +36,9 @@
                         <div class="text-center">
                             <img src="assets/images/error400-cover.png" alt="error img" class="img-fluid">
                             <div class="mt-3">
-                                <h3 class="text-uppercase">Sorry, Page not Found 😭</h3>
-                                <p class="text-muted mb-4">The page you are looking for not available!</p>
-                                <a href="index.html" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>
+                                <h3 class="text-uppercase">Desculpe, Pagina nao encontrada 😭</h3>
+                                <p class="text-muted mb-4">A página que você está procurando não está disponível!</p>
+                                <a href="{{route('dashboard')}}" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Voltar</a>
                             </div>
                         </div>
                     </div><!-- end col -->
