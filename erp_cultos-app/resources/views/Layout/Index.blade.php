@@ -205,6 +205,36 @@
                                                     </div>
                                                 @endforeach
                                             @endrole
+                                            @role('worship_leader')
+                                            @foreach ($announcements as $announcement)
+                                                <div
+                                                    class="text-reset notification-item d-block dropdown-item position-relative">
+                                                    <div class="d-flex">
+                                                        <img src="../Ficheiros/homem.jpg"
+                                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                        <div class="flex-1">
+                                                            <a href="{{ route('showAnnouncements', ['id' => $announcement->id]) }}"
+                                                                class="stretched-link">
+                                                                <h6 class="mt-0 mb-1 fs-13 fw-semibold">
+                                                                    {{ $announcement->Type }}</h6>
+                                                            </a>
+                                                            <div class="fs-13 text-muted">
+                                                                <p class="mb-1">{{ $announcement->Description }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-2 fs-15">
+                                                            <div class="form-check notification-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="all-notification-check04">
+                                                                <label class="form-check-label"
+                                                                    for="all-notification-check04"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endrole
                                         </div>
 
                                     </div>
@@ -242,6 +272,34 @@
                                             @endforeach
                                             @endrole
                                             @role('treasurer')
+                                            @foreach ($activities as $activity)
+                                                <div class="text-reset notification-item d-block dropdown-item">
+                                                    <div class="d-flex">
+                                                        <img src="assets/images/users/avatar-3.jpg"
+                                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                        <div class="flex-1">
+                                                            <a href="{{ route('dashboard') }}" class="stretched-link">
+                                                                <h6 class="mt-0 mb-1 fs-13 fw-semibold">
+                                                                    {{ $activity->name($activity->Id_user) }}</h6>
+                                                            </a>
+                                                            <div class="fs-13 text-muted">
+                                                                <p class="mb-1">{{ $activity->Title }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-2 fs-15">
+                                                            <div class="form-check notification-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="messages-notification-check01">
+                                                                <label class="form-check-label"
+                                                                    for="messages-notification-check01"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            @endrole
+                                            @role('worship_leader')
                                             @foreach ($activities as $activity)
                                                 <div class="text-reset notification-item d-block dropdown-item">
                                                     <div class="d-flex">
