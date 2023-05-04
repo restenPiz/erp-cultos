@@ -141,6 +141,23 @@ class memberController extends Controller
             return redirect()->route('login');
         }
     }
+    public function allMemberShepherd()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $users=DB::table('users')
+            ->where('userType','member')
+            ->get();
+
+            return view('Shepherd.allMember');
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
     public function updateStatus($id, $status_code)
     {
         try {

@@ -29,15 +29,16 @@ Route::get('/', function () {
 Route::get('/dashShepherd', [dashboardController::class, 'indexShepherd'])->middleware(['auth'])->name('dashShepherd');
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
-//Inicio da rota de todos os membros
-Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
-    
 //Inicio da rota que vai retornar todos os cultos
 Route::get('/allCult', [cultController::class, 'allCult'])->middleware(['auth'])->name('allCult');
 
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
 
+        
+    //Inicio da rota de todos os membros
+    Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
+        
     //Inicio das rotas de pesquisa da parte de administrador
     Route::post('searchActivity', [activityController::class, 'searchActivity'])->middleware(['auth'])->name('searchActivity');
 
@@ -116,6 +117,9 @@ Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity']
 
 //Inicio das rotas da parte de pastor
 Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {
+
+    //Inicio da parte de todos os membros da parte do pastor
+    Route::get('/allMemberShepherd', [memberController::class, 'allMemberShepherd'])->middleware(['auth'])->name('allMemberShepherd');
 
     //Inicio da rota que vai retornar todos os cultos
     Route::get('/allCultShepherd', [cultController::class, 'allCultShepherd'])->middleware(['auth'])->name('allCultShepherd');
