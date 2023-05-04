@@ -190,7 +190,18 @@ class cultController extends Controller
         {
             $cults=Cult::all();
 
-            return view('Worship_leader.allCultWorship_leader',compact('cults'));
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            return view('Worship_leader.allCultWorship_leader',compact('cults','announcemnts','activities','total'));
         }
         else
         {
@@ -204,8 +215,19 @@ class cultController extends Controller
         if(Auth::user()->hasRole('treasurer'))
         {
             $cults=Cult::all();
+            
+            $announcements=Announcement::all();
 
-            return view('Treasurer.allCultTreasurer',compact('cults'));
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            return view('Treasurer.allCultTreasurer',compact('cults','announcements','activities','total'));
         }
         else
         {

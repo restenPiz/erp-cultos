@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Announcement;
 use Request;
 use App\Models\Input;
 use App\Models\User;
@@ -20,11 +22,23 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
+            
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+            
             $users=DB::table('users')
                 ->where('name','<>','Admin')
                 ->get();
 
-            return view('Treasurer.addInput',compact('users'));
+            return view('Treasurer.addInput',compact('users','announcements','activities','total'));
         }
         else
         {
@@ -39,12 +53,23 @@ class inputController extends Controller
         {
             $users=Input::select('SELECT * FROM inputs WHERE id > 1');
             
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+            
             $inputs=Input::all();
 
             $count=DB::table('inputs')
                 ->sum('Offert_value_confirmation');
 
-            return view('Treasurer.allInput',compact('inputs','users'), ['count'=>$count]);
+            return view('Treasurer.allInput',compact('inputs','users','total','announcements','activities'), ['count'=>$count]);
         }
         else
         {

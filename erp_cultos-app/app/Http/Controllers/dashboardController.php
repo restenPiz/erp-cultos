@@ -81,7 +81,7 @@ class dashboardController extends Controller
 
             $total=$count_activities+$count_announcements;
 
-            return view('Treasurer.Index');
+            return view('Treasurer.Index',compact('announcements','activities','total'));
         }
         if(Auth::user()->hasRole('member'))
         {

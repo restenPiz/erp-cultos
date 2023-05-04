@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Announcement;
 use Request;
 use App\Models\Output;
 use App\Models\Input;
@@ -23,8 +25,19 @@ class outputController extends Controller
         {
             $users=User::all();
             $inputs=Input::all();
+            
+            $announcements=Announcement::all();
 
-            return view('Treasurer.addOutput', compact('users','inputs'));
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            return view('Treasurer.addOutput', compact('users','inputs','total','announcements','activities'));
         }
         else
         {
@@ -84,10 +97,21 @@ class outputController extends Controller
             $inputs=Input::all();
             $outputs=Output::all();
             
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+            
             $count=DB::table('inputs')
                 ->sum('Offert_value_confirmation');
 
-            return view('Treasurer.allOutput',compact('users','outputs','inputs'),['count'=>$count]);
+            return view('Treasurer.allOutput',compact('users','outputs','inputs','announcements','activities','total'),['count'=>$count]);
         }
         else
         {

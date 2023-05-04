@@ -115,6 +115,23 @@
                                     <div class="px-2 pt-2">
                                         <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
                                             id="notificationItemsTab" role="tablist">
+                                            @role('treasurer')
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
+                                                        role="tab" aria-selected="false">
+                                                        Actividades
+                                                    </a>
+                                                </li>
+                                            @endrole
+
+                                            @role('treasurer')
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
+                                                        role="tab" aria-selected="true">
+                                                        Comunicados
+                                                    </a>
+                                                </li>
+                                            @endrole
                                             @role('shepherd')
                                                 <li class="nav-item waves-effect waves-light">
                                                     <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
@@ -141,7 +158,7 @@
                                     <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab"
                                         role="tabpanel">
                                         <div data-simplebar style="max-height: 300px;" class="pe-2">
-                                            @role('shepherd')
+                                            @role('treasurer')
                                                 @foreach ($announcements as $announcement)
                                                     <div
                                                         class="text-reset notification-item d-block dropdown-item position-relative">
@@ -179,6 +196,7 @@
                                         aria-labelledby="messages-tab">
                                         <div data-simplebar style="max-height: 300px;" class="pe-2">
 
+                                            @role('shepherd')
                                             @foreach ($activities as $activity)
                                                 <div class="text-reset notification-item d-block dropdown-item">
                                                     <div class="d-flex">
@@ -205,6 +223,35 @@
                                                     </div>
                                                 </div>
                                             @endforeach
+                                            @endrole
+                                            @role('treasurer')
+                                            @foreach ($activities as $activity)
+                                                <div class="text-reset notification-item d-block dropdown-item">
+                                                    <div class="d-flex">
+                                                        <img src="assets/images/users/avatar-3.jpg"
+                                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                        <div class="flex-1">
+                                                            <a href="{{ route('dashboard') }}" class="stretched-link">
+                                                                <h6 class="mt-0 mb-1 fs-13 fw-semibold">
+                                                                    {{ $activity->name($activity->Id_user) }}</h6>
+                                                            </a>
+                                                            <div class="fs-13 text-muted">
+                                                                <p class="mb-1">{{ $activity->Title }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-2 fs-15">
+                                                            <div class="form-check notification-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="messages-notification-check01">
+                                                                <label class="form-check-label"
+                                                                    for="messages-notification-check01"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            @endrole
                                         </div>
                                     </div>
                                     <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
