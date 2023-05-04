@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Request;
 use App\Models\User;
 use App\Models\Announcement;
@@ -22,7 +23,12 @@ class announcementController extends Controller
             ->where('name',Auth::user()->name)
             ->get();
 
-            return view('shepherd.addAnnouncement',compact('users'));
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('shepherd.addAnnouncement',compact('users','activities','total'));
 
         }else{
 
@@ -38,7 +44,12 @@ class announcementController extends Controller
         {
             $announcements=Announcement::all();
 
-            return view('Shepherd.allAnnouncement',compact('announcements'));
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.allAnnouncement',compact('announcements','activities','total'));
         
         }else{
             Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
