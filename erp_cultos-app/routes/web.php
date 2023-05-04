@@ -106,12 +106,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/showDepartment/{id}', [departmentController::class, 'showDepartment'])->middleware(['auth'])->name('showDepartment');
     Route::post('/connectDepartment', [departmentController::class, 'connectDepartment'])->middleware(['auth'])->name('connectDepartment');
     Route::get('/deleteDepartmentMember/{id}', [departmentController::class, 'deleteDepartmentMember'])->middleware(['auth'])->name('deleteDepartmentMember');
+
+    //Inicio da rota de todas as actividades e de adicao de actividades
+    Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
+    Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
+
 });
 
 //Inicio da parte de actividade
 Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
 Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
-Route::get('/allActivity', [activityController::class, 'allActivity'])->middleware(['auth'])->name('allActivity');
 Route::post('/updateActivity/{id}', [activityController::class, 'updateActivity'])->middleware(['auth'])->name('updateActivity');
 Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity'])->middleware(['auth'])->name('deleteActivity');
 
