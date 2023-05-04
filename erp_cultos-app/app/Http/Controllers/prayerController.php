@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Prayer_request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -157,7 +158,12 @@ class prayerController extends Controller
             ->where('name',Auth::user()->name)
             ->get();
 
-            return view('Shepherd.allPrayerRequest',compact('users','prayers'));
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.allPrayerRequest',compact('users','prayers','total','activities'));
         }   
         else
         {
