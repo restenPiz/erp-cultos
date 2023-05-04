@@ -138,7 +138,12 @@ class announcementController extends Controller
             
             $announcements=Announcement::findOrFail($id);
 
-            return view('Shepherd.showAnnouncement',compact('users','announcements'));
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.showAnnouncement',compact('users','announcements','activities','total'));
 
         }else{
             
