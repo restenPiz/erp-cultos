@@ -102,7 +102,7 @@
                                                 <td class="customer_name">{{ $prayer->Title }}</td>
                                                 <td class="email">{{ $prayer->Hour }}</td>
                                                 <td class="phone">{{ $prayer->Date }}</td>
-                                                <td class="dat">{{ $prayer->users->name }}</td>
+                                                <td class="dat">{{ $prayer->Username }}</td>
                                                 <td class="actio">
                                                     <div class="d-flex gap-2">
                                                         <div class="remove">
