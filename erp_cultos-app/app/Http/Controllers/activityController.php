@@ -178,6 +178,35 @@ class activityController extends Controller
             return redirect()->route('login');
         }
     }
+    public function allActivityShepherd()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $users = DB::table('users')
+            ->where('userType', '<>', 'admin')
+            ->get();
+
+            $users = DB::table('users')
+                ->where('userType', '=', 'pastor')
+                ->get();
+
+            $departments=DB::table('departments')
+                ->get();
+
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+            ->count();
+            
+            return view('Shepherd.allActivityShepherd',compact('users','total','departments','activities'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
     public function updateActivity($id)
     {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
