@@ -103,6 +103,11 @@ class memberController extends Controller
     {
         if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd'))
         {
+            
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
             //Retornando os dados para se usar nas cards
             $count_branches=Branche::count();
             $count_activities=Activity::count();
@@ -127,7 +132,7 @@ class memberController extends Controller
             ->get();
 
             //Retorna a view de todos membros
-            return view('Admin.allMember',compact('users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));            
+            return view('Admin.allMember',compact('activities','users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));            
         }
         else
         {
