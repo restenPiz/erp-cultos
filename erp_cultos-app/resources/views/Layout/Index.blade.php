@@ -115,6 +115,23 @@
                                     <div class="px-2 pt-2">
                                         <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
                                             id="notificationItemsTab" role="tablist">
+                                            @role('worship_leader')
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
+                                                        role="tab" aria-selected="false">
+                                                        Actividades
+                                                    </a>
+                                                </li>
+                                            @endrole
+
+                                            @role('worship_leader')
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
+                                                        role="tab" aria-selected="true">
+                                                        Comunicados
+                                                    </a>
+                                                </li>
+                                            @endrole
                                             @role('treasurer')
                                                 <li class="nav-item waves-effect waves-light">
                                                     <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
