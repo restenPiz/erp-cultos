@@ -197,8 +197,10 @@ class activityController extends Controller
 
             $total=DB::table('activities')
             ->count();
+
+            $activitie=Activity::all();
             
-            return view('Shepherd.allActivityShepherd',compact('users','total','departments','activities'));
+            return view('Shepherd.allActivity',compact('users','total','departments','activities','activitie'));
         }
         else
         {

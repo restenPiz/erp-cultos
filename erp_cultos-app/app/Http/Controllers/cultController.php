@@ -170,7 +170,12 @@ class cultController extends Controller
         {
             $cults=Cult::all();
 
-            return view('Shepherd.allCultShepherd',compact('cults'));
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.allCultShepherd',compact('cults','activities','total'));
         }
         else
         {
