@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Request;
 use App\Models\User;
 use App\Models\ReportActivity;
@@ -24,7 +25,12 @@ class reportActivitiesController extends Controller
                 ->where('name', '=', Auth::user()->name)
                 ->get();
 
-            return view('Shepherd.addReportActivities', compact('users'));
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.addReportActivities', compact('users','activities','total'));
         } else {
 
             Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
@@ -40,7 +46,12 @@ class reportActivitiesController extends Controller
 
             $activities=ReportActivity::all();
 
-            return view('Shepherd.allReportActivities', compact('activities', 'users'));
+            $activitie=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.allReportActivities', compact('activitie','activities', 'users','total'));
         } else {
 
             Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
