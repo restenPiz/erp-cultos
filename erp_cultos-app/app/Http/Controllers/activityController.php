@@ -105,7 +105,7 @@ class activityController extends Controller
     }
     public function allActivity()
     {
-        if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('shepherd')) {
+        if (Auth::user()->hasRole('admin')) {
             
             $pesquisas=DB::table('activities')
                 ->where('Title','like','%'.Request::input('search').'%')
@@ -144,7 +144,17 @@ class activityController extends Controller
 
             return view('Admin.allActivity', compact('pesquisas','activitie','users','departments','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
-        } else {
+        }
+        elseif(Auth::user()->hasRole('shepherd'))
+        {
+            $activitie=Activity::all();
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Admin.allActivity',compact('activitie','activities','total'));
+        }else {
             Alert::error('Nao autenticado!', 'Voce nao esta autenticado no sistema!');
             return redirect()->route('login');
         }

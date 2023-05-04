@@ -298,7 +298,11 @@
 
         {{-- Fim da view que possui o codigo fonte --}}
     @endrole
+    @endsection
 
+    @extends('Layout.Index')
+
+    @section('content')
     @role('shepherd')
         {{-- Inicio da view que possui todo o codigo fonte --}}
 
