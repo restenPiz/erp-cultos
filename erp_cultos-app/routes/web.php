@@ -174,8 +174,10 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
     Route::post('/updateFile/{id}', [fileController::class, 'updateFile'])->middleware(['auth'])->name('updateFile');
     Route::get('/deleteFile/{id}', [fileController::class, 'deleteFile'])->middleware(['auth'])->name('deleteFile');
     Route::get('/playVideo/{id}', [fileController::class, 'playVideo'])->middleware(['auth'])->name('playVideo');
-    Route::get('/dowloandFile/{id}', [fileController::class, 'dowloandFile'])->middleware(['auth'])->name('dowloandFile');
 });
+
+//Inicio da rota para baixar qualquer tipo de ficheiro
+Route::get('/dowloand/{File}', [fileController::class, 'dowloand'])->middleware(['auth'])->name('dowloand');
 
 //Inicio das rotas da parte de tesoureiro treasurer
 Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {

@@ -26,7 +26,7 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
-
+x
     /**
      * Register the exception handling callbacks for the application.
      *
@@ -38,7 +38,8 @@ class Handler extends ExceptionHandler
             //
         });
     }
-    public function render($request, Throwable $exception)
+    //Inicio do metodo para redirecionar um erro
+    /*public function render($request, Throwable $exception)
     {
         if ($this->isHttpException($exception)) {
             if ($exception->getStatusCode() == 404) {
@@ -47,6 +48,6 @@ class Handler extends ExceptionHandler
         }
 
         return parent::render($request, $exception);
-    }
+    }*/
 
 }

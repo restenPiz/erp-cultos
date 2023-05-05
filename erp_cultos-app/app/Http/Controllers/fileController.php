@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Announcement;
 use Request;
 use App\Models\Files;
 use Illuminate\Auth\Events\Registered;
@@ -19,7 +21,19 @@ class fileController extends Controller
     public function addFile()
     {
         if (Auth::user()->hasRole('worship_leader')) {
-            return view('Worship_leader.addFile');
+
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            return view('Worship_leader.addFile',compact('announcements','activities','total'));
         } else {
             Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
@@ -43,13 +57,14 @@ class fileController extends Controller
             $table->Name_file = Request::input('Name_file');
             $table->Type_file = Request::input('Type_file');
             $table->Description = Request::input('Description');
+            $table->File = Request::input('File');
 
             if (Request::file('File') != null) {
                 $filename = Request::file('File')->getClientOriginalName();
                 $link = "Ficheiros/" . $filename;
                 $table->File = $link;
                 $foto = Request::file('File');
-                $foto->move('Ficheiros', $filename);
+                $foto->move('Ficheiros/', $filename);
             }
 
             $table->save();
@@ -67,12 +82,23 @@ class fileController extends Controller
     public function allFile()
     {
         if (Auth::user()->hasRole('worship_leader')) {
+
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
             $files = DB::table('files')->where('Type_file', 'Documento')->get();
             $images = DB::table('files')->where('Type_file', 'Imagem')->get();
             $videos = DB::table('files')->where('Type_file', 'Video')->get();
             $audios = DB::table('files')->where('Type_file', 'Audio')->get();
 
-            return view('Worship_leader.Index', compact('files', 'images', 'videos','audios'));
+            return view('Worship_leader.Index', compact('files', 'images', 'videos','audios','announcements','activities','total'));
         } else {
             Alert('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
 
@@ -157,20 +183,8 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
-    public function dowloandFile($id)
+    public function dowloand($File)
     {
-        //Capturando os dados do ficheiro
-        
-        $file = Files::find($id);
-
-        $filepath = storage_path($file->File);
-
-        if (File::exists($file)) {
-            $headers = [
-                'Content-Type' => 'video/mp4',
-            ];
-    
-            return response()->download($filepath, $file->File, $headers);   
-        }
+        return response()->download(public_path().$File);       
     }
 }
