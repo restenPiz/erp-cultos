@@ -55,7 +55,9 @@ class fileController extends Controller
             $table=new Files();
 
             if (Request::file('File')->isValid()) {
-                $table->File=Request::file('File')->store('Ficheiros/');
+                $filename=Request::input('Name_file') . '.' .Request::file('File')->extension();
+
+                $table->File=Request::file('File')->store('Ficheiros', $filename);
                 $table->Name_file=Request::input('Name_file');
                 $table->Type_file=Request::input('Type_file');
                 $table->Description=Request::input('Description');
