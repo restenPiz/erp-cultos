@@ -226,8 +226,8 @@
                                                                                 class="image-popup" href="../{{$video->File}}"><i
                                                                                         class="ri-eye-fill me-2 align-middle text-muted"></i>Reproduzir</a>
                                                                             </li>
-                                                                            <li><a href="/dowloand/{{$video->id}}" class="dropdown-item"><i
-                                                                                        class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
+                                                                            <li><a href="../{{$video->File}}" class="dropdown-item" download><i
+                                                                                        class="ri-download-2-fill me-2 align-middle text-muted" dowloand></i>Download</a>
                                                                             </li>
                                                                             <li class="dropdown-divider"></li>
                                                                             <li><a class="dropdown-item"
@@ -604,8 +604,8 @@
                                                                                     href="javascript:void(0);"><i
                                                                                         class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
                                                                             </li>--}}
-                                                                            <li><a class="dropdown-item" href="#"
-                                                                                    download="{{ $file->File }}"><i
+                                                                            <li><a class="dropdown-item" href="{{$file->File}}"
+                                                                                    download><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
                                                                             </li>
                                                                             <li class="dropdown-divider"></li>
@@ -756,7 +756,7 @@
                                                                                 class="image-popup" href="../{{$audio->File}}"><i
                                                                                         class="ri-eye-fill me-2 align-middle text-muted"></i>Reproduzir</a>
                                                                             </li>---}}
-                                                                            <li><a href="#" class="dropdown-item" download="{{$audio->File}}"><i
+                                                                            <li><a href="{{$audio->File}}" class="dropdown-item" download><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
                                                                             </li>
                                                                             <li class="dropdown-divider"></li>

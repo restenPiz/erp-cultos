@@ -197,12 +197,12 @@ class fileController extends Controller
             return abort(404);
         }
     
-        $path = public_path('Ficheiros/' . $arquivo->Name_file);
+        $path = public_path($arquivo->File);
     
         if (!Storage::exists($path)) {
             return abort(404);
         }
     
-        return response()->download($path);  
+        return \response()->download($path)->deleteFileAfterSend(true)->setStatusCode(200);;  
     }
 }
