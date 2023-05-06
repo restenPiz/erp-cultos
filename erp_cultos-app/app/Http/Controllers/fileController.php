@@ -64,10 +64,10 @@ class fileController extends Controller
             $table->Name_file=Request::input('Name_file');
             $table->Type_file=Request::input('Type_file');
             $table->Description=Request::input('Description');
-            
+
             $table->save();
 
-            Alert::error('Nao Adicionado!','O seu ficheiro nao foi adicionado!');
+            Alert::success('Adicionado!','O seu ficheiro foi adicionado com sucesso!');
 
             return redirect()->back();
 
