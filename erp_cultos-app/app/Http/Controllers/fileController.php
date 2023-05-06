@@ -55,19 +55,17 @@ class fileController extends Controller
             $table=new Files();
 
             if (Request::file('File')->isValid()) {
-                $filename=Request::input('Name_file') . '.' .Request::file('File')->extension();
-
-                $table->File=Request::file('File')->store('Ficheiros', $filename);
-                $table->Name_file=Request::input('Name_file');
-                $table->Type_file=Request::input('Type_file');
-                $table->Description=Request::input('Description');
-
-                $table->save();
-
-                Alert::success('Adicionado!','O seu ficheiro foi adicionado com sucesso!');
-
-                return redirect()->back();
+                $filename = Request::file('File')->getClientOriginalName();
+                $link = "Ficheiros/" . $filename;
+                $table->File = $link;
+                $foto = Request::file('File');
+                $foto->move('Ficheiros/', $filename);
             }
+            $table->Name_file=Request::input('Name_file');
+            $table->Type_file=Request::input('Type_file');
+            $table->Description=Request::input('Description');
+            
+            $table->save();
 
             Alert::error('Nao Adicionado!','O seu ficheiro nao foi adicionado!');
 
