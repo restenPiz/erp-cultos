@@ -189,20 +189,4 @@ class fileController extends Controller
             return redirect()->route('login');
         }
     }
-    public function dowloand($id)
-    {
-        $arquivo = Files::find($id);
-
-        if (!$arquivo) {
-            return abort(404);
-        }
-    
-        $path = public_path($arquivo->File);
-    
-        if (!Storage::exists($path)) {
-            return abort(404);
-        }
-    
-        return \response()->download($path)->deleteFileAfterSend(true)->setStatusCode(200);;  
-    }
 }
