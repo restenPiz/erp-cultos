@@ -110,12 +110,19 @@ class fileController extends Controller
     {
         if (Auth::user()->hasRole('worship_leader')) {
 
-            Request::validate([
+            $validator = Request::validate([
                 'Name_file' => 'required',
                 'Type_file' => 'required',
                 'Description' => 'required',
                 'File' => 'required',
             ]);
+
+            if($validator->fails())
+            {
+                Alert::error('Nao Inserido','Algum problema com um dos campos!');
+
+                return redirect()->back();
+            }
             
             $file = Files::findOrFail($id);
 
