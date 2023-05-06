@@ -119,7 +119,7 @@ class fileController extends Controller
 
             if($validator->fails())
             {
-                Alert::error('Nao Inserido','Algum problema com um dos campos!');
+                Alert::error('Falha ao Adicionar Ficheiro','Algum problema com um dos campos!');
 
                 return redirect()->back();
             }
