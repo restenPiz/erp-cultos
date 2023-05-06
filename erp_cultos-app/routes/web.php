@@ -177,7 +177,7 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
 });
 
 //Inicio da rota para baixar qualquer tipo de ficheiro
-Route::get('/dowloand/{File}', [fileController::class, 'dowloand'])->middleware(['auth'])->name('dowloand');
+Route::get('/dowloand/{id}', [fileController::class, 'dowloand'])->middleware(['auth'])->name('dowloand');
 
 //Inicio das rotas da parte de tesoureiro treasurer
 Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {
