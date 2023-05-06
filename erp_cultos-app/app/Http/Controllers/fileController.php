@@ -52,31 +52,27 @@ class fileController extends Controller
                 'File' => 'required',
             ]);
 
-
-            $File=Request::input('File');
-
-            $path = $File->store('uploads');
-
             $table=new File();
 
-            $table->Name_file=Request::input('Name_file');
-            $table->Type_file=Request::input('Type_file');
-            $table->Description=Request::input('Description');
-            $table->File_path=$path;
-
-            $table->save();
-
-            Alert::success('Adicionado!','O ficheiro foi adicionado com sucesso!');
-
-            /*if (Request::file('File') != null) {
+            if (Request::file('File') != null) {
                 $filename = Request::file('File')->getClientOriginalName();
                 $link = "Ficheiros/" . $filename;
                 $table->File = $link;
                 $foto = Request::file('File');
                 $foto->move('Ficheiros/', $filename);
-            }*/
+            }
+
+            $table=Name_file=Request::input('Name_file');
+            $table=Type_file=Request::input('Type_file');
+            $table=Description=Request::input('Description');
+            $table=File=Request::input('File');
+
+            $table->save();
+
+            Alert::success('Adicionado!','O seu ficheiro foi adicionado com sucesso!');
 
             return redirect()->back();
+
         } else {
             Alert::error('Nao Autenticado', 'Voce nao esta autenticado no sistema!');
 
