@@ -274,9 +274,7 @@ class activityController extends Controller
             $department=Request::input('Group');
 
             //Retornando os dados de pesquisa
-            $activitie=DB::table('activities')
-                ->where('Group',$department)
-                ->get();
+            $activitie=Activity::where('Group',$department)->get();
 
             //Retornando os dados para se usar nas cards
             $count_branches=Branche::count();
