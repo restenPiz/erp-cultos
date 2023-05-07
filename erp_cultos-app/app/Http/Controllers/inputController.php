@@ -202,12 +202,34 @@ class inputController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            $users=Input::select('SELECT * FROM inputs WHERE id > 1');
             
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+            
+            $Input_type=Request::input('Input_type');
+            $Description=Request::input('Description');
+
+            $inputs=Input::where('Input_type',$Input_type)->where('Description',$Description)->get();
+
+            $count=DB::table('inputs')
+                ->sum('Offert_value_confirmation');
+
+            return view('Treasurer.allInput',compact('inputs','users','total','announcements','activities'), ['count'=>$count]);
+        
         }
         else
         {
             Alert::erro('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
-            
+
             return redirect()->route('login');
         }
     }
