@@ -187,6 +187,9 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
 //Inicio das rotas da parte de tesoureiro treasurer
 Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {
     
+    //Inicio das rotas de pesquisa da parte de tesoureiro
+    Route::post('searchMemberShepherd', [inputController::class, 'searchMemberShepherd'])->middleware(['auth'])->name('searchMemberShepherd');
+
     //Inicio da rota da parte de cultos
     Route::get('/allCultTreasurer', [cultController::class, 'allCultTreasurer'])->middleware(['auth'])->name('allCultTreasurer');
 

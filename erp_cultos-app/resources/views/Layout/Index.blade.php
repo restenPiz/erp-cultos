@@ -152,7 +152,7 @@
                                             @role('shepherd')
                                                 <li class="nav-item waves-effect waves-light">
                                                     <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
-                                                        role="tab" aria-selected="false">
+                                                        role="tab" aria-selected="true">
                                                         Actividades
                                                     </a>
                                                 </li>
