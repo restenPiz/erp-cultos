@@ -184,4 +184,43 @@ class branchesController extends Controller
             return redirect()->route('login');
         }
     }
+    public function searchBranche()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $creation_year=Request::input('Creation_year');
+            $id_user=Request::input('Id_user');
+
+            $branches = Branche::where('Creation_year',$creation_year)->where('Id_user',$id_user)->get();
+
+            $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
+            
+            $announcements=Announcement::all();
+            
+            $activities=ReportActivity::all();
+
+            return view('Admin.allBranches', compact('branches', 'users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
