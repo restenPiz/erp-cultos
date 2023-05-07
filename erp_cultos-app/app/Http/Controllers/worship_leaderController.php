@@ -148,10 +148,34 @@ class worship_leaderController extends Controller
             return redirect()->route('login');
         }
     }
-    public function searchWorship_leader()
+    public function searchWorship_leader(Request $request)
     {
         if(Auth::user()->hasRole('admin'))
         {
+            //Retornando os dados para se usar nas cards
+            $count_branches=Branche::count();
+            $count_activities=Activity::count();
+            $count_cults=DB::table('cults')
+            ->count();
+            $count_shepherds=DB::table('users')
+                ->where('userType','pastor')
+                ->count();
+            
+            $count_report=ReportActivity::count();
+
+            $count_announcement=Announcement::count();
+
+            $total=$count_report+$count_announcement;
+            
+            $theological_level=$request->input('theological_level');
+
+            $users = User::where('theological_level',$theological_level)->where('userType', 'lider_louvor')->get();
+            
+            $announcements=Announcement::all();
+                
+            $activities=ReportActivity::all();
+
+            return view('Admin.allWorship_leader',compact('users','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities'));
 
         }
         else
