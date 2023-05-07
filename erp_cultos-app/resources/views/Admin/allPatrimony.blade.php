@@ -44,29 +44,18 @@
                                 <form action="{{route('searchPatrimony')}}" method="post">
                                     @csrf
                                     <div class="row g-3">
-                                        <!--end col-->
-                                        {{--<div class="col-xxl-2 col-sm-6">
-                                            <div>
-                                                <input type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" id="demo-datepicker" placeholder="Select date">
-                                            </div>
-                                        </div>--}}
-                                        <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
                                                 <select class="form-control" data-choices data-choices-search-false name="Department" id="idStatus">
                                                     <option>...</option>
+                    
+                                                    <option value="Danificado">Danificado</option>
+                                                    <option value="Em Boas Condicoes">Em Boas Condicoes</option>
+                                                    <option value="Em condicoes Razoaveis">Em condicoes Razoaveis</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-4 col-sm-6">
-                                            <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Day" id="idPayment">
-                                                    <option>...</option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                        </div>
                                         <!--end col-->
                                         <div class="col-xxl-1 col-sm-4">
                                             <div>
