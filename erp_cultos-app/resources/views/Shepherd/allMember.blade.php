@@ -65,7 +65,8 @@
                                 </div>
                                 <!--end row-->
                             </form>
-                        </div>                            <div class="table-responsive table-card mt-3 mb-1">
+                        </div>                            
+                        <div class="table-responsive table-card mt-3 mb-1">
                             @if(count($users)>0)
                             <table class="table align-middle table-nowrap" id="customerTable">
                                 <thead class="table-light">

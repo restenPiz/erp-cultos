@@ -268,4 +268,29 @@ class memberController extends Controller
             return redirect()->route('login');
         }
     }
+    public function searchMemberShepherd()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $theological_level=Request::input('theological_level');
+
+            $users=DB::table('users')
+            ->where('userType','member')
+            ->where('theological_level',$theological_level)
+            ->get();
+
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            return view('Shepherd.allMember',compact('users','activities','total'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
