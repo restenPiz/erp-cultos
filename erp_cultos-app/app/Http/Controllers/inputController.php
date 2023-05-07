@@ -198,4 +198,17 @@ class inputController extends Controller
             return redirect()->route('login');
         }
     }
+    public function searchInput()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            
+        }
+        else
+        {
+            Alert::erro('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+            
+            return redirect()->route('login');
+        }
+    }
 }
