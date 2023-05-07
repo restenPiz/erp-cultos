@@ -44,26 +44,18 @@
                                 <form action="" method="post">
                                     @csrf
                                     <div class="row g-3">
-                                        <!--end col-->
-                                        {{--<div class="col-xxl-2 col-sm-6">
-                                            <div>
-                                                <input type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" id="demo-datepicker" placeholder="Select date">
-                                            </div>
-                                        </div>--}}
-                                        <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Department" id="idStatus">
+                                                <select class="form-control" data-choices data-choices-search- required name="theological_level" id="idStatus">
                                                     <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-xxl-4 col-sm-6">
-                                            <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Day" id="idPayment">
-                                                    <option>...</option>
-                                                    <option></option>
+
+                                                    <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
+                                                    <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
+                                                    <option value="Curso Superior em Teologia">Curso Superior em Teologia</option>
+                                                    <option value="Capacitacao de Lideres">Capacitacao de Lideres</option>
+                                                    <option value="Capacitacao de Obreiros">Capacitacao de Obreiros</option>
+                                                    <option value="Capacitacao de Professores Criancas">Capacitacao de Professores Criancas</option>
+                                                    <option value="Nenhum">Nenhum</option>
                                                 </select>
                                             </div>
                                         </div>

@@ -54,6 +54,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::post('searchPatrimony', [patrimonyController::class, 'searchPatrimony'])->middleware(['auth'])->name('searchPatrimony');
     Route::post('searchBranche', [branchesController::class, 'searchBranche'])->middleware(['auth'])->name('searchBranche');
     Route::post('searchShepherd', [shepherdController::class, 'searchShepherd'])->middleware(['auth'])->name('searchShepherd');
+    Route::post('searchTreasurer', [treasurerController::class, 'searchTreasurer'])->middleware(['auth'])->name('searchTreasurer');
+    Route::post('searchWorship_leader', [worship_leaderController::class, 'searchWorship_leader'])->middleware(['auth'])->name('searchWorship_leader');
 
     //Inicio da rota para poder ter acesso ao comunicado
     Route::get('/showAnnouncements/{id}', [dashboardController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncements');
