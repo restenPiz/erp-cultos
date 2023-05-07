@@ -46,7 +46,7 @@
                                     <div class="row g-3">
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Creation_year" id="idStatus">
+                                                <select class="form-control" data-choices data-choices-search-false name="Creation_year" required id="idStatus">
                                                     <option>...</option>
 
                                                     @foreach ($branches as $branche)
@@ -58,7 +58,7 @@
                                         <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="Number_of_members" id="idPayment">
+                                                <select class="form-control" data-choices data-choices-search-false name="Id_user" required id="idPayment">
                                                     <option>...</option>
 
                                                     @foreach ($branches as $branche)
