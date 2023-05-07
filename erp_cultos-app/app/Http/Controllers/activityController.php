@@ -339,7 +339,7 @@ class activityController extends Controller
             ->count();
 
             $department=Request::input('Group');
-            $activitie=Activity::where('Group',$department);
+            $activitie=Activity::where('Group',$department)->get();
             
             return view('Shepherd.allActivity',compact('users','total','departments','activities','activitie'));
         }
