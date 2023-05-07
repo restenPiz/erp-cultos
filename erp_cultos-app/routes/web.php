@@ -126,6 +126,9 @@ Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity']
 //Inicio das rotas da parte de pastor
 Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {
 
+    //Inicio de todos as rotas de pesquisa da parte do pastor
+    Route::post('searchActivityShepherd', [activityController::class, 'searchActivityShepherd'])->middleware(['auth'])->name('searchActivityShepherd');
+
     //Inicio da rota de todas as actividades e de adicao de actividades
     Route::get('/allActivityShepherd', [activityController::class, 'allActivityShepherd'])->middleware(['auth'])->name('allActivityShepherd');
     Route::get('/addActivityShepherd', [activityController::class, 'addActivityShepherd'])->middleware(['auth'])->name('addActivityShepherd');
