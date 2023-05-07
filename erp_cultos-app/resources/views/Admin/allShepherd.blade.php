@@ -47,11 +47,11 @@
                                     <div class="row g-3">
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="theological_level" id="idStatus">
+                                                <select class="form-control" data-choices data-choices-search- required name="theological_level" id="idStatus">
                                                     <option>...</option>
 
                                                     @foreach ($users as $user)
-                                                        <option value="{{$user->theological_level}}">{{$option->theological_level}}</option>
+                                                        <option value="{{$user->theological_level}}">{{$user->theological_level}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
