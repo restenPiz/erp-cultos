@@ -158,4 +158,44 @@ class patrimonyController extends Controller
             return redirect()->route('login');
         }
     }
+    public function searchPatrimony()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+             //Retornando os dados para se usar nas cards
+             $count_branches=Branche::count();
+             $count_activities=Activity::count();
+             $count_cults=DB::table('cults')
+             ->count();
+             $count_shepherds=DB::table('users')
+                 ->where('userType','pastor')
+                 ->count();
+             
+             $count_report=ReportActivity::count();
+ 
+             $count_announcement=Announcement::count();
+ 
+             $total=$count_report+$count_announcement;
+             
+            $status=Request::input('Status');
+
+             $patrimonys=Patrimony::where('Status',$status);
+             
+             $announcements=Announcement::all();
+             
+             $activities=ReportActivity::all();
+             
+             $announcements=Announcement::all();
+             
+             $activities=ReportActivity::all();
+ 
+             return view('Admin.allPatrimony',compact('patrimonys','count_branches','count_activities','count_cults','count_shepherds','total','announcements','activities','announcements','activities'));     
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
