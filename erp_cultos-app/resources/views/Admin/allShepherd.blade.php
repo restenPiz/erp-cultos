@@ -50,9 +50,13 @@
                                                 <select class="form-control" data-choices data-choices-search- required name="theological_level" id="idStatus">
                                                     <option>...</option>
 
-                                                    @foreach ($users as $user)
-                                                        <option value="{{$user->theological_level}}">{{$user->theological_level}}</option>
-                                                    @endforeach
+                                                    <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
+                                                    <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
+                                                    <option value="Curso Superior em Teologia">Curso Superior em Teologia</option>
+                                                    <option value="Capacitacao de Lideres">Capacitacao de Lideres</option>
+                                                    <option value="Capacitacao de Obreiros">Capacitacao de Obreiros</option>
+                                                    <option value="Capacitacao de Professores Criancas">Capacitacao de Professores Criancas</option>
+                                                    <option value="Nenhum">Nenhum</option>
                                                 </select>
                                             </div>
                                         </div>
