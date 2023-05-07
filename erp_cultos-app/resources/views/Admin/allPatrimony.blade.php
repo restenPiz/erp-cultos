@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <div id="customerList">
                             <div class="card-body border border-dashed border-end-0 border-start-0">
-                                <form action="{{route('searchMember')}}" method="post">
+                                <form action="{{route('searchPatrimony')}}" method="post">
                                     @csrf
                                     <div class="row g-3">
                                         <!--end col-->
