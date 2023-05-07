@@ -49,7 +49,9 @@
                                                 <select class="form-control" data-choices data-choices-search-false name="Creation_year" id="idStatus">
                                                     <option>...</option>
 
-                                                    
+                                                    @foreach ($branches as $branche)
+                                                    <option value="{{$branche->Creation_year}}">{{$branche->Creation_year}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -59,7 +61,9 @@
                                                 <select class="form-control" data-choices data-choices-search-false name="Number_of_members" id="idPayment">
                                                     <option>...</option>
 
-
+                                                    @foreach ($branches as $branche)
+                                                    <option value="{{$branche->Id_user}}">{{$branche->name($branche->Id_user)}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>

@@ -34,8 +34,7 @@ Route::get('/allCult', [cultController::class, 'allCult'])->middleware(['auth'])
 
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
-
-        
+      
     //Inicio da rota de todos os membros
     Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
         
