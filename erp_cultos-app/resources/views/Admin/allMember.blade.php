@@ -38,43 +38,18 @@
                                 <form action="{{route('searchMember')}}" method="post">
                                     @csrf
                                     <div class="row g-3">
-                                        <!--end col-->
-                                        {{--<div class="col-xxl-2 col-sm-6">
-                                            <div>
-                                                <input type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" id="demo-datepicker" placeholder="Select date">
-                                            </div>
-                                        </div>--}}
-                                        <!--end col-->
                                         <div class="col-xxl-4 col-sm-6">
                                             <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="theological_level" id="idStatus" required>
+                                                <select class="form-control" data-choices data-choices-search- required name="theological_level" id="idStatus">
                                                     <option>...</option>
 
-                                                    {{--Inicio da parte contendo os niveis teologicos--}}
-                                                    
-                                                    @foreach ($users as $user)
-                                                        <option value="{{$user->theological_level}}">{{$user->theological_level}}</option>    
-                                                    @endforeach
-
-                                                    {{--Fim da parte contendo os niveis teologicos--}}
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-xxl-4 col-sm-6">
-                                            <div>
-                                                <select class="form-control" data-choices data-choices-search-false name="surname" id="idPayment" required>
-                                                    <option>...</option>
-
-                                                    {{--Inicio da parte contendo o papel de cada um--}}
-
-                                                    @foreach ($users as $user)
-                                                        <option value="{{$user->surname}}">{{$user->surname}}</option>    
-                                                    @endforeach
-
-                                                    {{--Fim da parte contendo o papel de cada um--}}
-
+                                                    <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
+                                                    <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
+                                                    <option value="Curso Superior em Teologia">Curso Superior em Teologia</option>
+                                                    <option value="Capacitacao de Lideres">Capacitacao de Lideres</option>
+                                                    <option value="Capacitacao de Obreiros">Capacitacao de Obreiros</option>
+                                                    <option value="Capacitacao de Professores Criancas">Capacitacao de Professores Criancas</option>
+                                                    <option value="Nenhum">Nenhum</option>
                                                 </select>
                                             </div>
                                         </div>
