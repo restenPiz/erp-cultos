@@ -179,7 +179,7 @@ class patrimonyController extends Controller
              
             $status=Request::input('Status');
 
-             $patrimonys=Patrimony::where('Status',$status);
+             $patrimonys=Patrimony::where('Status',$status)->get();
              
              $announcements=Announcement::all();
              
