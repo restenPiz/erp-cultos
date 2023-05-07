@@ -322,7 +322,26 @@ class activityController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
+            $users = DB::table('users')
+            ->where('userType', '<>', 'admin')
+            ->get();
 
+            $users = DB::table('users')
+                ->where('userType', '=', 'pastor')
+                ->get();
+
+            $departments=DB::table('departments')
+                ->get();
+
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+            ->count();
+
+            $department=Request::input('Group');
+            $activitie=Activity::where('Group',$department);
+            
+            return view('Shepherd.allActivity',compact('users','total','departments','activities','activitie'));
         }
         else{
 
