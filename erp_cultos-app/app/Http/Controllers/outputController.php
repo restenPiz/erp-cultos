@@ -23,7 +23,7 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-            $users=User::all();
+            $users=User::where('userType','<>','admin')->get();
             $inputs=Input::all();
             
             $announcements=Announcement::all();
@@ -93,7 +93,7 @@ class outputController extends Controller
     {
         if(Auth::user()->hasRole('treasurer'))
         {
-            $users=User::all();
+            $users=User::where('userType','<>','admin')->get();
             $inputs=Input::all();
             $outputs=Output::all();
             

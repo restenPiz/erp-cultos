@@ -24,3 +24,4 @@ class member_department extends Model
         return $this->belongsTo(User::class,'Id_user');
     }
 }
+//Fim do model intermedidario entre membros e departamentos
