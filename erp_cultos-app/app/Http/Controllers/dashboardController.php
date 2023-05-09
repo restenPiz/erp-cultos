@@ -168,4 +168,17 @@ class dashboardController extends Controller
     {
         return view('Member.login');
     }
+    public function showAnnouncementsMember()
+    {
+        if(Auth::user()->hasRole('member'))
+        {
+
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
