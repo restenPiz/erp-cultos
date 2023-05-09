@@ -379,8 +379,8 @@
                                                                                     href="javascript:void(0);"><i
                                                                                         class="ri-eye-fill me-2 align-middle text-muted"></i>Ver</a>
                                                                             </li>--}}
-                                                                            <li><a class="dropdown-item" href="#"
-                                                                                    download="{{ $file->File }}"><i
+                                                                            <li><a class="dropdown-item" href="{{ $file->File }}"
+                                                                                    download><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
                                                                             </li>
                                                                         </ul>
