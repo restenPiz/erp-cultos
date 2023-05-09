@@ -172,9 +172,13 @@ class dashboardController extends Controller
     {
         if(Auth::user()->hasRole('member'))
         {
-            $announcements=Announcement::find($id);
+            $announcementss=Announcement::find($id);
 
-            return view('Member.showAnnouncementMember',compact('announcements'));
+            $users = DB::table('users')
+            ->where('userType', '=', 'pastor')
+            ->get();
+
+            return view('Member.showAnnouncementsMember',compact('announcements','users'));
         }
         else
         {
