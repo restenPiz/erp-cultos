@@ -117,7 +117,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
 //Inicio da rota para poder ter acesso ao comunicado
 Route::get('/showAnnouncements/{id}', [dashboardController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncements');
 
-
 //Inicio da parte de actividade
 Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
 Route::post('/storeActivity', [activityController::class, 'storeActivity'])->middleware(['auth'])->name('storeActivity');
