@@ -95,12 +95,9 @@
                             </div>
                             <input type="hidden" class="form-control bg-light border-0" value="admin" name="Type">
                             
-                            <div class="hstack gap-2 justify-content-end d-print-none mt-4">
-                                <button name="submit" type="submit" class="btn btn-success"><i
-                                        class="ri-check-double-line align-bottom me-1"></i> Actualizar</button>
                                 {{--<a href="javascript:void(0);" class="btn btn-primary"><i
                                         class="ri-download-2-line align-bottom me-1"></i> Download Comunicado</a>--}}
-                                        <a href="{{route('allAnnouncementMember')}}" class="btn btn-secondary"> Voltar</a>
+                                        <a href="{{route('dashboard')}}" class="btn btn-secondary"> Voltar</a>
                                 {{---<a href="javascript:void(0);" class="btn btn-danger"><i
                                         class="ri-send-plane-fill align-bottom me-1"></i> Send Invoice</a>--}}
                             </div>
