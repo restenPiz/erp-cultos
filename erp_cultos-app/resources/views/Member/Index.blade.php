@@ -463,7 +463,7 @@
                                                                                 class="image-popup" href="../{{$audio->File}}"><i
                                                                                         class="ri-eye-fill me-2 align-middle text-muted"></i>Reproduzir</a>
                                                                             </li>---}}
-                                                                            <li><a href="#" class="dropdown-item" download="{{$audio->File}}"><i
+                                                                            <li><a href="{{$audio->File}}" class="dropdown-item" download><i
                                                                                         class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
                                                                             </li>
                                                                         </ul>
