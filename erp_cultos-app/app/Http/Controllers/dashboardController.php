@@ -124,33 +124,41 @@ class dashboardController extends Controller
     }
     public function showAnnouncement($id)
     {
-        $announcementss = Announcement::findOrFail($id);
-        $users = DB::table('users')
-            ->where('userType', '=', 'pastor')
-            ->get();
+        if (Auth::user()->hasRole('admin')) {
+            
+            $announcementss = Announcement::findOrFail($id);
+            $users = DB::table('users')
+                ->where('userType', '=', 'pastor')
+                ->get();
 
-            //Retornando os dados para se usar nas cards
-        $count_branches = Branche::count();
-        $count_activities = Activity::count();
-        $count_cults = DB::table('cults')
-            ->count();
-        $count_shepherds = DB::table('users')
-            ->where('userType', 'pastor')
-            ->count();
+                //Retornando os dados para se usar nas cards
+            $count_branches = Branche::count();
+            $count_activities = Activity::count();
+            $count_cults = DB::table('cults')
+                ->count();
+            $count_shepherds = DB::table('users')
+                ->where('userType', 'pastor')
+                ->count();
 
-        $count_report = ReportActivity::count();
+            $count_report = ReportActivity::count();
 
-        $count_announcement = Announcement::count();
+            $count_announcement = Announcement::count();
 
-        $total = $count_report + $count_announcement;
+            $total = $count_report + $count_announcement;
 
-        $branches = Branche::all();
+            $branches = Branche::all();
 
-        $announcements = Announcement::all();
+            $announcements = Announcement::all();
 
-        $activities = ReportActivity::all();
-        return view('Admin.showAnnouncement', compact('users','announcementss','count_branches', 'count_activities', 'count_cults', 'count_shepherds', 'total', 'announcements', 'activities'));
+            $activities = ReportActivity::all();
+            return view('Admin.showAnnouncement', compact('users','announcementss','count_branches', 'count_activities', 'count_cults', 'count_shepherds', 'total', 'announcements', 'activities'));
 
+        } else {
+
+            Alert::error('Nao Autenticado!', 'O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
     }
     public function autoMember()
     {

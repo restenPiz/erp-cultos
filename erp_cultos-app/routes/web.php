@@ -57,6 +57,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::post('searchTreasurer', [treasurerController::class, 'searchTreasurer'])->middleware(['auth'])->name('searchTreasurer');
     Route::post('searchWorship_leader', [worship_leaderController::class, 'searchWorship_leader'])->middleware(['auth'])->name('searchWorship_leader');
 
+    //Inicio da rota para poder ter acesso ao comunicado
+    Route::get('/showAnnouncements/{id}', [dashboardController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncements');
+
     //Inicio das rotas da parte de tesoureiros
     Route::get('/addTreasurer', [treasurerController::class, 'addTreasurer'])->middleware(['auth'])->name('addTreasurer');
     Route::post('/storeTreasurer', [treasurerController::class, 'storeTreasurer'])->middleware(['auth'])->name('storeTreasurer');
@@ -113,9 +116,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
 
 });
-
-//Inicio da rota para poder ter acesso ao comunicado
-Route::get('/showAnnouncements/{id}', [dashboardController::class, 'showAnnouncement'])->middleware(['auth'])->name('showAnnouncements');
 
 //Inicio da parte de actividade
 Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
@@ -217,6 +217,9 @@ Route::post('/loginMember', [memberController::class, 'loginMember'])->name('log
 
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
+
+    //Inicio da rota responsavel por fazer o show do comunicado
+    Route::get('/showAnnouncementsMember/{id}', [dashboardController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementsMember');
 
     //Inicio da rota para poder acessar a parte de todos os cultos
     Route::get('/allCultMember', [cultController::class, 'allCultMember'])->middleware(['auth'])->name('allCultMember');
