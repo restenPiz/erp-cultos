@@ -168,11 +168,13 @@ class dashboardController extends Controller
     {
         return view('Member.login');
     }
-    public function showAnnouncementsMember()
+    public function showAnnouncementsMember($id)
     {
         if(Auth::user()->hasRole('member'))
         {
+            $announcements=Announcement::find($id);
 
+            return view('Member.showAnnouncementMember',compact('announcements'));
         }
         else
         {
