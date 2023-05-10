@@ -190,6 +190,9 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
 //Inicio das rotas da parte de tesoureiro treasurer
 Route::group(['prefix' => 'treasurer', 'middleware' => ['role:treasurer']], function () {
     
+    //Inicio da rota de show do comunicado
+    Route::get('/showAnnouncementTreasurer/{id}', [dashboardController::class, 'showAnnouncementTreasurer'])->middleware(['auth'])->name('showAnnouncementTreasurer');
+
     //Inicio das rotas de pesquisa da parte de tesoureiro
     Route::post('searchInput', [inputController::class, 'searchInput'])->middleware(['auth'])->name('searchInput');
 

@@ -240,4 +240,35 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
+    public function showAnnouncementTreasurer($id)
+    {
+        if(Auth::user()->hasRole('treasurer'))
+        {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+            
+            $users=DB::table('users')
+                ->where('name','<>','Admin')
+                ->where('userType', '=', 'pastor')
+                ->get();
+
+            $announcementss=Announcement::find($id);
+
+            return view('Treasurer.showAnnouncementTreasurer',compact('announcementss','users','announcements','activities','total'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
