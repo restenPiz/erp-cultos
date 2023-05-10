@@ -208,4 +208,17 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
+    public function showAnnouncementWorship_leader()
+    {
+        if(Auth::user()->hasRole('worship_leader'))
+        {
+
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
