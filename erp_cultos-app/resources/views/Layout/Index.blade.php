@@ -103,12 +103,9 @@
                                     <div class="p-3">
                                         <div class="row align-items-center">
                                             <div class="col">
-                                                <h6 class="m-0 fs-16 fw-semibold text-white"> Relatorio de Actividades
+                                                <h6 class="m-0 fs-16 fw-semibold text-white"> Notificacoes
                                                 </h6>
                                             </div>
-                                            {{-- -<div class="col-auto dropdown-tabs">
-                                                <span class="badge badge-soft-light fs-13"> 4 New</span>
-                                            </div> --}}
                                         </div>
                                     </div>
 
@@ -149,6 +146,7 @@
                                                     </a>
                                                 </li>
                                             @endrole
+                                            
                                             @role('shepherd')
                                                 <li class="nav-item waves-effect waves-light">
                                                     <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"

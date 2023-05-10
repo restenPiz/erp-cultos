@@ -175,6 +175,9 @@ Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leade
     //Inicio da parte de cultos do sistema
     Route::get('/allCultWorship_leader', [cultController::class, 'allCultWorship_leader'])->middleware(['auth'])->name('allCultWorship_leader');
 
+    //Inicio da rota de show do comunicado
+    Route::get('/showAnnouncementWorship_leader/{id}', [dashboardController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementsMember');
+
     //Inicio das rotas para gerir os ficheiros File
     Route::post('/storeFile', [fileController::class, 'storeFile'])->middleware(['auth'])->name('storeFile');
     Route::get('/addFile', [fileController::class, 'addFile'])->middleware(['auth'])->name('addFile');
@@ -219,7 +222,7 @@ Route::post('/loginMember', [memberController::class, 'loginMember'])->name('log
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
 
     //Inicio da rota responsavel por fazer o show do comunicado
-    Route::get('/showAnnouncementsMember/{id}', [dashboardController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementsMember');
+    Route::get('/showAnnouncementsMember/{id}', [dashboardController::class, 'showAnnouncementWorship_leader'])->middleware(['auth'])->name('showAnnouncementWorship_leader');
 
     //Inicio da rota para poder acessar a parte de todos os cultos
     Route::get('/allCultMember', [cultController::class, 'allCultMember'])->middleware(['auth'])->name('allCultMember');
