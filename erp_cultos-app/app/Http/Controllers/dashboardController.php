@@ -275,7 +275,9 @@ class dashboardController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
+            $users=User::where('id',1)->get();
 
+            return view('Admin.ProfileAdmin',compact('users'));
         }
         else
         {
