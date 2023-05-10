@@ -208,11 +208,30 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
-    public function showAnnouncementWorship_leader()
+    public function showAnnouncementWorship_leader($id)
     {
         if(Auth::user()->hasRole('worship_leader'))
         {
+            $cults=Cult::all();
 
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            $announcementss=Announcement::find($id);
+
+            $users = DB::table('users')
+            ->where('userType', '=', 'pastor')
+            ->get();
+
+            return view('Worship_leader.showAnnouncementWorship_leader',compact('announcementss','users','cults','announcements','activities','total'));
         }
         else
         {
