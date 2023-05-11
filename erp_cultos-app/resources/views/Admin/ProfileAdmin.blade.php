@@ -20,7 +20,7 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Nome</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu nome" name="name" required>
+                                                value="{{$userss->name}}" name="name" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -28,7 +28,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Email</label>
                                             <input type="email" class="form-control" id="labelInput"
-                                                placeholder="Digite o seu email" name="email" required>
+                                            value="{{$userss->email}}" name="email" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -36,7 +36,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Senha</label>
                                             <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password" required>
+                                            value="{{$userss->password}}" name="password" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -44,7 +44,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Senha de Confirmacao</label>
                                             <input type="password" class="form-control" id="labelInput"
-                                                placeholder="Digite a sua senha" name="password_confirmation" required>
+                                            value="{{$userss->password}}" name="password_confirmation" required>
                                         </div>
                                     </div>
                                 </div>
@@ -70,14 +70,14 @@
                                         <div>
                                             <label for="basiInput" class="form-label">Apelido</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu nome" name="surname" required>
+                                            value="{{$userss->surname}}" name="surname" required>
                                         </div>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="basiInput" class="form-label">Contacto</label>
                                             <input type="text" class="form-control" id="basiInput"
-                                                placeholder="Digite o seu contacto" name="contact" required>
+                                            value="{{$userss->contact}}" name="contact" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -85,7 +85,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Funcao</label>
                                             <input type="text" class="form-control" id="labelInput"
-                                                placeholder="Escreva a sua funcao" name="function" required>
+                                            value="{{$userss->function}}" name="function" required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -94,15 +94,16 @@
                                         <div>
                                             <label class="form-label">Genero</label>
                                             <select class="form-control" name="gender">
+                                                <option value="{{$userss->gender}}">{{$userss->gender}}</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-xxl-6 col-md-6">
+                                    {{--<div class="col-xxl-6 col-md-6">
                                         <label for="exampleDataList" class="form-label">Nivel Teologico</label>
                                         <select class="form-control" name="theological_level" required>
-                                            <option>...</option>
+                                            <option value="{{$userss->theological_level}}">{{$users->theological_level}}</option>
                                             <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
                                             <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
                                             <option value="Curso Superior em Teologia">Curso Superior em Teologia</option>
@@ -111,9 +112,9 @@
                                             <option value="Capacitacao de Professores Criancas">Capacitacao de Professores Criancas</option>
                                             <option value="Nenhum">Nenhum</option>
                                         </select>
-                                    </div>
+                                    </div>--}}
                                     <!--end col-->
-                                    <input type="hidden" class="form-control" id="labelInput" name="userType" value="pastor">
+                                    <input type="hidden" class="form-control" id="labelInput" name="userType" value="admin">
                                 </div>
                                 <!--end row-->
                             </div>
@@ -130,7 +131,7 @@
                         {{-- Inicio da parte de butoes --}}
 
                         <button type="submit" name="submit" class="form-control bg-primary"
-                            style="color:white">Adicionar</button>
+                            style="color:white">Actualizar</button>
 
                         {{-- Fim da parte de butoes --}}
 

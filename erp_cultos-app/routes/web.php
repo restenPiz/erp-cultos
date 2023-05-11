@@ -36,6 +36,7 @@ Route::get('/allCult', [cultController::class, 'allCult'])->middleware(['auth'])
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
       
     Route::get('/ProfileAdmin', [dashboardController::class, 'ProfileAdmin'])->middleware(['auth'])->name('ProfileAdmin');
+    Route::post('/updateProfileAdmin', [dashboardController::class, 'updateProfileAdmin'])->middleware(['auth'])->name('updateProfileAdmin');
 
     //Inicio da rota de todos os membros
     Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');

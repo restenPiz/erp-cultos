@@ -241,7 +241,7 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Bem Vindo {{ Auth::user()->name }}!</h6>
-                                <a class="dropdown-item" href="pages-profile.html"><i
+                                <a class="dropdown-item" href="{{route('ProfileAdmin')}}"><i
                                         class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Perfil</span></a>
                                 <a class="dropdown-item" href="pages-faqs.html"><i
