@@ -36,7 +36,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Senha</label>
                                             <input type="password" class="form-control" id="labelInput"
-                                            value="{{$userss->password}}" name="password" required>
+                                            value="{{$userss->password}}" name="password" controls required>
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -44,7 +44,7 @@
                                         <div>
                                             <label for="labelInput" class="form-label">Senha de Confirmacao</label>
                                             <input type="password" class="form-control" id="labelInput"
-                                            value="{{$userss->password}}" name="password_confirmation" required>
+                                            value="{{$userss->password}}" name="password_confirmation" controls required>
                                         </div>
                                     </div>
                                 </div>

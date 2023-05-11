@@ -317,13 +317,7 @@ class dashboardController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $request->validate([
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            ]);
-
-            $user=User::find($id);
+            $user=User::findOrFail($id);
 
             $user->id=$request->input('id');
             $user->name=$request->input('name');
@@ -333,7 +327,7 @@ class dashboardController extends Controller
             $user->contact=$request->input('contact');
             $user->function=$request->input('function');
             $user->gender=$request->input('gender');    
-            $user->name=$request->Hash::make($request->password);
+            $user->name=$request->input(Hash::make($request->password));
 
             $user->save();
     
