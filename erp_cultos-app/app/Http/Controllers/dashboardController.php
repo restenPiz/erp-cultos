@@ -325,6 +325,7 @@ class dashboardController extends Controller
 
             $user=User::find($id);
 
+            $user->id=$request->input('id');
             $user->name=$request->input('name');
             $user->email=$request->input('email');
             $user->userType=$request->input('userType');

@@ -4,7 +4,7 @@
 
     @role('admin')
         {{-- Inicio do conteudo do meu sistem --}}
-        <form action="{{ route('updateProfileAdmin',['id',$userss->id]) }}" method="post">
+        <form action="{{ route('updateProfileAdmin',['id'=>$userss->id]) }}" method="post">
             @csrf
 
             <div class="row">
@@ -113,6 +113,7 @@
                                             <option value="Nenhum">Nenhum</option>
                                         </select>
                                     </div>--}}
+                                    <input type="hidden" class="form-control" id="labelInput" name="id" value="{{$userss->id}}">
                                     <!--end col-->
                                     <input type="hidden" class="form-control" id="labelInput" name="userType" value="admin">
                                 </div>
