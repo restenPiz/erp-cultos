@@ -309,4 +309,17 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
+    public function updateProfileAdmin()
+    {
+        if(Auth::user()->hasRole('admin'))
+        {
+
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
