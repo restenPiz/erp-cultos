@@ -309,11 +309,36 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
-    public function updateProfileAdmin()
+    public function updateProfileAdmin(Request $request, $id)
     {
         if(Auth::user()->hasRole('admin'))
         {
+            $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            ]);
 
+            $user=User::find($id);
+    
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'userType' => $request->userType,
+                'surname' => $request->surname,
+                'contact' => $request->contact,
+                'function' => $request->function,
+                'gender' => $request->gender,
+                'password' => Hash::make($request->password),
+            ]);
+    
+            $user->attachRole('admin');
+    
+            event(new Registered($user));
+    
+            Auth::login($user);
+    
+            return back();
         }
         else
         {
