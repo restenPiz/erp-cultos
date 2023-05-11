@@ -13,6 +13,10 @@ use Alert;
 use Illuminate\Support\Facades\File;
 use App\Models\User;
 use App\Models\Branche;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class dashboardController extends Controller
 {
