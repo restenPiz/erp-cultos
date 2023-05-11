@@ -345,7 +345,7 @@ class dashboardController extends Controller
     
             Alert::success('Actualizado!','Os dados do usuario foram actualizados com sucesso!');
 
-            return redirect()->back();
+            return redirect()->route('dashboard');
         }
         else
         {
