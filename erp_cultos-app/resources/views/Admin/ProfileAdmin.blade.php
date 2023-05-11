@@ -4,7 +4,7 @@
 
     @role('admin')
         {{-- Inicio do conteudo do meu sistem --}}
-        <form action="{{ route('storeShepherd') }}" method="post">
+        <form action="{{ route('updateProfileAdmin',['id',$userss->id]) }}" method="post">
             @csrf
 
             <div class="row">
