@@ -327,7 +327,7 @@ class dashboardController extends Controller
             $user->contact=$request->input('contact');
             $user->function=$request->input('function');
             $user->gender=$request->input('gender');    
-            $user->name=$request->input(Hash::make($request->password));
+            $user->password=$request->input(Hash::make($request->password));
 
             $user->save();
     
