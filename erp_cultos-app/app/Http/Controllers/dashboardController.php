@@ -324,17 +324,17 @@ class dashboardController extends Controller
             ]);
 
             $user=User::find($id);
-    
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'userType' => $request->userType,
-                'surname' => $request->surname,
-                'contact' => $request->contact,
-                'function' => $request->function,
-                'gender' => $request->gender,
-                'password' => Hash::make($request->password),
-            ]);
+
+            $user->name=$request->input('name');
+            $user->email=$request->input('email');
+            $user->userType=$request->input('userType');
+            $user->surname=$request->input('surname');
+            $user->contact=$request->input('contact');
+            $user->function=$request->input('function');
+            $user->gender=$request->input('gender');    
+            $user->name=$request->Hash::make($request->password);
+
+            $user->save();
     
             $user->attachRole('admin');
     
@@ -342,6 +342,8 @@ class dashboardController extends Controller
     
             Auth::login($user);
     
+            Alert::success('Actualizado!','Os dados do usuario foram actualizados com sucesso!');
+
             return back();
         }
         else
