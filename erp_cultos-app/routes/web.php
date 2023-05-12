@@ -180,6 +180,9 @@ Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], functi
 //Inicio das rotas da parte do lider de louvor
 Route::group(['prefix' => 'worship_leader', 'middleware' => ['role:worship_leader']], function () {
 
+    //Inicio da rota de perfil de usuario
+    Route::get('/ProfileWorship_leader/{id}', [dashboardController::class, 'ProfileWorship_leader'])->middleware(['auth'])->name('ProfileWorship_leader');
+
     //Inicio da parte de cultos do sistema
     Route::get('/allCultWorship_leader', [cultController::class, 'allCultWorship_leader'])->middleware(['auth'])->name('allCultWorship_leader');
 
@@ -234,6 +237,9 @@ Route::post('/loginMember', [memberController::class, 'loginMember'])->name('log
 
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
+
+    //Inicio da rota de perfil de usuario
+    Route::get('/ProfileMember/{id}', [dashboardController::class, 'ProfileMember'])->middleware(['auth'])->name('ProfileMember');
 
     //Inicio da rota responsavel por fazer o show do comunicado
     Route::get('/showAnnouncementsMember/{id}', [dashboardController::class, 'showAnnouncementMember'])->middleware(['auth'])->name('showAnnouncementsMember');
