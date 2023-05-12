@@ -319,24 +319,21 @@ class dashboardController extends Controller
         {
             $user=User::findOrFail($id);
 
-            $user->id=$request->input('id');
-            $user->name=$request->input('name');
-            $user->email=$request->input('email');
-            $user->userType=$request->input('userType');
-            $user->surname=$request->input('surname');
-            $user->contact=$request->input('contact');
-            $user->function=$request->input('function');
-            $user->gender=$request->input('gender');    
-            $user->password=$request->input(Hash::make($request->password));
+            $user = User::create([
+                'id'=>$request->id,
+                'name' => $request->name,
+                'email' => $request->email,
+                'surname' => $request->surname,
+                'function' => $request->function,
+                'theological_level' => $request->theological_level,
+                'contact' => $request->contact,
+                'userType' => $request->userType,
+                'gender' => $request->gender,
+                'password' => Hash::make($request->password),
+            ]);
 
-            $user->save();
-    
             $user->attachRole('admin');
-    
-            event(new Registered($user));
-    
-            Auth::login($user);
-    
+            
             Alert::success('Actualizado!','Os dados do usuario foram actualizados com sucesso!');
 
             return redirect()->route('dashboard');
