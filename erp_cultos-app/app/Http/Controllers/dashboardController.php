@@ -360,6 +360,54 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
+    public function ProfileWorship_leader($id)
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $userss=User::findOrFail($id);
+
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            $users=DB::table('users')
+                ->where('userType','member')
+                ->get();
+
+            return view('Worship_leader.ProfileWorship_leader',compact('userss','users','activities','total'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function ProfileMember($id)
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $userss=User::findOrFail($id);
+
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            $users=DB::table('users')
+                ->where('userType','member')
+                ->get();
+
+            return view('Treasurer.ProfileTreasurer',compact('userss','users','activities','total'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
     
     public function updateProfileAdmin(Request $request, $id)
     {
