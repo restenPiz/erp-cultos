@@ -312,11 +312,11 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
-    public function ProfileShepherd()
+    public function ProfileShepherd($id)
     {
         if(Auth::user()->hasRole('shepherd'))
         {
-            $userss=User::where('userType','admin')->first();
+            $userss=User::findOrFail($id);
 
             $activities=Activity::all();
 
@@ -327,7 +327,7 @@ class dashboardController extends Controller
                 ->where('userType','member')
                 ->get();
 
-            return view('Shepherd.Index',compact('userss','users','activities','total'));
+            return view('Shepherd.ProfileShepherd',compact('userss','users','activities','total'));
         }
         else
         {

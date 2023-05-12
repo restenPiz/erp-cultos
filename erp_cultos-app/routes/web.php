@@ -132,7 +132,7 @@ Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity']
 Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {
 
     //Inicio da rota de actualizacao do perfil na parte de pastor auxiliar
-    Route::get('/ProfileShepherd', [dashboardController::class, 'ProfileShepherd'])->middleware(['auth'])->name('ProfileShepherd');
+    Route::get('/ProfileShepherd/{id}', [dashboardController::class, 'ProfileShepherd'])->middleware(['auth'])->name('ProfileShepherd');
 
     //Inicio de todos as rotas de pesquisa da parte do pastor
     Route::post('searchActivityShepherd', [activityController::class, 'searchActivityShepherd'])->middleware(['auth'])->name('searchActivityShepherd');
