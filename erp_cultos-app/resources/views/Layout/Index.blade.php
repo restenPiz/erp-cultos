@@ -376,13 +376,6 @@
                                         class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Ajuda</span></a>
                                 <div class="dropdown-divider"></div>
-                                {{-- <a class="dropdown-item" href="pages-profile-settings.html"><span
-                                        class="badge bg-soft-success text-success mt-1 float-end">New</span><i
-                                        class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Settings</span></a> --}}
-                                {{-- <a class="dropdown-item" href="auth-lockscreen-basic.html"><i
-                                        class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Lock screen</span></a> --}}
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
                                     <button type="submit" name="submit" class="dropdown-item"
