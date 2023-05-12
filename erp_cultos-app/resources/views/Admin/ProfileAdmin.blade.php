@@ -35,16 +35,14 @@
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Senha</label>
-                                            <input type="password" class="form-control" id="labelInput"
-                                            value="{{$userss->password}}" name="password" controls required>
+                                            <input type="password" class="form-control" id="labelInput" name="password" controls required>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-xxl-6 col-md-6">
                                         <div>
                                             <label for="labelInput" class="form-label">Senha de Confirmacao</label>
-                                            <input type="password" class="form-control" id="labelInput"
-                                            value="{{$userss->password}}" name="password_confirmation" controls required>
+                                            <input type="password" class="form-control" id="labelInput" name="password_confirmation" controls required>
                                         </div>
                                     </div>
                                 </div>

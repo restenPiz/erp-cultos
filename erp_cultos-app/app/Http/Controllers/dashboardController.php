@@ -279,10 +279,9 @@ class dashboardController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $userss=DB::table('users')
-                ->first();
+            $userss=User::where('userType','admin')->first();
 
-            $users = User::where('name', '<>', 'admin')->orderBy('name')->get();
+            $users = User::where('userType', '<>', 'admin')->orderBy('name')->get();
             //Retornando os dados para se usar nas cards
             $count_branches = Branche::count();
             $count_activities = Activity::count();
@@ -315,11 +314,11 @@ class dashboardController extends Controller
     }
     public function updateProfileAdmin(Request $request, $id)
     {
-        if(Auth::user()->hasRole('admin'))
+        if(Auth::user())
         {
             $user=User::findOrFail($id);
 
-            $user = User::create([
+            $user->update([
                 'id'=>$request->id,
                 'name' => $request->name,
                 'email' => $request->email,
@@ -332,8 +331,10 @@ class dashboardController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            $user->attachRole('admin');
-            
+                
+            event(new Registered($user));
+
+            Auth::login($user);
             Alert::success('Actualizado!','Os dados do usuario foram actualizados com sucesso!');
 
             return redirect()->route('dashboard');
