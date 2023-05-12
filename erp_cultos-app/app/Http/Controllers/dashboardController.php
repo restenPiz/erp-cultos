@@ -338,7 +338,7 @@ class dashboardController extends Controller
     }
     public function ProfileTreasurer($id)
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('treasurer'))
         {
             $announcements=Announcement::all();
 
@@ -376,6 +376,7 @@ class dashboardController extends Controller
 
             $count_activities=DB::table('activities')
                 ->count();
+
             $count_announcements=DB::table('announcements')
                 ->count();
 
@@ -400,20 +401,29 @@ class dashboardController extends Controller
     }
     public function ProfileMember($id)
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('member'))
         {
-            $userss=User::findOrFail($id);
+            $announcements=Announcement::all();
 
             $activities=Activity::all();
 
-            $total=DB::table('activities')
+            $count_activities=DB::table('activities')
                 ->count();
+
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            $userss=User::findOrFail($id);
+
+            $activities=Activity::all();
 
             $users=DB::table('users')
                 ->where('userType','member')
                 ->get();
 
-            return view('Treasurer.ProfileTreasurer',compact('userss','users','activities','total'));
+            return view('Member.ProfileMember',compact('userss','users','activities','total','announcements'));
         }
         else
         {
