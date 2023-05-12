@@ -2,7 +2,7 @@
 @extends('Layout.Index')
 @section('content')
 
-    @role('shepherd')
+    @role('treasurer')
         {{-- Inicio do conteudo do meu sistem --}}
         <form action="{{ route('updateProfileAdmin',['id'=>$userss->id]) }}" method="post">
             @csrf
@@ -113,7 +113,7 @@
                                     </div>--}}
                                     <input type="hidden" class="form-control" id="labelInput" name="id" value="{{$userss->id}}">
                                     <!--end col-->
-                                    <input type="hidden" class="form-control" id="labelInput" name="userType" value="shepherd">
+                                    <input type="hidden" class="form-control" id="labelInput" name="userType" value="treasurer">
                                 </div>
                                 <!--end row-->
                             </div>
