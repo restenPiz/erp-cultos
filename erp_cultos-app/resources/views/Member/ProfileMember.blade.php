@@ -4,7 +4,7 @@
 
     @role('member')
         {{-- Inicio do conteudo do meu sistem --}}
-        <div class="container">
+        <br><br><br><br><br><div class="container-fluid">
         
             <form action="{{route('loginMember')}}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -14,7 +14,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <div class="profile-user position-relative d-inline-block mx-auto  mb-4">
-                                        <img src="assets/images/users/avatar-1.jpg"
+                                        <img src="/{{$userss->File}}"
                                             class="rounded-circle avatar-xl img-thumbnail user-profile-image"
                                             alt="user-profile-image">
                                         <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
@@ -64,7 +64,7 @@
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Primeiro Nome</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="Digite o seu nome" name="name" required>
+                                                        value="{{$userss->name}}" name="name" required>
                                                 </div>
                                             </div>
                                             <!--end col-->
@@ -72,7 +72,7 @@
                                                 <div class="mb-3">
                                                     <label for="lastnameInput" class="form-label">Email</label>
                                                     <input type="email" class="form-control" id="lastnameInput"
-                                                        placeholder="Digite o seu email" name="email" required>
+                                                    value="{{$userss->email}}" name="email" required>
                                                 </div>
                                             </div>
                                             <!--end col-->
@@ -102,35 +102,35 @@
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Apelido</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="Digite o seu apelido" name="surname" required>
+                                                    value="{{$userss->surname}}" name="surname" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Numero de BI</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="EX: 0983939937982982BF" name="number_bi" required>
+                                                    value="{{$userss->number_bi}}" name="number_bi" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Profissao</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="Digite a sua profissao" name="profission" required>
+                                                    value="{{$userss->profission}}" name="profission" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Filiacao</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="EX: filho de Peniel e Assuncao" name="affiliation" required>
+                                                    value="{{$userss->affiliation}}" name="affiliation" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Genero</label>
                                                     <select class="form-control" name="gender" required>
-                                                        <option>...</option>
+                                                        <option value="{{$userss->gender}}">{{$userss->gender}}</option>
                                                         <option value="Masculino">Masculino</option>
                                                         <option value="Femenino">Femenino</option>
                                                     </select>
@@ -140,7 +140,7 @@
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Morada</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="Escreva a sua morada" name="household" required>
+                                                    value="{{$userss->household}}" name="household" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
@@ -148,21 +148,21 @@
                                                     <label for="firstnameInput" class="form-label">Data de
                                                         Nascimento</label>
                                                     <input type="date" class="form-control" id="firstnameInput"
-                                                        placeholder="EX: filho de Peniel e Assuncao" name="date_of_birth" required>
+                                                    value="{{$userss->date_of_birth}}" name="date_of_birth" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Estado Civil</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="Digite o seu estado civil" name="marital_status" required>
+                                                    value="{{$userss->marital_status}}" name="marital_status" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">Contacto</label>
                                                     <input type="text" class="form-control" id="firstnameInput"
-                                                        placeholder="EX: 868749382" name="contact" required>
+                                                    value="{{$userss->contact}}" name="contact" required>
                                                 </div>
                                             </div>
                                             <!--end col-->
@@ -186,7 +186,7 @@
                                                             <label for="firstnameInput"
                                                                 class="form-label">Baptismo</label>
                                                             <select class="form-control" name="baptism" required>
-                                                                <option>...</option>
+                                                                <option value="{{$userss->baptism}}">{{$userss->baptism}}</option>
                                                                 <option value="Baptizado">Baptizado</option>
                                                                 <option value="Nao Baptizado">Nao Baptizado</option>
                                                             </select>
@@ -197,7 +197,7 @@
                                                             <label for="firstnameInput" class="form-label">Tempo na
                                                                 Igreja</label>
                                                             <input type="text" class="form-control"
-                                                                id="firstnameInput" placeholder="EX: 5 anos"
+                                                                id="firstnameInput" value="{{$userss->time_of_church}}"
                                                                 name="time_of_church" required>
                                                         </div>
                                                     </div>
@@ -206,7 +206,7 @@
                                                             <label for="firstnameInput" class="form-label">Nivel
                                                                 Teologico</label>
                                                             <select class="form-control" name="theological_level" required>
-                                                                <option>...</option>
+                                                                <option value="{{$userss->theological_level}}">{{$userss->theological_level}}</option>
                                                                 <option value="Curso Basico em Teologia">Curso Basico em
                                                                     Teologia</option>
                                                                 <option value="Curso Medio em Teologia">Curso Medio em
@@ -239,8 +239,8 @@
                     <!--end col-->
                     <div class="col">
                         <div class="hstack gap-2 justify-content-end">
-                            <a href="{{route('login')}}" class="btn btn-success">Login</a>
-                            <button type="submit" name="submit" class="btn btn-primary">Cadastrar-me</a>
+                            <a href="{{route('dashboard')}}" class="btn btn-success">Voltar</a>
+                            <button type="submit" name="submit" class="btn btn-primary">Actualizar</a>
                         </div>
                     </div>
                 </div>
