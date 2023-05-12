@@ -1,5 +1,5 @@
 
-@extends('Layout.Principal')
+@extends('Layout.Other')
 @section('content')
 
     @role('admin')
