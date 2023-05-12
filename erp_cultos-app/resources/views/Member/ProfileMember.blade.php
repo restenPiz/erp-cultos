@@ -6,7 +6,7 @@
         {{-- Inicio do conteudo do meu sistem --}}
         <br><br><br><br><div class="container-fluid">
         
-            <form action="{{ route('updateProfileAdmin',['id'=>$userss->id])}}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('updateProfileMember',['id'=>$userss->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-xxl-3">
@@ -225,6 +225,7 @@
                                                     </div>
                                                     <input type="hidden" value="membro" name="function">
                                                     <input type="hidden" value="member" name="userType">
+                                                    <input type="hidden" value="{{$userss->id}}" name="id">
                                                     <!--end col-->
                                                 </div>
                                                 <!--end row-->

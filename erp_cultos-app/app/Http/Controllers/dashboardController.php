@@ -428,6 +428,7 @@ class dashboardController extends Controller
         }
     }
     
+    
     public function updateProfileAdmin(Request $request, $id)
     {
         if(Auth::check())

@@ -34,6 +34,7 @@ Route::get('/allCult', [cultController::class, 'allCult'])->middleware(['auth'])
 
 //Inicio da rota de actualizacao dos dados do perfil
 Route::post('/updateProfileAdmin/{id}', [dashboardController::class, 'updateProfileAdmin'])->middleware(['auth'])->name('updateProfileAdmin');
+Route::post('/updateProfileMember/{id}', [memberController::class, 'updateProfileMember'])->middleware(['auth'])->name('updateProfileMember');
 
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {

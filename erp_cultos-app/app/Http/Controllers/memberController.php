@@ -293,4 +293,54 @@ class memberController extends Controller
             return redirect()->route('login');
         }
     }
+    public function updateProfileMember($id)
+    {
+        if(Auth::user()->hasRole('member'))
+        {
+            $table=User::findOrFail($id);
+            
+            $table->id=Request::input('id');
+            $table->name=Request::input('name');
+            $table->email=Request::input('email');
+            $table->password=Hash::make(Request::input('password'));
+            $table->number_bi=Request::input('number_bi');
+            $table->profission=Request::input('profission');
+            $table->baptism=Request::input('baptism');
+            $table->time_of_church=Request::input('time_of_church');
+            $table->affiliation=Request::input('affiliation');
+            $table->gender=Request::input('gender');
+            $table->household=Request::input('household');
+            $table->date_of_birth=Request::input('date_of_birth');
+            $table->marital_status=Request::input('marital_status');
+            $table->surname=Request::input('surname');
+            $table->function=Request::input('function');
+            $table->theological_level=Request::input('theological_level');
+            $table->contact=Request::input('contact');
+            $table->userType=Request::input('userType');
+
+            if (Request::file('File') != null) {
+                $filename = Request::file('File')->getClientOriginalName();
+                $link = "Ficheiros/" . $filename;
+                $table->File = $link;
+                $foto = Request::file('File');
+                $foto->move('Ficheiros', $filename);
+            }
+
+            $table->save();
+
+            event(new Registered($table));
+
+            Auth::login($table);
+
+            Alert::success('Actualizado!','Os seus dados foram actualizados com sucesso!');
+
+            return redirect()->route('dashboard');
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
