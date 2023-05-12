@@ -369,9 +369,16 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
+                                @role('shepherd')
                                 <a class="dropdown-item" href="{{route('ProfileShepherd',['id'=>Auth::user()->id])}}"><i
-                                        class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Perfil</span></a>
+                                    class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Perfil</span></a>
+                                @endrole
+                                @role('treasurer')
+                                <a class="dropdown-item" href="{{route('ProfileTreasurer',['id'=>Auth::user()->id])}}"><i
+                                    class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Perfil</span></a>
+                                @endrole
                                 <a class="dropdown-item" href="pages-faqs.html"><i
                                         class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Ajuda</span></a>
