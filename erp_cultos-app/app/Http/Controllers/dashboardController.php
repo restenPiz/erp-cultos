@@ -314,7 +314,7 @@ class dashboardController extends Controller
     }
     public function updateProfileAdmin(Request $request, $id)
     {
-        if(Auth::user())
+        if(Auth::check())
         {
             $user=User::findOrFail($id);
 
