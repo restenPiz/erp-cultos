@@ -312,6 +312,43 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
+    public function ProfileShepherd()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $userss=User::where('userType','admin')->first();
+
+            $users = User::where('userType', '<>', 'admin')->orderBy('name')->get();
+            //Retornando os dados para se usar nas cards
+            $count_branches = Branche::count();
+            $count_activities = Activity::count();
+            $count_cults = DB::table('cults')
+                ->count();
+            $count_shepherds = DB::table('users')
+                ->where('userType', 'pastor')
+                ->count();
+
+            $count_report = ReportActivity::count();
+
+            $count_announcement = Announcement::count();
+
+            $total = $count_report + $count_announcement;
+
+            $branches = Branche::all();
+
+            $announcements = Announcement::all();
+
+            $activities = ReportActivity::all();
+
+            return view('shepherd.ProfileShepherd', compact('userss','branches', 'users', 'count_branches', 'count_activities', 'count_cults', 'count_shepherds', 'total', 'announcements', 'activities'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
     public function updateProfileAdmin(Request $request, $id)
     {
         if(Auth::check())
