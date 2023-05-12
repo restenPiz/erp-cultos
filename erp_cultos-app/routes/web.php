@@ -32,11 +32,13 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['au
 //Inicio da rota que vai retornar todos os cultos
 Route::get('/allCult', [cultController::class, 'allCult'])->middleware(['auth'])->name('allCult');
 
+//Inicio da rota de actualizacao dos dados do perfil
+Route::post('/updateProfileAdmin/{id}', [dashboardController::class, 'updateProfileAdmin'])->middleware(['auth'])->name('updateProfileAdmin');
+
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
       
     Route::get('/ProfileAdmin', [dashboardController::class, 'ProfileAdmin'])->middleware(['auth'])->name('ProfileAdmin');
-    Route::post('/updateProfileAdmin/{id}', [dashboardController::class, 'updateProfileAdmin'])->middleware(['auth'])->name('updateProfileAdmin');
 
     //Inicio da rota de todos os membros
     Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
