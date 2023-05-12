@@ -354,7 +354,6 @@ class dashboardController extends Controller
             $userss=User::findOrFail($id);
 
             $users=DB::table('users')
-                ->where('userType','member')
                 ->get();
 
             return view('Treasurer.ProfileTreasurer',compact('userss','users','activities','total','announcements'));
@@ -387,7 +386,6 @@ class dashboardController extends Controller
             $activities=Activity::all();
 
             $users=DB::table('users')
-                ->where('userType','member')
                 ->get();
 
             return view('Worship_leader.ProfileWorship_leader',compact('userss','users','activities','total','announcements'));
@@ -417,10 +415,7 @@ class dashboardController extends Controller
 
             $userss=User::findOrFail($id);
 
-            $activities=Activity::all();
-
             $users=DB::table('users')
-                ->where('userType','member')
                 ->get();
 
             return view('Member.ProfileMember',compact('userss','users','activities','total','announcements'));

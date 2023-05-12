@@ -206,7 +206,7 @@
                                                         <div class="flex-1">
                                                             <a href="{{ route('dashboard') }}" class="stretched-link">
                                                                 <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                                                                    {{ $activity->users->name }}</h6>
+                                                                    {{ $activity->name($activity->Id_user) }}</h6>
                                                             </a>
                                                             <div class="fs-13 text-muted">
                                                                 <p class="mb-1">{{ $activity->Title }}

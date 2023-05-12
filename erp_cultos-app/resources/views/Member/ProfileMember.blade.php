@@ -1,5 +1,5 @@
 
-@extends('Layout.PrincipalMember')
+@extends('Layout.Another')
 @section('content')
 
     @role('member')
@@ -98,19 +98,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    {{--<div class="col-xxl-6 col-md-6">
-                                        <label for="exampleDataList" class="form-label">Nivel Teologico</label>
-                                        <select class="form-control" name="theological_level" required>
-                                            <option value="{{$userss->theological_level}}">{{$users->theological_level}}</option>
-                                            <option value="Curso Basico em Teologia">Curso Basico em Teologia</option>
-                                            <option value="Curso Medio em Teologia">Curso Medio em Teologia</option>
-                                            <option value="Curso Superior em Teologia">Curso Superior em Teologia</option>
-                                            <option value="Capacitacao de Lideres">Capacitacao de Lideres</option>
-                                            <option value="Capacitacao de Obreiros">Capacitacao de Obreiros</option>
-                                            <option value="Capacitacao de Professores Criancas">Capacitacao de Professores Criancas</option>
-                                            <option value="Nenhum">Nenhum</option>
-                                        </select>
-                                    </div>--}}
                                     <input type="hidden" class="form-control" id="labelInput" name="id" value="{{$userss->id}}">
                                     <!--end col-->
                                     <input type="hidden" class="form-control" id="labelInput" name="userType" value="member">
