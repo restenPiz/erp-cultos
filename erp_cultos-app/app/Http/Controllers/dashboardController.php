@@ -318,29 +318,16 @@ class dashboardController extends Controller
         {
             $userss=User::where('userType','admin')->first();
 
-            $users = User::where('userType', '<>', 'admin')->orderBy('name')->get();
-            //Retornando os dados para se usar nas cards
-            $count_branches = Branche::count();
-            $count_activities = Activity::count();
-            $count_cults = DB::table('cults')
-                ->count();
-            $count_shepherds = DB::table('users')
-                ->where('userType', 'pastor')
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
                 ->count();
 
-            $count_report = ReportActivity::count();
+            $users=DB::table('users')
+                ->where('userType','member')
+                ->get();
 
-            $count_announcement = Announcement::count();
-
-            $total = $count_report + $count_announcement;
-
-            $branches = Branche::all();
-
-            $announcements = Announcement::all();
-
-            $activities = ReportActivity::all();
-
-            return view('shepherd.ProfileShepherd', compact('userss','branches', 'users', 'count_branches', 'count_activities', 'count_cults', 'count_shepherds', 'total', 'announcements', 'activities'));
+            return view('Shepherd.Index',compact('userss','users','activities','total'));
         }
         else
         {
