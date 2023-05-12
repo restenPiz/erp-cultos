@@ -359,7 +359,7 @@ class dashboardController extends Controller
             event(new Registered($user));
 
             Auth::login($user);
-            Alert::success('Actualizado!','Os dados do usuario foram actualizados com sucesso!');
+            Alert::success('Actualizado!','Os seus dados foram actualizados com sucesso!');
 
             return redirect()->route('dashboard');
         }
