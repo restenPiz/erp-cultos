@@ -379,6 +379,11 @@
                                     class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                     class="align-middle">Perfil</span></a>
                                 @endrole
+                                @role('worship_leader')
+                                <a class="dropdown-item" href="{{route('ProfileWorship_leader',['id'=>Auth::user()->id])}}"><i
+                                    class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Perfil</span></a>
+                                @endrole
                                 <a class="dropdown-item" href="pages-faqs.html"><i
                                         class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Ajuda</span></a>
