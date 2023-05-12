@@ -340,18 +340,24 @@ class dashboardController extends Controller
     {
         if(Auth::user()->hasRole('shepherd'))
         {
-            $userss=User::findOrFail($id);
+            $announcements=Announcement::all();
 
             $activities=Activity::all();
 
-            $total=DB::table('activities')
+            $count_activities=DB::table('activities')
                 ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            $userss=User::findOrFail($id);
 
             $users=DB::table('users')
                 ->where('userType','member')
                 ->get();
 
-            return view('Treasurer.ProfileTreasurer',compact('userss','users','activities','total'));
+            return view('Treasurer.ProfileTreasurer',compact('userss','users','activities','total','announcements'));
         }
         else
         {
@@ -362,20 +368,28 @@ class dashboardController extends Controller
     }
     public function ProfileWorship_leader($id)
     {
-        if(Auth::user()->hasRole('shepherd'))
+        if(Auth::user()->hasRole('worship_leader'))
         {
-            $userss=User::findOrFail($id);
+            $announcements=Announcement::all();
 
             $activities=Activity::all();
 
-            $total=DB::table('activities')
+            $count_activities=DB::table('activities')
                 ->count();
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            $userss=User::findOrFail($id);
+
+            $activities=Activity::all();
 
             $users=DB::table('users')
                 ->where('userType','member')
                 ->get();
 
-            return view('Worship_leader.ProfileWorship_leader',compact('userss','users','activities','total'));
+            return view('Worship_leader.ProfileWorship_leader',compact('userss','users','activities','total','announcements'));
         }
         else
         {
