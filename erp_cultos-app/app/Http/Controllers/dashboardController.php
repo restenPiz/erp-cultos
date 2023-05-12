@@ -275,11 +275,11 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
-    public function ProfileAdmin()
+    public function ProfileAdmin($id)
     {
         if(Auth::user()->hasRole('admin'))
         {
-            $userss=User::where('userType','admin')->first();
+            $userss=User::findOrFail($id);
 
             $users = User::where('userType', '<>', 'admin')->orderBy('name')->get();
             //Retornando os dados para se usar nas cards

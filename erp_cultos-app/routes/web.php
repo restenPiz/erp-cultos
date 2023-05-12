@@ -38,7 +38,7 @@ Route::post('/updateProfileAdmin/{id}', [dashboardController::class, 'updateProf
 //Inicio das rotas da parte de administrador
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
       
-    Route::get('/ProfileAdmin', [dashboardController::class, 'ProfileAdmin'])->middleware(['auth'])->name('ProfileAdmin');
+    Route::get('/ProfileAdmin/{id}', [dashboardController::class, 'ProfileAdmin'])->middleware(['auth'])->name('ProfileAdmin');
 
     //Inicio da rota de todos os membros
     Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
