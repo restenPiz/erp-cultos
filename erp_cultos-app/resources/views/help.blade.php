@@ -44,12 +44,20 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="genques-headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#genques-collapseOne" aria-expanded="true" aria-controls="genques-collapseOne">
-                                        O que e o sistema de gestao de cultos ?
+                                        Sistema de Gestao de Cultos
                                     </button>
                                 </h2>
                                 <div id="genques-collapseOne" class="accordion-collapse collapse show" aria-labelledby="genques-headingOne" data-bs-parent="#genques-accordion">
                                     <div class="accordion-body">
-                                        Este é um sistema de gestão de cultos, que tem como objetivo fazer a gestão de: cultos, património da igreja, membros, ficheiros, departamentos e filiais associadas a igreja mãe.
+                                        Este é um sistema de gestão de cultos, que tem como objetivo fazer a gestão de:
+                                        <ul>
+                                            <li>Cultos</li>
+                                            <li>Património da igreja</li>
+                                            <li>Membros</li>
+                                            <li>Ficheiros</li>
+                                            <li>Departamentos</li>
+                                            <li>Filiais</li>
+                                        </ul> 
                                          O sistema possui links na parte lateral esquerda que permitem a rápida navegação pelo sistema.
 
                                         O sistema possui alguns links que estão ocultos, que vão aparecer quando clicares sobre a parte da tua foto!
