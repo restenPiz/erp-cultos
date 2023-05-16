@@ -136,6 +136,9 @@ Route::get('/deleteActivity/{id}', [activityController::class, 'deleteActivity']
 //Inicio das rotas da parte de pastor
 Route::group(['prefix' => 'shepherd', 'middleware' => ['role:shepherd']], function () {
 
+    //Inicio da rota que vai fazer 
+    Route::get('/helpShepherd', [dashboardController::class, 'helpShepherd'])->middleware(['auth'])->name('helpShepherd');
+
     //Inicio da rota de actualizacao do perfil na parte de pastor auxiliar
     Route::get('/ProfileShepherd/{id}', [dashboardController::class, 'ProfileShepherd'])->middleware(['auth'])->name('ProfileShepherd');
 
@@ -242,6 +245,9 @@ Route::post('/loginMember', [memberController::class, 'loginMember'])->name('log
 
 //Inicio das rotas da parte de membro
 Route::group(['prefix' => 'member', 'middleware' => ['role:member']], function () {
+
+    //Inicio da rota que vai colocar a tela de helpUs
+    Route::get('/helpMember', [dashboardController::class, 'helpMember'])->middleware(['auth'])->name('helpMember');
 
     //Inicio da rota de perfil de usuario
     Route::get('/ProfileMember/{id}', [dashboardController::class, 'ProfileMember'])->middleware(['auth'])->name('ProfileMember');

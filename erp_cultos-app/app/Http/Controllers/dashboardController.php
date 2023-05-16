@@ -498,4 +498,85 @@ class dashboardController extends Controller
             return redirect()->route('login');
         }
     }
+    public function helpUs()
+    {
+        if(Auth::check())
+        {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            $activities=Activity::all();
+
+            $users=DB::table('users')
+                ->get();
+
+            return view('helpUs',compact('users','activities','total','announcements'));
+        
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()-route('login');
+        }
+    }
+    public function helpShepherd()
+    {
+        if(Auth::user()->hasRole('shepherd'))
+        {
+            $activities=Activity::all();
+
+            $total=DB::table('activities')
+                ->count();
+
+            $users=DB::table('users')
+                ->where('userType','member')
+                ->get();
+
+            return view('helpShepherd',compact('users','activities','total'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
+    public function helpMember()
+    {
+        if(Auth::user()->hasRole('member'))
+        {
+            $announcements=Announcement::all();
+
+            $activities=Activity::all();
+
+            $count_activities=DB::table('activities')
+                ->count();
+
+            $count_announcements=DB::table('announcements')
+                ->count();
+
+            $total=$count_activities+$count_announcements;
+
+            $users=DB::table('users')
+                ->get();
+
+            return view('helpMember',compact('users','activities','total','announcements'));
+        }
+        else
+        {
+            Alert::error('Nao Autenticado!','O usuario nao esta autenticado no sistema!');
+
+            return redirect()->route('login');
+        }
+    }
 }
