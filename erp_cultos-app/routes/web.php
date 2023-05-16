@@ -41,6 +41,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
       
     Route::get('/ProfileAdmin/{id}', [dashboardController::class, 'ProfileAdmin'])->middleware(['auth'])->name('ProfileAdmin');
 
+    Route::get('/helpAdmin', [dashboardController::class, 'helpAdmin'])->middleware(['auth'])->name('helpAdmin');
+
     //Inicio da rota de todos os membros
     Route::get('/allMember', [memberController::class, 'allMember'])->middleware(['auth'])->name('allMember');
         
