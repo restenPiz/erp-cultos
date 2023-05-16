@@ -12,7 +12,7 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Layout config Js -->
     <script src="/assets/js/layout.js"></script>
@@ -244,17 +244,10 @@
                                 <a class="dropdown-item" href="{{route('ProfileAdmin',['id'=>Auth::user()->id])}}"><i
                                         class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Perfil</span></a>
-                                <a class="dropdown-item" href="pages-faqs.html"><i
+                                <a class="dropdown-item" href="{{route('helpAdmin')}}"><i
                                         class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Ajuda</span></a>
                                 <div class="dropdown-divider"></div>
-                                {{-- <a class="dropdown-item" href="pages-profile-settings.html"><span
-                                        class="badge bg-soft-success text-success mt-1 float-end">New</span><i
-                                        class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Settings</span></a> --}}
-                                {{--<a class="dropdown-item" href="auth-lockscreen-basic.html"><i
-                                        class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Lock screen</span></a>--}}
                                 <form action="{{route('logout')}}" method="post">
                                     @csrf
                                     <button type="submit" name="submit" class="dropdown-item" href="{{ route('logout') }}"><i
