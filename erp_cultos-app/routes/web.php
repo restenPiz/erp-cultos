@@ -124,6 +124,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
 
 });
+//Inicio da rota de perfil dos restantes usuarios
+Route::get('/helpUs', [dashboardController::class, 'helpUs'])->middleware(['auth'])->name('helpUs');
 
 //Inicio da parte de actividade
 Route::get('/addActivity', [activityController::class, 'addActivity'])->middleware(['auth'])->name('addActivity');
