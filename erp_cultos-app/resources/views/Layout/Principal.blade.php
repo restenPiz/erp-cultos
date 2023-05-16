@@ -244,7 +244,7 @@
                                 <a class="dropdown-item" href="{{route('ProfileAdmin',['id'=>Auth::user()->id])}}"><i
                                         class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Perfil</span></a>
-                                <a class="dropdown-item" href="pages-faqs.html"><i
+                                <a class="dropdown-item" href="{{route('helpAdmin')}}"><i
                                         class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Ajuda</span></a>
                                 <div class="dropdown-divider"></div>
