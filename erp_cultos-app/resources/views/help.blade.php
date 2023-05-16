@@ -9,8 +9,8 @@
                     <div class="row">
                         <div class="col-xxl-5 align-self-center">
                             <div class="py-4">
-                                <h4 class="display-6 coming-soon-text">Perguntas Frequentes</h4>
-                                <p class="text-success fs-15 mt-3">Aqui voce encontrar a resposta para a sua pergunta, caso nao encontre contacte o administrador!</p>
+                                <h4 class="display-6 coming-soon-text">Informações</h4>
+                                <p class="text-success fs-15 mt-3">Nesta seccao tem algumas informacoes sobre o sistema!</p>
                                 <div class="hstack flex-wrap gap-2">
                                     <button type="button" class="btn btn-primary btn-label rounded-pill"><i class="ri-mail-line label-icon align-middle rounded-pill fs-16 me-2"></i> admin@gmail.com</button>
                                     <button type="button" class="btn btn-info btn-label rounded-pill"><i class="ri-whatsapp-line label-icon align-middle rounded-pill fs-16 me-2"></i> 867336817</button>
