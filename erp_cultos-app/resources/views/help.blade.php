@@ -49,8 +49,14 @@
                                 </h2>
                                 <div id="genques-collapseOne" class="accordion-collapse collapse show" aria-labelledby="genques-headingOne" data-bs-parent="#genques-accordion">
                                     <div class="accordion-body">
-                                        If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple their most common words.
-                                    </div>
+                                        Este é um sistema de gestão de cultos, que tem como objetivo fazer a gestão de: cultos, património da igreja, membros, ficheiros, departamentos e filiais associadas a igreja mãe.
+                                         O sistema possui links na parte lateral esquerda que permitem a rápida navegação pelo sistema.
+
+                                        O sistema possui alguns links que estão ocultos, que vão aparecer quando clicares sobre a parte da tua foto!
+
+                                        Caso isso não tenha te ajudado, contacte o administrador para que ele possa te esclarecer a dúvida com mais precisão!<br><br>
+
+                                        Obrigado...</div>
                                 </div>
                             </div>
                         </div>
