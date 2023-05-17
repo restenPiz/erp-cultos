@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use App\Models\Announcement;
 use App\Models\Cult;
+use App\Models\member_department;
 use App\Models\ReportActivity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -111,6 +112,8 @@ class dashboardController extends Controller
                 ->count();
 
             $total=$count_activities+$count_announcements;
+
+            $member_departments=member_department::all();
 
             $files = DB::table('files')->where('Type_file', 'Documento')->get();
             $images = DB::table('files')->where('Type_file', 'Imagem')->get();

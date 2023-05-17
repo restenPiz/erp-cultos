@@ -48,7 +48,7 @@ class activityController extends Controller
                 ->where('userType', '=', 'pastor')
                 ->get();
 
-            $departments=member_department::all();
+            $departments=member_department::select('id','Id_department')->distinct()->get();
 
             $announcements=Announcement::all();
             
