@@ -168,7 +168,7 @@
                                                 <div
                                                     class="text-reset notification-item d-block dropdown-item position-relative">
                                                     <div class="d-flex">
-                                                        <img src="../Ficheiros/homem.jpg"
+                                                        <img src="../Ficheiros/dif.jpg"
                                                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                         <div class="flex-1">
                                                             <a href="{{ route('showAnnouncementsMember', ['id' => $announcement->id]) }}"
@@ -197,7 +197,7 @@
                                             @foreach ($activities as $activity)
                                                 <div class="text-reset notification-item d-block dropdown-item">
                                                     <div class="d-flex">
-                                                        <img src="assets/images/users/avatar-3.jpg"
+                                                        <img src="../Ficheiros/dif.jpg"
                                                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                         <div class="flex-1">
                                                             <a href="{{ route('dashboard') }}" class="stretched-link">
