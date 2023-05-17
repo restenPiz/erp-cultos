@@ -42,7 +42,7 @@
                                             <select class="form-control" name="Group" required>
                                                 <option>...</option>
                                                 @foreach ($departments as $department)
-                                                    <option value="{{$department->id}}">{{$department->Name}}</option>
+                                                    <option value="{{$department->id}}">{{$department->department->Name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

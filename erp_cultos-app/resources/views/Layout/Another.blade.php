@@ -66,6 +66,7 @@
                                 <span></span>
                             </span>
                         </button>
+
                     </div>
 
                     <div class="d-flex align-items-center">
@@ -81,7 +82,7 @@
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ."
+                                            <input type="text" class="form-control" placeholder="Pesquisar ."
                                                 aria-label="Recipient's username">
                                             <button class="btn btn-primary" type="submit"><i
                                                     class="mdi mdi-magnify"></i></button>
@@ -104,13 +105,16 @@
                             </button>
                         </div>
 
+
+                        {{--Inicio da parte contendo as notficacoes dos membros--}}
+
                         <div class="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                 <i class='bx bx-bell fs-22'></i>
                                 <span
-                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">3<span
+                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ $total }}<span
                                         class="visually-hidden">unread messages</span></span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
@@ -164,7 +168,7 @@
                                                 <div
                                                     class="text-reset notification-item d-block dropdown-item position-relative">
                                                     <div class="d-flex">
-                                                        <img src="../Ficheiros/homem.jpg"
+                                                        <img src="/Ficheiros/homem.jpg"
                                                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                         <div class="flex-1">
                                                             <a href="{{ route('showAnnouncementsMember', ['id' => $announcement->id]) }}"
@@ -242,35 +246,29 @@
                             </div>
                         </div>
 
+                        {{--Fim da parte contendo as notificacoes dos membros--}}
+
+
                         <div class="dropdown ms-sm-3 header-item topbar-user">
                             <button type="button" class="btn" id="page-header-user-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
-                                    @if(Auth::user()->gender=='Masculino')
                                     <img class="rounded-circle header-profile-user"
-                                        src="/Ficheiros/homem.jpg" alt="Header Avatar">
-                                    @elseif(Auth::user()->gender=='Femenino')
-                                    <img class="rounded-circle header-profile-user"
-                                        src="/Ficheiros/mulher.jpg" alt="Header Avatar">
-                                    @else
-                                    <img class="rounded-circle header-profile-user"
-                                    src="/Ficheiros/dif.jpg" alt="Header Avatar">
-                                    @endif
+                                        src="/{{Auth::user()->File}}" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{Auth::user()->name}}</span>
                                         <span
-                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
-                                        <span
-                                            class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">{{ Auth::user()->userType }}</span>
+                                            class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">{{Auth::user()->userType}}</span>
                                     </span>
                                 </span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Bem Vindo {{ Auth::user()->name }}!</h6>
-                                <a class="dropdown-item" href="pages-profile.html"><i
+                                <a class="dropdown-item" href="{{route('ProfileMember',['id'=>Auth::user()->id])}}"><i
                                         class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Perfil</span></a>
-                                <a class="dropdown-item" href="pages-faqs.html"><i
+                                <a class="dropdown-item" href="{{route('helpMember')}}"><i
                                         class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Ajuda</span></a>
                                 <div class="dropdown-divider"></div>
@@ -278,15 +276,18 @@
                                         class="badge bg-soft-success text-success mt-1 float-end">New</span><i
                                         class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Settings</span></a> --}}
-                                {{--<a class="dropdown-item" href="auth-lockscreen-basic.html"><i
+                                {{--<form action="/lock-screen" method="post">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item" id="lock-screen"><i
                                         class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Lock screen</span></a>--}}
-                                        <form action="{{route('logout')}}" method="post">
-                                            @csrf
-                                            <button type="submit" name="submit" class="dropdown-item" href="{{ route('logout') }}"><i
-                                                class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
-                                                class="align-middle" data-key="t-logout">Logout</span></button>
-                                        </form>
+                                        class="align-middle" id="lock-screen">Lock screen</span></button>
+                                </form>--}}
+                                <form action="{{route('logout')}}" method="post">
+                                    @csrf
+                                    <button type="submit" name="submit" class="dropdown-item" href="{{ route('logout') }}"><i
+                                        class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
+                                        class="align-middle" data-key="t-logout">Logout</span></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -313,9 +314,9 @@
                             </div>
                         </div>
                         <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                            <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn w-sm btn-danger" id="delete-notification">Sim, Elimine
-                                Isto!</button>
+                            <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn w-sm btn-danger" id="delete-notification">Yes, Delete
+                                It!</button>
                         </div>
                     </div>
 
@@ -370,13 +371,28 @@
                             <div class="collapse menu-dropdown" id="sidebarApps">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{ route('addActivity') }}" class="nav-link" data-key="t-calendar">
+                                        <a href="{{ route('addPrayer') }}" class="nav-link" data-key="t-calendar">
                                             Adicionar Pedido de Oracao
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('allActivity') }}" class="nav-link" data-key="t-chat">
+                                        <a href="{{ route('allPrayer') }}" class="nav-link" data-key="t-chat">
                                             Detalhes dos Pedidos de Oracao </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Culto</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarForms">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ route('allCultMember') }}" class="nav-link"
+                                            data-key="t-form-select">Detalhes do culto</a>
                                     </li>
                                 </ul>
                             </div>
@@ -432,7 +448,7 @@
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Erp - Culto.
+                            </script> © ERP - Cultos.
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
@@ -448,10 +464,28 @@
     </div>
     <!-- END layout-wrapper -->
 
-    
     {{-- Inicio do link de sweetAlerta --}}
     @include('sweetalert::alert')
     {{-- Fim do link do sweetAlerta --}}
+
+    <script>
+
+        // Quando o botão de bloqueio for clicado, enviar uma solicitação AJAX ao endpoint Laravel para bloquear a sessão do usuário
+        $(document).on('click', '#lock-screen', function () {
+            $.ajax({
+                type: 'POST',
+                url: '/lock-screen',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function (response) {
+                    // Redirecionar para a página de bloqueio de tela
+                    window.location.href = '/lock-screen';
+                }
+            });
+        });
+
+    </script>
 
     <!-- JAVASCRIPT -->
     <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -470,6 +504,16 @@
 
     <!-- Dashboard init -->
     <script src="/assets/js/pages/dashboard-analytics.init.js"></script>
+
+
+    
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+
+    <!-- gridjs js -->
+    <script src="/assets/libs/gridjs/gridjs.umd.js"></script>
+    <!-- gridjs init -->
+    <script src="/assets/js/pages/gridjs.init.js"></script>
 
     <!-- App js -->
     <script src="/assets/js/app.js"></script>

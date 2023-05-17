@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use App\Models\Branche;
+use App\Models\member_department;
 use App\Models\ReportActivity;
 use Request;
 use App\Models\User;
@@ -47,8 +48,7 @@ class activityController extends Controller
                 ->where('userType', '=', 'pastor')
                 ->get();
 
-            $departments=DB::table('departments')
-                ->get();
+            $departments=member_department::all();
 
             $announcements=Announcement::all();
             

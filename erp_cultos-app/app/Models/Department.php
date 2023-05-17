@@ -18,7 +18,7 @@ class Department extends Model
     //Inicio dos metodos responsaveis por interligar a tabela de departamentos com a de usuarios
     public function users()
     {
-        return $this->belongsToMany(member_department::class, 'Id_user','Id_department');
+        return $this->belongsToMany(User::class, 'Id_user','Id_department');
     }
     public function activitys()
     {

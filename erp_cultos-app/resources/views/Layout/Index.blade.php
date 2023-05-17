@@ -384,9 +384,21 @@
                                     class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                     class="align-middle">Perfil</span></a>
                                 @endrole
-                                <a class="dropdown-item" href="pages-faqs.html"><i
-                                        class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Ajuda</span></a>
+                                @role('shepherd')
+                                <a class="dropdown-item" href="{{route('helpShepherd')}}"><i
+                                    class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Ajuda</span></a>
+                                @endrole
+                                @role('worship_leader')
+                                <a class="dropdown-item" href="{{route('helpUs')}}"><i
+                                    class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Ajuda</span></a>
+                                @endrole
+                                @role('treasurer')
+                                <a class="dropdown-item" href="{{route('helpUs')}}"><i
+                                    class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Ajuda</span></a>
+                                @endrole
                                 <div class="dropdown-divider"></div>
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
