@@ -210,9 +210,10 @@ class inputController extends Controller
 
             $count_activities=DB::table('activities')
                 ->count();
+                
             $count_announcements=DB::table('announcements')
                 ->count();
-
+ 
             $total=$count_activities+$count_announcements;
             
             $Input_type=Request::input('Input_type');
