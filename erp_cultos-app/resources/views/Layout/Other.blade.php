@@ -151,14 +151,6 @@
                                                                     </p>
                                                                 </div>
                                                             </div>
-                                                            <div class="px-2 fs-15">
-                                                                <div class="form-check notification-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="all-notification-check04">
-                                                                    <label class="form-check-label"
-                                                                        for="all-notification-check04"></label>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 @endforeach
@@ -186,14 +178,6 @@
                                                                     </p>
                                                                 </div>
                                                             </div>
-                                                            <div class="px-2 fs-15">
-                                                                <div class="form-check notification-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="messages-notification-check01">
-                                                                    <label class="form-check-label"
-                                                                        for="messages-notification-check01"></label>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 @endforeach
@@ -202,14 +186,6 @@
                                         <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
                                             aria-labelledby="alerts-tab"></div>
 
-                                        <div class="notification-actions" id="notification-actions">
-                                            <div class="d-flex text-muted justify-content-center">
-                                                Select <div id="select-content" class="text-body fw-semibold px-1">0</div>
-                                                Result <button type="button" class="btn btn-link link-danger p-0 ms-3"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#removeNotificationModal">Remove</button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
