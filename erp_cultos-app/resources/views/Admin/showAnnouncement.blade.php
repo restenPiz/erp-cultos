@@ -1,4 +1,4 @@
-@extends('Layout.Principal')
+@extends('Layout.Other')
 @section('content')
     @role('admin')
         {{-- Inicio do conteudo da parte de comunicado --}}
